@@ -1,0 +1,783 @@
+05/19/2017 12:46:42 PM | Navigation | INFO: Failed to click on any element with locator analysisButton of type id. 
+05/19/2017 12:46:45 PM | Navigation | INFO: Failed to click on any element with locator organismButton of type id. 
+05/19/2017 12:46:48 PM | Navigation | INFO: Failed to click on any element with locator populationButton of type id. 
+05/19/2017 12:48:42 PM | Navigation | INFO: Failed to click on any element with locator analysisButton of type id. 
+05/19/2017 12:48:45 PM | Navigation | INFO: Failed to click on any element with locator organismButton of type id. 
+05/19/2017 12:48:48 PM | Navigation | INFO: Failed to click on any element with locator populationButton of type id. 
+05/19/2017 01:15:32 PM | Navigation | INFO: Failed to click on any element with locator analysisButton of type id. 
+05/19/2017 01:15:35 PM | Navigation | INFO: Failed to click on any element with locator organismButton of type id. 
+05/19/2017 01:15:38 PM | Navigation | INFO: Failed to click on any element with locator populationButton of type id. 
+05/19/2017 01:22:34 PM | Navigation | INFO: Failed to click on any element with locator analysisButton of type id. 
+05/19/2017 01:23:04 PM | Navigation | INFO: Failed to click on any element with locator organismButton of type id. 
+05/19/2017 01:23:34 PM | Navigation | INFO: Failed to click on any element with locator populationButton of type id. 
+05/19/2017 01:27:11 PM | Navigation | INFO: Failed to click on any element with locator analysisButton of type id. 
+05/19/2017 01:27:41 PM | Navigation | INFO: Failed to click on any element with locator organismButton of type id. 
+05/19/2017 01:28:11 PM | Navigation | INFO: Failed to click on any element with locator populationButton of type id. 
+05/19/2017 01:28:11 PM | Navigation | INFO: Failed to click on any element with locator analysisButton of type id. 
+05/19/2017 01:28:41 PM | Navigation | INFO: Failed to click on any element with locator populationButton of type id. 
+05/19/2017 01:29:11 PM | Navigation | INFO: Failed to click on any element with locator organismButton of type id. 
+05/20/2017 10:32:55 AM | Navigation | INFO: Failed to click on any element with locator analysisButton of type id. 
+05/20/2017 10:33:25 AM | Navigation | INFO: Failed to click on any element with locator organismButton of type id. 
+05/20/2017 10:33:55 AM | Navigation | INFO: Failed to click on any element with locator populationButton of type id. 
+05/20/2017 10:33:55 AM | Navigation | INFO: Failed to click on any element with locator analysisButton of type id. 
+05/20/2017 10:34:25 AM | Navigation | INFO: Failed to click on any element with locator populationButton of type id. 
+05/20/2017 10:34:55 AM | Navigation | INFO: Failed to click on any element with locator organismButton of type id. 
+05/20/2017 11:27:26 AM | Navigation | INFO: Failed to click on any element with locator analysisButton of type id. 
+05/20/2017 11:27:56 AM | Navigation | INFO: Failed to click on any element with locator organismButton of type id. 
+05/20/2017 11:28:26 AM | Navigation | INFO: Failed to click on any element with locator populationButton of type id. 
+05/20/2017 11:28:26 AM | Navigation | INFO: Failed to click on any element with locator analysisButton of type id. 
+05/20/2017 11:28:56 AM | Navigation | INFO: Failed to click on any element with locator populationButton of type id. 
+05/20/2017 11:29:26 AM | Navigation | INFO: Failed to click on any element with locator organismButton of type id. 
+05/20/2017 11:36:56 AM | Navigation | INFO: Failed to click on any element with locator organismButton of type id. 
+05/22/2017 02:56:51 PM | Navigation | INFO: Failed to click on any element with locator analysisButton of type id. 
+05/22/2017 02:57:21 PM | Navigation | INFO: Failed to click on any element with locator organismButton of type id. 
+05/22/2017 03:01:45 PM | Navigation | INFO: Failed to click on any element with locator populationButton of type id. 
+05/22/2017 03:02:05 PM | Navigation | INFO: Failed to click on any element with locator organismButton of type id. 
+05/22/2017 03:22:25 PM | Navigation | INFO: Element found with locator analysisButton of type id. 
+05/22/2017 03:22:25 PM | Navigation | INFO: Clicked on element with locator analysisButton of type id. 
+05/22/2017 03:22:55 PM | Navigation | INFO: Element found with locator organismButton of type id. 
+05/22/2017 03:22:55 PM | Navigation | INFO: Clicked on element with locator organismButton of type id. 
+05/22/2017 03:30:41 PM | Navigation | INFO: Element found with locator analysisButton of type id. 
+05/22/2017 03:30:41 PM | Navigation | INFO: Clicked on element with locator analysisButton of type id. 
+05/22/2017 03:30:44 PM | Navigation | INFO: Element found with locator organismButton of type id. 
+05/22/2017 03:30:44 PM | Navigation | INFO: Clicked on element with locator organismButton of type id. 
+05/22/2017 03:30:47 PM | Navigation | INFO: Element found with locator populationButton of type id. 
+05/22/2017 03:30:47 PM | Navigation | INFO: Clicked on element with locator populationButton of type id. 
+05/22/2017 03:30:47 PM | Navigation | INFO: Element found with locator analysisButton of type id. 
+05/22/2017 03:30:47 PM | Navigation | INFO: Clicked on element with locator analysisButton of type id. 
+05/22/2017 03:30:50 PM | Navigation | INFO: Element found with locator populationButton of type id. 
+05/22/2017 03:30:50 PM | Navigation | INFO: Clicked on element with locator populationButton of type id. 
+05/22/2017 03:30:54 PM | Navigation | INFO: Element found with locator organismButton of type id. 
+05/22/2017 03:30:54 PM | Navigation | INFO: Clicked on element with locator organismButton of type id. 
+05/23/2017 11:15:59 AM | Navigation | INFO: Element found with locator analysisButton of type id. 
+05/23/2017 11:15:59 AM | Navigation | INFO: Clicked on element with locator analysisButton of type id. 
+05/23/2017 11:15:59 AM | Navigation | INFO: Element found with locator analysisBlock of type id. 
+05/23/2017 11:15:59 AM | Navigation | INFO: Element with locator analysisBlock of type id found to be displayed. 
+05/23/2017 11:15:59 AM | Navigation | INFO: Element found with locator organismButton of type id. 
+05/23/2017 11:15:59 AM | Navigation | INFO: Clicked on element with locator organismButton of type id. 
+05/23/2017 11:15:59 AM | Navigation | INFO: Element found with locator organismBlock of type id. 
+05/23/2017 11:15:59 AM | Navigation | INFO: Element with locator organismBlock of type id found to be displayed. 
+05/23/2017 11:15:59 AM | Navigation | INFO: Element found with locator populationButton of type id. 
+05/23/2017 11:16:00 AM | Navigation | INFO: Clicked on element with locator populationButton of type id. 
+05/23/2017 11:16:00 AM | Navigation | INFO: Element found with locator populationBlock of type id. 
+05/23/2017 11:16:00 AM | Navigation | INFO: Element with locator populationBlock of type id found to be displayed. 
+05/23/2017 11:18:03 AM | Navigation | INFO: Element found with locator analysisButton of type id. 
+05/23/2017 11:18:03 AM | Navigation | INFO: Clicked on element with locator analysisButton of type id. 
+05/23/2017 11:18:03 AM | Navigation | INFO: Element found with locator analysisBlock of type id. 
+05/23/2017 11:18:03 AM | Navigation | INFO: Element with locator analysisBlock of type id found to be displayed. 
+05/23/2017 11:18:03 AM | Navigation | INFO: Element found with locator organismButton of type id. 
+05/23/2017 11:18:03 AM | Navigation | INFO: Clicked on element with locator organismButton of type id. 
+05/23/2017 11:18:03 AM | Navigation | INFO: Element found with locator organismBlock of type id. 
+05/23/2017 11:18:03 AM | Navigation | INFO: Element with locator organismBlock of type id found to be displayed. 
+05/23/2017 11:18:03 AM | Navigation | INFO: Element found with locator populationButton of type id. 
+05/23/2017 11:18:03 AM | Navigation | INFO: Clicked on element with locator populationButton of type id. 
+05/23/2017 11:18:03 AM | Navigation | INFO: Element found with locator populationBlock of type id. 
+05/23/2017 11:18:03 AM | Navigation | INFO: Element with locator populationBlock of type id found to be displayed. 
+05/23/2017 11:20:09 AM | Navigation | INFO: Element found with locator analysisButton of type id. 
+05/23/2017 11:20:09 AM | Navigation | INFO: Clicked on element with locator analysisButton of type id. 
+05/23/2017 11:20:09 AM | Navigation | INFO: Element found with locator analysisBlock of type id. 
+05/23/2017 11:20:09 AM | Navigation | INFO: Element with locator analysisBlock of type id found to be displayed. 
+05/23/2017 11:20:09 AM | Navigation | INFO: Element found with locator organismButton of type id. 
+05/23/2017 11:20:09 AM | Navigation | INFO: Clicked on element with locator organismButton of type id. 
+05/23/2017 11:20:09 AM | Navigation | INFO: Element found with locator organismBlock of type id. 
+05/23/2017 11:20:09 AM | Navigation | INFO: Element with locator organismBlock of type id found to be displayed. 
+05/23/2017 11:20:09 AM | Navigation | INFO: Element found with locator populationButton of type id. 
+05/23/2017 11:20:09 AM | Navigation | INFO: Clicked on element with locator populationButton of type id. 
+05/23/2017 11:20:09 AM | Navigation | INFO: Element found with locator populationBlock of type id. 
+05/23/2017 11:20:09 AM | Navigation | INFO: Element with locator populationBlock of type id found to be displayed. 
+05/23/2017 11:21:53 AM | Navigation | INFO: Element found with locator analysisButton of type id. 
+05/23/2017 11:21:53 AM | Navigation | INFO: Clicked on element with locator analysisButton of type id. 
+05/23/2017 11:21:53 AM | Navigation | INFO: Element found with locator analysisBlock of type id. 
+05/23/2017 11:21:53 AM | Navigation | INFO: Element with locator analysisBlock of type id found to be displayed. 
+05/23/2017 11:21:53 AM | Navigation | INFO: Element found with locator organismButton of type id. 
+05/23/2017 11:21:53 AM | Navigation | INFO: Clicked on element with locator organismButton of type id. 
+05/23/2017 11:21:53 AM | Navigation | INFO: Element found with locator organismBlock of type id. 
+05/23/2017 11:21:53 AM | Navigation | INFO: Element with locator organismBlock of type id found to be displayed. 
+05/23/2017 11:21:53 AM | Navigation | INFO: Element found with locator populationButton of type id. 
+05/23/2017 11:21:53 AM | Navigation | INFO: Clicked on element with locator populationButton of type id. 
+05/23/2017 11:21:53 AM | Navigation | INFO: Element found with locator populationBlock of type id. 
+05/23/2017 11:21:53 AM | Navigation | INFO: Element with locator populationBlock of type id found to be displayed. 
+05/23/2017 11:22:48 AM | Navigation | INFO: Element found with locator analysisButton of type id. 
+05/23/2017 11:22:48 AM | Navigation | INFO: Clicked on element with locator analysisButton of type id. 
+05/23/2017 11:22:48 AM | Navigation | INFO: Element found with locator analysisBlock of type id. 
+05/23/2017 11:22:48 AM | Navigation | INFO: Element with locator analysisBlock of type id found to be displayed. 
+05/23/2017 11:22:48 AM | Navigation | INFO: Element found with locator organismButton of type id. 
+05/23/2017 11:22:48 AM | Navigation | INFO: Clicked on element with locator organismButton of type id. 
+05/23/2017 11:22:48 AM | Navigation | INFO: Element found with locator organismBlock of type id. 
+05/23/2017 11:22:48 AM | Navigation | INFO: Element with locator organismBlock of type id found to be displayed. 
+05/23/2017 11:22:48 AM | Navigation | INFO: Element found with locator populationButton of type id. 
+05/23/2017 11:22:48 AM | Navigation | INFO: Clicked on element with locator populationButton of type id. 
+05/23/2017 11:22:48 AM | Navigation | INFO: Element found with locator populationBlock of type id. 
+05/23/2017 11:22:48 AM | Navigation | INFO: Element with locator populationBlock of type id found to be displayed. 
+05/23/2017 11:46:57 AM | Navigation | INFO: Element found with locator analysisButton of type id. 
+05/23/2017 11:46:57 AM | Navigation | INFO: Clicked on element with locator analysisButton of type id. 
+05/23/2017 11:46:57 AM | Navigation | INFO: Element found with locator analysisBlock of type id. 
+05/23/2017 11:46:57 AM | Navigation | INFO: Element with locator analysisBlock of type id found to be displayed. 
+05/23/2017 11:46:57 AM | Navigation | INFO: Element found with locator populationButton of type id. 
+05/23/2017 11:46:57 AM | Navigation | INFO: Clicked on element with locator populationButton of type id. 
+05/23/2017 11:46:57 AM | Navigation | INFO: Element found with locator popSetupButton of type id. 
+05/23/2017 11:46:57 AM | Navigation | INFO: Element found with locator organismButton of type id. 
+05/23/2017 11:46:58 AM | Navigation | INFO: Clicked on element with locator organismButton of type id. 
+05/23/2017 11:46:58 AM | Navigation | INFO: Element found with locator organismBlock of type id. 
+05/23/2017 11:46:58 AM | Navigation | INFO: Element with locator organismBlock of type id found to be displayed. 
+05/23/2017 11:46:58 AM | Navigation | INFO: Element found with locator populationButton of type id. 
+05/23/2017 11:46:58 AM | Navigation | INFO: Clicked on element with locator populationButton of type id. 
+05/23/2017 11:46:58 AM | Navigation | INFO: Element found with locator populationBlock of type id. 
+05/23/2017 11:46:58 AM | Navigation | INFO: Element with locator populationBlock of type id found to be displayed. 
+05/23/2017 11:49:33 AM | Navigation | INFO: Element found with locator analysisButton of type id. 
+05/23/2017 11:49:33 AM | Navigation | INFO: Clicked on element with locator analysisButton of type id. 
+05/23/2017 11:49:33 AM | Navigation | INFO: Element found with locator analysisBlock of type id. 
+05/23/2017 11:49:33 AM | Navigation | INFO: Element with locator analysisBlock of type id found to be displayed. 
+05/23/2017 11:49:33 AM | Navigation | INFO: Element found with locator populationButton of type id. 
+05/23/2017 11:49:33 AM | Navigation | INFO: Clicked on element with locator populationButton of type id. 
+05/23/2017 11:49:33 AM | Navigation | INFO: Element found with locator popSetupButton of type id. 
+05/23/2017 11:49:33 AM | Navigation | INFO: Got text 'Setup' from element with locator of type id. 
+05/23/2017 11:49:33 AM | Navigation | INFO: Clicked on element with locator  of type id. 
+05/23/2017 11:49:33 AM | Navigation | INFO: Element found with locator setupForm of type id. 
+05/23/2017 11:49:33 AM | Navigation | INFO: Element with locator setupForm of type id found to be displayed. 
+05/23/2017 11:49:33 AM | Navigation | INFO: Element found with locator organismButton of type id. 
+05/23/2017 11:49:33 AM | Navigation | INFO: Clicked on element with locator organismButton of type id. 
+05/23/2017 11:49:33 AM | Navigation | INFO: Element found with locator organismBlock of type id. 
+05/23/2017 11:49:33 AM | Navigation | INFO: Element with locator organismBlock of type id found to be displayed. 
+05/23/2017 11:49:33 AM | Navigation | INFO: Element found with locator populationButton of type id. 
+05/23/2017 11:49:33 AM | Navigation | INFO: Clicked on element with locator populationButton of type id. 
+05/23/2017 11:49:33 AM | Navigation | INFO: Element found with locator populationBlock of type id. 
+05/23/2017 11:49:33 AM | Navigation | INFO: Element with locator populationBlock of type id found to be displayed. 
+05/23/2017 03:12:28 PM | Navigation | INFO: Element found with locator analysisButton of type id. 
+05/23/2017 03:12:28 PM | Navigation | INFO: Clicked on element with locator analysisButton of type id. 
+05/23/2017 03:12:29 PM | Navigation | INFO: Element found with locator analysisBlock of type id. 
+05/23/2017 03:12:29 PM | Navigation | INFO: Element with locator analysisBlock of type id found to be displayed. 
+05/23/2017 03:12:29 PM | Navigation | INFO: Element found with locator populationButton of type id. 
+05/23/2017 03:12:29 PM | Navigation | INFO: Clicked on element with locator populationButton of type id. 
+05/23/2017 03:12:29 PM | Navigation | INFO: Element found with locator popSetupButton of type id. 
+05/23/2017 03:12:29 PM | Navigation | INFO: Got text 'Setup' from element with locator of type id. 
+05/23/2017 03:12:29 PM | Navigation | INFO: Clicked on element with locator  of type id. 
+05/23/2017 03:12:29 PM | Navigation | INFO: Element found with locator setupForm of type id. 
+05/23/2017 03:12:29 PM | Navigation | INFO: Element with locator setupForm of type id found to be displayed. 
+05/23/2017 03:12:29 PM | Navigation | INFO: Element found with locator organismButton of type id. 
+05/23/2017 03:12:29 PM | Navigation | INFO: Clicked on element with locator organismButton of type id. 
+05/23/2017 03:12:29 PM | Navigation | INFO: Element found with locator OrgSetting of type id. 
+05/23/2017 03:12:29 PM | Navigation | INFO: Got text 'Settings' from element with locator of type id. 
+05/23/2017 03:12:29 PM | Navigation | INFO: Clicked on element with locator  of type id. 
+05/23/2017 03:12:29 PM | Navigation | INFO: Element found with locator dijit_Dialog_4 of type id. 
+05/23/2017 03:12:29 PM | Navigation | INFO: Element with locator dijit_Dialog_4 of type id found to be displayed. 
+05/23/2017 03:12:29 PM | Navigation | INFO: Element found with locator organismButton of type id. 
+05/23/2017 03:12:29 PM | Navigation | INFO: Failed to click on any element with locator organismButton of type id. 
+05/23/2017 03:12:29 PM | Navigation | INFO: Element found with locator organismBlock of type id. 
+05/23/2017 03:12:29 PM | Navigation | INFO: Element with locator organismBlock of type id found to be displayed. 
+05/23/2017 03:12:29 PM | Navigation | INFO: Element found with locator populationButton of type id. 
+05/23/2017 03:12:29 PM | Navigation | INFO: Failed to click on any element with locator populationButton of type id. 
+05/23/2017 03:12:29 PM | Navigation | INFO: Element found with locator populationBlock of type id. 
+05/23/2017 03:12:29 PM | Navigation | INFO: Element with locator populationBlock of type id found not to be displayed. 
+05/23/2017 03:31:55 PM | Navigation | INFO: Element found with locator analysisButton of type id. 
+05/23/2017 03:31:55 PM | Navigation | INFO: Clicked on element with locator analysisButton of type id. 
+05/23/2017 03:31:55 PM | Navigation | INFO: Element found with locator analysisBlock of type id. 
+05/23/2017 03:31:55 PM | Navigation | INFO: Element with locator analysisBlock of type id found to be displayed. 
+05/23/2017 03:31:55 PM | Navigation | INFO: Element found with locator populationButton of type id. 
+05/23/2017 03:31:55 PM | Navigation | INFO: Clicked on element with locator populationButton of type id. 
+05/23/2017 03:31:55 PM | Navigation | INFO: Element found with locator popSetupButton of type id. 
+05/23/2017 03:31:55 PM | Navigation | INFO: Got text 'Setup' from element with locator of type id. 
+05/23/2017 03:31:55 PM | Navigation | INFO: Clicked on element with locator  of type id. 
+05/23/2017 03:31:55 PM | Navigation | INFO: Element found with locator setupForm of type id. 
+05/23/2017 03:31:55 PM | Navigation | INFO: Element with locator setupForm of type id found to be displayed. 
+05/23/2017 03:31:55 PM | Navigation | INFO: Element found with locator organismButton of type id. 
+05/23/2017 03:31:55 PM | Navigation | INFO: Clicked on element with locator organismButton of type id. 
+05/23/2017 03:31:55 PM | Navigation | INFO: Element found with locator OrgSetting of type id. 
+05/23/2017 03:31:55 PM | Navigation | INFO: Got text 'Settings' from element with locator of type id. 
+05/23/2017 03:31:55 PM | Navigation | INFO: Clicked on element with locator  of type id. 
+05/23/2017 03:31:55 PM | Navigation | INFO: Element found with locator dijit_Dialog_4 of type id. 
+05/23/2017 03:31:55 PM | Navigation | INFO: Element with locator dijit_Dialog_4 of type id found to be displayed. 
+05/23/2017 03:31:55 PM | Navigation | INFO: Element found with locator dijit_Dialog_4 of type id. 
+05/23/2017 03:31:55 PM | Navigation | INFO: Element with locator dijit_Dialog_4 of type id found to be displayed. 
+05/23/2017 03:31:56 PM | Navigation | INFO: Element found with locator dijitDialogCloseIcon of type class. 
+05/23/2017 03:31:56 PM | Navigation | INFO: Failed to click on any element with locator dijitDialogCloseIcon of type class. 
+05/23/2017 03:31:56 PM | Navigation | INFO: Element found with locator organismButton of type id. 
+05/23/2017 03:31:56 PM | Navigation | INFO: Failed to click on any element with locator organismButton of type id. 
+05/23/2017 03:31:56 PM | Navigation | INFO: Element found with locator organismBlock of type id. 
+05/23/2017 03:31:56 PM | Navigation | INFO: Element with locator organismBlock of type id found to be displayed. 
+05/23/2017 03:31:56 PM | Navigation | INFO: Element found with locator populationButton of type id. 
+05/23/2017 03:31:56 PM | Navigation | INFO: Failed to click on any element with locator populationButton of type id. 
+05/23/2017 03:31:56 PM | Navigation | INFO: Element found with locator populationBlock of type id. 
+05/23/2017 03:31:56 PM | Navigation | INFO: Element with locator populationBlock of type id found not to be displayed. 
+05/23/2017 03:33:53 PM | Navigation | INFO: Element found with locator analysisButton of type id. 
+05/23/2017 03:33:53 PM | Navigation | INFO: Clicked on element with locator analysisButton of type id. 
+05/23/2017 03:33:53 PM | Navigation | INFO: Element found with locator analysisBlock of type id. 
+05/23/2017 03:33:53 PM | Navigation | INFO: Element with locator analysisBlock of type id found to be displayed. 
+05/23/2017 03:33:56 PM | Navigation | INFO: Element found with locator populationButton of type id. 
+05/23/2017 03:33:56 PM | Navigation | INFO: Clicked on element with locator populationButton of type id. 
+05/23/2017 03:33:56 PM | Navigation | INFO: Element found with locator popSetupButton of type id. 
+05/23/2017 03:33:56 PM | Navigation | INFO: Got text 'Setup' from element with locator of type id. 
+05/23/2017 03:33:56 PM | Navigation | INFO: Clicked on element with locator  of type id. 
+05/23/2017 03:33:56 PM | Navigation | INFO: Element found with locator setupForm of type id. 
+05/23/2017 03:33:56 PM | Navigation | INFO: Element with locator setupForm of type id found to be displayed. 
+05/23/2017 03:33:59 PM | Navigation | INFO: Element found with locator organismButton of type id. 
+05/23/2017 03:33:59 PM | Navigation | INFO: Clicked on element with locator organismButton of type id. 
+05/23/2017 03:33:59 PM | Navigation | INFO: Element found with locator OrgSetting of type id. 
+05/23/2017 03:33:59 PM | Navigation | INFO: Got text 'Settings' from element with locator of type id. 
+05/23/2017 03:34:00 PM | Navigation | INFO: Clicked on element with locator  of type id. 
+05/23/2017 03:34:00 PM | Navigation | INFO: Element found with locator dijit_Dialog_4 of type id. 
+05/23/2017 03:34:00 PM | Navigation | INFO: Element with locator dijit_Dialog_4 of type id found to be displayed. 
+05/23/2017 03:34:00 PM | Navigation | INFO: Element found with locator dijit_Dialog_4 of type id. 
+05/23/2017 03:34:00 PM | Navigation | INFO: Element with locator dijit_Dialog_4 of type id found to be displayed. 
+05/23/2017 03:34:00 PM | Navigation | INFO: Element found with locator dijitDialogCloseIcon of type class. 
+05/23/2017 03:34:00 PM | Navigation | INFO: Failed to click on any element with locator dijitDialogCloseIcon of type class. 
+05/23/2017 03:34:03 PM | Navigation | INFO: Element found with locator organismButton of type id. 
+05/23/2017 03:34:03 PM | Navigation | INFO: Failed to click on any element with locator organismButton of type id. 
+05/23/2017 03:34:03 PM | Navigation | INFO: Element found with locator organismBlock of type id. 
+05/23/2017 03:34:03 PM | Navigation | INFO: Element with locator organismBlock of type id found to be displayed. 
+05/23/2017 03:34:06 PM | Navigation | INFO: Element found with locator populationButton of type id. 
+05/23/2017 03:34:06 PM | Navigation | INFO: Failed to click on any element with locator populationButton of type id. 
+05/23/2017 03:34:06 PM | Navigation | INFO: Element found with locator populationBlock of type id. 
+05/23/2017 03:34:06 PM | Navigation | INFO: Element with locator populationBlock of type id found not to be displayed. 
+05/23/2017 03:36:24 PM | Navigation | INFO: Element found with locator analysisButton of type id. 
+05/23/2017 03:36:24 PM | Navigation | INFO: Clicked on element with locator analysisButton of type id. 
+05/23/2017 03:36:24 PM | Navigation | INFO: Element found with locator analysisBlock of type id. 
+05/23/2017 03:36:24 PM | Navigation | INFO: Element with locator analysisBlock of type id found to be displayed. 
+05/23/2017 03:36:27 PM | Navigation | INFO: Element found with locator populationButton of type id. 
+05/23/2017 03:36:27 PM | Navigation | INFO: Clicked on element with locator populationButton of type id. 
+05/23/2017 03:36:27 PM | Navigation | INFO: Element found with locator popSetupButton of type id. 
+05/23/2017 03:36:27 PM | Navigation | INFO: Got text 'Setup' from element with locator of type id. 
+05/23/2017 03:36:27 PM | Navigation | INFO: Clicked on element with locator  of type id. 
+05/23/2017 03:36:27 PM | Navigation | INFO: Element found with locator setupForm of type id. 
+05/23/2017 03:36:27 PM | Navigation | INFO: Element with locator setupForm of type id found to be displayed. 
+05/23/2017 03:36:30 PM | Navigation | INFO: Element found with locator organismButton of type id. 
+05/23/2017 03:36:30 PM | Navigation | INFO: Clicked on element with locator organismButton of type id. 
+05/23/2017 03:36:31 PM | Navigation | INFO: Element found with locator OrgSetting of type id. 
+05/23/2017 03:36:31 PM | Navigation | INFO: Got text 'Settings' from element with locator of type id. 
+05/23/2017 03:36:31 PM | Navigation | INFO: Clicked on element with locator  of type id. 
+05/23/2017 03:36:31 PM | Navigation | INFO: Element found with locator dijit_Dialog_4 of type id. 
+05/23/2017 03:36:31 PM | Navigation | INFO: Element with locator dijit_Dialog_4 of type id found to be displayed. 
+05/23/2017 03:36:31 PM | Navigation | INFO: Element found with locator dijit_Dialog_4 of type id. 
+05/23/2017 03:36:31 PM | Navigation | INFO: Element with locator dijit_Dialog_4 of type id found to be displayed. 
+05/23/2017 03:36:31 PM | Navigation | INFO: Element found with locator indDone of type id. 
+05/23/2017 03:36:31 PM | Navigation | INFO: Clicked on element with locator indDone of type id. 
+05/23/2017 03:36:34 PM | Navigation | INFO: Element found with locator organismButton of type id. 
+05/23/2017 03:36:34 PM | Navigation | INFO: Clicked on element with locator organismButton of type id. 
+05/23/2017 03:36:34 PM | Navigation | INFO: Element found with locator organismBlock of type id. 
+05/23/2017 03:36:34 PM | Navigation | INFO: Element with locator organismBlock of type id found to be displayed. 
+05/23/2017 03:36:37 PM | Navigation | INFO: Element found with locator populationButton of type id. 
+05/23/2017 03:36:37 PM | Navigation | INFO: Clicked on element with locator populationButton of type id. 
+05/23/2017 03:36:37 PM | Navigation | INFO: Element found with locator populationBlock of type id. 
+05/23/2017 03:36:37 PM | Navigation | INFO: Element with locator populationBlock of type id found to be displayed. 
+05/24/2017 06:43:14 PM | BasePage | INFO: Element found with locator analysisButton of type id. 
+05/24/2017 06:43:14 PM | BasePage | INFO: Clicked on element with locator analysisButton of type id. 
+05/24/2017 06:43:14 PM | BasePage | INFO: Element found with locator analysisBlock of type id. 
+05/24/2017 06:43:14 PM | BasePage | INFO: Element with locator analysisBlock of type id found to be displayed. 
+05/24/2017 06:43:17 PM | BasePage | INFO: Element found with locator organismButton of type id. 
+05/24/2017 06:43:17 PM | BasePage | INFO: Clicked on element with locator organismButton of type id. 
+05/24/2017 06:43:17 PM | BasePage | INFO: Element found with locator organismBlock of type id. 
+05/24/2017 06:43:17 PM | BasePage | INFO: Element with locator organismBlock of type id found to be displayed. 
+05/24/2017 06:43:20 PM | BasePage | INFO: Element found with locator populationButton of type id. 
+05/24/2017 06:43:20 PM | BasePage | INFO: Clicked on element with locator populationButton of type id. 
+05/24/2017 06:43:20 PM | BasePage | INFO: Element found with locator populationBlock of type id. 
+05/24/2017 06:43:20 PM | BasePage | INFO: Element with locator populationBlock of type id found to be displayed. 
+05/24/2017 08:16:27 PM | OrganismPage | INFO: Element found with locator organismBlock of type id. 
+05/24/2017 08:16:27 PM | OrganismPage | INFO: Element with locator organismBlock of type id found not to be displayed. 
+05/24/2017 08:16:27 PM | OrganismPage | INFO: Element found with locator organismBlock of type id. 
+05/24/2017 08:16:27 PM | OrganismPage | INFO: Element with locator organismBlock of type id found not to be displayed. 
+05/24/2017 08:16:27 PM | OrganismPage | INFO: Element found with locator organismButton of type id. 
+05/24/2017 08:16:27 PM | OrganismPage | INFO: Clicked on element with locator organismButton of type id. 
+05/24/2017 08:16:27 PM | OrganismPage | INFO: Element found with locator OrgSetting of type id. 
+05/24/2017 08:16:27 PM | OrganismPage | INFO: Got text 'Settings' from element with locator of type id. 
+05/24/2017 08:16:27 PM | OrganismPage | INFO: Clicked on element with locator  of type id. 
+05/24/2017 08:16:27 PM | OrganismPage | INFO: Element found with locator organismBlock of type id. 
+05/24/2017 08:16:27 PM | OrganismPage | INFO: Element with locator organismBlock of type id found to be displayed. 
+05/24/2017 08:16:27 PM | OrganismPage | INFO: Element found with locator dijit_Dialog_4 of type id. 
+05/24/2017 08:16:27 PM | OrganismPage | INFO: Element with locator dijit_Dialog_4 of type id found to be displayed. 
+05/24/2017 08:16:28 PM | OrganismPage | INFO: Element found with locator organismBlock of type id. 
+05/24/2017 08:16:28 PM | OrganismPage | INFO: Element with locator organismBlock of type id found to be displayed. 
+05/24/2017 08:16:28 PM | OrganismPage | INFO: Element found with locator rightDetail of type id. 
+05/24/2017 08:16:28 PM | OrganismPage | INFO: Element with locator rightDetail of type id found to be displayed. 
+05/24/2017 08:16:28 PM | OrganismPage | INFO: Element found with locator organismBlock of type id. 
+05/24/2017 08:16:28 PM | OrganismPage | INFO: Element with locator organismBlock of type id found to be displayed. 
+05/24/2017 08:16:28 PM | OrganismPage | INFO: Element found with locator rightDetail of type id. 
+05/24/2017 08:16:28 PM | OrganismPage | INFO: Element with locator rightDetail of type id found to be displayed. 
+05/24/2017 08:16:28 PM | OrganismPage | INFO: Element found with locator organismBlock of type id. 
+05/24/2017 08:16:28 PM | OrganismPage | INFO: Element with locator organismBlock of type id found to be displayed. 
+05/24/2017 08:16:28 PM | OrganismPage | INFO: Element found with locator rightDetail of type id. 
+05/24/2017 08:16:28 PM | OrganismPage | INFO: Element with locator rightDetail of type id found to be displayed. 
+05/24/2017 08:16:28 PM | OrganismPage | INFO: Element found with locator OrgDetailsButton of type id. 
+05/24/2017 08:16:28 PM | OrganismPage | INFO: Failed to click on any element with locator OrgDetailsButton of type id. 
+05/24/2017 08:16:28 PM | OrganismPage | INFO: Element found with locator organismBlock of type id. 
+05/24/2017 08:16:28 PM | OrganismPage | INFO: Element with locator organismBlock of type id found to be displayed. 
+05/24/2017 08:16:28 PM | OrganismPage | INFO: Element found with locator rightDetail of type id. 
+05/24/2017 08:16:28 PM | OrganismPage | INFO: Element with locator rightDetail of type id found to be displayed. 
+05/24/2017 08:24:02 PM | OrganismPage | INFO: Element found with locator organismBlock of type id. 
+05/24/2017 08:24:02 PM | OrganismPage | INFO: Element with locator organismBlock of type id found not to be displayed. 
+05/24/2017 08:24:02 PM | OrganismPage | INFO: Element found with locator organismBlock of type id. 
+05/24/2017 08:24:02 PM | OrganismPage | INFO: Element with locator organismBlock of type id found not to be displayed. 
+05/24/2017 08:24:02 PM | OrganismPage | INFO: Element found with locator organismButton of type id. 
+05/24/2017 08:24:02 PM | OrganismPage | INFO: Clicked on element with locator organismButton of type id. 
+05/24/2017 08:24:02 PM | OrganismPage | INFO: Element found with locator OrgSetting of type id. 
+05/24/2017 08:24:02 PM | OrganismPage | INFO: Got text 'Settings' from element with locator of type id. 
+05/24/2017 08:24:02 PM | OrganismPage | INFO: Clicked on element with locator  of type id. 
+05/24/2017 08:24:02 PM | OrganismPage | INFO: Element found with locator organismBlock of type id. 
+05/24/2017 08:24:02 PM | OrganismPage | INFO: Element with locator organismBlock of type id found to be displayed. 
+05/24/2017 08:24:02 PM | OrganismPage | INFO: Element found with locator dijit_Dialog_4 of type id. 
+05/24/2017 08:24:02 PM | OrganismPage | INFO: Element with locator dijit_Dialog_4 of type id found to be displayed. 
+05/24/2017 08:24:02 PM | OrganismPage | INFO: Element found with locator organismBlock of type id. 
+05/24/2017 08:24:02 PM | OrganismPage | INFO: Element with locator organismBlock of type id found to be displayed. 
+05/24/2017 08:24:02 PM | OrganismPage | INFO: Element found with locator rightDetail of type id. 
+05/24/2017 08:24:02 PM | OrganismPage | INFO: Element with locator rightDetail of type id found to be displayed. 
+05/24/2017 08:24:05 PM | OrganismPage | INFO: Element found with locator organismBlock of type id. 
+05/24/2017 08:24:05 PM | OrganismPage | INFO: Element with locator organismBlock of type id found to be displayed. 
+05/24/2017 08:24:05 PM | OrganismPage | INFO: Element found with locator rightDetail of type id. 
+05/24/2017 08:24:05 PM | OrganismPage | INFO: Element with locator rightDetail of type id found to be displayed. 
+05/24/2017 08:24:05 PM | OrganismPage | INFO: Element found with locator organismBlock of type id. 
+05/24/2017 08:24:05 PM | OrganismPage | INFO: Element with locator organismBlock of type id found to be displayed. 
+05/24/2017 08:24:05 PM | OrganismPage | INFO: Element found with locator rightDetail of type id. 
+05/24/2017 08:24:05 PM | OrganismPage | INFO: Element with locator rightDetail of type id found to be displayed. 
+05/24/2017 08:24:05 PM | OrganismPage | INFO: Element found with locator OrgDetailsButton of type id. 
+05/24/2017 08:24:05 PM | OrganismPage | INFO: Failed to click on any element with locator OrgDetailsButton of type id. 
+05/24/2017 08:24:08 PM | OrganismPage | INFO: Element found with locator organismBlock of type id. 
+05/24/2017 08:24:08 PM | OrganismPage | INFO: Element with locator organismBlock of type id found to be displayed. 
+05/24/2017 08:24:08 PM | OrganismPage | INFO: Element found with locator rightDetail of type id. 
+05/24/2017 08:24:08 PM | OrganismPage | INFO: Element with locator rightDetail of type id found to be displayed. 
+05/24/2017 08:29:20 PM | OrganismPage | INFO: Element found with locator organismBlock of type id. 
+05/24/2017 08:29:20 PM | OrganismPage | INFO: Element with locator organismBlock of type id found not to be displayed. 
+05/24/2017 08:29:20 PM | OrganismPage | INFO: Element found with locator organismBlock of type id. 
+05/24/2017 08:29:20 PM | OrganismPage | INFO: Element with locator organismBlock of type id found not to be displayed. 
+05/24/2017 08:29:23 PM | OrganismPage | INFO: Element found with locator organismButton of type id. 
+05/24/2017 08:29:23 PM | OrganismPage | INFO: Clicked on element with locator organismButton of type id. 
+05/24/2017 08:29:23 PM | OrganismPage | INFO: Element found with locator OrgSetting of type id. 
+05/24/2017 08:29:23 PM | OrganismPage | INFO: Got text 'Settings' from element with locator of type id. 
+05/24/2017 08:29:23 PM | OrganismPage | INFO: Clicked on element with locator  of type id. 
+05/24/2017 08:29:23 PM | OrganismPage | INFO: Element found with locator organismBlock of type id. 
+05/24/2017 08:29:23 PM | OrganismPage | INFO: Element with locator organismBlock of type id found to be displayed. 
+05/24/2017 08:29:23 PM | OrganismPage | INFO: Element found with locator dijit_Dialog_4 of type id. 
+05/24/2017 08:29:23 PM | OrganismPage | INFO: Element with locator dijit_Dialog_4 of type id found to be displayed. 
+05/24/2017 08:29:23 PM | OrganismPage | INFO: Element found with locator organismBlock of type id. 
+05/24/2017 08:29:23 PM | OrganismPage | INFO: Element with locator organismBlock of type id found to be displayed. 
+05/24/2017 08:29:23 PM | OrganismPage | INFO: Element found with locator rightDetail of type id. 
+05/24/2017 08:29:23 PM | OrganismPage | INFO: Element with locator rightDetail of type id found to be displayed. 
+05/24/2017 08:29:26 PM | OrganismPage | INFO: Element found with locator organismBlock of type id. 
+05/24/2017 08:29:26 PM | OrganismPage | INFO: Element with locator organismBlock of type id found to be displayed. 
+05/24/2017 08:29:26 PM | OrganismPage | INFO: Element found with locator rightDetail of type id. 
+05/24/2017 08:29:26 PM | OrganismPage | INFO: Element with locator rightDetail of type id found to be displayed. 
+05/24/2017 08:29:26 PM | OrganismPage | INFO: Element found with locator organismBlock of type id. 
+05/24/2017 08:29:26 PM | OrganismPage | INFO: Element with locator organismBlock of type id found to be displayed. 
+05/24/2017 08:29:26 PM | OrganismPage | INFO: Element found with locator rightDetail of type id. 
+05/24/2017 08:29:26 PM | OrganismPage | INFO: Element with locator rightDetail of type id found to be displayed. 
+05/24/2017 08:29:26 PM | OrganismPage | INFO: Element found with locator OrgDetailsButton of type id. 
+05/24/2017 08:29:26 PM | OrganismPage | INFO: Failed to click on any element with locator OrgDetailsButton of type id. 
+05/24/2017 08:29:29 PM | OrganismPage | INFO: Element found with locator organismBlock of type id. 
+05/24/2017 08:29:29 PM | OrganismPage | INFO: Element with locator organismBlock of type id found to be displayed. 
+05/24/2017 08:29:29 PM | OrganismPage | INFO: Element found with locator rightDetail of type id. 
+05/24/2017 08:29:29 PM | OrganismPage | INFO: Element with locator rightDetail of type id found to be displayed. 
+05/24/2017 08:32:42 PM | OrganismPage | INFO: Element found with locator organismBlock of type id. 
+05/24/2017 08:32:42 PM | OrganismPage | INFO: Element with locator organismBlock of type id found not to be displayed. 
+05/24/2017 08:32:42 PM | OrganismPage | INFO: Element found with locator organismBlock of type id. 
+05/24/2017 08:32:42 PM | OrganismPage | INFO: Element with locator organismBlock of type id found not to be displayed. 
+05/24/2017 08:32:45 PM | OrganismPage | INFO: Element found with locator organismButton of type id. 
+05/24/2017 08:32:45 PM | OrganismPage | INFO: Clicked on element with locator organismButton of type id. 
+05/24/2017 08:32:45 PM | OrganismPage | INFO: Element found with locator OrgSetting of type id. 
+05/24/2017 08:32:45 PM | OrganismPage | INFO: Got text 'Settings' from element with locator of type id. 
+05/24/2017 08:32:45 PM | OrganismPage | INFO: Clicked on element with locator  of type id. 
+05/24/2017 08:32:45 PM | OrganismPage | INFO: Element found with locator organismBlock of type id. 
+05/24/2017 08:32:45 PM | OrganismPage | INFO: Element with locator organismBlock of type id found to be displayed. 
+05/24/2017 08:32:45 PM | OrganismPage | INFO: Element found with locator dijit_Dialog_4 of type id. 
+05/24/2017 08:32:45 PM | OrganismPage | INFO: Element with locator dijit_Dialog_4 of type id found to be displayed. 
+05/24/2017 08:32:45 PM | OrganismPage | INFO: Element found with locator organismBlock of type id. 
+05/24/2017 08:32:45 PM | OrganismPage | INFO: Element with locator organismBlock of type id found to be displayed. 
+05/24/2017 08:32:45 PM | OrganismPage | INFO: Element found with locator rightDetail of type id. 
+05/24/2017 08:32:45 PM | OrganismPage | INFO: Element with locator rightDetail of type id found to be displayed. 
+05/24/2017 08:32:48 PM | OrganismPage | INFO: Element found with locator organismBlock of type id. 
+05/24/2017 08:32:48 PM | OrganismPage | INFO: Element with locator organismBlock of type id found to be displayed. 
+05/24/2017 08:32:48 PM | OrganismPage | INFO: Element found with locator rightDetail of type id. 
+05/24/2017 08:32:48 PM | OrganismPage | INFO: Element with locator rightDetail of type id found to be displayed. 
+05/24/2017 08:32:48 PM | OrganismPage | INFO: Element found with locator organismBlock of type id. 
+05/24/2017 08:32:48 PM | OrganismPage | INFO: Element with locator organismBlock of type id found to be displayed. 
+05/24/2017 08:32:48 PM | OrganismPage | INFO: Element found with locator rightDetail of type id. 
+05/24/2017 08:32:48 PM | OrganismPage | INFO: Element with locator rightDetail of type id found to be displayed. 
+05/24/2017 08:32:48 PM | OrganismPage | INFO: Element found with locator indDone of type id. 
+05/24/2017 08:32:48 PM | OrganismPage | INFO: Clicked on element with locator indDone of type id. 
+05/24/2017 08:32:51 PM | OrganismPage | INFO: Element found with locator organismBlock of type id. 
+05/24/2017 08:32:51 PM | OrganismPage | INFO: Element with locator organismBlock of type id found to be displayed. 
+05/24/2017 08:32:51 PM | OrganismPage | INFO: Element found with locator rightDetail of type id. 
+05/24/2017 08:32:51 PM | OrganismPage | INFO: Element with locator rightDetail of type id found to be displayed. 
+05/25/2017 01:25:44 PM | OrganismPage | INFO: Element with locator organismBlock of type id not found. 
+05/25/2017 01:25:44 PM | OrganismPage | INFO: Element with locator organismBlock of type id found not to be displayed. 
+05/25/2017 01:25:44 PM | OrganismPage | INFO: Element with locator organismBlock of type id not found. 
+05/25/2017 01:25:44 PM | OrganismPage | INFO: Element with locator organismBlock of type id found not to be displayed. 
+05/25/2017 01:25:47 PM | OrganismPage | INFO: Element with locator organismButton of type id not found. 
+05/25/2017 01:25:47 PM | OrganismPage | INFO: Failed to click on any element with locator organismButton of type id. 
+05/25/2017 01:25:47 PM | OrganismPage | INFO: Element with locator OrgSetting of type id not found. 
+05/25/2017 01:25:47 PM | OrganismPage | INFO: Element with locator  of type id not found. 
+05/25/2017 01:25:47 PM | OrganismPage | INFO: Unable to get text from element with locator  of type id. 
+05/25/2017 01:25:47 PM | OrganismPage | INFO: Element with locator organismBlock of type id not found. 
+05/25/2017 01:25:47 PM | OrganismPage | INFO: Element with locator organismBlock of type id found not to be displayed. 
+05/25/2017 01:25:47 PM | OrganismPage | INFO: Element with locator organismBlock of type id not found. 
+05/25/2017 01:25:47 PM | OrganismPage | INFO: Element with locator organismBlock of type id found not to be displayed. 
+05/25/2017 01:25:47 PM | OrganismPage | INFO: Element with locator OrgDetailsButton of type id not found. 
+05/25/2017 01:25:47 PM | OrganismPage | INFO: Failed to click on any element with locator OrgDetailsButton of type id. 
+05/25/2017 01:25:50 PM | OrganismPage | INFO: Element with locator organismBlock of type id not found. 
+05/25/2017 01:25:50 PM | OrganismPage | INFO: Element with locator organismBlock of type id found not to be displayed. 
+05/25/2017 01:26:10 PM | OrganismPage | INFO: Element with locator organismBlock of type id not found. 
+05/25/2017 01:26:10 PM | OrganismPage | INFO: Element with locator organismBlock of type id found not to be displayed. 
+05/25/2017 01:26:10 PM | OrganismPage | INFO: Element with locator organismBlock of type id not found. 
+05/25/2017 01:26:10 PM | OrganismPage | INFO: Element with locator organismBlock of type id found not to be displayed. 
+05/25/2017 01:26:17 PM | OrganismPage | INFO: Element with locator organismButton of type id not found. 
+05/25/2017 01:26:17 PM | OrganismPage | INFO: Failed to click on any element with locator organismButton of type id. 
+05/25/2017 01:26:21 PM | OrganismPage | INFO: Element with locator OrgSetting of type id not found. 
+05/25/2017 01:26:25 PM | OrganismPage | INFO: Element with locator  of type id not found. 
+05/25/2017 01:26:25 PM | OrganismPage | INFO: Unable to get text from element with locator  of type id. 
+05/25/2017 01:26:29 PM | OrganismPage | INFO: Element with locator organismBlock of type id not found. 
+05/25/2017 01:26:29 PM | OrganismPage | INFO: Element with locator organismBlock of type id found not to be displayed. 
+05/25/2017 01:26:33 PM | OrganismPage | INFO: Element with locator organismBlock of type id not found. 
+05/25/2017 01:26:33 PM | OrganismPage | INFO: Element with locator organismBlock of type id found not to be displayed. 
+05/25/2017 01:26:37 PM | OrganismPage | INFO: Element with locator OrgDetailsButton of type id not found. 
+05/25/2017 01:26:37 PM | OrganismPage | INFO: Failed to click on any element with locator OrgDetailsButton of type id. 
+05/25/2017 01:26:44 PM | OrganismPage | INFO: Element with locator organismBlock of type id not found. 
+05/25/2017 01:26:44 PM | OrganismPage | INFO: Element with locator organismBlock of type id found not to be displayed. 
+05/25/2017 01:34:20 PM | OrganismPage | INFO: Element with locator organismBlock of type id not found. 
+05/25/2017 01:34:20 PM | OrganismPage | INFO: Element with locator organismBlock of type id found not to be displayed. 
+05/25/2017 01:34:20 PM | OrganismPage | INFO: Element with locator organismBlock of type id not found. 
+05/25/2017 01:34:20 PM | OrganismPage | INFO: Element with locator organismBlock of type id found not to be displayed. 
+05/25/2017 01:34:23 PM | OrganismPage | INFO: Element with locator organismButton of type id not found. 
+05/25/2017 01:34:23 PM | OrganismPage | INFO: Failed to click on any element with locator organismButton of type id. 
+05/25/2017 01:34:23 PM | OrganismPage | INFO: Element with locator OrgSetting of type id not found. 
+05/25/2017 01:34:23 PM | OrganismPage | INFO: Element with locator  of type id not found. 
+05/25/2017 01:34:23 PM | OrganismPage | INFO: Unable to get text from element with locator  of type id. 
+05/25/2017 01:34:23 PM | OrganismPage | INFO: Element with locator organismBlock of type id not found. 
+05/25/2017 01:34:23 PM | OrganismPage | INFO: Element with locator organismBlock of type id found not to be displayed. 
+05/25/2017 01:34:23 PM | OrganismPage | INFO: Element with locator organismBlock of type id not found. 
+05/25/2017 01:34:23 PM | OrganismPage | INFO: Element with locator organismBlock of type id found not to be displayed. 
+05/25/2017 01:34:23 PM | OrganismPage | INFO: Element with locator OrgDetailsButton of type id not found. 
+05/25/2017 01:34:23 PM | OrganismPage | INFO: Failed to click on any element with locator OrgDetailsButton of type id. 
+05/25/2017 01:34:26 PM | OrganismPage | INFO: Element with locator organismBlock of type id not found. 
+05/25/2017 01:34:26 PM | OrganismPage | INFO: Element with locator organismBlock of type id found not to be displayed. 
+05/25/2017 01:48:42 PM | OrganismPage | INFO: Element with locator organismBlock of type id not found. 
+05/25/2017 01:48:42 PM | OrganismPage | INFO: Element with locator organismBlock of type id found not to be displayed. 
+05/25/2017 01:48:42 PM | OrganismPage | INFO: Element with locator organismBlock of type id not found. 
+05/25/2017 01:48:42 PM | OrganismPage | INFO: Element with locator organismBlock of type id found not to be displayed. 
+05/25/2017 01:48:45 PM | OrganismPage | INFO: Element with locator organismButton of type id not found. 
+05/25/2017 01:48:45 PM | OrganismPage | INFO: Failed to click on any element with locator organismButton of type id. 
+05/25/2017 01:48:45 PM | OrganismPage | INFO: Element with locator OrgSetting of type id not found. 
+05/25/2017 01:48:45 PM | OrganismPage | INFO: Element with locator  of type id not found. 
+05/25/2017 01:48:45 PM | OrganismPage | INFO: Unable to get text from element with locator  of type id. 
+05/25/2017 01:48:45 PM | OrganismPage | INFO: Element with locator organismBlock of type id not found. 
+05/25/2017 01:48:45 PM | OrganismPage | INFO: Element with locator organismBlock of type id found not to be displayed. 
+05/25/2017 01:48:45 PM | OrganismPage | INFO: Element with locator organismBlock of type id not found. 
+05/25/2017 01:48:45 PM | OrganismPage | INFO: Element with locator organismBlock of type id found not to be displayed. 
+05/25/2017 01:48:45 PM | OrganismPage | INFO: Element with locator OrgDetailsButton of type id not found. 
+05/25/2017 01:48:45 PM | OrganismPage | INFO: Failed to click on any element with locator OrgDetailsButton of type id. 
+05/25/2017 01:48:48 PM | OrganismPage | INFO: Element with locator organismBlock of type id not found. 
+05/25/2017 01:48:48 PM | OrganismPage | INFO: Element with locator organismBlock of type id found not to be displayed. 
+05/25/2017 01:49:25 PM | OrganismPage | INFO: Element with locator organismBlock of type id not found. 
+05/25/2017 01:49:25 PM | OrganismPage | INFO: Element with locator organismBlock of type id found not to be displayed. 
+05/25/2017 01:49:25 PM | OrganismPage | INFO: Element with locator organismBlock of type id not found. 
+05/25/2017 01:49:25 PM | OrganismPage | INFO: Element with locator organismBlock of type id found not to be displayed. 
+05/25/2017 01:49:28 PM | OrganismPage | INFO: Element with locator organismButton of type id not found. 
+05/25/2017 01:49:28 PM | OrganismPage | INFO: Failed to click on any element with locator organismButton of type id. 
+05/25/2017 01:49:28 PM | OrganismPage | INFO: Element with locator OrgSetting of type id not found. 
+05/25/2017 01:49:28 PM | OrganismPage | INFO: Element with locator  of type id not found. 
+05/25/2017 01:49:28 PM | OrganismPage | INFO: Unable to get text from element with locator  of type id. 
+05/25/2017 01:49:28 PM | OrganismPage | INFO: Element with locator organismBlock of type id not found. 
+05/25/2017 01:49:28 PM | OrganismPage | INFO: Element with locator organismBlock of type id found not to be displayed. 
+05/25/2017 01:49:28 PM | OrganismPage | INFO: Element with locator organismBlock of type id not found. 
+05/25/2017 01:49:28 PM | OrganismPage | INFO: Element with locator organismBlock of type id found not to be displayed. 
+05/25/2017 01:49:28 PM | OrganismPage | INFO: Element with locator OrgDetailsButton of type id not found. 
+05/25/2017 01:49:28 PM | OrganismPage | INFO: Failed to click on any element with locator OrgDetailsButton of type id. 
+05/25/2017 01:49:31 PM | OrganismPage | INFO: Element with locator organismBlock of type id not found. 
+05/25/2017 01:49:31 PM | OrganismPage | INFO: Element with locator organismBlock of type id found not to be displayed. 
+05/25/2017 02:19:34 PM | BasePage | INFO: Element with locator analysisButton of type id not found. 
+05/25/2017 02:19:34 PM | BasePage | INFO: Failed to click on any element with locator analysisButton of type id. 
+05/25/2017 02:19:34 PM | BasePage | INFO: Element with locator analysisBlock of type id not found. 
+05/25/2017 02:19:34 PM | BasePage | INFO: Element with locator analysisBlock of type id found not to be displayed. 
+05/25/2017 02:19:34 PM | BasePage | INFO: Element with locator organismButton of type id not found. 
+05/25/2017 02:19:34 PM | BasePage | INFO: Failed to click on any element with locator organismButton of type id. 
+05/25/2017 02:19:34 PM | BasePage | INFO: Element with locator organismBlock of type id not found. 
+05/25/2017 02:19:34 PM | BasePage | INFO: Element with locator organismBlock of type id found not to be displayed. 
+05/25/2017 02:19:34 PM | BasePage | INFO: Element with locator populationButton of type id not found. 
+05/25/2017 02:19:34 PM | BasePage | INFO: Failed to click on any element with locator populationButton of type id. 
+05/25/2017 02:19:34 PM | BasePage | INFO: Element with locator populationBlock of type id not found. 
+05/25/2017 02:19:34 PM | BasePage | INFO: Element with locator populationBlock of type id found not to be displayed. 
+05/25/2017 02:19:44 PM | BasePage | INFO: Element with locator analysisButton of type id not found. 
+05/25/2017 02:19:44 PM | BasePage | INFO: Failed to click on any element with locator analysisButton of type id. 
+05/25/2017 02:19:44 PM | BasePage | INFO: Element with locator analysisBlock of type id not found. 
+05/25/2017 02:19:44 PM | BasePage | INFO: Element with locator analysisBlock of type id found not to be displayed. 
+05/25/2017 02:19:44 PM | BasePage | INFO: Element with locator organismButton of type id not found. 
+05/25/2017 02:19:44 PM | BasePage | INFO: Failed to click on any element with locator organismButton of type id. 
+05/25/2017 02:19:44 PM | BasePage | INFO: Element with locator organismBlock of type id not found. 
+05/25/2017 02:19:44 PM | BasePage | INFO: Element with locator organismBlock of type id found not to be displayed. 
+05/25/2017 02:19:44 PM | BasePage | INFO: Element with locator populationButton of type id not found. 
+05/25/2017 02:19:44 PM | BasePage | INFO: Failed to click on any element with locator populationButton of type id. 
+05/25/2017 02:19:44 PM | BasePage | INFO: Element with locator populationBlock of type id not found. 
+05/25/2017 02:19:44 PM | BasePage | INFO: Element with locator populationBlock of type id found not to be displayed. 
+05/25/2017 04:16:36 PM | BasePage | INFO: Element with locator analysisButton of type id not found. 
+05/25/2017 04:16:36 PM | BasePage | INFO: Failed to click on any element with locator analysisButton of type id. 
+05/25/2017 04:16:36 PM | BasePage | INFO: Element with locator analysisBlock of type id not found. 
+05/25/2017 04:16:36 PM | BasePage | INFO: Element with locator analysisBlock of type id found not to be displayed. 
+05/25/2017 04:16:36 PM | BasePage | INFO: Element with locator organismButton of type id not found. 
+05/25/2017 04:16:36 PM | BasePage | INFO: Failed to click on any element with locator organismButton of type id. 
+05/25/2017 04:16:36 PM | BasePage | INFO: Element with locator organismBlock of type id not found. 
+05/25/2017 04:16:36 PM | BasePage | INFO: Element with locator organismBlock of type id found not to be displayed. 
+05/25/2017 04:16:36 PM | BasePage | INFO: Element with locator populationButton of type id not found. 
+05/25/2017 04:16:36 PM | BasePage | INFO: Failed to click on any element with locator populationButton of type id. 
+05/25/2017 04:16:36 PM | BasePage | INFO: Element with locator populationBlock of type id not found. 
+05/25/2017 04:16:36 PM | BasePage | INFO: Element with locator populationBlock of type id found not to be displayed. 
+05/26/2017 12:14:58 PM | BasePage | INFO: Element found with locator analysisButton of type id. 
+05/26/2017 12:14:58 PM | BasePage | INFO: Clicked on element with locator analysisButton of type id. 
+05/26/2017 12:14:58 PM | BasePage | INFO: Element found with locator analysisBlock of type id. 
+05/26/2017 12:14:58 PM | BasePage | INFO: Element with locator analysisBlock of type id found to be displayed. 
+05/26/2017 12:15:01 PM | BasePage | INFO: Element found with locator organismButton of type id. 
+05/26/2017 12:15:01 PM | BasePage | INFO: Clicked on element with locator organismButton of type id. 
+05/26/2017 12:15:01 PM | BasePage | INFO: Element found with locator organismBlock of type id. 
+05/26/2017 12:15:01 PM | BasePage | INFO: Element with locator organismBlock of type id found to be displayed. 
+05/26/2017 12:15:04 PM | BasePage | INFO: Element found with locator populationButton of type id. 
+05/26/2017 12:15:04 PM | BasePage | INFO: Clicked on element with locator populationButton of type id. 
+05/26/2017 12:15:04 PM | BasePage | INFO: Element found with locator populationBlock of type id. 
+05/26/2017 12:15:04 PM | BasePage | INFO: Element with locator populationBlock of type id found to be displayed. 
+05/26/2017 12:15:51 PM | OrganismPage | INFO: Element found with locator organismBlock of type id. 
+05/26/2017 12:15:51 PM | OrganismPage | INFO: Element with locator organismBlock of type id found not to be displayed. 
+05/26/2017 12:15:51 PM | OrganismPage | INFO: Element found with locator organismBlock of type id. 
+05/26/2017 12:15:51 PM | OrganismPage | INFO: Element with locator organismBlock of type id found not to be displayed. 
+05/26/2017 12:15:54 PM | OrganismPage | INFO: Element found with locator organismButton of type id. 
+05/26/2017 12:15:54 PM | OrganismPage | INFO: Clicked on element with locator organismButton of type id. 
+05/26/2017 12:15:54 PM | OrganismPage | INFO: Element found with locator OrgSetting of type id. 
+05/26/2017 12:15:54 PM | OrganismPage | INFO: Got text 'Settings' from element with locator of type id. 
+05/26/2017 12:15:54 PM | OrganismPage | INFO: Clicked on element with locator  of type id. 
+05/26/2017 12:15:54 PM | OrganismPage | INFO: Element found with locator organismBlock of type id. 
+05/26/2017 12:15:54 PM | OrganismPage | INFO: Element with locator organismBlock of type id found to be displayed. 
+05/26/2017 12:15:54 PM | OrganismPage | INFO: Element found with locator dijit_Dialog_4 of type id. 
+05/26/2017 12:15:54 PM | OrganismPage | INFO: Element with locator dijit_Dialog_4 of type id found to be displayed. 
+05/26/2017 12:15:54 PM | OrganismPage | INFO: Element found with locator organismBlock of type id. 
+05/26/2017 12:15:54 PM | OrganismPage | INFO: Element with locator organismBlock of type id found to be displayed. 
+05/26/2017 12:15:54 PM | OrganismPage | INFO: Element found with locator rightDetail of type id. 
+05/26/2017 12:15:54 PM | OrganismPage | INFO: Element with locator rightDetail of type id found to be displayed. 
+05/26/2017 12:15:57 PM | OrganismPage | INFO: Element found with locator organismBlock of type id. 
+05/26/2017 12:15:57 PM | OrganismPage | INFO: Element with locator organismBlock of type id found to be displayed. 
+05/26/2017 12:15:57 PM | OrganismPage | INFO: Element found with locator rightDetail of type id. 
+05/26/2017 12:15:57 PM | OrganismPage | INFO: Element with locator rightDetail of type id found to be displayed. 
+05/26/2017 12:15:57 PM | OrganismPage | INFO: Element found with locator organismBlock of type id. 
+05/26/2017 12:15:57 PM | OrganismPage | INFO: Element with locator organismBlock of type id found to be displayed. 
+05/26/2017 12:15:57 PM | OrganismPage | INFO: Element found with locator rightDetail of type id. 
+05/26/2017 12:15:57 PM | OrganismPage | INFO: Element with locator rightDetail of type id found to be displayed. 
+05/26/2017 12:15:57 PM | OrganismPage | INFO: Element found with locator indDone of type id. 
+05/26/2017 12:15:57 PM | OrganismPage | INFO: Clicked on element with locator indDone of type id. 
+05/26/2017 12:16:00 PM | OrganismPage | INFO: Element found with locator organismBlock of type id. 
+05/26/2017 12:16:00 PM | OrganismPage | INFO: Element with locator organismBlock of type id found to be displayed. 
+05/26/2017 12:16:00 PM | OrganismPage | INFO: Element found with locator rightDetail of type id. 
+05/26/2017 12:16:00 PM | OrganismPage | INFO: Element with locator rightDetail of type id found to be displayed. 
+05/26/2017 12:16:46 PM | OrganismPage | INFO: Element found with locator organismBlock of type id. 
+05/26/2017 12:16:46 PM | OrganismPage | INFO: Element with locator organismBlock of type id found not to be displayed. 
+05/26/2017 12:16:46 PM | OrganismPage | INFO: Element found with locator organismBlock of type id. 
+05/26/2017 12:16:46 PM | OrganismPage | INFO: Element with locator organismBlock of type id found not to be displayed. 
+05/26/2017 12:16:49 PM | OrganismPage | INFO: Element found with locator organismButton of type id. 
+05/26/2017 12:16:49 PM | OrganismPage | INFO: Clicked on element with locator organismButton of type id. 
+05/26/2017 12:16:49 PM | OrganismPage | INFO: Element found with locator OrgSetting of type id. 
+05/26/2017 12:16:49 PM | OrganismPage | INFO: Got text 'Settings' from element with locator of type id. 
+05/26/2017 12:16:49 PM | OrganismPage | INFO: Clicked on element with locator  of type id. 
+05/26/2017 12:16:49 PM | OrganismPage | INFO: Element found with locator organismBlock of type id. 
+05/26/2017 12:16:49 PM | OrganismPage | INFO: Element with locator organismBlock of type id found to be displayed. 
+05/26/2017 12:16:49 PM | OrganismPage | INFO: Element found with locator dijit_Dialog_4 of type id. 
+05/26/2017 12:16:49 PM | OrganismPage | INFO: Element with locator dijit_Dialog_4 of type id found to be displayed. 
+05/26/2017 12:16:49 PM | OrganismPage | INFO: Element found with locator organismBlock of type id. 
+05/26/2017 12:16:49 PM | OrganismPage | INFO: Element with locator organismBlock of type id found to be displayed. 
+05/26/2017 12:16:49 PM | OrganismPage | INFO: Element found with locator rightDetail of type id. 
+05/26/2017 12:16:49 PM | OrganismPage | INFO: Element with locator rightDetail of type id found to be displayed. 
+05/26/2017 12:16:52 PM | OrganismPage | INFO: Element found with locator organismBlock of type id. 
+05/26/2017 12:16:52 PM | OrganismPage | INFO: Element with locator organismBlock of type id found to be displayed. 
+05/26/2017 12:16:52 PM | OrganismPage | INFO: Element found with locator rightDetail of type id. 
+05/26/2017 12:16:52 PM | OrganismPage | INFO: Element with locator rightDetail of type id found to be displayed. 
+05/26/2017 12:16:52 PM | OrganismPage | INFO: Element found with locator organismBlock of type id. 
+05/26/2017 12:16:52 PM | OrganismPage | INFO: Element with locator organismBlock of type id found to be displayed. 
+05/26/2017 12:16:52 PM | OrganismPage | INFO: Element found with locator rightDetail of type id. 
+05/26/2017 12:16:52 PM | OrganismPage | INFO: Element with locator rightDetail of type id found to be displayed. 
+05/26/2017 12:16:52 PM | OrganismPage | INFO: Element found with locator indDone of type id. 
+05/26/2017 12:16:52 PM | OrganismPage | INFO: Clicked on element with locator indDone of type id. 
+05/26/2017 12:16:55 PM | OrganismPage | INFO: Element found with locator organismBlock of type id. 
+05/26/2017 12:16:55 PM | OrganismPage | INFO: Element with locator organismBlock of type id found to be displayed. 
+05/26/2017 12:16:55 PM | OrganismPage | INFO: Element found with locator rightDetail of type id. 
+05/26/2017 12:16:55 PM | OrganismPage | INFO: Element with locator rightDetail of type id found to be displayed. 
+05/26/2017 12:21:18 PM | OrganismPage | INFO: Element found with locator organismBlock of type id. 
+05/26/2017 12:21:19 PM | OrganismPage | INFO: Element with locator organismBlock of type id found not to be displayed. 
+05/26/2017 12:21:19 PM | OrganismPage | INFO: Element found with locator organismBlock of type id. 
+05/26/2017 12:21:19 PM | OrganismPage | INFO: Element with locator organismBlock of type id found not to be displayed. 
+05/26/2017 12:21:22 PM | OrganismPage | INFO: Element found with locator organismButton of type id. 
+05/26/2017 12:21:22 PM | OrganismPage | INFO: Clicked on element with locator organismButton of type id. 
+05/26/2017 12:21:22 PM | OrganismPage | INFO: Element found with locator OrgSetting of type id. 
+05/26/2017 12:21:22 PM | OrganismPage | INFO: Got text 'Settings' from element with locator of type id. 
+05/26/2017 12:21:22 PM | OrganismPage | INFO: Clicked on element with locator  of type id. 
+05/26/2017 12:21:22 PM | OrganismPage | INFO: Element found with locator organismBlock of type id. 
+05/26/2017 12:21:22 PM | OrganismPage | INFO: Element with locator organismBlock of type id found to be displayed. 
+05/26/2017 12:21:22 PM | OrganismPage | INFO: Element found with locator dijit_Dialog_4 of type id. 
+05/26/2017 12:21:22 PM | OrganismPage | INFO: Element with locator dijit_Dialog_4 of type id found to be displayed. 
+05/26/2017 12:21:22 PM | OrganismPage | INFO: Element found with locator organismBlock of type id. 
+05/26/2017 12:21:22 PM | OrganismPage | INFO: Element with locator organismBlock of type id found to be displayed. 
+05/26/2017 12:21:22 PM | OrganismPage | INFO: Element found with locator rightDetail of type id. 
+05/26/2017 12:21:22 PM | OrganismPage | INFO: Element with locator rightDetail of type id found to be displayed. 
+05/26/2017 12:21:25 PM | OrganismPage | INFO: Element found with locator organismBlock of type id. 
+05/26/2017 12:21:25 PM | OrganismPage | INFO: Element with locator organismBlock of type id found to be displayed. 
+05/26/2017 12:21:25 PM | OrganismPage | INFO: Element found with locator rightDetail of type id. 
+05/26/2017 12:21:25 PM | OrganismPage | INFO: Element with locator rightDetail of type id found to be displayed. 
+05/26/2017 12:21:25 PM | OrganismPage | INFO: Element found with locator organismBlock of type id. 
+05/26/2017 12:21:25 PM | OrganismPage | INFO: Element with locator organismBlock of type id found to be displayed. 
+05/26/2017 12:21:25 PM | OrganismPage | INFO: Element found with locator rightDetail of type id. 
+05/26/2017 12:21:25 PM | OrganismPage | INFO: Element with locator rightDetail of type id found to be displayed. 
+05/26/2017 12:21:25 PM | OrganismPage | INFO: Element found with locator indDone of type id. 
+05/26/2017 12:21:25 PM | OrganismPage | INFO: Clicked on element with locator indDone of type id. 
+05/26/2017 12:21:28 PM | OrganismPage | INFO: Element found with locator organismBlock of type id. 
+05/26/2017 12:21:28 PM | OrganismPage | INFO: Element with locator organismBlock of type id found to be displayed. 
+05/26/2017 12:21:28 PM | OrganismPage | INFO: Element found with locator rightDetail of type id. 
+05/26/2017 12:21:28 PM | OrganismPage | INFO: Element with locator rightDetail of type id found to be displayed. 
+05/26/2017 12:23:23 PM | OrganismPage | INFO: Element found with locator organismBlock of type id. 
+05/26/2017 12:23:23 PM | OrganismPage | INFO: Element with locator organismBlock of type id found not to be displayed. 
+05/26/2017 12:23:23 PM | OrganismPage | INFO: Element found with locator organismBlock of type id. 
+05/26/2017 12:23:23 PM | OrganismPage | INFO: Element with locator organismBlock of type id found not to be displayed. 
+05/26/2017 12:23:26 PM | OrganismPage | INFO: Element found with locator organismButton of type id. 
+05/26/2017 12:23:26 PM | OrganismPage | INFO: Clicked on element with locator organismButton of type id. 
+05/26/2017 12:23:26 PM | OrganismPage | INFO: Element found with locator OrgSetting of type id. 
+05/26/2017 12:23:26 PM | OrganismPage | INFO: Got text 'Settings' from element with locator of type id. 
+05/26/2017 12:23:26 PM | OrganismPage | INFO: Clicked on element with locator  of type id. 
+05/26/2017 12:23:26 PM | OrganismPage | INFO: Element found with locator organismBlock of type id. 
+05/26/2017 12:23:26 PM | OrganismPage | INFO: Element with locator organismBlock of type id found to be displayed. 
+05/26/2017 12:23:26 PM | OrganismPage | INFO: Element found with locator dijit_Dialog_4 of type id. 
+05/26/2017 12:23:26 PM | OrganismPage | INFO: Element with locator dijit_Dialog_4 of type id found to be displayed. 
+05/26/2017 12:23:26 PM | OrganismPage | INFO: Element found with locator organismBlock of type id. 
+05/26/2017 12:23:26 PM | OrganismPage | INFO: Element with locator organismBlock of type id found to be displayed. 
+05/26/2017 12:23:26 PM | OrganismPage | INFO: Element found with locator rightDetail of type id. 
+05/26/2017 12:23:27 PM | OrganismPage | INFO: Element with locator rightDetail of type id found to be displayed. 
+05/26/2017 12:23:30 PM | OrganismPage | INFO: Element found with locator organismBlock of type id. 
+05/26/2017 12:23:30 PM | OrganismPage | INFO: Element with locator organismBlock of type id found to be displayed. 
+05/26/2017 12:23:30 PM | OrganismPage | INFO: Element found with locator rightDetail of type id. 
+05/26/2017 12:23:30 PM | OrganismPage | INFO: Element with locator rightDetail of type id found to be displayed. 
+05/26/2017 12:23:30 PM | OrganismPage | INFO: Element found with locator organismBlock of type id. 
+05/26/2017 12:23:30 PM | OrganismPage | INFO: Element with locator organismBlock of type id found to be displayed. 
+05/26/2017 12:23:30 PM | OrganismPage | INFO: Element found with locator rightDetail of type id. 
+05/26/2017 12:23:30 PM | OrganismPage | INFO: Element with locator rightDetail of type id found to be displayed. 
+05/26/2017 12:23:30 PM | OrganismPage | INFO: Element found with locator OrgDetailsButton of type id. 
+05/26/2017 12:23:30 PM | OrganismPage | INFO: Failed to click on any element with locator OrgDetailsButton of type id. 
+05/26/2017 12:23:33 PM | OrganismPage | INFO: Element found with locator organismBlock of type id. 
+05/26/2017 12:23:33 PM | OrganismPage | INFO: Element with locator organismBlock of type id found to be displayed. 
+05/26/2017 12:23:33 PM | OrganismPage | INFO: Element found with locator rightDetail of type id. 
+05/26/2017 12:23:33 PM | OrganismPage | INFO: Element with locator rightDetail of type id found to be displayed. 
+05/26/2017 12:27:59 PM | BasePage | INFO: Element found with locator analysisButton of type id. 
+05/26/2017 12:27:59 PM | BasePage | INFO: Clicked on element with locator analysisButton of type id. 
+05/26/2017 12:27:59 PM | BasePage | INFO: Element found with locator analysisBlock of type id. 
+05/26/2017 12:27:59 PM | BasePage | INFO: Element with locator analysisBlock of type id found to be displayed. 
+05/26/2017 12:28:02 PM | BasePage | INFO: Element found with locator organismButton of type id. 
+05/26/2017 12:28:02 PM | BasePage | INFO: Clicked on element with locator organismButton of type id. 
+05/26/2017 12:28:02 PM | BasePage | INFO: Element found with locator organismBlock of type id. 
+05/26/2017 12:28:02 PM | BasePage | INFO: Element with locator organismBlock of type id found to be displayed. 
+05/26/2017 12:28:05 PM | BasePage | INFO: Element found with locator populationButton of type id. 
+05/26/2017 12:28:05 PM | BasePage | INFO: Clicked on element with locator populationButton of type id. 
+05/26/2017 12:28:05 PM | BasePage | INFO: Element found with locator populationBlock of type id. 
+05/26/2017 12:28:05 PM | BasePage | INFO: Element with locator populationBlock of type id found to be displayed. 
+05/26/2017 12:28:34 PM | OrganismPage | INFO: Element found with locator organismBlock of type id. 
+05/26/2017 12:28:34 PM | OrganismPage | INFO: Element with locator organismBlock of type id found not to be displayed. 
+05/26/2017 12:28:34 PM | OrganismPage | INFO: Element found with locator organismBlock of type id. 
+05/26/2017 12:28:34 PM | OrganismPage | INFO: Element with locator organismBlock of type id found not to be displayed. 
+05/26/2017 12:28:37 PM | OrganismPage | INFO: Element found with locator organismButton of type id. 
+05/26/2017 12:28:37 PM | OrganismPage | INFO: Clicked on element with locator organismButton of type id. 
+05/26/2017 12:28:37 PM | OrganismPage | INFO: Element found with locator OrgSetting of type id. 
+05/26/2017 12:28:37 PM | OrganismPage | INFO: Got text 'Settings' from element with locator of type id. 
+05/26/2017 12:28:37 PM | OrganismPage | INFO: Clicked on element with locator  of type id. 
+05/26/2017 12:28:37 PM | OrganismPage | INFO: Element found with locator organismBlock of type id. 
+05/26/2017 12:28:37 PM | OrganismPage | INFO: Element with locator organismBlock of type id found to be displayed. 
+05/26/2017 12:28:37 PM | OrganismPage | INFO: Element found with locator dijit_Dialog_4 of type id. 
+05/26/2017 12:28:37 PM | OrganismPage | INFO: Element with locator dijit_Dialog_4 of type id found to be displayed. 
+05/26/2017 12:28:37 PM | OrganismPage | INFO: Element found with locator organismBlock of type id. 
+05/26/2017 12:28:37 PM | OrganismPage | INFO: Element with locator organismBlock of type id found to be displayed. 
+05/26/2017 12:28:37 PM | OrganismPage | INFO: Element found with locator rightDetail of type id. 
+05/26/2017 12:28:37 PM | OrganismPage | INFO: Element with locator rightDetail of type id found to be displayed. 
+05/26/2017 12:28:40 PM | OrganismPage | INFO: Element found with locator organismBlock of type id. 
+05/26/2017 12:28:40 PM | OrganismPage | INFO: Element with locator organismBlock of type id found to be displayed. 
+05/26/2017 12:28:40 PM | OrganismPage | INFO: Element found with locator rightDetail of type id. 
+05/26/2017 12:28:40 PM | OrganismPage | INFO: Element with locator rightDetail of type id found to be displayed. 
+05/26/2017 12:28:40 PM | OrganismPage | INFO: Element found with locator organismBlock of type id. 
+05/26/2017 12:28:40 PM | OrganismPage | INFO: Element with locator organismBlock of type id found to be displayed. 
+05/26/2017 12:28:40 PM | OrganismPage | INFO: Element found with locator rightDetail of type id. 
+05/26/2017 12:28:40 PM | OrganismPage | INFO: Element with locator rightDetail of type id found to be displayed. 
+05/26/2017 12:28:41 PM | OrganismPage | INFO: Element found with locator OrgDetailsButton of type id. 
+05/26/2017 12:28:41 PM | OrganismPage | INFO: Failed to click on any element with locator OrgDetailsButton of type id. 
+05/26/2017 12:28:44 PM | OrganismPage | INFO: Element found with locator organismBlock of type id. 
+05/26/2017 12:28:44 PM | OrganismPage | INFO: Element with locator organismBlock of type id found to be displayed. 
+05/26/2017 12:28:44 PM | OrganismPage | INFO: Element found with locator rightDetail of type id. 
+05/26/2017 12:28:44 PM | OrganismPage | INFO: Element with locator rightDetail of type id found to be displayed. 
+05/26/2017 01:37:49 PM | OrganismPage | INFO: Element found with locator organismBlock of type id. 
+05/26/2017 01:37:49 PM | OrganismPage | INFO: Element with locator organismBlock of type id found not to be displayed. 
+05/26/2017 01:37:49 PM | OrganismPage | INFO: Element found with locator organismBlock of type id. 
+05/26/2017 01:37:49 PM | OrganismPage | INFO: Element with locator organismBlock of type id found not to be displayed. 
+05/26/2017 01:37:52 PM | OrganismPage | INFO: Element found with locator organismButton of type id. 
+05/26/2017 01:37:52 PM | OrganismPage | INFO: Clicked on element with locator organismButton of type id. 
+05/26/2017 01:37:52 PM | OrganismPage | INFO: Element found with locator OrgSetting of type id. 
+05/26/2017 01:37:52 PM | OrganismPage | INFO: Got text 'Settings' from element with locator of type id. 
+05/26/2017 01:37:52 PM | OrganismPage | INFO: Clicked on element with locator  of type id. 
+05/26/2017 01:37:52 PM | OrganismPage | INFO: Element found with locator organismBlock of type id. 
+05/26/2017 01:37:52 PM | OrganismPage | INFO: Element with locator organismBlock of type id found to be displayed. 
+05/26/2017 01:37:52 PM | OrganismPage | INFO: Element found with locator dijit_Dialog_4 of type id. 
+05/26/2017 01:37:52 PM | OrganismPage | INFO: Element with locator dijit_Dialog_4 of type id found to be displayed. 
+05/26/2017 01:37:52 PM | OrganismPage | INFO: Element found with locator organismBlock of type id. 
+05/26/2017 01:37:52 PM | OrganismPage | INFO: Element with locator organismBlock of type id found to be displayed. 
+05/26/2017 01:37:52 PM | OrganismPage | INFO: Element found with locator rightDetail of type id. 
+05/26/2017 01:37:52 PM | OrganismPage | INFO: Element with locator rightDetail of type id found to be displayed. 
+05/26/2017 01:37:55 PM | OrganismPage | INFO: Element found with locator organismBlock of type id. 
+05/26/2017 01:37:55 PM | OrganismPage | INFO: Element with locator organismBlock of type id found to be displayed. 
+05/26/2017 01:37:55 PM | OrganismPage | INFO: Element found with locator rightDetail of type id. 
+05/26/2017 01:37:55 PM | OrganismPage | INFO: Element with locator rightDetail of type id found to be displayed. 
+05/26/2017 01:37:55 PM | OrganismPage | INFO: Element found with locator organismBlock of type id. 
+05/26/2017 01:37:55 PM | OrganismPage | INFO: Element with locator organismBlock of type id found to be displayed. 
+05/26/2017 01:37:55 PM | OrganismPage | INFO: Element found with locator rightDetail of type id. 
+05/26/2017 01:37:55 PM | OrganismPage | INFO: Element with locator rightDetail of type id found to be displayed. 
+05/26/2017 01:37:55 PM | OrganismPage | INFO: Element found with locator OrgDetailsButton of type id. 
+05/26/2017 01:37:55 PM | OrganismPage | INFO: Failed to click on any element with locator OrgDetailsButton of type id. 
+05/26/2017 01:37:58 PM | OrganismPage | INFO: Element found with locator organismBlock of type id. 
+05/26/2017 01:37:58 PM | OrganismPage | INFO: Element with locator organismBlock of type id found to be displayed. 
+05/26/2017 01:37:58 PM | OrganismPage | INFO: Element found with locator rightDetail of type id. 
+05/26/2017 01:37:58 PM | OrganismPage | INFO: Element with locator rightDetail of type id found to be displayed. 
+05/26/2017 04:45:16 PM | BasePage | INFO: Element found with locator analysisButton of type id. 
+05/26/2017 04:45:16 PM | BasePage | INFO: Clicked on element with locator analysisButton of type id. 
+05/26/2017 04:45:16 PM | BasePage | INFO: Element found with locator analysisBlock of type id. 
+05/26/2017 04:45:16 PM | BasePage | INFO: Element with locator analysisBlock of type id found to be displayed. 
+05/26/2017 04:45:19 PM | BasePage | INFO: Element found with locator organismButton of type id. 
+05/26/2017 04:45:19 PM | BasePage | INFO: Clicked on element with locator organismButton of type id. 
+05/26/2017 04:45:19 PM | BasePage | INFO: Element found with locator organismBlock of type id. 
+05/26/2017 04:45:19 PM | BasePage | INFO: Element with locator organismBlock of type id found to be displayed. 
+05/26/2017 04:45:22 PM | BasePage | INFO: Element found with locator populationButton of type id. 
+05/26/2017 04:45:22 PM | BasePage | INFO: Clicked on element with locator populationButton of type id. 
+05/26/2017 04:45:23 PM | BasePage | INFO: Element found with locator populationBlock of type id. 
+05/26/2017 04:45:23 PM | BasePage | INFO: Element with locator populationBlock of type id found to be displayed. 
+05/26/2017 04:57:44 PM | BasePage | INFO: Element found with locator analysisButton of type id. 
+05/26/2017 04:57:44 PM | BasePage | INFO: Clicked on element with locator analysisButton of type id. 
+05/26/2017 04:57:45 PM | BasePage | INFO: Element found with locator analysisBlock of type id. 
+05/26/2017 04:57:45 PM | BasePage | INFO: Element with locator analysisBlock of type id found to be displayed. 
+05/26/2017 04:57:48 PM | BasePage | INFO: Element found with locator organismButton of type id. 
+05/26/2017 04:57:48 PM | BasePage | INFO: Clicked on element with locator organismButton of type id. 
+05/26/2017 04:57:48 PM | BasePage | INFO: Element found with locator organismBlock of type id. 
+05/26/2017 04:57:48 PM | BasePage | INFO: Element with locator organismBlock of type id found to be displayed. 
+05/26/2017 04:57:51 PM | BasePage | INFO: Element found with locator populationButton of type id. 
+05/26/2017 04:57:51 PM | BasePage | INFO: Clicked on element with locator populationButton of type id. 
+05/26/2017 04:57:51 PM | BasePage | INFO: Element found with locator populationBlock of type id. 
+05/26/2017 04:57:51 PM | BasePage | INFO: Element with locator populationBlock of type id found to be displayed. 
+05/26/2017 05:04:21 PM | OrganismPage | INFO: Element found with locator organismBlock of type id. 
+05/26/2017 05:04:21 PM | OrganismPage | INFO: Element with locator organismBlock of type id found not to be displayed. 
+05/26/2017 05:04:21 PM | OrganismPage | INFO: Element found with locator organismBlock of type id. 
+05/26/2017 05:04:21 PM | OrganismPage | INFO: Element with locator organismBlock of type id found not to be displayed. 
+05/26/2017 05:04:24 PM | OrganismPage | INFO: Element found with locator organismButton of type id. 
+05/26/2017 05:04:24 PM | OrganismPage | INFO: Clicked on element with locator organismButton of type id. 
+05/26/2017 05:04:24 PM | OrganismPage | INFO: Element found with locator OrgSetting of type id. 
+05/26/2017 05:04:24 PM | OrganismPage | INFO: Got text 'Settings' from element with locator of type id. 
+05/26/2017 05:04:24 PM | OrganismPage | INFO: Clicked on element with locator  of type id. 
+05/26/2017 05:04:24 PM | OrganismPage | INFO: Element found with locator organismBlock of type id. 
+05/26/2017 05:04:24 PM | OrganismPage | INFO: Element with locator organismBlock of type id found to be displayed. 
+05/26/2017 05:04:24 PM | OrganismPage | INFO: Element found with locator dijit_Dialog_4 of type id. 
+05/26/2017 05:04:24 PM | OrganismPage | INFO: Element with locator dijit_Dialog_4 of type id found to be displayed. 
+05/26/2017 05:04:24 PM | OrganismPage | INFO: Element found with locator organismBlock of type id. 
+05/26/2017 05:04:24 PM | OrganismPage | INFO: Element with locator organismBlock of type id found to be displayed. 
+05/26/2017 05:04:24 PM | OrganismPage | INFO: Element found with locator rightDetail of type id. 
+05/26/2017 05:04:25 PM | OrganismPage | INFO: Element with locator rightDetail of type id found to be displayed. 
+05/26/2017 05:04:28 PM | OrganismPage | INFO: Element found with locator organismBlock of type id. 
+05/26/2017 05:04:28 PM | OrganismPage | INFO: Element with locator organismBlock of type id found to be displayed. 
+05/26/2017 05:04:28 PM | OrganismPage | INFO: Element found with locator rightDetail of type id. 
+05/26/2017 05:04:28 PM | OrganismPage | INFO: Element with locator rightDetail of type id found to be displayed. 
+05/26/2017 05:04:28 PM | OrganismPage | INFO: Element found with locator organismBlock of type id. 
+05/26/2017 05:04:28 PM | OrganismPage | INFO: Element with locator organismBlock of type id found to be displayed. 
+05/26/2017 05:04:28 PM | OrganismPage | INFO: Element found with locator rightDetail of type id. 
+05/26/2017 05:04:28 PM | OrganismPage | INFO: Element with locator rightDetail of type id found to be displayed. 
+05/26/2017 05:04:28 PM | OrganismPage | INFO: Element found with locator OrgDetailsButton of type id. 
+05/26/2017 05:04:28 PM | OrganismPage | INFO: Failed to click on any element with locator OrgDetailsButton of type id. 
+05/26/2017 05:04:31 PM | OrganismPage | INFO: Element found with locator organismBlock of type id. 
+05/26/2017 05:04:31 PM | OrganismPage | INFO: Element with locator organismBlock of type id found to be displayed. 
+05/26/2017 05:04:31 PM | OrganismPage | INFO: Element found with locator rightDetail of type id. 
+05/26/2017 05:04:31 PM | OrganismPage | INFO: Element with locator rightDetail of type id found to be displayed. 
