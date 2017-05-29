@@ -17,7 +17,7 @@ def create_custom_logger(log_level=logging.DEBUG):
     logger = logging.getLogger(logger_name)
     logger.setLevel(logging.DEBUG)
 
-    file_handler = logging.FileHandler("avida_ed_testing.log", mode='a')
+    file_handler = logging.FileHandler("output/log/avida_ed_testing.log", mode='a')
     file_handler.setLevel(log_level)
 
     formatter = logging.Formatter(
