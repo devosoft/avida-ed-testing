@@ -4,12 +4,13 @@ import logging
 from utilities.custom_logger import create_custom_logger
 
 
-class UtilityMethods(object):
+class UtilityMethods:
     """
     Class that contains common methods for use across the project but does not
     interact directly with the driver interface.
     
-    Mostly used to wrap common common methods in with the logging infrastructure.
+    Mostly used to wrap common common methods in with the logging
+    infrastructure.
     """
 
     log = create_custom_logger(logging.INFO)

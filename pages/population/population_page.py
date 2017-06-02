@@ -12,6 +12,7 @@ class PopulationPage(BasePage):
     """
 
     log = create_custom_logger(logging.DEBUG)
+    util = UtilityMethods()
 
     def __init__(self, driver):
         super().__init__(driver)
@@ -25,11 +26,11 @@ class PopulationPage(BasePage):
         :return: True if the "Environmental Settings" panel is displayed, false
         otherwise.
         """
+
         if self.population_displayed():
             setup_button_text = self.get_text("popSetupButton")
             if (self.element_displayed("setupBlock") and
-                    UtilityMethods.verify_text_matches(setup_button_text,
-                                                       "Map")):
+                    self.util.verify_text_matches(setup_button_text, "Map")):
                 return True
         return False
 
@@ -48,10 +49,8 @@ class PopulationPage(BasePage):
         """
         if self.population_displayed():
             setup_button_text = self.get_text("popSetupButton")
-            if (self.element_displayed("setupBlock") and
-                    UtilityMethods.verify_text_matches(setup_button_text,
-                                                       "Setup")):
-
+            if (not self.element_displayed("setupBlock") and
+                    self.util.verify_text_matches(setup_button_text, "Setup")):
                 return True
         return False
 

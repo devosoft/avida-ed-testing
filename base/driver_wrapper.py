@@ -210,16 +210,16 @@ class DriverWrapper:
         
         :return: String containing the text from the chosen element.
         """
+        text = None
         try:
             if element is None:
                 element = self.get_element(my_locator, locator_type)
             text = element.text
             text = text.strip()
-            self.log.info("Got text '" + text + "' from element with locator"
+            self.log.info("Got text '" + text + "' from element with locator "
                           + my_locator + " of type " + locator_type + ".")
 
         except:
-            text = None
             self.log.info("Unable to get text from element with locator "
                           + my_locator + " of type " + locator_type + ".")
         return text
