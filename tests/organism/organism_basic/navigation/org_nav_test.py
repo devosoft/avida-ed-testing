@@ -23,29 +23,21 @@ class OrganismNavigationTest(unittest.TestCase):
         """
         self.page = OrganismPage(self.driver)
 
-    @pytest.mark.run(order=1)
-    def test_go_to_org_settings(self):
-        """
-        Tests navigating to the Organism Settings pop-up.
-        
-        :return: None. 
-        """
-        time.sleep(3)
-        self.page.open_org_settings()
-        assert self.page.org_settings_displayed()
-
     @pytest.mark.run(order=2)
-    def test_close_org_settings(self):
+    def test_toggle_org_settings(self):
         """
         Tests closing the Organism Settings pop-up.
-        
+
         :return: None.
         """
-        time.sleep(3)
+        self.page.open_org_settings()
+        time.sleep(5)
+        assert self.page.org_settings_displayed()
         self.page.close_org_settings()
-        assert not self.page.org_details_displayed()
+        time.sleep(1)
+        assert not self.page.org_settings_displayed()
 
-    @pytest.mark.run(order=3)
+    @pytest.mark.run(order=1)
     def test_toggle_org_details(self):
         """
         Tests toggling the Details panel within the Organism page on and off.
@@ -53,11 +45,11 @@ class OrganismNavigationTest(unittest.TestCase):
         :return: None.
         """
         self.page.open_org_details()
-        time.sleep(3)
+        time.sleep(1)
         assert self.page.org_details_displayed()
         self.page.close_org_details()
-        time.sleep(3)
+        time.sleep(1)
         assert not self.page.org_details_displayed()
         self.page.open_org_details()
-        time.sleep(3)
+        time.sleep(1)
         assert self.page.org_details_displayed()

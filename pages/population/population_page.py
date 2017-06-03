@@ -15,8 +15,14 @@ class PopulationPage(BasePage):
     util = UtilityMethods()
 
     def __init__(self, driver):
+        """
+        Sets up the page for use at initialization.
+
+        :param driver: The driver that interacts with the actual page.
+        """
         super().__init__(driver)
         self.driver = driver
+        self.go_to_population()
 
     def env_settings_displayed(self):
         """
@@ -61,9 +67,9 @@ class PopulationPage(BasePage):
         
         :return: None 
         """
-        if self.population_displayed():
-            if not self.env_settings_displayed():
-                self.click_element("popSetupButton")
+        self.go_to_population()
+        if not self.env_settings_displayed():
+            self.click_element("popSetupButton")
 
     def hide_env_settings(self):
         """
@@ -72,9 +78,9 @@ class PopulationPage(BasePage):
         
         :return: None 
         """
-        if self.population_displayed():
-            if self.env_settings_displayed():
-                self.click_element("popSetupButton")
+        self.go_to_population()
+        if self.env_settings_displayed():
+            self.click_element("popSetupButton")
 
     def pop_stats_displayed(self):
         """
@@ -92,9 +98,9 @@ class PopulationPage(BasePage):
         
         :return: None.
         """
-        if self.population_displayed():
-            if not self.element_displayed("popRight"):
-                self.click_element("popStatsButton")
+        self.go_to_population()
+        if not self.element_displayed("popRight"):
+            self.click_element("popStatsButton")
 
     def hide_pop_stats(self):
         """
@@ -102,6 +108,6 @@ class PopulationPage(BasePage):
         
         :return: None.
         """
-        if self.population_displayed():
-            if self.element_displayed("popRight"):
-                self.click_element("popStatsButton")
+        self.go_to_population()
+        if self.element_displayed("popRight"):
+            self.click_element("popStatsButton")

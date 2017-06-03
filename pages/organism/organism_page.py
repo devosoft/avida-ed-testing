@@ -10,6 +10,16 @@ class OrganismPage(BasePage):
     Page within the Avida-ED website.
     """
 
+    def __init__(self, driver):
+        """
+        Sets up the page at initialization.
+
+        :param driver: The driver that is interacting with the actual page.
+        """
+        super().__init__(driver)
+        self.driver = driver
+        self.go_to_organism()
+
     log = create_custom_logger(logging.DEBUG)
 
     def org_settings_displayed(self):
@@ -66,6 +76,7 @@ class OrganismPage(BasePage):
         :return: None.
         """
 
+        self.go_to_organism()
         if not self.org_details_displayed():
             self.click_element("OrgDetailsButton")
 
@@ -76,6 +87,6 @@ class OrganismPage(BasePage):
         
         :return: None. 
         """
-
+        self.go_to_organism()
         if self.org_details_displayed():
             self.click_element("OrgDetailsButton")

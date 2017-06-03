@@ -2,6 +2,7 @@ from pages.population.population_page import PopulationPage
 import unittest
 import pytest
 
+
 @pytest.mark.usefixtures("one_time_setup")
 class PopulationNavigationTest(unittest.TestCase):
     """
