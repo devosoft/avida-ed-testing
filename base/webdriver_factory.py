@@ -1,7 +1,11 @@
+import threading
+import time
+
 from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as ec
 from selenium.webdriver.firefox.firefox_binary import FirefoxBinary
+from utilities.simple_web_server import run_http_server
 
 
 class WebDriverFactory:
@@ -12,10 +16,11 @@ class WebDriverFactory:
      wdf = WebDriverFactory(browser_type)
      driver = wdf.get_webdriver_instance()
      """
-    def __init__(self, browser):
+    def __init__(self, browser="chrome", local=True):
         """ Inits a WebDriverFactory class """
 
-        self.browser = browser
+        self.browser = browser.lower()
+        self.local = local
 
     def get_webdriver_instance(self):
         """
@@ -23,12 +28,16 @@ class WebDriverFactory:
         
         :returns: A WebDriver instance that is ready for testing.
         """
-
-        base_url = "https://avida-ed.beacon-center.org/appTest/AvidaED.html"
+        if self.local:
+            run_http_server()
+            base_url = "http://127.0.0.1:8000/av_ui/AvidaED.html"
+        else:
+            base_url = "https://avida-ed.beacon-center.org/appTest/AvidaED.html"
 
         # Instantiate driver using specified browser (defaults to Chrome)
         if self.browser == "firefox":
-            binary = FirefoxBinary(r'C:\Program Files (x86)\Mozilla Firefox\Firefox.exe')
+            binary = FirefoxBinary(
+                r'C:\Program Files (x86)\Mozilla Firefox\Firefox.exe')
             driver = webdriver.Firefox(firefox_binary=binary)
         else:
             driver = webdriver.Chrome()
