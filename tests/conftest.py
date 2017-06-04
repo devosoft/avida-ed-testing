@@ -19,8 +19,8 @@ def one_time_setup(request, browser):
 def pytest_addoption(parser):
     parser.addoption("--browser",
                      help="Name of internet browser used for testing.")
-    parser.addoption("--osType",
-                     help="Type of operating system the tests will run on.")
+    parser.addoption("--local",
+                     help="True if a local copy of Avida-ED should be run.")
 
 
 @pytest.fixture(scope="session")
@@ -29,5 +29,5 @@ def browser(request):
 
 
 @pytest.fixture(scope="session")
-def os_type(request):
-    return request.config.getoption("--osType")
+def local(request):
+    return request.config.getoption("--local")
