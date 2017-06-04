@@ -1,4 +1,5 @@
 import threading
+import os
 
 from http.server import SimpleHTTPRequestHandler, HTTPServer
 
@@ -9,6 +10,7 @@ def run_http_server():
 
     :return: None.
     """
+    os.chdir("C:/Users/Jake/PycharmProjects/avida_ed_ui")
     server_address = ('127.0.0.1', 8000)
     httpd = HTTPServer(server_address, SimpleHTTPRequestHandler)
     threading.Thread(target=httpd.serve_forever).start()
