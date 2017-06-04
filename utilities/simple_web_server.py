@@ -13,4 +13,4 @@ def run_http_server():
     os.chdir("C:/Users/Jake/PycharmProjects/avida_ed_ui")
     server_address = ('127.0.0.1', 8000)
     httpd = HTTPServer(server_address, SimpleHTTPRequestHandler)
-    threading.Thread(target=httpd.serve_forever).start()
+    threading.Thread(target=httpd.serve_forever, daemon=True).start()
