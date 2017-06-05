@@ -300,6 +300,27 @@ class DriverWrapper:
                           + my_locator + " of type " + locator_type)
             return False
 
+    def element_has_class(self, my_locator="",
+                          locator_type="id",
+                          class_name=""):
+        """
+        Determines whether the specified element is of class class_name.
+
+        :param my_locator: Locator used to find the element on the site.
+
+        :param locator_type: Type of locator that my_locator is; could be a ID,
+        CSS selector, etc.
+
+        :param class_name: Name of the class that we are looking for in the list
+        of classes that have been applied to the element.
+
+        :return: True if the specified element exists and class class_name has
+        been applied to the element; False otherwise.
+
+        ***NOT IMPLEMENTED***
+        """
+        return False
+
     def take_screenshot(self, description):
         """
         Takes a screenshot of the webpage that is currently open.
