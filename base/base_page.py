@@ -77,6 +77,8 @@ class BasePage(DriverWrapper):
         expanded.
 
         :return: True if the dropdown is expanded, false otherwise.
+
+        ***NOT IMPLEMENTED***
         """
         return False
 
