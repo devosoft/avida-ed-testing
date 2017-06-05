@@ -71,4 +71,13 @@ class BasePage(DriverWrapper):
         """
         self.click_element("analysisButton")
 
+    def avida_ed_dropdown_expanded(self):
+        """
+        Determines whether the "Avida-ED" dropdown at the top of the page is
+        expanded.
+
+        :return: True if the dropdown is expanded, false otherwise.
+        """
+        return False
+
 
