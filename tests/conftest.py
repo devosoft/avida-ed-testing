@@ -3,9 +3,9 @@ from base.webdriver_factory import WebDriverFactory
 
 
 @pytest.yield_fixture(scope="class")
-def one_time_setup(request, browser):
+def one_time_setup(request, browser, local):
     print("One time setup begins here.\n")
-    wdf = WebDriverFactory(browser)
+    wdf = WebDriverFactory(browser, local)
     driver = wdf.get_webdriver_instance()
 
     if request.cls is not None:

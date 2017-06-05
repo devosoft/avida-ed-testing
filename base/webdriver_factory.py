@@ -16,11 +16,15 @@ class WebDriverFactory:
      wdf = WebDriverFactory(browser_type)
      driver = wdf.get_webdriver_instance()
      """
-    def __init__(self, browser="chrome", local=True):
+    def __init__(self, browser, is_local):
         """ Inits a WebDriverFactory class """
-
+        if browser is None:
+            browser = "chrome"
         self.browser = browser.lower()
-        self.local = local
+        if is_local is None or is_local.lower() != "false":
+            self.is_local = True
+        else:
+            self.is_local = False
 
     def get_webdriver_instance(self):
         """
@@ -28,7 +32,7 @@ class WebDriverFactory:
         
         :returns: A WebDriver instance that is ready for testing.
         """
-        if self.local:
+        if self.is_local:
             run_http_server()
             base_url = "http://127.0.0.1:8000/av_ui/AvidaED.html"
         else:
