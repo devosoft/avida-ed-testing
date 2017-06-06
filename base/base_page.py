@@ -116,4 +116,31 @@ class BasePage(DriverWrapper):
         if self.avida_ed_dropdown_expanded():
             self.click_element("mnAvidaEd")
 
+    def file_dropdown_expanded(self):
+        """
+        Determines whether the "File" dropdown at the top of the website has
+        been expanded.
 
+        :return: True if the dropdown is expanded, false otherwise.
+        """
+        if self.menu_dropdown_expanded("mnFile"):
+            return True
+        return False
+
+    def open_file_dropdown(self):
+        """
+        Expands the "File" dropdown at the top of the website.
+
+        :return: None.
+        """
+        if not self.file_dropdown_expanded():
+            self.click_element("mnFile")
+
+    def close_file_dropdown(self):
+        """
+        Closes the "File" dropdown at the top of the website.
+
+        :return: None.
+        """
+        if self.file_dropdown_expanded():
+            self.click_element("mnFile")
