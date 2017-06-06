@@ -320,7 +320,7 @@ class DriverWrapper:
         """
         my_element = self.get_element(my_locator, locator_type)
         class_list = my_element.get_attribute("class")
-        if class_name is in class_list:
+        if class_name in class_list:
             return True
         return False
 
