@@ -98,6 +98,14 @@ class BasePage(DriverWrapper):
             return True
         return False
 
+    def click_avida_ed_dropdown(self):
+        """
+        Clicks on the Avida-ED dropdown menu.
+
+        :return: None.
+        """
+        self.click_element("mnAvidaED")
+
     def open_avida_ed_dropdown(self):
         """
         Expands the Avida-ED dropdown menu at the top of the page.
@@ -105,7 +113,7 @@ class BasePage(DriverWrapper):
         :return: None.
         """
         if not self.avida_ed_dropdown_expanded():
-            self.click_element("mnAvidaEd")
+            self.click_avida_ed_dropdown()
 
     def close_avida_ed_dropdown(self):
         """
@@ -114,7 +122,7 @@ class BasePage(DriverWrapper):
         :return: None.
         """
         if self.avida_ed_dropdown_expanded():
-            self.click_element("mnAvidaEd")
+            self.click_avida_ed_dropdown()
 
     def file_dropdown_expanded(self):
         """
@@ -127,6 +135,14 @@ class BasePage(DriverWrapper):
             return True
         return False
 
+    def click_file_dropdown(self):
+        """
+        Clicks on the "File" dropdown menu.
+
+        :return: None.
+        """
+        self.click_element("mnFile")
+
     def open_file_dropdown(self):
         """
         Expands the "File" dropdown at the top of the website.
@@ -134,7 +150,7 @@ class BasePage(DriverWrapper):
         :return: None.
         """
         if not self.file_dropdown_expanded():
-            self.click_element("mnFile")
+            self.click_file_dropdown()
 
     def close_file_dropdown(self):
         """
@@ -143,4 +159,4 @@ class BasePage(DriverWrapper):
         :return: None.
         """
         if self.file_dropdown_expanded():
-            self.click_element("mnFile")
+            self.click_file_dropdown()
