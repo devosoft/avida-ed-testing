@@ -98,4 +98,22 @@ class BasePage(DriverWrapper):
             return True
         return False
 
+    def open_avida_ed_dropdown(self):
+        """
+        Expands the Avida-ED dropdown menu at the top of the page.
+
+        :return: None.
+        """
+        if not self.avida_ed_dropdown_expanded():
+            self.click_element("dijit_MenuBar_0")
+
+    def close_avida_ed_dropdown(self):
+        """
+        Closes the Avida-ED dropdown menu at the top of the page.
+
+        :return: None.
+        """
+        if self.avida_ed_dropdown_expanded():
+            self.click_element("dijit_MenuBar_0")
+
 
