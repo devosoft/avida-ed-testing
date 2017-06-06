@@ -10,7 +10,9 @@ def run_http_server():
 
     :return: None.
     """
+    proj_dir = os.getcwd()
     os.chdir("C:/Users/Jake/PycharmProjects/avida_ed_ui")
     server_address = ('127.0.0.1', 8000)
     httpd = HTTPServer(server_address, SimpleHTTPRequestHandler)
     threading.Thread(target=httpd.serve_forever, daemon=True).start()
+    os.chdir(proj_dir)
