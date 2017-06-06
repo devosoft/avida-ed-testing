@@ -83,7 +83,7 @@ class BasePage(DriverWrapper):
         :return: True if the dropdown is expanded, false otherwise.
         """
         if self.element_has_class(my_locator, locator_type,
-                                  "dijitMenuBarSelected"):
+                                  "dijitMenuItemSelected"):
             return True
         return False
 
@@ -94,7 +94,7 @@ class BasePage(DriverWrapper):
 
         :return: True if the dropdown is expanded, false otherwise.
         """
-        if self.menu_dropdown_expanded("dijit_MenuBar_0"):
+        if self.menu_dropdown_expanded("mnAvidaEd"):
             return True
         return False
 
@@ -105,7 +105,7 @@ class BasePage(DriverWrapper):
         :return: None.
         """
         if not self.avida_ed_dropdown_expanded():
-            self.click_element("dijit_MenuBar_0")
+            self.click_element("mnAvidaEd")
 
     def close_avida_ed_dropdown(self):
         """
@@ -114,6 +114,6 @@ class BasePage(DriverWrapper):
         :return: None.
         """
         if self.avida_ed_dropdown_expanded():
-            self.click_element("dijit_MenuBar_0")
+            self.click_element("mnAvidaEd")
 
 
