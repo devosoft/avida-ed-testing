@@ -316,7 +316,6 @@ class DriverWrapper:
 
         :return: True if the specified element exists and class class_name has
         been applied to the element; False otherwise.
-
         """
         my_element = self.get_element(my_locator, locator_type)
         class_list = my_element.get_attribute("class")
