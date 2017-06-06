@@ -71,7 +71,7 @@ class BasePage(DriverWrapper):
         """
         self.click_element("analysisButton")
 
-    def menu_dropdown_expanded(self, my_locator, locator_type=id):
+    def menu_dropdown_expanded(self, my_locator, locator_type="id"):
         """
         Determines whether the dropdown on a menu option is currently displayed.
 
