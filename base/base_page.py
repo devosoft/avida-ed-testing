@@ -71,15 +71,31 @@ class BasePage(DriverWrapper):
         """
         self.click_element("analysisButton")
 
+    def menu_dropdown_expanded(self, my_locator, locator_type):
+        """
+        Determines whether the dropdown on a menu option is currently displayed.
+
+        :param my_locator: Locator used to find the element on the site.
+
+        :param locator_type: Type of locator that my_locator is; could be an ID,
+        CSS selector, etc.
+
+        :return: True if the dropdown is expanded, false otherwise.
+        """
+        if self.element_has_class(my_locator, locator_type,
+                                  "dijitMenuBarSelected"):
+            return True
+        return False
+
     def avida_ed_dropdown_expanded(self):
         """
         Determines whether the "Avida-ED" dropdown at the top of the page is
         expanded.
 
         :return: True if the dropdown is expanded, false otherwise.
-
-        ***NOT IMPLEMENTED***
         """
+        if self.menu_dropdown_expanded("dijit_MenuBar_0"):
+            return True
         return False
 
 
