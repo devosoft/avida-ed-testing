@@ -160,3 +160,40 @@ class BasePage(DriverWrapper):
         """
         if self.file_dropdown_expanded():
             self.click_file_dropdown()
+
+    def freezer_dropdown_expanded(self):
+        """
+        Determines whether the "Freezer" dropdown menu at the top of the page is
+        expanded.
+
+        :return: True if the dropdown is expanded, False otherwise.
+        """
+        if self.menu_dropdown_expanded("mnFreezer"):
+            return True
+        return False
+
+    def click_freezer_dropdown(self):
+        """
+        Clicks on the "Freezer" dropdown menu.
+
+        :return: None.
+        """
+        self.click_element("mnFreezer")
+
+    def open_freezer_dropdown(self):
+        """
+        Opens the "Freezer" dropdown menu.
+
+        :return: None
+        """
+        if not self.freezer_dropdown_expanded():
+            self.click_freezer_dropdown()
+
+    def close_freezer_dropdown(self):
+        """
+        Closes the "Freezer" dropdown menu.
+
+        :return: None.
+        """
+        if self.freezer_dropdown_expanded():
+            self.click_freezer_dropdown()
