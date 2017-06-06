@@ -317,8 +317,11 @@ class DriverWrapper:
         :return: True if the specified element exists and class class_name has
         been applied to the element; False otherwise.
 
-        ***NOT IMPLEMENTED***
         """
+        my_element = self.get_element(my_locator, locator_type)
+        class_list = my_element.get_attribute("class")
+        if class_name is in class_list:
+            return True
         return False
 
     def take_screenshot(self, description):
