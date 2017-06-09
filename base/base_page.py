@@ -197,3 +197,40 @@ class BasePage(DriverWrapper):
         """
         if self.freezer_dropdown_expanded():
             self.click_freezer_dropdown()
+
+    def control_dropdown_expanded(self):
+        """
+        Determines whether the "Control" dropdown within the menu bar is
+        expanded.
+
+        :return: True if the dropdown is expanded, false otherwise.
+        """
+        if self.menu_dropdown_expanded("mnControl"):
+            return True
+        return False
+
+    def click_control_dropdown(self):
+        """
+        Clicks on the "Control" dropdown in the menu bar.
+
+        :return: None.
+        """
+        self.click_element("mnControl")
+
+    def open_control_dropdown(self):
+        """
+        Opens up the "Control" dropdown in the menu bar.
+
+        :return: None.
+        """
+        if not self.control_dropdown_expanded():
+            self.click_control_dropdown()
+
+    def close_open_dropdown(self):
+        """
+        Closes the "Control" dropdown in the menu bar.
+
+        :return: None.
+        """
+        if self.control_dropdown_expanded():
+            self.click_control_dropdown()
