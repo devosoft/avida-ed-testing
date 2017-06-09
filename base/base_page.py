@@ -256,7 +256,7 @@ class BasePage(DriverWrapper):
         if not self.control_dropdown_expanded():
             self.click_control_dropdown()
 
-    def close_open_dropdown(self):
+    def close_control_dropdown(self):
         """
         Closes the "Control" dropdown in the menu bar.
 
