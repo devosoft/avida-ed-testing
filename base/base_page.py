@@ -124,6 +124,36 @@ class BasePage(DriverWrapper):
         if self.avida_ed_dropdown_expanded():
             self.click_avida_ed_dropdown()
 
+    def avida_ed_about_displayed(self):
+        """
+        Determines whether the "About" dialog box (accessed through the
+        "Avida-ED" tab on the main menu bar) is currently displayed.
+
+        :return: True if the dialog box is displayed, false otherwise.
+        """
+        if self.element_displayed("dijit_Dialog_6"):
+            return True
+        return False
+
+    def open_avida_ed_about(self):
+        """
+        Attempts to open the "About" dialog box (by clicking on the "About"
+        option in the "Avida-ED" dropdown in the main menu bar).
+
+        :return: None.
+        """
+        self.open_avida_ed_dropdown()
+        self.click_element("dijit_Menu_0")
+
+    def close_avida_ed_about(self):
+        """
+        Attempts to close the "About" dialog box if it is currently open.
+
+        :return: None.
+        """
+        if self.avida_ed_about_displayed():
+            self.click_element("mnHpAboutCancel")
+
     def file_dropdown_expanded(self):
         """
         Determines whether the "File" dropdown at the top of the website has
