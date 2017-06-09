@@ -104,7 +104,7 @@ class BasePage(DriverWrapper):
 
         :return: None.
         """
-        self.click_element("mnAvidaED")
+        self.click_element("mnAvidaEd")
 
     def open_avida_ed_dropdown(self):
         """
