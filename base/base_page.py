@@ -191,6 +191,129 @@ class BasePage(DriverWrapper):
         if self.file_dropdown_expanded():
             self.click_file_dropdown()
 
+    def save_current_workspace(self):
+        """
+        Clicks on the "Save Current Workspace" option within the File tab of the
+        main menu bar. This should initiate the download process of a .zip file
+        containing the current workspace. On Firefox, it opens a prompt first --
+        this has not been accounted for as of yet.
+
+        *** Only works properly with Chrome for now ***
+
+        :return: None.
+        """
+        self.open_file_dropdown()
+        self.click_element("mnFlSaveWorkspace")
+
+    def save_current_workspace_as(self, workspace_name):
+        """
+        Clicks on the "Save Workspace As" option within the File tab of the main
+        menu bar. This should cause a prompt to pop up asking for the name the
+        workspace. Actually filling in this prompt with the given workspace name
+        will be implemented later.
+
+        ***Not Fully Implemented Yet ***
+
+        :param workspace_name: The name that the workspace should be saved as.
+
+        :return: None.
+        """
+        self.open_file_dropdown()
+        self.click_element("mnFlSaveAs")
+
+    def open_default_workspace(self):
+        """
+        Opens the default workspace by clicking on the "Open Default Workspace"
+        option within the File tab of the main menu bar.
+
+        :return: None.
+        """
+        self.open_file_dropdown()
+        self.click_element("mnFlOpenDefaultWS")
+
+    def open_workspace(self, workspace_path):
+        """
+        Clicks on the "Open Workspace" option within the File tab of the main
+        menu bar. This should open a prompt to select a workspace on the local
+        computer to open -- however, interacting with that window has not been
+        implemented.
+
+        *** Not Fully Implemented Yet ***
+
+        :param workspace_path: The path where the workspace to be opened is
+        located.
+
+        :return: None.
+        """
+        self.open_file_dropdown()
+        self.click_element("mnFlOpenWS")
+
+    def import_freezer_item(self, freezer_item_path):
+        """
+        Clicks on the "Import Freezer Item" option within the File tab of the
+        main menu bar. This should open a prompt to select a saved freezer item
+        on the local computer to open -- however, interacting with that window
+        has not been implemented.
+
+        *** Not Fully Implemented Yet ***
+
+        :param freezer_item_path: The path where the freezer item to be opened
+        is located.
+
+        :return: None.
+        """
+        self.open_file_dropdown()
+        self.click_element("mnFlFzItem")
+
+    def export_data(self):
+        """
+        Clicks on the "Export Data" option within the File tab of the main menu
+        bar. This should cause a .csv file containing Avida-ED info to be
+        downloaded (or a prompt will show up in Firefox, which has not been
+        accounted for yet.
+
+        *** Only works with Chrome for now ***
+
+        :return: None.
+        """
+        self.open_file_dropdown()
+        self.click_element("mnFlExportData")
+
+    def export_graphics(self):
+        """
+        Clicks on the "Export Graphics" option within the File tab of the main
+        menu bar. Because exporting graphics from Avida-ED has not yet been
+        implemented, this simply opens up a dialog box that explains how to
+        take a screenshot using standard OS-level tools.
+
+        :return: None.
+        """
+        self.open_file_dropdown()
+        self.click_element("mnFlExportGraph")
+
+    def export_graphics_dialog_displayed(self):
+        """
+        Determines whether the dialog box that appears when the "Export
+        Graphics" option is clicked on is visible on-screen.
+
+        :return: True if the dialog box is displayed, False otherwise.
+        """
+        if (self.file_dropdown_expanded() and
+            self.element_displayed("dijit_Dialog_1")):
+            return True
+        return False
+
+    def close_export_graphics_dialog(self):
+        """
+        Closes the dialog box that explains how to take screenshots (which
+        should appear on-screen when the "Export Graphics" option is clicked),
+        if it is currently displayed.
+
+        :return: None.
+        """
+        if self.export_graphics_dialog_displayed():
+            self.click_element("mnFlExportGraphCancel")
+
     def freezer_dropdown_expanded(self):
         """
         Determines whether the "Freezer" dropdown menu at the top of the page is
