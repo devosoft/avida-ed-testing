@@ -234,3 +234,40 @@ class BasePage(DriverWrapper):
         """
         if self.control_dropdown_expanded():
             self.click_control_dropdown()
+
+    def help_dropdown_expanded(self):
+        """
+        Determines whether the "Help" dropdown in the main menu bar on the site
+        is expanded.
+
+        :return: True if the dropdown is expanded, False otherwise.
+        """
+        if self.menu_dropdown_expanded("mnHelp"):
+            return True
+        return False
+
+    def click_help_dropdown(self):
+        """
+        Clicks on the "Help" dropdown in the main menu bar.
+
+        :return: None.
+        """
+        self.click_element("mnHelp")
+
+    def open_help_dropdown(self):
+        """
+        Opens the "Help" dropdown in the main menu bar.
+
+        :return: None.
+        """
+        if not self.help_dropdown_expanded():
+            self.click_help_dropdown()
+
+    def close_help_dropdown(self):
+        """
+        Closes the "Help" dropdown in the main menu bar.
+
+        :return: None.
+        """
+        if self.help_dropdown_expanded():
+            self.click_help_dropdown()
