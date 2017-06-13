@@ -87,6 +87,22 @@ class BasePage(DriverWrapper):
             return True
         return False
 
+    def menu_item_disabled(self, my_locator, locator_type="id"):
+        """
+        Determines if a menu option in the main menu bar is disabled.
+
+        :param my_locator: The locator used to find the menu item.
+
+        :param locator_type: Type of locator that my_locator is; could be ID,
+        CSS Selector, etc.
+
+        :return: True if the menu item is disabled, False otherwise.
+        """
+        if self.element_has_class(my_locator, locator_type,
+                                  "dijitMenuItemDisabled"):
+            return True
+        return False
+
     def avida_ed_dropdown_expanded(self):
         """
         Determines whether the "Avida-ED" dropdown at the top of the page is
@@ -350,6 +366,94 @@ class BasePage(DriverWrapper):
         """
         if self.freezer_dropdown_expanded():
             self.click_freezer_dropdown()
+
+    def save_exp_conf(self):
+        """
+        Clicks on the "Save Experiment Configuration" within the Freezer tab of
+        the main menu bar.
+
+        :return: None.
+        """
+        self.open_freezer_dropdown()
+        self.click_element("mnFzConfig")
+
+    def can_save_current_pop(self):
+        """
+        Determines whether the option to "Save Current Population" within the
+        Freezer tab of the main menu bar is clickable or grayed out.
+
+        :return: True if the option is clickable, False otherwise.
+        """
+        if self.menu_item_disabled("mnFzPopulation"):
+            return False
+        return True
+
+    def save_current_pop(self):
+        """
+        Saves the current population (if one can be saved). If the option is
+        available, it should pop up an window that prompts the user to enter
+        a name for the population. However, interacting with this prompt has not
+        yet been implemented.
+
+        *** Not Fully Implemented ***
+
+        :return: None.
+        """
+        self.open_freezer_dropdown()
+        if self.can_save_current_pop():
+            self.click_element("mnFzPopulation")
+
+    def can_save_selected_org(self):
+        """
+        Determines whether the option to "Save Selected Organism" within the
+        Freezer tab of the main menu bar is clickable or grayed out.
+
+        :return: True if the option is clickable, False otherwise.
+        """
+        if self.menu_item_disabled("mnFzOrganism"):
+            return False
+        return True
+
+    def save_selected_org(self):
+        """
+        Saves the selected organism to the Freezer (if one is selected) by
+        clicking on the "Save Selected Organism" option in the main menu bar.
+        This should open up a prompt to give the organism a name, but
+        interacting with this has not been implemented yet.
+
+        *** Not Fully Implemented Yet ***
+
+        :return: None.
+        """
+        self.open_freezer_dropdown()
+        if self.can_save_selected_org():
+            self.click_element("mnFzOrganism")
+
+    def can_save_offspring_org(self):
+        """
+        Determines whether the "Save Offspring Organism" option in the Freezer
+        tab of the main menu bar is clickable or grayed out.
+
+        :return: True if the option is clickable, False otherwise.
+        """
+        if self.menu_item_disabled("mnFzOffspring"):
+            return False
+        return True
+
+    def save_offspring_org(self):
+        """
+        Saves the offspring organism from the Organism window (if possible) by
+        clicking on the "Save Offspring Organism" option in the Freezer tab of
+        the main menu bar. Interacting with the name prompt has not been
+        implemented yet.
+
+        *** Not Fully Implemented Yet ***
+
+        :return: None.
+        """
+        self.open_freezer_dropdown()
+        if self.can_save_offspring_org():
+            self.click_element("mnFzOffspring")
 
     def control_dropdown_expanded(self):
         """
