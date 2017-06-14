@@ -492,6 +492,123 @@ class BasePage(DriverWrapper):
         if self.control_dropdown_expanded():
             self.click_control_dropdown()
 
+    def can_run_from_menu(self):
+        """
+        Determines whether the "Run" option in the Control tab of the main menu
+        bar is clickable or grayed out.
+
+        :return: True if the option is clickable, false otherwise.
+        """
+        if self.menu_item_disabled("mnCnRun"):
+            return False
+        return True
+
+    def run_from_menu(self):
+        """
+        Attempts to click on the "Run" option in the Control tab of the main
+        menu.
+
+        *** Not Fully Implemented Yet ***
+
+        :return: None.
+        """
+        self.open_control_dropdown()
+        if self.can_run_from_menu():
+            self.click_element("mnCnRun")
+
+    def can_pause_from_menu(self):
+        """
+        Determines whether the "Pause" option in the Control tab of the main
+        menu is clickable or grayed out.
+
+        :return: True if the option is clickable, False otherwise.
+        """
+        if self.menu_item_disabled("mnCnPause"):
+            return False
+        return True
+
+    def pause_from_menu(self):
+        """
+        Attempts to click on the "Pause" option in the Control tab of the main
+        menu.
+
+        :return: None.
+        """
+        self.open_control_dropdown()
+        if self.can_pause_from_menu():
+            self.click_element("mnCnPause")
+
+    def do_one_update(self):
+        """
+        Clicks on the "Do One Update" option in the Control tab of the main menu
+        bar.
+
+        *** Not Fully Implemented Yet ***
+
+        :return: None.
+        """
+        self.open_control_dropdown()
+        self.click_element("mnCnOne")
+
+    def start_new_exp_from_menu(self):
+        """
+        Clicks on the "Start New Experiment" option in the Control tab of the
+        main menu bar.
+
+        In the future, will be able to handle prompts from Avida-ED to save work
+        that pop up as a result of pressing the button.
+
+        *** Not Fully Implemented Yet ***
+
+        :return: None.
+        """
+        self.open_control_dropdown()
+        self.click_element("mnCnNewpop")
+
+    def can_bring_to_org_window(self):
+        """
+        Determines whether the "Put Selected Organism in Organism View" option
+        in the Control tab of the main menu bar is clickable or grayed out.
+
+        :return: True if the option is clickable, false otherwise.
+        """
+        if self.menu_item_disabled("mnCnOrganismTrace"):
+            return False
+        return True
+
+    def bring_to_org_window(self):
+        """
+        Clicks on the "Put Selected Organism in Organism View" option in the
+        Control tab of the main menu bar, if the option is available.
+
+        :return: None.
+        """
+        self.open_control_dropdown()
+        if self.can_bring_to_org_window():
+            self.click_element("mnCnOrganismTrace")
+
+    def can_bring_child_to_org_window(self):
+        """
+        Determines whether the "Put Offspring in Organism View" option in the
+        Control tab of the main menu bar is clickable or grayed out.
+
+        :return: True if the option is clickable, false otherwise.
+        """
+        if self.menu_item_disabled("mnCnOffspringTrace"):
+            return False
+        return True
+
+    def bring_child_to_org_window(self):
+        """
+        Clicks on the "Put Offspring in Organism View" option in the Control tab
+        of the main menu bar is clickable or grayed out.
+
+        :return: None.
+        """
+        self.open_control_dropdown()
+        if self.can_bring_child_to_org_window():
+            self.click_element("mnCnOffspringTrace")
+
     def help_dropdown_expanded(self):
         """
         Determines whether the "Help" dropdown in the main menu bar on the site
