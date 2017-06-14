@@ -4,7 +4,7 @@ import unittest
 import pytest
 
 @pytest.mark.usefixtures("one_time_setup")
-class AboutTabTest(unittest.TestCase):
+class AvidaEdTabTest(unittest.TestCase):
     """
     Test class that tests the File tab of the main menu bar.
     """
