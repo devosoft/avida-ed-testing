@@ -350,3 +350,17 @@ class DriverWrapper:
         except:
             self.log.info("Attempt to take screenshot failed.")
 
+    def execute_script(self, script_text):
+        """
+        Executes arbitrary Javascript code to interact with the page.
+
+        :param script_text: The Javascript code to be executed.
+
+        :return: None.
+        """
+
+        try:
+            self.driver.execute_script(script_text)
+            self.log.info("Run Javascript code: '" + script_text + "'.")
+        except:
+            self.log.info("Attempt to run Javascript code failed.")
