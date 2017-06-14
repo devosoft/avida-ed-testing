@@ -9,6 +9,7 @@ class BasePage(DriverWrapper):
     """
 
     log = create_custom_logger()
+    util = UtilityMethods()
 
     def __init__(self, driver):
         """
@@ -304,8 +305,12 @@ class BasePage(DriverWrapper):
 
         :return: None.
         """
-        self.open_file_dropdown()
-        self.click_element("mnFlExportGraph")
+        if not self.export_graphics_dialog_displayed():
+            self.open_file_dropdown()
+            self.click_element("mnFlExportGraph")
+
+            # Opening the dialog takes some time, so we will wait a bit.
+            self.util.sleep(1)
 
     def export_graphics_dialog_displayed(self):
         """
@@ -314,8 +319,7 @@ class BasePage(DriverWrapper):
 
         :return: True if the dialog box is displayed, False otherwise.
         """
-        if (self.file_dropdown_expanded() and
-            self.element_displayed("dijit_Dialog_1")):
+        if self.element_displayed("dijit_Dialog_1"):
             return True
         return False
 
@@ -330,6 +334,8 @@ class BasePage(DriverWrapper):
         if self.export_graphics_dialog_displayed():
             self.click_element("mnFlExportGraphCancel")
 
+            # Closing the dialog takes some time, so we will wait a bit.
+            self.util.sleep(1)
     def freezer_dropdown_expanded(self):
         """
         Determines whether the "Freezer" dropdown menu at the top of the page is
