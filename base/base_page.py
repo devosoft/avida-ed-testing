@@ -8,8 +8,22 @@ class BasePage(DriverWrapper):
     Class that provides features common to all aspects of the Avida-ED website.
     """
 
+    # Logger object for the BasePage
     log = create_custom_logger()
+
+    # Utilties class that provides simple methods (particularly a wrapper for
+    # time.sleep.
     util = UtilityMethods()
+
+    # Locators for main sections of site.
+    _population_block = "populationBlock"
+    _organism_block = "organismBlock"
+    _analysis_block = "analysisBlock"
+
+    # Locators for buttons to switch between sections.
+    _population_button = "populationButton"
+    _organism_button = "organismButton"
+    _analysis_button="analysisButton"
 
     def __init__(self, driver):
         """
@@ -30,7 +44,7 @@ class BasePage(DriverWrapper):
 
         :return: True if the population pane is displayed, false otherwise. 
         """
-        pop_displayed = self.element_displayed("populationBlock")
+        pop_displayed = self.element_displayed(self._population_block)
         return pop_displayed
 
     def go_to_population(self):
@@ -38,7 +52,7 @@ class BasePage(DriverWrapper):
         Navigates to the "Population" pane of the Avida-ED website.
         :return: None.
         """
-        self.click_element("populationButton")
+        self.click_element(self._population_button)
 
     def organism_displayed(self):
         """
@@ -46,7 +60,7 @@ class BasePage(DriverWrapper):
 
         :return: True if the organism pane is displayed, false otherwise.
         """
-        org_displayed = self.element_displayed("organismBlock")
+        org_displayed = self.element_displayed(self._organism_block)
         return org_displayed
 
     def go_to_organism(self):
@@ -54,7 +68,7 @@ class BasePage(DriverWrapper):
         Navigates to the "Organism" pane of the Avida-ED website.
         :return: None.
         """
-        self.click_element("organismButton")
+        self.click_element(self._organism_button)
 
     def analysis_displayed(self):
         """
@@ -62,7 +76,7 @@ class BasePage(DriverWrapper):
 
         :return: True if the analysis pane is displayed, false otherwise. 
         """
-        ana_displayed = self.element_displayed("analysisBlock")
+        ana_displayed = self.element_displayed(self._analysis_block)
         return ana_displayed
 
     def go_to_analysis(self):
@@ -70,7 +84,7 @@ class BasePage(DriverWrapper):
         Navigates to the "Analysis" pane of the Avida-ED website.
         :return: None.
         """
-        self.click_element("analysisButton")
+        self.click_element(self._analysis_button)
 
     def menu_dropdown_expanded(self, my_locator, locator_type="id"):
         """
