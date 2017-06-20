@@ -23,7 +23,53 @@ class BasePage(DriverWrapper):
     # Locators for buttons to switch between sections.
     _population_button = "populationButton"
     _organism_button = "organismButton"
-    _analysis_button="analysisButton"
+    _analysis_button = "analysisButton"
+
+    # Name of class that is applied to selected tabs in the main menu bar.
+    _item_selected = "dijitMenuItemSelected"
+
+    # Name of class that is applied to disabled menu options in main menu bar.
+    _item_disabled = "dijitMenuItemDisabled"
+
+    #Locators for dropdowns in the main menu bar.
+    _avida_ed_tab = "mnAvidaEd"
+    _file_tab = "mnFile"
+    _freezer_tab = "mnFreezer"
+    _control_tab = "mnControl"
+    _help_tab = "mnHelp"
+
+    # Locators for options within the Avida-ED dropdown.
+    _avida_ed_about_menu = "dijit_Menu_0"
+    _avida_ed_about_dlg = "dijit_Dialog_6"
+    _avida_ed_about_closedlg = "mnHpAboutCancel"
+
+    # Locators for options within the File dropdown.
+    _file_save_workspace = "mnFlSaveWorkspace"
+    _file_save_workspace_as = "mnFlSaveAs"
+    _file_open_def_workspace = "mnFlOpenDefaultWS"
+    _file_open_workspace = "mnFlOpenWS"
+    _file_import_freezer_item = "mnFlFzItem"
+    _file_export_data = "mnFlExportData"
+    _file_export_graph = "mnFlExportGraph"
+    _file_export_graph_dlg = "dijit_Dialog_1"
+    _file_export_graph_closedlg = "mnFlExportGraphCancel"
+
+    # Locators for options within the Freezer dropdown.
+    _fz_save_exp_conf = "mnFzConfig"
+    _fz_save_pop = "mnFzPopulation"
+    _fz_save_org = "mnFzOrganism"
+    _fz_save_offspring = "mnFzOffspring"
+
+    # Locators for options within the Control dropdown.
+    _cn_run = "mnCnRun"
+    _cn_pause = "mnCnPause"
+    _cn_one_update = "mnCnOne"
+    _cn_new_exp = "mnCnNewpop"
+    _cn_bring_to_org = "mnCnOrganismTrace"
+    _cn_bring_offspring_to_org = "mnCnOffspringTrace"
+
+    # Locators for options within the Help dropdown.
+
 
     def __init__(self, driver):
         """
@@ -98,7 +144,7 @@ class BasePage(DriverWrapper):
         :return: True if the dropdown is expanded, false otherwise.
         """
         if self.element_has_class(my_locator, locator_type,
-                                  "dijitMenuItemSelected"):
+                                  self._item_selected):
             return True
         return False
 
@@ -113,8 +159,9 @@ class BasePage(DriverWrapper):
 
         :return: True if the menu item is disabled, False otherwise.
         """
-        if self.element_has_class(my_locator, locator_type,
-                                  "dijitMenuItemDisabled"):
+        if self.element_has_class(my_locator,
+                                  locator_type,
+                                  self._item_disabled):
             return True
         return False
 
@@ -125,7 +172,7 @@ class BasePage(DriverWrapper):
 
         :return: True if the dropdown is expanded, false otherwise.
         """
-        if self.menu_dropdown_expanded("mnAvidaEd"):
+        if self.menu_dropdown_expanded(self._avida_ed_tab):
             return True
         return False
 
@@ -135,7 +182,7 @@ class BasePage(DriverWrapper):
 
         :return: None.
         """
-        self.click_element("mnAvidaEd")
+        self.click_element(self._avida_ed_tab)
 
     def open_avida_ed_dropdown(self):
         """
@@ -162,7 +209,7 @@ class BasePage(DriverWrapper):
 
         :return: True if the dialog box is displayed, false otherwise.
         """
-        if self.element_displayed("dijit_Dialog_6"):
+        if self.element_displayed(self._avida_ed_about_dlg):
             return True
         return False
 
@@ -174,7 +221,8 @@ class BasePage(DriverWrapper):
         :return: None.
         """
         self.open_avida_ed_dropdown()
-        self.click_element("dijit_Menu_0")
+        self.click_element(self._avida_ed_about_menu)
+        self.util.sleep(1)
 
     def close_avida_ed_about(self):
         """
@@ -183,7 +231,8 @@ class BasePage(DriverWrapper):
         :return: None.
         """
         if self.avida_ed_about_displayed():
-            self.click_element("mnHpAboutCancel")
+            self.click_element(self._avida_ed_about_closedlg)
+            self.util.sleep(1)
 
     def file_dropdown_expanded(self):
         """
@@ -192,7 +241,7 @@ class BasePage(DriverWrapper):
 
         :return: True if the dropdown is expanded, false otherwise.
         """
-        if self.menu_dropdown_expanded("mnFile"):
+        if self.menu_dropdown_expanded(self._file_tab):
             return True
         return False
 
@@ -202,7 +251,7 @@ class BasePage(DriverWrapper):
 
         :return: None.
         """
-        self.click_element("mnFile")
+        self.click_element(self._file_tab)
 
     def open_file_dropdown(self):
         """
@@ -234,7 +283,7 @@ class BasePage(DriverWrapper):
         :return: None.
         """
         self.open_file_dropdown()
-        self.click_element("mnFlSaveWorkspace")
+        self.click_element(self._file_save_workspace)
 
     def save_current_workspace_as(self, workspace_name):
         """
@@ -250,7 +299,7 @@ class BasePage(DriverWrapper):
         :return: None.
         """
         self.open_file_dropdown()
-        self.click_element("mnFlSaveAs")
+        self.click_element(self._file_save_workspace_as)
 
     def open_default_workspace(self):
         """
@@ -260,7 +309,7 @@ class BasePage(DriverWrapper):
         :return: None.
         """
         self.open_file_dropdown()
-        self.click_element("mnFlOpenDefaultWS")
+        self.click_element(self._file_open_def_workspace)
 
     def open_workspace(self, workspace_path):
         """
@@ -277,7 +326,7 @@ class BasePage(DriverWrapper):
         :return: None.
         """
         self.open_file_dropdown()
-        self.click_element("mnFlOpenWS")
+        self.click_element(self._file_open_workspace)
 
     def import_freezer_item(self, freezer_item_path):
         """
@@ -294,7 +343,7 @@ class BasePage(DriverWrapper):
         :return: None.
         """
         self.open_file_dropdown()
-        self.click_element("mnFlFzItem")
+        self.click_element(self._file_import_freezer_item)
 
     def export_data(self):
         """
@@ -308,7 +357,7 @@ class BasePage(DriverWrapper):
         :return: None.
         """
         self.open_file_dropdown()
-        self.click_element("mnFlExportData")
+        self.click_element(self._file_export_data)
 
     def export_graphics(self):
         """
@@ -321,7 +370,7 @@ class BasePage(DriverWrapper):
         """
         if not self.export_graphics_dialog_displayed():
             self.open_file_dropdown()
-            self.click_element("mnFlExportGraph")
+            self.click_element(self._file_export_graph)
 
             # Opening the dialog takes some time, so we will wait a bit.
             self.util.sleep(1)
@@ -333,7 +382,7 @@ class BasePage(DriverWrapper):
 
         :return: True if the dialog box is displayed, False otherwise.
         """
-        if self.element_displayed("dijit_Dialog_1"):
+        if self.element_displayed(self._file_export_graph_dlg):
             return True
         return False
 
@@ -346,7 +395,7 @@ class BasePage(DriverWrapper):
         :return: None.
         """
         if self.export_graphics_dialog_displayed():
-            self.click_element("mnFlExportGraphCancel")
+            self.click_element(self._file_export_graph_closedlg)
 
             # Closing the dialog takes some time, so we will wait a bit.
             self.util.sleep(1)
@@ -357,7 +406,7 @@ class BasePage(DriverWrapper):
 
         :return: True if the dropdown is expanded, False otherwise.
         """
-        if self.menu_dropdown_expanded("mnFreezer"):
+        if self.menu_dropdown_expanded(self._freezer_tab):
             return True
         return False
 
@@ -367,7 +416,7 @@ class BasePage(DriverWrapper):
 
         :return: None.
         """
-        self.click_element("mnFreezer")
+        self.click_element(self._freezer_tab)
 
     def open_freezer_dropdown(self):
         """
@@ -395,7 +444,7 @@ class BasePage(DriverWrapper):
         :return: None.
         """
         self.open_freezer_dropdown()
-        self.click_element("mnFzConfig")
+        self.click_element(self._fz_save_exp_conf)
 
     def can_save_current_pop(self):
         """
@@ -404,7 +453,7 @@ class BasePage(DriverWrapper):
 
         :return: True if the option is clickable, False otherwise.
         """
-        if self.menu_item_disabled("mnFzPopulation"):
+        if self.menu_item_disabled(self._fz_save_pop):
             return False
         return True
 
@@ -421,7 +470,7 @@ class BasePage(DriverWrapper):
         """
         self.open_freezer_dropdown()
         if self.can_save_current_pop():
-            self.click_element("mnFzPopulation")
+            self.click_element(self._fz_save_pop)
 
     def can_save_selected_org(self):
         """
@@ -430,7 +479,7 @@ class BasePage(DriverWrapper):
 
         :return: True if the option is clickable, False otherwise.
         """
-        if self.menu_item_disabled("mnFzOrganism"):
+        if self.menu_item_disabled(self._fz_save_org):
             return False
         return True
 
@@ -447,7 +496,7 @@ class BasePage(DriverWrapper):
         """
         self.open_freezer_dropdown()
         if self.can_save_selected_org():
-            self.click_element("mnFzOrganism")
+            self.click_element(self._fz_save_org)
 
     def can_save_offspring_org(self):
         """
@@ -456,7 +505,7 @@ class BasePage(DriverWrapper):
 
         :return: True if the option is clickable, False otherwise.
         """
-        if self.menu_item_disabled("mnFzOffspring"):
+        if self.menu_item_disabled(self._fz_save_offspring):
             return False
         return True
 
@@ -473,7 +522,7 @@ class BasePage(DriverWrapper):
         """
         self.open_freezer_dropdown()
         if self.can_save_offspring_org():
-            self.click_element("mnFzOffspring")
+            self.click_element(self._fz_save_offspring)
 
     def control_dropdown_expanded(self):
         """
@@ -482,7 +531,7 @@ class BasePage(DriverWrapper):
 
         :return: True if the dropdown is expanded, false otherwise.
         """
-        if self.menu_dropdown_expanded("mnControl"):
+        if self.menu_dropdown_expanded(self._control_tab):
             return True
         return False
 
@@ -492,7 +541,7 @@ class BasePage(DriverWrapper):
 
         :return: None.
         """
-        self.click_element("mnControl")
+        self.click_element(self._control_tab)
 
     def open_control_dropdown(self):
         """
@@ -519,7 +568,7 @@ class BasePage(DriverWrapper):
 
         :return: True if the option is clickable, false otherwise.
         """
-        if self.menu_item_disabled("mnCnRun"):
+        if self.menu_item_disabled(self._cn_run):
             return False
         return True
 
@@ -534,7 +583,7 @@ class BasePage(DriverWrapper):
         """
         self.open_control_dropdown()
         if self.can_run_from_menu():
-            self.click_element("mnCnRun")
+            self.click_element(self._cn_run)
 
     def can_pause_from_menu(self):
         """
@@ -543,7 +592,7 @@ class BasePage(DriverWrapper):
 
         :return: True if the option is clickable, False otherwise.
         """
-        if self.menu_item_disabled("mnCnPause"):
+        if self.menu_item_disabled(self._cn_pause):
             return False
         return True
 
@@ -556,7 +605,7 @@ class BasePage(DriverWrapper):
         """
         self.open_control_dropdown()
         if self.can_pause_from_menu():
-            self.click_element("mnCnPause")
+            self.click_element(self._cn_pause)
 
     def do_one_update(self):
         """
@@ -568,7 +617,7 @@ class BasePage(DriverWrapper):
         :return: None.
         """
         self.open_control_dropdown()
-        self.click_element("mnCnOne")
+        self.click_element(self._cn_one_update)
 
     def start_new_exp_from_menu(self):
         """
@@ -583,7 +632,7 @@ class BasePage(DriverWrapper):
         :return: None.
         """
         self.open_control_dropdown()
-        self.click_element("mnCnNewpop")
+        self.click_element(self._cn_new_exp)
 
     def can_bring_to_org_window(self):
         """
@@ -592,7 +641,7 @@ class BasePage(DriverWrapper):
 
         :return: True if the option is clickable, false otherwise.
         """
-        if self.menu_item_disabled("mnCnOrganismTrace"):
+        if self.menu_item_disabled(self._cn_bring_to_org):
             return False
         return True
 
@@ -605,7 +654,7 @@ class BasePage(DriverWrapper):
         """
         self.open_control_dropdown()
         if self.can_bring_to_org_window():
-            self.click_element("mnCnOrganismTrace")
+            self.click_element(self._cn_bring_to_org)
 
     def can_bring_child_to_org_window(self):
         """
@@ -614,7 +663,7 @@ class BasePage(DriverWrapper):
 
         :return: True if the option is clickable, false otherwise.
         """
-        if self.menu_item_disabled("mnCnOffspringTrace"):
+        if self.menu_item_disabled(self._cn_bring_offspring_to_org):
             return False
         return True
 
@@ -627,7 +676,7 @@ class BasePage(DriverWrapper):
         """
         self.open_control_dropdown()
         if self.can_bring_child_to_org_window():
-            self.click_element("mnCnOffspringTrace")
+            self.click_element(self._cn_bring_offspring_to_org)
 
     def help_dropdown_expanded(self):
         """
@@ -636,7 +685,7 @@ class BasePage(DriverWrapper):
 
         :return: True if the dropdown is expanded, False otherwise.
         """
-        if self.menu_dropdown_expanded("mnHelp"):
+        if self.menu_dropdown_expanded(self._help_tab):
             return True
         return False
 
@@ -646,7 +695,7 @@ class BasePage(DriverWrapper):
 
         :return: None.
         """
-        self.click_element("mnHelp")
+        self.click_element(self._help_tab)
 
     def open_help_dropdown(self):
         """
