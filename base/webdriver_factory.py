@@ -6,6 +6,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as ec
 from selenium.webdriver.firefox.firefox_binary import FirefoxBinary
 from utilities.simple_web_server import run_http_server
+from base.config import Configuration
 
 
 class WebDriverFactory:
@@ -18,6 +19,7 @@ class WebDriverFactory:
      """
     def __init__(self, browser, is_local):
         """ Inits a WebDriverFactory class """
+        self.config = Configuration()
         if browser is None:
             browser = "chrome"
         self.browser = browser.lower()
@@ -40,8 +42,7 @@ class WebDriverFactory:
 
         # Instantiate driver using specified browser (defaults to Chrome)
         if self.browser == "firefox":
-            binary = FirefoxBinary(
-                r'C:\Program Files (x86)\Mozilla Firefox\Firefox.exe')
+            binary = FirefoxBinary(self.config.get_ff_loc())
             driver = webdriver.Firefox(firefox_binary=binary)
         else:
             driver = webdriver.Chrome()
