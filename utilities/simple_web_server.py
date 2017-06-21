@@ -3,6 +3,8 @@ import os
 
 from http.server import SimpleHTTPRequestHandler, HTTPServer
 
+from base.config import Configuration
+
 
 def run_http_server():
     """
@@ -10,8 +12,8 @@ def run_http_server():
 
     :return: None.
     """
-    proj_dir = os.getcwd()
-    os.chdir("C:/Users/Jake/PycharmProjects/avida_ed_ui")
+    config = Configuration()
+    os.chdir(config.get_ui_path())
     server_address = ('127.0.0.1', 8000)
     httpd = HTTPServer(server_address, SimpleHTTPRequestHandler)
     threading.Thread(target=httpd.serve_forever, daemon=True).start()
