@@ -1,3 +1,3 @@
 Avida-ED Testing Project
 ========================
-This is a readme that is a work-in-progress. Enjoy!
+This project is a work-in-progress testing suite for 'Avida-ED<https://avida-ed.msu.edu/>'_.
