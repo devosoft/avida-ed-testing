@@ -7,6 +7,6 @@ Avida-ED Testing Project Readme
 
 Introduction
 ============
-This project is a work-in-progress testing suite for 'Avida-ED'_.
+This project is a work-in-progress testing suite for Avida-ED_.
 
 .. _Avida-ED: https://avida-ed.msu.edu/
