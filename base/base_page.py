@@ -59,6 +59,9 @@ class BasePage(DriverWrapper):
     _fz_save_pop = "mnFzPopulation"
     _fz_save_org = "mnFzOrganism"
     _fz_save_offspring = "mnFzOffspring"
+    _fz_add_conf_dish = "mnFzAddConfigEx"
+    _fz_add_org = "mnFzAddGenomeEx"
+    _fz_add_pop_dish = "mnFzAddPopEx"
 
     # Locators for options within the Control dropdown.
     _cn_run = "mnCnRun"
@@ -523,6 +526,40 @@ class BasePage(DriverWrapper):
         self.open_freezer_dropdown()
         if self.can_save_offspring_org():
             self.click_element(self._fz_save_offspring)
+
+    def add_config_dish_to_exp(self):
+        """
+        Clicks on the "Add Highlighted Configured Dish to Experiment" button in
+        the Freezer tab of the main menu bar.
+
+        *** Not Fully Implemented Yet ***
+
+        :return: None.
+        """
+        self.open_freezer_dropdown()
+        self.click_element(self._fz_add_conf_dish)
+
+    def add_org_to_exp(self):
+        """
+        Clicks on the "Add Highlighted Organism to Experiment" button in the
+        Freezer tab of the main menu bar.
+
+        *** Not Fully Implemented Yet ***
+
+        :return: None.
+        """
+        self.open_freezer_dropdown()
+        self.click_element(self._fz_add_org)
+
+    def add_pop_dish_to_exp(self):
+        """
+        Clicks on the "Add Highlighted Populated Dish to Experiment" button in
+        the Freezer tab of the main menu bar.
+
+        :return: None.
+        """
+        self.open_freezer_dropdown()
+        self.click_element(self._fz_add_pop_dish)
 
     def control_dropdown_expanded(self):
         """
