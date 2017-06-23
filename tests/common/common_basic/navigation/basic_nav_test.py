@@ -8,10 +8,10 @@ import time
 @pytest.mark.usefixtures("one_time_setup")
 class BasicNavigationTest(unittest.TestCase):
     """
-    Test class that tests navigation between the major pages
+    Test class that tests navigation between the major specializations
     within the Avida-ED website.
     
-    Note that "pages" are logical rather than real, URL-level separations
+    Note that "specializations" are logical rather than real, URL-level separations
     within the site. They are divided into the major parts of the website --
     Population, Organism, and Analysis -- because a user will always be within
     one of those three parts of the site.

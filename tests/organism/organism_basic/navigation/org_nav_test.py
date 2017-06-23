@@ -1,4 +1,4 @@
-from pages.organism.organism_page import OrganismPage
+from specializations.organism.organism_page import OrganismPage
 import unittest
 import pytest
 import time
@@ -7,7 +7,7 @@ import time
 @pytest.mark.usefixtures("one_time_setup")
 class OrganismNavigationTest(unittest.TestCase):
     """
-    Test class that tests navigation between the panels and other sub-pages
+    Test class that tests navigation between the panels and other sub-specializations
     within the Organism page.
     """
 

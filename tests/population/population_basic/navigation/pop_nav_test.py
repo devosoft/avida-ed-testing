@@ -1,4 +1,4 @@
-from pages.population.population_page import PopulationPage
+from specializations.population.population_page import PopulationPage
 import unittest
 import pytest
 
@@ -6,7 +6,7 @@ import pytest
 @pytest.mark.usefixtures("one_time_setup")
 class PopulationNavigationTest(unittest.TestCase):
     """
-    Test class that tests navigation between various panels and sub-pages within
+    Test class that tests navigation between various panels and sub-specializations within
     the Population page.
     """
 
