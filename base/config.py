@@ -9,15 +9,29 @@ class Configuration:
 
     _config_file_path = r"config_files\config.json"
 
+    _default_config_dict = {
+        "ui_path": r"C:\avida_ed_ui",
+        "ff_loc": r'C:\Program Files (x86)\Mozilla Firefox\Firefox.exe'
+    }
+
     def __init__(self):
         """
         Initializes the Configuration object.
         """
         if not os.path.exists(self._config_file_path):
             self._create_config_file()
+        self.config = self._get_config()
+
+
+    def _get_config(self):
+        """
+        Gets the configuration from the config file.
+
+        :return: a Python dict containing config info.
+        """
 
         with open(self._config_file_path) as json_data_file:
-            self.config = json.load(json_data_file)
+            return json.load(json_data_file)
 
     def _create_config_file(self):
         """
@@ -26,13 +40,24 @@ class Configuration:
 
         :return: None.
         """
-        default_config_dict = {
-            "ui_path":r"C:\avida_ed_ui",
-            "ff_loc": r'C:\Program Files (x86)\Mozilla Firefox\Firefox.exe'
-        }
 
         with open(self._config_file_path, "w") as file:
-            json.dump(default_config_dict, file)
+            json.dump(self._default_config_dict, file)
+
+    def set_ui_path(self, path):
+        """
+        Sets the path to the Avida-ED UI installation.
+
+        :param path: The path where the the web server should be created from so
+        that the local Avida-ED copy runs as intended.
+
+        :return: None.
+        """
+        modified_config_dict = self._default_config_dict
+        modified_config_dict["ui_path"] = path
+        with open(self._config_file_path, "w") as file:
+            json.dump(modified_config_dict, file)
+        self.config = self._get_config()
 
     def get_ui_path(self):
         """
@@ -46,6 +71,20 @@ class Configuration:
         if path is not None:
             return path
         return r""
+
+    def set_ff_path(self, path):
+        """
+        Sets the path to the Firefox binary.
+
+        :param path: The path where the the FF binary should be looked for.
+
+        :return: None.
+        """
+        modified_config_dict = self._default_config_dict
+        modified_config_dict["ff_path"] = path
+        with open(self._config_file_path, "w") as file:
+            json.dump(modified_config_dict, file)
+        self.config = self._get_config()
 
     def get_ff_loc(self):
         """

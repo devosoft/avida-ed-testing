@@ -17,9 +17,26 @@ class WebDriverFactory:
      wdf = WebDriverFactory(browser_type)
      driver = wdf.get_webdriver_instance()
      """
-    def __init__(self, browser, is_local):
-        """ Inits a WebDriverFactory class """
+    def __init__(self, browser, is_local, ui_path, ff_path):
+        """
+        Initializes a WebDriverFactory object.
+
+        :param browser: The browser that the driver will be used with.
+
+        :param is_local: True if the driver will test a local version of the
+        app, False otherwise.
+
+        :param ui_path: The path to the Avida-ED app's lccal files (if running
+        locally).
+
+        :param ff_path: The path to the Firefox binary (needed when running with
+        FF).
+        """
         self.config = Configuration()
+        if ui_path is not None:
+            self.config.set_ui_path(ui_path)
+        if ff_path is not None:
+            self.config.set_ff_path(ff_path)
         if browser is None:
             browser = "chrome"
         self.browser = browser.lower()
