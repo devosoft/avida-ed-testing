@@ -22,4 +22,3 @@ class Scripter(BasePage):
         """
         super().__init__(driver)
         self.driver = driver
-
