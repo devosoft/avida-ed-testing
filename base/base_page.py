@@ -168,6 +168,18 @@ class BasePage(DriverWrapper):
             return True
         return False
 
+    def freezer_item_highlighted(self, my_locator, locator_type="id"):
+        """
+        Determines if an item in the Freezer is highlighted.
+
+        :param my_locator: The locator used to find the Freezer item.
+
+        :param locator_type: The type of locator that my_locator is; could be
+         ID, CSS Selector, etc.
+
+        :return: True if the item is highlighted; False otherwise.
+        """
+
     def avida_ed_dropdown_expanded(self):
         """
         Determines whether the "Avida-ED" dropdown at the top of the page is
