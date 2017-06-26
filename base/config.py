@@ -11,7 +11,8 @@ class Configuration:
 
     _default_config_dict = {
         "ui_path": r"C:\avida_ed_ui",
-        "ff_loc": r'C:\Program Files (x86)\Mozilla Firefox\Firefox.exe'
+        "ff_loc": r'C:\Program Files (x86)\Mozilla Firefox\Firefox.exe',
+        "av_url": r'https://avida-ed.beacon-center.org/appTest/AvidaED.html'
     }
 
     def __init__(self):
@@ -96,4 +97,29 @@ class Configuration:
         path = self.config["ff_loc"]
         if path is not None:
             return path
+        return r""
+
+    def set_av_url(self, url):
+        """
+        Sets the URL for the Avida-ED website in the config.json file.
+
+        :param url: The URL that will be placed in the config file.
+
+        :return: None.
+        """
+        modified_config_dict = self._default_config_dict
+        modified_config_dict["av_url"] = url
+        with open(self._config_file_path, "w") as file:
+            json.dump(modified_config_dict, file)
+        self.config = self._get_config()
+
+    def get_av_url(self):
+        """
+        Gets the URL for the online-hosted Avida-ED app.
+
+        :return: Raw string literal containing URL to Avida-ED website.
+        """
+        url = self.config["av_url"]
+        if url is not None:
+            return url
         return r""

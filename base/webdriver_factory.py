@@ -55,7 +55,7 @@ class WebDriverFactory:
             run_http_server()
             base_url = "http://127.0.0.1:8000/av_ui/AvidaED.html"
         else:
-            base_url = "https://avida-ed.beacon-center.org/appTest/AvidaED.html"
+            base_url = self.config.get_av_url()
 
         # Instantiate driver using specified browser (defaults to Chrome)
         if self.browser == "firefox":
