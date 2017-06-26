@@ -3,9 +3,9 @@ from base.webdriver_factory import WebDriverFactory
 
 
 @pytest.yield_fixture(scope="class")
-def one_time_setup(request, browser, local, setuipath, setffpath):
+def one_time_setup(request, browser, local, setuipath, setffpath, seturl):
     print("One time setup begins here.\n")
-    wdf = WebDriverFactory(browser, local, setuipath, setffpath)
+    wdf = WebDriverFactory(browser, local, setuipath, setffpath, seturl)
     driver = wdf.get_webdriver_instance()
 
     if request.cls is not None:
@@ -25,6 +25,8 @@ def pytest_addoption(parser):
                      help="Path for folder containing local Avida-ED files.")
     parser.addoption("--setffpath",
                      help="Path for Firefox binary.")
+    parser.addoption("--seturl",
+                     help="URL for web-hosted Avida-ED.")
 
 
 @pytest.fixture(scope="session")
@@ -45,3 +47,7 @@ def setuipath(request):
 @pytest.fixture(scope="session")
 def setffpath(request):
     return request.config.getoption("--setffpath")
+
+@pytest.fixture(scope="session")
+def seturl(request):
+    return request.config.getoption("--seturl")
