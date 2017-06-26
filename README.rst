@@ -28,7 +28,7 @@ Use
 
 As this testing suite is a work-in-progress, a unified way to run all (or a specific group) of the tests has not been implemented. This will be provided in the future, but for now running all of the tests in one file is possible using the following commands:
 
-``pytest path/to/test/testfile.py``
+``pytest path\to\test\testfile.py``
 
 There are also several command-line options that can be provided:
 
