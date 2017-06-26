@@ -25,11 +25,17 @@ Windows:
 
 Use
 -------
-As this testing suite is a work-in-progress, a unified way to run all (or a specific group) of the tests has not been implemented. This will be provided in the future, but for now running all of the tests in one file is possible using the following commands:::
+As this testing suite is a work-in-progress, a unified way to run all (or a specific group) of the tests has not been implemented. This will be provided in the future, but for now running all of the tests in one file is possible using the following commands::
     pytest path/to/test/testfile.py
 There are also several command-line options that can be provided:
+
 - --browser\: Changes the browser used to run the tests. Current options are chrome (default) and firefox (not fully supported yet).
+
 - --local\: Sets whether the tests should be run on a local copy of Avida-ED (using a simple Python web server) or the copy hosted online by MSU. Providing "false" as the argument will run the tests on the MSU version, while any other input (or not specifying) will make the tests run locally.
+
+- --setuipath: Used to set the path to the Avida-ED UI repository, which is used to run the tests locally. You should provide the path to the folder containing the ``av_ui`` folder.
+
+- --setffpath: Used to set the path to the Firefox binary, which at this time is needed to run the tests via Firefox. However, this has not been thoroughly tested and Chrome is recommended to run tests at this time.
 
 .. _`Python 3.6`: https://www.python.org/downloads/
 .. _pip: https://pypi.python.org/pypi/pip/
