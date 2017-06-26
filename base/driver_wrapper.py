@@ -85,7 +85,7 @@ class DriverWrapper:
 
         return element
 
-    def get_element_list(self, my_locator, locator_type = "id"):
+    def get_element_list(self, my_locator, locator_type="id"):
         """
         Attempts to get a group of elements on the webpage from the driver.
         
