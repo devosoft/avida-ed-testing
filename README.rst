@@ -30,6 +30,8 @@ As this testing suite is a work-in-progress, a unified way to run all (or a spec
 
 ``pytest path\to\test\testfile.py``
 
+All of the tests are located within subdirectories of the ``tests`` folder within the ``avida_ed_testing`` folder. For example, there is a simple navigation test at ``tests\common\common_basic
+
 There are also several command-line options that can be provided:
 
 - --browser\: Changes the browser used to run the tests. Current options are chrome (default) and firefox (not fully supported yet).
