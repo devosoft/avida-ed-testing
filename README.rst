@@ -21,12 +21,15 @@ Windows:
 4. Install any browsers that you plan to run the test suite with. This test suite currently supports Chrome_ and will support Firefox_ in the future.
 5. If you are using Chrome, you will need to download Chromedriver_, the tool that allows Selenium to interact with Chrome. The directory where chromedriver.exe is located must also be added to your system PATH. See `this tutorial`_ on how to do this in Windows. Instructions for Firefox will be included at a later date.
 6. Use pip to install the required packages listed in requirements.txt. This can be done easily by running the command ``pip install -r requirements.txt`` from the ``avida_ed_testing`` folder.  If you would like to isolate the project's requirements from those of any other Python projects (highly recommended), you can use the virtualenv_ package to create a Python virtual environment. This can also be done `through PyCharm`_.
-7. If you want to run the tests locally (which is the default setting), you will need to provide the location of the Avida-ED UI repository in your first run. How to do this will be explained below.
+7. If you want to run the tests locally (which is the default setting), you will need to provide the location of the Avida-ED UI repository in your first run. See below for details.
 
 Use
--------
-As this testing suite is a work-in-progress, a unified way to run all (or a specific group) of the tests has not been implemented. This will be provided in the future, but for now running all of the tests in one file is possible using the following commands::
-    pytest path/to/test/testfile.py
+----
+
+As this testing suite is a work-in-progress, a unified way to run all (or a specific group) of the tests has not been implemented. This will be provided in the future, but for now running all of the tests in one file is possible using the following commands:
+
+``pytest path/to/test/testfile.py``
+
 There are also several command-line options that can be provided:
 
 - --browser\: Changes the browser used to run the tests. Current options are chrome (default) and firefox (not fully supported yet).
