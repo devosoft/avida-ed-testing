@@ -7,12 +7,16 @@ class Configuration:
     names and other configurable variables for this project.
     """
 
-    _config_file_path = r"config_files\config.json"
+    _config_file_path = r'config_files\config.json'
+
+    _uipath_key = "ui_path"
+    _ffpath_key = "ff_path"
+    _avurl_key = "av_url"
 
     _default_config_dict = {
-        "ui_path": r"C:\avida_ed_ui",
-        "ff_loc": r'C:\Program Files (x86)\Mozilla Firefox\Firefox.exe',
-        "av_url": r'https://avida-ed.beacon-center.org/appTest/AvidaED.html'
+        _uipath_key: r"C:\avida_ed_ui",
+        _ffpath_key: r'C:\Program Files (x86)\Mozilla Firefox\Firefox.exe',
+        _avurl_key: r'https://avida-ed.beacon-center.org/appTest/AvidaED.html'
     }
 
     def __init__(self):
@@ -26,9 +30,9 @@ class Configuration:
         self.config = self._get_config()
 
         # Checks for invalid config file.
-        config_valid = ("ui_path" in self.config
-                        and "ff_path" in self.config
-                        and "av_url" in self.config)
+        config_valid = (self._uipath_key in self.config
+                        and self._ffpath_key in self.config
+                        and self._avurl_key in self.config)
 
         # If config invalid, re-do it.
         if not config_valid:
@@ -52,7 +56,6 @@ class Configuration:
 
         :return: None.
         """
-
         with open(self._config_file_path, "w") as file:
             json.dump(self._default_config_dict, file)
 
@@ -66,7 +69,7 @@ class Configuration:
         :return: None.
         """
         modified_config_dict = self._default_config_dict
-        modified_config_dict["ui_path"] = path
+        modified_config_dict[self._uipath_key] = path
         with open(self._config_file_path, "w") as file:
             json.dump(modified_config_dict, file)
         self.config = self._get_config()
@@ -93,19 +96,19 @@ class Configuration:
         :return: None.
         """
         modified_config_dict = self._default_config_dict
-        modified_config_dict["ff_path"] = path
+        modified_config_dict[self._ffpath_key] = path
         with open(self._config_file_path, "w") as file:
             json.dump(modified_config_dict, file)
         self.config = self._get_config()
 
-    def get_ff_loc(self):
+    def get_ff_path(self):
         """
         Gets the path to the Firefox binary (which is needed when running with
         FF).
 
         :return: Raw string literal containing path to the Avida-ED UI install.
         """
-        path = self.config["ff_loc"]
+        path = self.config[self._ffpath_key]
         if path is not None:
             return path
         return r""
@@ -119,7 +122,7 @@ class Configuration:
         :return: None.
         """
         modified_config_dict = self._default_config_dict
-        modified_config_dict["av_url"] = url
+        modified_config_dict[self._avurl_key] = url
         with open(self._config_file_path, "w") as file:
             json.dump(modified_config_dict, file)
         self.config = self._get_config()
@@ -130,7 +133,7 @@ class Configuration:
 
         :return: Raw string literal containing URL to Avida-ED website.
         """
-        url = self.config["av_url"]
+        url = self.config[self._avurl_key]
         if url is not None:
             return url
         return r""
