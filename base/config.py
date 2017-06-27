@@ -27,14 +27,13 @@ class Configuration:
 
         # Checks for invalid config file.
         config_valid = ("ui_path" in self.config
-                           and "ff_path" in self.config
-                           and "av_url" in self.config)
+                        and "ff_path" in self.config
+                        and "av_url" in self.config)
 
         # If config invalid, re-do it.
         if not config_valid:
             self._create_config_file()
             self.config = self._get_config()
-
 
     def _get_config(self):
         """
