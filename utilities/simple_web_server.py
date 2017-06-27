@@ -13,7 +13,8 @@ def run_http_server():
     :return: None.
     """
     config = Configuration()
-    os.chdir(config.get_ui_path())
+    path = config.get_ui_path()
+    os.chdir(path)
     server_address = ('127.0.0.1', 8000)
     httpd = HTTPServer(server_address, SimpleHTTPRequestHandler)
     threading.Thread(target=httpd.serve_forever, daemon=True).start()
