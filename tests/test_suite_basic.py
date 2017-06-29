@@ -8,11 +8,6 @@ as opposed to "advanced" tests.
 import unittest
 import os
 
-from tests.common import common_basic
-from tests.population import population_basic
-from tests.organism import organism_basic
-from tests.analysis import analysis_basic
-
 common_basic_path = r"tests/common/common_basic"
 pop_basic_path = r"tests/population/population_basic"
 org_basic_path = r"tests/organism/organism_basic"
