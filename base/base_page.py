@@ -71,7 +71,11 @@ class BasePage(DriverWrapper):
     _cn_bring_to_org = "mnCnOrganismTrace"
     _cn_bring_offspring_to_org = "mnCnOffspringTrace"
 
-    # Locators for options within the Help dropdown.
+    # Locator for items in the Freezer
+    _fz_item_xpath = "//div[@class='dojoDndItem' and @style='cursor: default;']"
+
+    # Class name for highlighted items in Freezer
+    _fz_highlight_class = "dojoDndItemAnchor"
 
 
     def __init__(self, driver):
@@ -168,17 +172,52 @@ class BasePage(DriverWrapper):
             return True
         return False
 
-    def freezer_item_highlighted(self, my_locator, locator_type="id"):
+    def __get_freezer_item(self, text_name):
         """
-        Determines if an item in the Freezer is highlighted.
+        Finds and returns a WebElement in the Freezer with matching text_name.
 
-        :param my_locator: The locator used to find the Freezer item.
+        :param text_name: The text title of the item (e.g. @ancestor).
 
-        :param locator_type: The type of locator that my_locator is; could be
-         ID, CSS Selector, etc.
-
-        :return: True if the item is highlighted; False otherwise.
+        :return: The first WebElement with matching name (or None if no match
+        found).
         """
+
+        freezer_items = self.driver.get_element_list(
+            self._fz_item_xpath,
+            "xpath"
+        )
+
+        for item in freezer_items:
+            if item.get_text(element=item) is text_name:
+                return item
+        return None
+
+    def freezer_item_highlighted(self, text_name):
+        """
+        Checks to see if there are any highlighted Freezer items with text
+        text_name.
+
+        :param text_name: The text title of the item (e.g. @ancestor).
+
+        :return: True if the item exists and is highlighted, False otherwise.
+        """
+        item = self.__get_freezer_item(text_name)
+
+        if self.element_has_class(class_name=self._fz_highlight_class,
+                                  element=item):
+            return True
+        return False
+
+    def click_freezer_item(self, text_name):
+        """
+        Clicks on a Freezer Item with text text_name.
+
+        :param text_name: The text title of the item (e.g. @ancestor).
+
+        :return: None.
+        """
+        item = self.__get_freezer_item(text_name)
+        self.click_element(element=item)
 
     def avida_ed_dropdown_expanded(self):
         """
@@ -191,7 +230,7 @@ class BasePage(DriverWrapper):
             return True
         return False
 
-    def click_avida_ed_dropdown(self):
+    def __click_avida_ed_dropdown(self):
         """
         Clicks on the Avida-ED dropdown menu.
 
@@ -206,7 +245,7 @@ class BasePage(DriverWrapper):
         :return: None.
         """
         if not self.avida_ed_dropdown_expanded():
-            self.click_avida_ed_dropdown()
+            self.__click_avida_ed_dropdown()
 
     def close_avida_ed_dropdown(self):
         """
@@ -215,7 +254,7 @@ class BasePage(DriverWrapper):
         :return: None.
         """
         if self.avida_ed_dropdown_expanded():
-            self.click_avida_ed_dropdown()
+            self.__click_avida_ed_dropdown()
 
     def avida_ed_about_displayed(self):
         """

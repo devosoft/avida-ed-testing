@@ -302,7 +302,8 @@ class DriverWrapper:
 
     def element_has_class(self, my_locator="",
                           locator_type="id",
-                          class_name=""):
+                          class_name="",
+                          element=None):
         """
         Determines whether the specified element is of class class_name.
 
@@ -314,12 +315,16 @@ class DriverWrapper:
         :param class_name: Name of the class that we are looking for in the list
         of classes that have been applied to the element.
 
+        :param element: Optional argument for an element that has already been
+        located.
+
         :return: True if the specified element exists and class class_name has
         been applied to the element; False otherwise.
         """
-        my_element = self.get_element(my_locator, locator_type)
-        if my_element is not None:
-            class_list = my_element.get_attribute("class")
+        if element is None:
+            element = self.get_element(my_locator, locator_type)
+        if element is not None:
+            class_list = element.get_attribute("class")
             if class_list is not None and class_name in class_list:
                 return True
         return False
