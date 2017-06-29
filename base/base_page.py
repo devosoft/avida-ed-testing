@@ -756,7 +756,7 @@ class BasePage(DriverWrapper):
         found).
         """
 
-        freezer_items = self.driver.get_element_list(
+        freezer_items = self.get_element_list(
             self._fz_item_xpath,
             "xpath"
         )
