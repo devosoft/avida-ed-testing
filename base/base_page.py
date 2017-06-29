@@ -72,11 +72,10 @@ class BasePage(DriverWrapper):
     _cn_bring_offspring_to_org = "mnCnOffspringTrace"
 
     # Locator for items in the Freezer
-    _fz_item_xpath = "//div[@class='dojoDndItem' and @style='cursor: default;']"
+    _fz_item_xpath = "//*/div[@class='dojoDndItem']"
 
     # Class name for highlighted items in Freezer
     _fz_highlight_class = "dojoDndItemAnchor"
-
 
     def __init__(self, driver):
         """
@@ -762,7 +761,7 @@ class BasePage(DriverWrapper):
         )
 
         for item in freezer_items:
-            if item.get_text(element=item) is text_name:
+            if self.get_text(element=item) == text_name:
                 return item
         return None
 
