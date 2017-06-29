@@ -711,7 +711,7 @@ class BasePage(DriverWrapper):
         if self.help_dropdown_expanded():
             self.__click_help_dropdown()
 
-    #Methods below this point shouldn't be called outside this class.
+    # Methods below this point shouldn't be called outside this class.
 
     def __menu_dropdown_expanded(self, my_locator, locator_type="id"):
         """
