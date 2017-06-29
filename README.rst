@@ -32,7 +32,7 @@ It is possible to run a single test file (containing one or more tests with a co
 
 All of the tests are located within subdirectories of the ``tests`` folder within the ``avida_ed_testing`` folder. For example, there is a simple navigation test at ``tests\common\common_basic\navigaton\basic_nav_test.py``.
 
-Alternatively, one can simply run ``pytest`` from the ``avida_ed_testing`` folder to run all of the tests. In the future, there will be test suites for running specific groupings of tests -- however, this has not been implemented yet.
+Alternatively, one can simply run ``pytest`` from the ``avida_ed_testing`` folder to run all of the tests from all of the test files. In the future, there will be test suites for running specific groupings of tests -- however, this has not been implemented yet.
 
 There are also several command-line options that can be provided:
 
