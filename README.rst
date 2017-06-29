@@ -26,11 +26,13 @@ Windows:
 Use
 ----
 
-As this testing suite is a work-in-progress, a unified way to run all (or a specific group) of the tests has not been implemented. This will be provided in the future, but for now running all of the tests in one file is possible using the following commands:
+It is possible to run a single test file (containing one or more tests with a common purpose) using the following commands:
 
 ``pytest path\to\test\testfile.py``
 
-All of the tests are located within subdirectories of the ``tests`` folder within the ``avida_ed_testing`` folder. For example, there is a simple navigation test at ``tests\common\common_basic
+All of the tests are located within subdirectories of the ``tests`` folder within the ``avida_ed_testing`` folder. For example, there is a simple navigation test at ``tests\common\common_basic\navigaton\basic_nav_test.py``.
+
+Alternatively, one can simply run ``pytest`` from the ``avida_ed_testing`` folder to run all of the tests from all of the test files. In the future, there will be test suites for running specific groupings of tests -- however, this has not been implemented yet.
 
 There are also several command-line options that can be provided:
 

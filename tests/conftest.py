@@ -12,6 +12,7 @@ def one_time_setup(request, browser, local, setuipath, setffpath, seturl):
         request.cls.driver = driver
 
     yield driver
+    wdf.clean_webdriver_instance()
     driver.quit()
     print("\nOne time teardown begins here.")
 

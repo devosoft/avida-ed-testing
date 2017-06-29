@@ -5,7 +5,7 @@ from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as ec
 from selenium.webdriver.firefox.firefox_binary import FirefoxBinary
-from utilities.simple_web_server import run_http_server
+from utilities.simple_web_server import CustomWebServer
 from base.config import Configuration
 
 
@@ -50,6 +50,8 @@ class WebDriverFactory:
         else:
             self.is_local = False
 
+        self.server = CustomWebServer()
+
     def get_webdriver_instance(self):
         """
         Get a WebDriver instance based on the browser configuration.
@@ -57,14 +59,14 @@ class WebDriverFactory:
         :returns: A WebDriver instance that is ready for testing.
         """
         if self.is_local:
-            run_http_server()
+            self.server.run_http_server()
             base_url = "http://127.0.0.1:8000/av_ui/AvidaED.html"
         else:
             base_url = self.config.get_av_url()
 
         # Instantiate driver using specified browser (defaults to Chrome)
         if self.browser == "firefox":
-            binary = FirefoxBinary(self.config.get_ff_loc())
+            binary = FirefoxBinary(self.config.get_ff_path())
             driver = webdriver.Firefox(firefox_binary=binary)
         else:
             driver = webdriver.Chrome()
@@ -78,3 +80,12 @@ class WebDriverFactory:
             .until(ec.invisibility_of_element_located(('id', 'splash')))
 
         return driver
+
+    def clean_webdriver_instance(self):
+        """
+        Clean up after a driver instance (specifically the web server if running locally).
+
+        :return: None.
+        """
+        if self.is_local:
+            self.server.cleanup()
