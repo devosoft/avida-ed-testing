@@ -139,59 +139,6 @@ class BasePage(DriverWrapper):
         """
         self.click_element(self._analysis_button)
 
-    def menu_dropdown_expanded(self, my_locator, locator_type="id"):
-        """
-        Determines whether the dropdown on a menu option is currently displayed.
-
-        :param my_locator: Locator used to find the element on the site.
-
-        :param locator_type: Type of locator that my_locator is; could be an ID,
-        CSS selector, etc.
-
-        :return: True if the dropdown is expanded, false otherwise.
-        """
-        if self.element_has_class(my_locator, locator_type,
-                                  self._item_selected):
-            return True
-        return False
-
-    def menu_item_disabled(self, my_locator, locator_type="id"):
-        """
-        Determines if a menu option in the main menu bar is disabled.
-
-        :param my_locator: The locator used to find the menu item.
-
-        :param locator_type: Type of locator that my_locator is; could be ID,
-        CSS Selector, etc.
-
-        :return: True if the menu item is disabled, False otherwise.
-        """
-        if self.element_has_class(my_locator,
-                                  locator_type,
-                                  self._item_disabled):
-            return True
-        return False
-
-    def __get_freezer_item(self, text_name):
-        """
-        Finds and returns a WebElement in the Freezer with matching text_name.
-
-        :param text_name: The text title of the item (e.g. @ancestor).
-
-        :return: The first WebElement with matching name (or None if no match
-        found).
-        """
-
-        freezer_items = self.driver.get_element_list(
-            self._fz_item_xpath,
-            "xpath"
-        )
-
-        for item in freezer_items:
-            if item.get_text(element=item) is text_name:
-                return item
-        return None
-
     def freezer_item_highlighted(self, text_name):
         """
         Checks to see if there are any highlighted Freezer items with text
@@ -226,17 +173,9 @@ class BasePage(DriverWrapper):
 
         :return: True if the dropdown is expanded, false otherwise.
         """
-        if self.menu_dropdown_expanded(self._avida_ed_tab):
+        if self.__menu_dropdown_expanded(self._avida_ed_tab):
             return True
         return False
-
-    def __click_avida_ed_dropdown(self):
-        """
-        Clicks on the Avida-ED dropdown menu.
-
-        :return: None.
-        """
-        self.click_element(self._avida_ed_tab)
 
     def open_avida_ed_dropdown(self):
         """
@@ -295,17 +234,9 @@ class BasePage(DriverWrapper):
 
         :return: True if the dropdown is expanded, false otherwise.
         """
-        if self.menu_dropdown_expanded(self._file_tab):
+        if self.__menu_dropdown_expanded(self._file_tab):
             return True
         return False
-
-    def click_file_dropdown(self):
-        """
-        Clicks on the "File" dropdown menu.
-
-        :return: None.
-        """
-        self.click_element(self._file_tab)
 
     def open_file_dropdown(self):
         """
@@ -314,7 +245,7 @@ class BasePage(DriverWrapper):
         :return: None.
         """
         if not self.file_dropdown_expanded():
-            self.click_file_dropdown()
+            self.__click_file_dropdown()
 
     def close_file_dropdown(self):
         """
@@ -323,7 +254,7 @@ class BasePage(DriverWrapper):
         :return: None.
         """
         if self.file_dropdown_expanded():
-            self.click_file_dropdown()
+            self.__click_file_dropdown()
 
     def save_current_workspace(self):
         """
@@ -453,6 +384,7 @@ class BasePage(DriverWrapper):
 
             # Closing the dialog takes some time, so we will wait a bit.
             self.util.sleep(1)
+
     def freezer_dropdown_expanded(self):
         """
         Determines whether the "Freezer" dropdown menu at the top of the page is
@@ -460,17 +392,9 @@ class BasePage(DriverWrapper):
 
         :return: True if the dropdown is expanded, False otherwise.
         """
-        if self.menu_dropdown_expanded(self._freezer_tab):
+        if self.__menu_dropdown_expanded(self._freezer_tab):
             return True
         return False
-
-    def click_freezer_dropdown(self):
-        """
-        Clicks on the "Freezer" dropdown menu.
-
-        :return: None.
-        """
-        self.click_element(self._freezer_tab)
 
     def open_freezer_dropdown(self):
         """
@@ -479,7 +403,7 @@ class BasePage(DriverWrapper):
         :return: None
         """
         if not self.freezer_dropdown_expanded():
-            self.click_freezer_dropdown()
+            self.__click_freezer_dropdown()
 
     def close_freezer_dropdown(self):
         """
@@ -488,7 +412,7 @@ class BasePage(DriverWrapper):
         :return: None.
         """
         if self.freezer_dropdown_expanded():
-            self.click_freezer_dropdown()
+            self.__click_freezer_dropdown()
 
     def save_exp_conf(self):
         """
@@ -507,7 +431,7 @@ class BasePage(DriverWrapper):
 
         :return: True if the option is clickable, False otherwise.
         """
-        if self.menu_item_disabled(self._fz_save_pop):
+        if self.__menu_item_disabled(self._fz_save_pop):
             return False
         return True
 
@@ -533,7 +457,7 @@ class BasePage(DriverWrapper):
 
         :return: True if the option is clickable, False otherwise.
         """
-        if self.menu_item_disabled(self._fz_save_org):
+        if self.__menu_item_disabled(self._fz_save_org):
             return False
         return True
 
@@ -559,7 +483,7 @@ class BasePage(DriverWrapper):
 
         :return: True if the option is clickable, False otherwise.
         """
-        if self.menu_item_disabled(self._fz_save_offspring):
+        if self.__menu_item_disabled(self._fz_save_offspring):
             return False
         return True
 
@@ -619,17 +543,9 @@ class BasePage(DriverWrapper):
 
         :return: True if the dropdown is expanded, false otherwise.
         """
-        if self.menu_dropdown_expanded(self._control_tab):
+        if self.__menu_dropdown_expanded(self._control_tab):
             return True
         return False
-
-    def click_control_dropdown(self):
-        """
-        Clicks on the "Control" dropdown in the menu bar.
-
-        :return: None.
-        """
-        self.click_element(self._control_tab)
 
     def open_control_dropdown(self):
         """
@@ -638,7 +554,7 @@ class BasePage(DriverWrapper):
         :return: None.
         """
         if not self.control_dropdown_expanded():
-            self.click_control_dropdown()
+            self.__click_control_dropdown()
 
     def close_control_dropdown(self):
         """
@@ -647,7 +563,7 @@ class BasePage(DriverWrapper):
         :return: None.
         """
         if self.control_dropdown_expanded():
-            self.click_control_dropdown()
+            self.__click_control_dropdown()
 
     def can_run_from_menu(self):
         """
@@ -656,7 +572,7 @@ class BasePage(DriverWrapper):
 
         :return: True if the option is clickable, false otherwise.
         """
-        if self.menu_item_disabled(self._cn_run):
+        if self.__menu_item_disabled(self._cn_run):
             return False
         return True
 
@@ -680,7 +596,7 @@ class BasePage(DriverWrapper):
 
         :return: True if the option is clickable, False otherwise.
         """
-        if self.menu_item_disabled(self._cn_pause):
+        if self.__menu_item_disabled(self._cn_pause):
             return False
         return True
 
@@ -729,7 +645,7 @@ class BasePage(DriverWrapper):
 
         :return: True if the option is clickable, false otherwise.
         """
-        if self.menu_item_disabled(self._cn_bring_to_org):
+        if self.__menu_item_disabled(self._cn_bring_to_org):
             return False
         return True
 
@@ -751,7 +667,7 @@ class BasePage(DriverWrapper):
 
         :return: True if the option is clickable, false otherwise.
         """
-        if self.menu_item_disabled(self._cn_bring_offspring_to_org):
+        if self.__menu_item_disabled(self._cn_bring_offspring_to_org):
             return False
         return True
 
@@ -773,17 +689,9 @@ class BasePage(DriverWrapper):
 
         :return: True if the dropdown is expanded, False otherwise.
         """
-        if self.menu_dropdown_expanded(self._help_tab):
+        if self.__menu_dropdown_expanded(self._help_tab):
             return True
         return False
-
-    def click_help_dropdown(self):
-        """
-        Clicks on the "Help" dropdown in the main menu bar.
-
-        :return: None.
-        """
-        self.click_element(self._help_tab)
 
     def open_help_dropdown(self):
         """
@@ -792,7 +700,7 @@ class BasePage(DriverWrapper):
         :return: None.
         """
         if not self.help_dropdown_expanded():
-            self.click_help_dropdown()
+            self.__click_help_dropdown()
 
     def close_help_dropdown(self):
         """
@@ -801,4 +709,99 @@ class BasePage(DriverWrapper):
         :return: None.
         """
         if self.help_dropdown_expanded():
-            self.click_help_dropdown()
+            self.__click_help_dropdown()
+
+    #Methods below this point shouldn't be called outside this class.
+
+    def __menu_dropdown_expanded(self, my_locator, locator_type="id"):
+        """
+        Determines whether the dropdown on a menu option is currently displayed.
+
+        :param my_locator: Locator used to find the element on the site.
+
+        :param locator_type: Type of locator that my_locator is; could be an ID,
+        CSS selector, etc.
+
+        :return: True if the dropdown is expanded, false otherwise.
+        """
+        if self.element_has_class(my_locator, locator_type,
+                                  self._item_selected):
+            return True
+        return False
+
+    def __menu_item_disabled(self, my_locator, locator_type="id"):
+        """
+        Determines if a menu option in the main menu bar is disabled.
+
+        :param my_locator: The locator used to find the menu item.
+
+        :param locator_type: Type of locator that my_locator is; could be ID,
+        CSS Selector, etc.
+
+        :return: True if the menu item is disabled, False otherwise.
+        """
+        if self.element_has_class(my_locator,
+                                  locator_type,
+                                  self._item_disabled):
+            return True
+        return False
+
+    def __get_freezer_item(self, text_name):
+        """
+        Finds and returns a WebElement in the Freezer with matching text_name.
+
+        :param text_name: The text title of the item (e.g. @ancestor).
+
+        :return: The first WebElement with matching name (or None if no match
+        found).
+        """
+
+        freezer_items = self.driver.get_element_list(
+            self._fz_item_xpath,
+            "xpath"
+        )
+
+        for item in freezer_items:
+            if item.get_text(element=item) is text_name:
+                return item
+        return None
+
+    def __click_avida_ed_dropdown(self):
+        """
+        Clicks on the Avida-ED dropdown menu.
+
+        :return: None.
+        """
+        self.click_element(self._avida_ed_tab)
+
+    def __click_file_dropdown(self):
+        """
+        Clicks on the "File" dropdown menu.
+
+        :return: None.
+        """
+        self.click_element(self._file_tab)
+
+    def __click_freezer_dropdown(self):
+        """
+        Clicks on the "Freezer" dropdown menu.
+
+        :return: None.
+        """
+        self.click_element(self._freezer_tab)
+
+    def __click_control_dropdown(self):
+        """
+        Clicks on the "Control" dropdown in the menu bar.
+
+        :return: None.
+        """
+        self.click_element(self._control_tab)
+
+    def __click_help_dropdown(self):
+        """
+        Clicks on the "Help" dropdown in the main menu bar.
+
+        :return: None.
+        """
+        self.click_element(self._help_tab)
