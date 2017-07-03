@@ -5,7 +5,7 @@ from utilities.util_methods import UtilityMethods
 from utilities.custom_logger import create_custom_logger
 
 
-class Scripter(BasePage):
+class JSHandler(BasePage):
     """
     Specialization of the BasePage that is specialized to tasks that require
     executing Javscript code on the webpage.
@@ -22,3 +22,11 @@ class Scripter(BasePage):
         """
         super().__init__(driver)
         self.driver = driver
+
+    def get_current_update(self):
+        """
+        Gets the current update from av.grd.updateNum.
+
+        :return: Integer value of current update.
+        """
+        return self.execute_script("return av.grd.updateNum")
