@@ -365,7 +365,8 @@ class DriverWrapper:
         """
 
         try:
-            self.driver.execute_script(script_text)
+            value = self.driver.execute_script(script_text)
             self.log.info("Run Javascript code: '" + script_text + "'.")
+            return value
         except:
             self.log.info("Attempt to run Javascript code failed.")
