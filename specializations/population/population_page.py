@@ -111,3 +111,12 @@ class PopulationPage(BasePage):
         self.go_to_population()
         if self.element_displayed("popRight"):
             self.click_element("popStatsButton")
+
+    def get_update_ui_text(self):
+        """
+        Gets the text from the UI element containing information about the
+        simulation update/time.
+
+        :return: String containing update information.
+        """
+        return self.get_text("TimeLabel")
