@@ -733,10 +733,13 @@ class BasePage(DriverWrapper):
 
         :return: True if the dropdown is expanded, false otherwise.
         """
-        if self.element_has_class(my_locator, locator_type,
-                                  self._item_selected):
-            return True
-        return False
+        expanded = self.element_has_class(my_locator, locator_type,
+                                  self._item_selected)
+        self.log.info("Checked that dropdown menu with locator " + my_locator
+                      + " of type " + locator_type
+                      + "is expanded: Found to be " + str(expanded) + ".")
+
+        return expanded
 
     def __menu_item_disabled(self, my_locator, locator_type="id"):
         """
@@ -749,11 +752,14 @@ class BasePage(DriverWrapper):
 
         :return: True if the menu item is disabled, False otherwise.
         """
-        if self.element_has_class(my_locator,
-                                  locator_type,
-                                  self._item_disabled):
-            return True
-        return False
+        disabled = self.element_has_class(my_locator,
+                                          locator_type,
+                                          self._item_disabled)
+        self.log.info("Checked that menu item with locator " + my_locator
+                      + " of type " + locator_type
+                      + "is disabled: Found to be " + str(disabled) + ".")
+
+        return disabled
 
     def __get_freezer_item(self, text_name):
         """
@@ -764,15 +770,22 @@ class BasePage(DriverWrapper):
         :return: The first WebElement with matching name (or None if no match
         found).
         """
+        self.log.info("Attempting to find freezer item with name "
+                      + text_name + ".")
 
         freezer_items = self.get_element_list(
             self._fz_item_xpath,
             "xpath"
         )
 
+        found = False
+
         for item in freezer_items:
             if self.get_text(element=item) == text_name:
+                self.log.info("Freezer item found.")
                 return item
+            if not found:
+                self.log.info("Freezer item not found.")
         return None
 
     def __click_avida_ed_dropdown(self):
@@ -781,6 +794,7 @@ class BasePage(DriverWrapper):
 
         :return: None.
         """
+        self.log.info("Clicking on Avida-ED main menu tab.")
         self.click_element(self._avida_ed_tab)
 
     def __click_file_dropdown(self):
@@ -789,6 +803,7 @@ class BasePage(DriverWrapper):
 
         :return: None.
         """
+        self.log.info("Clicking on File main menu tab.")
         self.click_element(self._file_tab)
 
     def __click_freezer_dropdown(self):
@@ -797,6 +812,7 @@ class BasePage(DriverWrapper):
 
         :return: None.
         """
+        self.log.info("Clicking on Freezer main menu tab.")
         self.click_element(self._freezer_tab)
 
     def __click_control_dropdown(self):
@@ -805,6 +821,7 @@ class BasePage(DriverWrapper):
 
         :return: None.
         """
+        self.log.info("Clicking on Control main menu tab.")
         self.click_element(self._control_tab)
 
     def __click_help_dropdown(self):
@@ -813,4 +830,5 @@ class BasePage(DriverWrapper):
 
         :return: None.
         """
+        self.log.info("Clicking on Help main menu tab.")
         self.click_element(self._help_tab)
