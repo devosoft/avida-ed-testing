@@ -1,5 +1,5 @@
 """
-Runs all basis tests included in the tests folder.
+Runs all basic tests included in the tests folder.
 
 This script creates and runs all tests considered in the "basic" tests groups,
 as opposed to "advanced" tests.
