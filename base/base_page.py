@@ -698,9 +698,10 @@ class BasePage(DriverWrapper):
 
         :return: True if the dropdown is expanded, False otherwise.
         """
-        if self.__menu_dropdown_expanded(self._help_tab):
-            return True
-        return False
+        expanded =  self.__menu_dropdown_expanded(self._help_tab)
+        self.log.info("Is Help menu dropdown expanded? "
+                      + str(expanded) + ".")
+        return expanded
 
     def open_help_dropdown(self):
         """
@@ -710,6 +711,7 @@ class BasePage(DriverWrapper):
         """
         if not self.help_dropdown_expanded():
             self.__click_help_dropdown()
+            self.log.info("Opening Help menu dropdown.")
 
     def close_help_dropdown(self):
         """
@@ -719,6 +721,7 @@ class BasePage(DriverWrapper):
         """
         if self.help_dropdown_expanded():
             self.__click_help_dropdown()
+            self.log.info("Closing Help menu dropdown.")
 
     # Methods below this point shouldn't be called outside this class.
 
@@ -735,9 +738,9 @@ class BasePage(DriverWrapper):
         """
         expanded = self.element_has_class(my_locator, locator_type,
                                   self._item_selected)
-        self.log.info("Checked that dropdown menu with locator " + my_locator
-                      + " of type " + locator_type
-                      + "is expanded: Found to be " + str(expanded) + ".")
+        self.log.info("Is dropdown menu with locator " + my_locator
+                      + " of type " + locator_type + "expanded? "
+                      + str(expanded) + ".")
 
         return expanded
 
@@ -755,10 +758,8 @@ class BasePage(DriverWrapper):
         disabled = self.element_has_class(my_locator,
                                           locator_type,
                                           self._item_disabled)
-        self.log.info("Checked that menu item with locator " + my_locator
-                      + " of type " + locator_type
-                      + "is disabled: Found to be " + str(disabled) + ".")
-
+        self.log.info("Is menu item with locator " + my_locator + " of type "
+                      + locator_type + " disabled? " + str(disabled)
         return disabled
 
     def __get_freezer_item(self, text_name):
