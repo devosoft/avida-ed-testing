@@ -97,6 +97,8 @@ class BasePage(DriverWrapper):
         :return: True if the population pane is displayed, false otherwise. 
         """
         pop_displayed = self.element_displayed(self._population_block)
+        self.log.info("Checked if population window displayed: found to be "
+                      + str(pop_displayed) + ".")
         return pop_displayed
 
     def go_to_population(self):
@@ -105,6 +107,7 @@ class BasePage(DriverWrapper):
         :return: None.
         """
         self.click_element(self._population_button)
+        self.log.info("Navigated to population window.")
 
     def organism_displayed(self):
         """
@@ -113,6 +116,9 @@ class BasePage(DriverWrapper):
         :return: True if the organism pane is displayed, false otherwise.
         """
         org_displayed = self.element_displayed(self._organism_block)
+        self.log.info("Checked if organism window displayed: found to be "
+                      + str(org_displayed) + ".")
+
         return org_displayed
 
     def go_to_organism(self):
@@ -121,6 +127,7 @@ class BasePage(DriverWrapper):
         :return: None.
         """
         self.click_element(self._organism_button)
+        self.log.info("Navigated to organism window.")
 
     def analysis_displayed(self):
         """
@@ -129,6 +136,8 @@ class BasePage(DriverWrapper):
         :return: True if the analysis pane is displayed, false otherwise. 
         """
         ana_displayed = self.element_displayed(self._analysis_block)
+        self.log.info("Checked if analysis window displayed: found to be "
+                      + str(ana_displayed) + ".")
         return ana_displayed
 
     def go_to_analysis(self):
@@ -137,6 +146,7 @@ class BasePage(DriverWrapper):
         :return: None.
         """
         self.click_element(self._analysis_button)
+        self.log.info("Navigated to analysis window.")
 
     def freezer_item_highlighted(self, text_name):
         """
