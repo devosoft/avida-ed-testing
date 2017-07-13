@@ -401,9 +401,9 @@ class BasePage(DriverWrapper):
 
         :return: True if the dropdown is expanded, False otherwise.
         """
-        if self.__menu_dropdown_expanded(self._freezer_tab):
-            return True
-        return False
+        expanded = self.__menu_dropdown_expanded(self._freezer_tab)
+        self.log.info("Is Freezer dropdown expanded? " + str(expanded))
+        return expanded
 
     def open_freezer_dropdown(self):
         """
@@ -413,6 +413,7 @@ class BasePage(DriverWrapper):
         """
         if not self.freezer_dropdown_expanded():
             self.__click_freezer_dropdown()
+            self.log.info("Opened Freezer dropdown.")
 
     def close_freezer_dropdown(self):
         """
@@ -422,6 +423,7 @@ class BasePage(DriverWrapper):
         """
         if self.freezer_dropdown_expanded():
             self.__click_freezer_dropdown()
+            self.log.info("Closed Freezer dropdown.")
 
     def save_exp_conf(self):
         """
@@ -432,6 +434,8 @@ class BasePage(DriverWrapper):
         """
         self.open_freezer_dropdown()
         self.click_element(self._fz_save_exp_conf)
+        self.log.info("Clicked 'Save Experiment Configuration' button in"
+                      " Freezer tab.")
 
     def can_save_current_pop(self):
         """
@@ -440,9 +444,10 @@ class BasePage(DriverWrapper):
 
         :return: True if the option is clickable, False otherwise.
         """
-        if self.__menu_item_disabled(self._fz_save_pop):
-            return False
-        return True
+        clickable = not self.__menu_item_disabled(self._fz_save_pop)
+        self.log.info("Is 'Save Current Population' clickable? "
+                      + str(clickable))
+        return clickable
 
     def save_current_pop(self):
         """
@@ -458,6 +463,11 @@ class BasePage(DriverWrapper):
         self.open_freezer_dropdown()
         if self.can_save_current_pop():
             self.click_element(self._fz_save_pop)
+            self.log.info("Successfully clicked on 'Save Current Population'"
+                          " button in Freezer tab.")
+        else:
+            self.log.info("Failed to click on 'Save Current Population' button"
+                          " button in Freezer tab.")
 
     def can_save_selected_org(self):
         """
@@ -466,9 +476,10 @@ class BasePage(DriverWrapper):
 
         :return: True if the option is clickable, False otherwise.
         """
-        if self.__menu_item_disabled(self._fz_save_org):
-            return False
-        return True
+        clickable = not self.__menu_item_disabled(self._fz_save_org)
+        self.log.info("Is 'Save Selected Organism' clickable? "
+                      + str(clickable))
+        return clickable
 
     def save_selected_org(self):
         """
@@ -484,6 +495,11 @@ class BasePage(DriverWrapper):
         self.open_freezer_dropdown()
         if self.can_save_selected_org():
             self.click_element(self._fz_save_org)
+            self.log.info("Successfully clicked on 'Save Selected Organism' in"
+                          " Freezer tab.")
+        else:
+            self.log.info("Failed to click on 'Save Selected Organism' in"
+                          " Freezer tab.")
 
     def can_save_offspring_org(self):
         """
@@ -492,9 +508,10 @@ class BasePage(DriverWrapper):
 
         :return: True if the option is clickable, False otherwise.
         """
-        if self.__menu_item_disabled(self._fz_save_offspring):
-            return False
-        return True
+        clickable = not self.__menu_item_disabled(self._fz_save_offspring)
+        self.log.info("Can click on 'Save Offspring Organism'? "
+                      + str(clickable))
+        return clickable
 
     def save_offspring_org(self):
         """
@@ -510,6 +527,11 @@ class BasePage(DriverWrapper):
         self.open_freezer_dropdown()
         if self.can_save_offspring_org():
             self.click_element(self._fz_save_offspring)
+            self.log.info("Successfully clicked on 'Save Offspring Organism'"
+                          " button in Freezer tab.")
+        else:
+            self.log.info("Failed to click on 'Save Offspring Organism' button"
+                          " in Freezer tab.")
 
     def add_config_dish_to_exp(self):
         """
@@ -522,6 +544,8 @@ class BasePage(DriverWrapper):
         """
         self.open_freezer_dropdown()
         self.click_element(self._fz_add_conf_dish)
+        self.log.info("Clicked on 'Add Highlighted Configured Dish to"
+                      " Experiment' button in Freezer tab.")
 
     def add_org_to_exp(self):
         """
@@ -534,6 +558,8 @@ class BasePage(DriverWrapper):
         """
         self.open_freezer_dropdown()
         self.click_element(self._fz_add_org)
+        self.log.info("Clicked on 'Add Highlighted Organism to Experiment'"
+                      " button in Freezer tab.")
 
     def add_pop_dish_to_exp(self):
         """
@@ -544,6 +570,8 @@ class BasePage(DriverWrapper):
         """
         self.open_freezer_dropdown()
         self.click_element(self._fz_add_pop_dish)
+        self.log.info("Clicked on 'Add Highlighted Populated Dish to"
+                      " Experiment' button in Freezer tab.")
 
     def control_dropdown_expanded(self):
         """
@@ -583,8 +611,9 @@ class BasePage(DriverWrapper):
 
         :return: True if the option is clickable, false otherwise.
         """
-        clickable = self.__menu_item_disabled(self._cn_run)
+        clickable = not self.__menu_item_disabled(self._cn_run)
         self.log.info("Is 'Run' clicakble? " + str(clickable))
+        return clickable
 
     def run_from_menu(self):
         """
@@ -609,7 +638,7 @@ class BasePage(DriverWrapper):
 
         :return: True if the option is clickable, False otherwise.
         """
-        clickable = self.__menu_item_disabled(self._cn_pause)
+        clickable = not self.__menu_item_disabled(self._cn_pause)
         self.log.info("Is 'Pause' clickable? " + str(clickable))
         return clickable
 
@@ -663,7 +692,7 @@ class BasePage(DriverWrapper):
 
         :return: True if the option is clickable, false otherwise.
         """
-        clickable = self.__menu_item_disabled(self._cn_bring_to_org)
+        clickable = not self.__menu_item_disabled(self._cn_bring_to_org)
         self.log.info("Is 'Put Selected Organism in Organism View' clickable? "
                       + str(clickable))
         return clickable
@@ -691,10 +720,12 @@ class BasePage(DriverWrapper):
 
         :return: True if the option is clickable, false otherwise.
         """
-        possible = self.__menu_item_disabled(self._cn_bring_offspring_to_org)
+        clickable = not self.__menu_item_disabled(
+            self._cn_bring_offspring_to_org)
+
         self.log.info("Is 'Put Offspring in Organism View' button clickable? "
-                      + str(possible))
-        return possible
+                      + str(clickable))
+        return clickable
 
     def bring_child_to_org_window(self):
         """
