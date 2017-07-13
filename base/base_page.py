@@ -159,10 +159,15 @@ class BasePage(DriverWrapper):
         """
         item = self.__get_freezer_item(text_name)
 
-        if self.element_has_class(class_name=self._fz_highlight_class,
-                                  element=item):
-            return True
-        return False
+        highlighted = False
+        if item is not None:
+            highlighted = self.element_has_class(
+                class_name=self._fz_highlight_class,
+                element=item)
+
+        self.log.info("Is freezer item with name " + text_name
+                      + " highlighted? " + str(highlighted))
+        return highlighted
 
     def click_freezer_item(self, text_name):
         """
@@ -173,7 +178,12 @@ class BasePage(DriverWrapper):
         :return: None.
         """
         item = self.__get_freezer_item(text_name)
-        self.click_element(element=item)
+        if item is not None:
+            self.click_element(element=item)
+            self.log.info("Clicked on freezer item with name " + text_name)
+        else:
+            self.log.info("Failed to click on any freezer item with name "
+                          + text_name)
 
     def avida_ed_dropdown_expanded(self):
         """
@@ -182,9 +192,9 @@ class BasePage(DriverWrapper):
 
         :return: True if the dropdown is expanded, false otherwise.
         """
-        if self.__menu_dropdown_expanded(self._avida_ed_tab):
-            return True
-        return False
+        expanded = self.__menu_dropdown_expanded(self._avida_ed_tab)
+        self.log.info("Is Avida-ED dropdown expanded? " + str(expanded))
+        return expanded
 
     def open_avida_ed_dropdown(self):
         """
@@ -194,6 +204,7 @@ class BasePage(DriverWrapper):
         """
         if not self.avida_ed_dropdown_expanded():
             self.__click_avida_ed_dropdown()
+            self.log.info("Opened Avida-ED dropdown.")
 
     def close_avida_ed_dropdown(self):
         """
@@ -203,6 +214,7 @@ class BasePage(DriverWrapper):
         """
         if self.avida_ed_dropdown_expanded():
             self.__click_avida_ed_dropdown()
+            self.log.info("Closed Avida-ED dropdown.")
 
     def avida_ed_about_displayed(self):
         """
@@ -211,9 +223,10 @@ class BasePage(DriverWrapper):
 
         :return: True if the dialog box is displayed, false otherwise.
         """
-        if self.element_displayed(self._avida_ed_about_dlg):
-            return True
-        return False
+        displayed = self.element_displayed(self._avida_ed_about_dlg)
+        self.log.info("Is 'About' dialog box in Avida-ED tab displayed? "
+                      + str(displayed))
+        return displayed
 
     def open_avida_ed_about(self):
         """
@@ -224,6 +237,9 @@ class BasePage(DriverWrapper):
         """
         self.open_avida_ed_dropdown()
         self.click_element(self._avida_ed_about_menu)
+        self.log.info("Opened 'About' dialog box in Avida-ED tab.")
+
+        # Wait (because opening can take a while).
         self.util.sleep(1)
 
     def close_avida_ed_about(self):
@@ -234,6 +250,9 @@ class BasePage(DriverWrapper):
         """
         if self.avida_ed_about_displayed():
             self.click_element(self._avida_ed_about_closedlg)
+            self.log.info("Closed 'About' dialog box in Avida-ED tab.")
+
+            # Wait (because closing can take a while).
             self.util.sleep(1)
 
     def file_dropdown_expanded(self):
