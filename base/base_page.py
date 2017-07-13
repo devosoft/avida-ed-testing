@@ -243,9 +243,9 @@ class BasePage(DriverWrapper):
 
         :return: True if the dropdown is expanded, false otherwise.
         """
-        if self.__menu_dropdown_expanded(self._file_tab):
-            return True
-        return False
+        expanded = self.__menu_dropdown_expanded(self._file_tab)
+        self.log.info("Is File dropdown expanded? " + str(expanded))
+        return expanded
 
     def open_file_dropdown(self):
         """
@@ -255,6 +255,7 @@ class BasePage(DriverWrapper):
         """
         if not self.file_dropdown_expanded():
             self.__click_file_dropdown()
+            self.log.info("Opened File tab.")
 
     def close_file_dropdown(self):
         """
@@ -264,6 +265,7 @@ class BasePage(DriverWrapper):
         """
         if self.file_dropdown_expanded():
             self.__click_file_dropdown()
+            self.log.info("Closed File tab.")
 
     def save_current_workspace(self):
         """
@@ -278,6 +280,7 @@ class BasePage(DriverWrapper):
         """
         self.open_file_dropdown()
         self.click_element(self._file_save_workspace)
+        self.log.info("Click on 'Save Current Workspace' in File tab.")
 
     def save_current_workspace_as(self, workspace_name):
         """
@@ -294,6 +297,7 @@ class BasePage(DriverWrapper):
         """
         self.open_file_dropdown()
         self.click_element(self._file_save_workspace_as)
+        self.log.info("Clicked on 'Save Current Workspace As' in File tab.")
 
     def open_default_workspace(self):
         """
@@ -304,6 +308,7 @@ class BasePage(DriverWrapper):
         """
         self.open_file_dropdown()
         self.click_element(self._file_open_def_workspace)
+        self.log.info("Clicked on 'Open Default Workspace' in File tab.")
 
     def open_workspace(self, workspace_path):
         """
@@ -321,6 +326,7 @@ class BasePage(DriverWrapper):
         """
         self.open_file_dropdown()
         self.click_element(self._file_open_workspace)
+        self.log.info("Click on 'Open Workspace' in File tab.")
 
     def import_freezer_item(self, freezer_item_path):
         """
@@ -338,6 +344,7 @@ class BasePage(DriverWrapper):
         """
         self.open_file_dropdown()
         self.click_element(self._file_import_freezer_item)
+        self.log.info("Clicked on 'Import Freezer Item' in File tab.")
 
     def export_data(self):
         """
@@ -352,6 +359,7 @@ class BasePage(DriverWrapper):
         """
         self.open_file_dropdown()
         self.click_element(self._file_export_data)
+        self.log.info("Clicked on 'Export Data' in the File tab.")
 
     def export_graphics(self):
         """
@@ -365,6 +373,7 @@ class BasePage(DriverWrapper):
         if not self.export_graphics_dialog_displayed():
             self.open_file_dropdown()
             self.click_element(self._file_export_graph)
+            self.log.info("Clicked on 'Export Graphics' in File tab.")
 
             # Opening the dialog takes some time, so we will wait a bit.
             self.util.sleep(1)
@@ -376,9 +385,10 @@ class BasePage(DriverWrapper):
 
         :return: True if the dialog box is displayed, False otherwise.
         """
-        if self.element_displayed(self._file_export_graph_dlg):
-            return True
-        return False
+        displayed = self.element_displayed(self._file_export_graph_dlg)
+        self.log.info("Is 'Export Graphics' dialog box displayed? "
+                      + str(displayed))
+        return displayed
 
     def close_export_graphics_dialog(self):
         """
@@ -390,6 +400,7 @@ class BasePage(DriverWrapper):
         """
         if self.export_graphics_dialog_displayed():
             self.click_element(self._file_export_graph_closedlg)
+            self.log.info("Closed export graphics dialog.")
 
             # Closing the dialog takes some time, so we will wait a bit.
             self.util.sleep(1)
