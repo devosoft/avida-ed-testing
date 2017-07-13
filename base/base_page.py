@@ -638,7 +638,7 @@ class BasePage(DriverWrapper):
         """
         self.open_control_dropdown()
         self.click_element(self._cn_one_update)
-        self.log.info("Clicking on 'Do One Update' in Control tab.")
+        self.log.info("Clicked on 'Do One Update' in Control tab.")
 
     def start_new_exp_from_menu(self):
         """
@@ -654,7 +654,7 @@ class BasePage(DriverWrapper):
         """
         self.open_control_dropdown()
         self.click_element(self._cn_new_exp)
-        self.log.info("Clicking on 'Start New Experiment' in Control tab.")
+        self.log.info("Clicked on 'Start New Experiment' in Control tab.")
 
     def can_bring_to_org_window(self):
         """
@@ -852,5 +852,5 @@ class BasePage(DriverWrapper):
 
         :return: None.
         """
-        self.log.info("Clicking on Help main menu tab.")
         self.click_element(self._help_tab)
+        self.log.info("Clicked on Help main menu tab.")
