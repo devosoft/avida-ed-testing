@@ -49,6 +49,15 @@ class JSHandler(BasePage):
         """
         return self.__get_num_orgs_list()[-1]
 
+    def __get_num_via_orgs_list(self):
+        """
+        Gets the list of the current amount of viable organisms for each update
+        from av.pch.
+
+        :return: List of integers that are the number of viable organisms
+        for each update.
+        """
+
     def __get_avg_fitness_list(self):
         """
         Gets the list of average fitnesses for each update in experiment.

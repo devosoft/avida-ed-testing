@@ -552,9 +552,9 @@ class BasePage(DriverWrapper):
 
         :return: True if the dropdown is expanded, false otherwise.
         """
-        if self.__menu_dropdown_expanded(self._control_tab):
-            return True
-        return False
+        expanded = self.__menu_dropdown_expanded(self._control_tab)
+        self.log.info("Is Control dropdown expanded? " + str(expanded))
+        return expanded
 
     def open_control_dropdown(self):
         """
@@ -564,6 +564,7 @@ class BasePage(DriverWrapper):
         """
         if not self.control_dropdown_expanded():
             self.__click_control_dropdown()
+            self.log.info("Opening 'Control' dropdown menu.")
 
     def close_control_dropdown(self):
         """
@@ -573,6 +574,7 @@ class BasePage(DriverWrapper):
         """
         if self.control_dropdown_expanded():
             self.__click_control_dropdown()
+            self.log.info("Closing 'Control' dropdown menu.")
 
     def can_run_from_menu(self):
         """
@@ -581,9 +583,8 @@ class BasePage(DriverWrapper):
 
         :return: True if the option is clickable, false otherwise.
         """
-        if self.__menu_item_disabled(self._cn_run):
-            return False
-        return True
+        clickable = self.__menu_item_disabled(self._cn_run)
+        self.log.info("Is 'Run' clicakble? " + str(clickable))
 
     def run_from_menu(self):
         """
@@ -597,6 +598,9 @@ class BasePage(DriverWrapper):
         self.open_control_dropdown()
         if self.can_run_from_menu():
             self.click_element(self._cn_run)
+            self.log.info("Successfully clicked on 'Run' in Control tab.")
+        else:
+            self.log.info("Failed to click on 'Run' in Control tab.")
 
     def can_pause_from_menu(self):
         """
@@ -605,9 +609,9 @@ class BasePage(DriverWrapper):
 
         :return: True if the option is clickable, False otherwise.
         """
-        if self.__menu_item_disabled(self._cn_pause):
-            return False
-        return True
+        clickable = self.__menu_item_disabled(self._cn_pause)
+        self.log.info("Is 'Pause' clickable? " + str(clickable))
+        return clickable
 
     def pause_from_menu(self):
         """
@@ -619,6 +623,9 @@ class BasePage(DriverWrapper):
         self.open_control_dropdown()
         if self.can_pause_from_menu():
             self.click_element(self._cn_pause)
+            self.log.info("Successfully clicked on 'Pause' in Control tab.")
+        else:
+            self.log.info("Failed to click on 'Pause' in Control tab.")
 
     def do_one_update(self):
         """
@@ -631,6 +638,7 @@ class BasePage(DriverWrapper):
         """
         self.open_control_dropdown()
         self.click_element(self._cn_one_update)
+        self.log.info("Clicking on 'Do One Update' in Control tab.")
 
     def start_new_exp_from_menu(self):
         """
@@ -646,6 +654,7 @@ class BasePage(DriverWrapper):
         """
         self.open_control_dropdown()
         self.click_element(self._cn_new_exp)
+        self.log.info("Clicking on 'Start New Experiment' in Control tab.")
 
     def can_bring_to_org_window(self):
         """
@@ -654,9 +663,10 @@ class BasePage(DriverWrapper):
 
         :return: True if the option is clickable, false otherwise.
         """
-        if self.__menu_item_disabled(self._cn_bring_to_org):
-            return False
-        return True
+        clickable = self.__menu_item_disabled(self._cn_bring_to_org)
+        self.log.info("Is 'Put Selected Organism in Organism View' clickable? "
+                      + str(clickable))
+        return clickable
 
     def bring_to_org_window(self):
         """
@@ -668,6 +678,11 @@ class BasePage(DriverWrapper):
         self.open_control_dropdown()
         if self.can_bring_to_org_window():
             self.click_element(self._cn_bring_to_org)
+            self.log.info("Successfully clicked on 'Put Highlighted Organism in"
+                          + " Organism View' button.")
+        else:
+            self.log.info("Tried but failed to click on 'Put Highlighted"
+                          + " Organism in Organism View' button.")
 
     def can_bring_child_to_org_window(self):
         """
@@ -676,9 +691,10 @@ class BasePage(DriverWrapper):
 
         :return: True if the option is clickable, false otherwise.
         """
-        if self.__menu_item_disabled(self._cn_bring_offspring_to_org):
-            return False
-        return True
+        possible = self.__menu_item_disabled(self._cn_bring_offspring_to_org)
+        self.log.info("Is 'Put Offspring in Organism View' button clickable? "
+                      + str(possible))
+        return possible
 
     def bring_child_to_org_window(self):
         """
@@ -690,6 +706,11 @@ class BasePage(DriverWrapper):
         self.open_control_dropdown()
         if self.can_bring_child_to_org_window():
             self.click_element(self._cn_bring_offspring_to_org)
+            self.log.info("Successfully clicked on Put Offspring in Organism "
+                          + "View menu option.")
+        else:
+            self.log.info("Tried, but could not click on Put Organism in "
+                          + "Offspring View menu option.")
 
     def help_dropdown_expanded(self):
         """
@@ -698,7 +719,7 @@ class BasePage(DriverWrapper):
 
         :return: True if the dropdown is expanded, False otherwise.
         """
-        expanded =  self.__menu_dropdown_expanded(self._help_tab)
+        expanded = self.__menu_dropdown_expanded(self._help_tab)
         self.log.info("Is Help menu dropdown expanded? "
                       + str(expanded) + ".")
         return expanded
@@ -737,7 +758,7 @@ class BasePage(DriverWrapper):
         :return: True if the dropdown is expanded, false otherwise.
         """
         expanded = self.element_has_class(my_locator, locator_type,
-                                  self._item_selected)
+                                          self._item_selected)
         self.log.info("Is dropdown menu with locator " + my_locator
                       + " of type " + locator_type + "expanded? "
                       + str(expanded) + ".")
@@ -759,7 +780,7 @@ class BasePage(DriverWrapper):
                                           locator_type,
                                           self._item_disabled)
         self.log.info("Is menu item with locator " + my_locator + " of type "
-                      + locator_type + " disabled? " + str(disabled)
+                      + locator_type + " disabled? " + str(disabled))
         return disabled
 
     def __get_freezer_item(self, text_name):
