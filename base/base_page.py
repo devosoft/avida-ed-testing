@@ -316,9 +316,13 @@ class BasePage(DriverWrapper):
         self.click_element(self._file_save_workspace_as)
         self.log.info("Clicked on 'Save Current Workspace As' in File tab.")
 
-        workspace_name_alert = self.switch_to_alert()
-        workspace_name_alert.send_keys(workspace_name)
-        workspace_name_alert.accept()
+        try:
+            workspace_name_alert = self.switch_to_alert()
+            workspace_name_alert.send_keys(workspace_name)
+            workspace_name_alert.accept()
+        except:
+            self.log.info("Error occurred while interacting with 'Save"
+                          " Workspace As' JS alert.")
 
     def open_default_workspace(self):
         """
@@ -471,9 +475,15 @@ class BasePage(DriverWrapper):
         self.click_element(self._fz_save_exp_conf)
         self.log.info("Clicked 'Save Experiment Configuration' button in"
                       " Freezer tab.")
-        name_exp_conf_alert = self.switch_to_alert()
-        name_exp_conf_alert.send_keys(name)
-        name_exp_conf_alert.accept()
+        try:
+            name_exp_conf_alert = self.switch_to_alert()
+            name_exp_conf_alert.send_keys(name)
+            name_exp_conf_alert.accept()
+            self.log.info("Successfully named our saved experiment "
+                          " configuration '" + name + "'.")
+        except:
+            self.log.info("Error occurred while interacting with 'Save"
+                          " Experiment Configuration' JS alert.")
 
 
 
