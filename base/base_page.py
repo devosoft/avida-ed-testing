@@ -499,14 +499,15 @@ class BasePage(DriverWrapper):
                       + str(clickable))
         return clickable
 
-    def save_current_pop(self):
+    def save_current_pop(self, name=None):
         """
         Saves the current population (if one can be saved). If the option is
         available, it should pop up an window that prompts the user to enter
-        a name for the population. However, interacting with this prompt has not
-        yet been implemented.
+        a name for the population. If a value is given to name argument, it
+        will save the population with that name -- otherwise, it will save with
+        whatever name Avida-ED suggests.
 
-        *** Not Fully Implemented ***
+        :param name: The name that the population should be saved as.
 
         :return: None.
         """
@@ -515,6 +516,15 @@ class BasePage(DriverWrapper):
             self.click_element(self._fz_save_pop)
             self.log.info("Successfully clicked on 'Save Current Population'"
                           " button in Freezer tab.")
+            name_popup = self.switch_to_alert()
+            if name is not None:
+                name_popup.send_keys(name)
+                self.log.info("Saving current population to freezer as '" + name
+                              + "'.")
+            else:
+                self.log.info("Saving current population with default name.")
+            name_popup.accept()
+
         else:
             self.log.info("Failed to click on 'Save Current Population' button"
                           " button in Freezer tab.")
