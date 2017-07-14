@@ -304,11 +304,9 @@ class BasePage(DriverWrapper):
     def save_current_workspace_as(self, workspace_name):
         """
         Clicks on the "Save Workspace As" option within the File tab of the main
-        menu bar. This should cause a prompt to pop up asking for the name the
-        workspace. Actually filling in this prompt with the given workspace name
-        will be implemented later.
-
-        ***Not Fully Implemented Yet ***
+        menu bar. It then gives the resulting Javascript popup a filename for
+        the workspace and accepts it, which results in the workspace being
+        downloaded as a zip file.
 
         :param workspace_name: The name that the workspace should be saved as.
 
