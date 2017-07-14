@@ -370,3 +370,11 @@ class DriverWrapper:
             return value
         except:
             self.log.info("Attempt to run Javascript code failed.")
+
+    def switch_to_alert(self):
+        """
+        Allows interaction with Javscript alerts.
+
+        :return: Object that allows interaction with the alert.
+        """
+        return self.driver.switch_to.alert
