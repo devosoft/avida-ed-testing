@@ -581,14 +581,14 @@ class BasePage(DriverWrapper):
                       + str(clickable))
         return clickable
 
-    def save_offspring_org(self):
+    def save_offspring_org(self, name=None):
         """
         Saves the offspring organism from the Organism window (if possible) by
         clicking on the "Save Offspring Organism" option in the Freezer tab of
         the main menu bar. Interacting with the name prompt has not been
         implemented yet.
 
-        *** Not Fully Implemented Yet ***
+        :param name: The name that the offspring organism should be saved as.
 
         :return: None.
         """
@@ -597,6 +597,16 @@ class BasePage(DriverWrapper):
             self.click_element(self._fz_save_offspring)
             self.log.info("Successfully clicked on 'Save Offspring Organism'"
                           " button in Freezer tab.")
+
+            name_popup = self.switch_to_alert()
+            if name is not None:
+                name_popup.send_keys(name)
+                self.log.info("Saving offspring organism with name '" + name
+                              + "'.")
+            else:
+                self.log.info("Saving offspring organism with default name.")
+            name_popup.accept()
+
         else:
             self.log.info("Failed to click on 'Save Offspring Organism' button"
                           " in Freezer tab.")
