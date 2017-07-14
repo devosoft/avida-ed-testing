@@ -31,7 +31,7 @@ class BasePage(DriverWrapper):
     # Name of class that is applied to disabled menu options in main menu bar.
     _item_disabled = "dijitMenuItemDisabled"
 
-    #Locators for dropdowns in the main menu bar.
+    # Locators for dropdowns in the main menu bar.
     _avida_ed_tab = "mnAvidaEd"
     _file_tab = "mnFile"
     _freezer_tab = "mnFreezer"
@@ -40,7 +40,7 @@ class BasePage(DriverWrapper):
 
     # Locators for options within the Avida-ED dropdown.
     _avida_ed_about_menu = "dijit_Menu_0"
-    _avida_ed_about_dlg = "dijit_Dialog_6"
+    _avida_ed_about_dlg = "dijit_Dialog_7"
     _avida_ed_about_closedlg = "mnHpAboutCancel"
 
     # Locators for options within the File dropdown.

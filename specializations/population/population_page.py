@@ -36,7 +36,7 @@ class PopulationPage(BasePage):
         if self.population_displayed():
             setup_button_text = self.get_text("popSetupButton")
             if (self.element_displayed("setupBlock") and
-                    self.util.verify_text_matches(setup_button_text, "Map")):
+                    self.util.verify_text_matches(setup_button_text, "Dish")):
                 return True
         return False
 

@@ -31,7 +31,7 @@ class OrganismPage(BasePage):
         """
         org_sett_displayed = False
         if self.organism_displayed():
-            org_sett_displayed = self.element_displayed("dijit_Dialog_4")
+            org_sett_displayed = self.element_displayed("dijit_Dialog_5")
         return org_sett_displayed
 
     def open_org_settings(self):
