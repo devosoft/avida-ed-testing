@@ -540,14 +540,14 @@ class BasePage(DriverWrapper):
                       + str(clickable))
         return clickable
 
-    def save_selected_org(self):
+    def save_selected_org(self, name=None):
         """
         Saves the selected organism to the Freezer (if one is selected) by
         clicking on the "Save Selected Organism" option in the main menu bar.
         This should open up a prompt to give the organism a name, but
         interacting with this has not been implemented yet.
 
-        *** Not Fully Implemented Yet ***
+        :param name: The name that the organism should be saved as.
 
         :return: None.
         """
@@ -556,6 +556,15 @@ class BasePage(DriverWrapper):
             self.click_element(self._fz_save_org)
             self.log.info("Successfully clicked on 'Save Selected Organism' in"
                           " Freezer tab.")
+
+            name_popup = self.switch_to_alert()
+            if name is not None:
+                name_popup.send_keys(name)
+                self.log.info("Saving selected organism as '" + name + "'.")
+            else:
+                self.log.info("Saving selected organism with default name.")
+            name_popup.accept()
+
         else:
             self.log.info("Failed to click on 'Save Selected Organism' in"
                           " Freezer tab.")
