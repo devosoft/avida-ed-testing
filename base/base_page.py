@@ -11,7 +11,7 @@ class BasePage(DriverWrapper):
     # Logger object for the BasePage
     log = create_custom_logger()
 
-    # Utilties class that provides simple methods (particularly a wrapper for
+    # Utilities class that provides simple methods (particularly a wrapper for
     # time.sleep.
     util = UtilityMethods()
 
