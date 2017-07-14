@@ -318,6 +318,10 @@ class BasePage(DriverWrapper):
         self.click_element(self._file_save_workspace_as)
         self.log.info("Clicked on 'Save Current Workspace As' in File tab.")
 
+        workspace_name_alert = self.switch_to_alert()
+        workspace_name_alert.send_keys(workspace_name)
+        workspace_name_alert.accept()
+
     def open_default_workspace(self):
         """
         Opens the default workspace by clicking on the "Open Default Workspace"
