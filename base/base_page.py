@@ -461,7 +461,7 @@ class BasePage(DriverWrapper):
             self.__click_freezer_dropdown()
             self.log.info("Closed Freezer dropdown.")
 
-    def save_exp_conf(self, name):
+    def save_exp_conf(self, name=None):
         """
         Clicks on the "Save Experiment Configuration" within the Freezer tab of
         the main menu bar. It then gives a name to the configuration and accepts
@@ -477,7 +477,8 @@ class BasePage(DriverWrapper):
                       " Freezer tab.")
         try:
             name_exp_conf_alert = self.switch_to_alert()
-            name_exp_conf_alert.send_keys(name)
+            if name is not None:
+                name_exp_conf_alert.send_keys(name)
             name_exp_conf_alert.accept()
             self.log.info("Successfully named our saved experiment "
                           " configuration '" + name + "'.")
