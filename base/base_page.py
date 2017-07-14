@@ -486,8 +486,6 @@ class BasePage(DriverWrapper):
             self.log.info("Error occurred while interacting with 'Save"
                           " Experiment Configuration' JS alert.")
 
-
-
     def can_save_current_pop(self):
         """
         Determines whether the option to "Save Current Population" within the
