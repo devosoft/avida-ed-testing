@@ -457,10 +457,13 @@ class BasePage(DriverWrapper):
             self.__click_freezer_dropdown()
             self.log.info("Closed Freezer dropdown.")
 
-    def save_exp_conf(self):
+    def save_exp_conf(self, name):
         """
         Clicks on the "Save Experiment Configuration" within the Freezer tab of
-        the main menu bar.
+        the main menu bar. It then gives a name to the configuration and accepts
+        the name by interacting with the Javascript alert.
+
+        :param name: The name that the exp. configuration will be given.
 
         :return: None.
         """
@@ -468,6 +471,11 @@ class BasePage(DriverWrapper):
         self.click_element(self._fz_save_exp_conf)
         self.log.info("Clicked 'Save Experiment Configuration' button in"
                       " Freezer tab.")
+        name_exp_conf_alert = self.switch_to_alert()
+        name_exp_conf_alert.send_keys(name)
+        name_exp_conf_alert.accept()
+
+
 
     def can_save_current_pop(self):
         """
