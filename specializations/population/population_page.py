@@ -1,7 +1,6 @@
 import logging
 
 from base.base_page import BasePage
-from utilities.util_methods import UtilityMethods
 from utilities.custom_logger import create_custom_logger
 
 
@@ -13,9 +12,6 @@ class PopulationPage(BasePage):
 
     # Logger
     log = create_custom_logger(logging.DEBUG)\
-
-    # Utilities class that contains useful methods not specific to any class.
-    util = UtilityMethods()
 
     # Locators for population setup pane.
     __setup_button_id = "popSetupButton"
