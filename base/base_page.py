@@ -62,6 +62,8 @@ class BasePage(DriverWrapper):
     _fz_add_conf_dish = "mnFzAddConfigEx"
     _fz_add_org = "mnFzAddGenomeEx"
     _fz_add_pop_dish = "mnFzAddPopEx"
+    _fz_bring_org_to_org_view = "mnFzAddGenomeView"
+    _fz_bring_dish_to_ana_view = "mnFzAddPopAnalysis"
 
     # Locators for options within the Control dropdown.
     _cn_run = "mnCnRun"
@@ -650,6 +652,26 @@ class BasePage(DriverWrapper):
         self.click_element(self._fz_add_pop_dish)
         self.log.info("Clicked on 'Add Highlighted Populated Dish to"
                       " Experiment' button in Freezer tab.")
+
+    def add_org_to_org_view(self):
+        """
+        Puts the currently highlighted organism into the Organism view.
+
+        :return: None.
+        """
+        self.open_freezer_dropdown()
+        self.click_element(self._fz_bring_org_to_org_view)
+        self.log.info("Clicked on the 'Put Highlighted Organism in Organism View' button in Freezer tab.")
+
+    def add_dish_to_analysis(self):
+        """
+        Puts the currently highlighted populated dish into the Analysis view.
+
+        :return: None.
+        """
+        self.open_freezer_dropdown()
+        self.click_element(self._fz_bring_dish_to_ana_view)
+        self.log.info("Clicked on the 'Put Highlighted Populated Dish in Analysis View' button in Freezer tab.")
 
     def control_dropdown_expanded(self):
         """
