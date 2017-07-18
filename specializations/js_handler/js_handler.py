@@ -23,7 +23,7 @@ class JSHandler(BasePage):
         super().__init__(driver)
         self.driver = driver
 
-    def get_current_update(self):
+    def gr_get_current_update(self):
         """
         Gets the current update from av.grd.updateNum.
 
@@ -31,7 +31,7 @@ class JSHandler(BasePage):
         """
         return self.execute_script("return av.grd.updateNum")
 
-    def __get_num_orgs_list(self):
+    def __gr_get_num_orgs_list(self):
         """
         Gets the list of the current amount of organisms for each update from
         av.pch.
@@ -41,24 +41,15 @@ class JSHandler(BasePage):
         """
         return self.execute_script("return av.pch.aveNum")
 
-    def get_curr_num_orgs(self):
+    def gr_get_curr_num_orgs(self):
         """
         Gets the current number of organisms from av.pch.
 
         :return: Integer value of current number of organisms.
         """
-        return self.__get_num_orgs_list()[-1]
+        return self.__gr_get_num_orgs_list()[-1]
 
-    def __get_num_via_orgs_list(self):
-        """
-        Gets the list of the current amount of viable organisms for each update
-        from av.pch.
-
-        :return: List of integers that are the number of viable organisms
-        for each update.
-        """
-
-    def __get_avg_fitness_list(self):
+    def __gr_get_avg_fitness_list(self):
         """
         Gets the list of average fitnesses for each update in experiment.
 
@@ -66,15 +57,15 @@ class JSHandler(BasePage):
         """
         return self.execute_script("return av.pch.aveFit")
 
-    def get_curr_avg_fit(self):
+    def gr_get_curr_avg_fit(self):
         """
         Gets the current average fitness from av.pch.
 
         :return: Float value of average fitness.
         """
-        return self.__get_avg_fitness_list()[-1]
+        return self.__gr_get_avg_fitness_list()[-1]
 
-    def __get_avg_rate(self):
+    def __gr_get_avg_rate(self):
         """
         Gets list of average energy acquisition rates for each update in exp.
 
@@ -82,15 +73,15 @@ class JSHandler(BasePage):
         """
         return self.execute_script("return av.pch.aveEar")
 
-    def get_curr_avg_rate(self):
+    def gr_get_curr_avg_rate(self):
         """
         Gets the current average energy acquisition rate from av.pch.
 
         :return: Float value of average energy acquisition rate.
         """
-        return self.__get_avg_rate()[-1]
+        return self.__gr_get_avg_rate()[-1]
 
-    def __get_avg_cost(self):
+    def __gr_get_avg_cost(self):
         """
         Gets list of average offspring cost for each update in experiment.
 
@@ -98,11 +89,11 @@ class JSHandler(BasePage):
         """
         return self.execute_script("return av.pch.aveCst")
 
-    def get_curr_avg_cost(self):
+    def gr_get_curr_avg_cost(self):
         """
         Gets the current average offspring cost from av.pch.
 
         :return: Float value of average offspring cost.
         """
-        return self.__get_avg_cost()[-1]
+        return self.__gr_get_avg_cost()[-1]
 
