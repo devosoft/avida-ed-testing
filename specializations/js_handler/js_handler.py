@@ -27,6 +27,9 @@ class JSHandler(BasePage):
         """
         Gets the current update from av.grd.updateNum.
 
+        Note: This gets a number from the Plotly graph, not the underlying
+        message from Avida.
+
         :return: Integer value of current update.
         """
         return self.execute_script("return av.grd.updateNum")
@@ -35,6 +38,9 @@ class JSHandler(BasePage):
         """
         Gets the list of the current amount of organisms for each update from
         av.pch.
+
+         Note: This gets a number from the Plotly graph, not the underlying
+        message from Avida.
 
         :return: List of integers with number of organisms in dish at each
         update.
@@ -61,6 +67,9 @@ class JSHandler(BasePage):
         """
         Gets the current average fitness from av.pch.
 
+        Note: This gets a number from the Plotly graph, not the underlying
+        message from Avida.
+
         :return: Float value of average fitness.
         """
         return self.__gr_get_avg_fitness_list()[-1]
@@ -69,6 +78,9 @@ class JSHandler(BasePage):
         """
         Gets list of average energy acquisition rates for each update in exp.
 
+        Note: This gets a number from the Plotly graph, not the underlying
+        message from Avida.
+
         :return: List of average rates.
         """
         return self.execute_script("return av.pch.aveEar")
@@ -76,6 +88,9 @@ class JSHandler(BasePage):
     def gr_get_curr_avg_rate(self):
         """
         Gets the current average energy acquisition rate from av.pch.
+
+        Note: This gets a number from the Plotly graph, not the underlying
+        message from Avida.
 
         :return: Float value of average energy acquisition rate.
         """
@@ -92,6 +107,9 @@ class JSHandler(BasePage):
     def gr_get_curr_avg_cost(self):
         """
         Gets the current average offspring cost from av.pch.
+
+        Note: This gets a number from the Plotly graph, not the underlying
+        message from Avida.
 
         :return: Float value of average offspring cost.
         """
