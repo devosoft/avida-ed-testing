@@ -23,10 +23,10 @@ class SimpleExperimentTest(unittest.TestCase):
         self.page = BasePage(self.driver)
 
     @pytest.mark.run()
-    def test_simple_exp(self):
+    def test_exp_run_controls(self):
         """
         Tests that a simple experiment can be run and that running, pausing, and
-        doing one update works properly.
+        doing one update work as expected.
 
         :return: None.
         """
