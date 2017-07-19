@@ -1,5 +1,5 @@
 from base.base_page import BasePage
-from specializations.js_handler.js_handler import JSHandler
+from specializations.value_getter.value_getter import ValueGetter
 
 import unittest
 import pytest
@@ -33,7 +33,7 @@ class PopStatsSanityTest(unittest.TestCase):
 
         :return: None.
         """
-        js_assertions = JSHandler(self.page)
+        js_assertions = ValueGetter(self.page)
 
         # Add @ancestor to dish.
         self.page.click_freezer_item("@ancestor")

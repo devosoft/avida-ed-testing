@@ -5,10 +5,10 @@ from utilities.util_methods import UtilityMethods
 from utilities.custom_logger import create_custom_logger
 
 
-class JSHandler(BasePage):
+class ValueGetter(BasePage):
     """
-    Specialization of the BasePage that is specialized to tasks that require
-    executing Javscript code on the webpage.
+    Specialization of the BasePage that is specialized to getting values from
+    within Avida-ED (as opposed to getting the UI text).
     """
 
     log = create_custom_logger(logging.DEBUG)
