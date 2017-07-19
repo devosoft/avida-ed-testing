@@ -22,6 +22,8 @@ class PopulationPage(BasePage):
     # Locators for population statistics window.
     __stats_window = "popRight"
     __stats_button = "popStatsButton"
+    __dish_cols_box = "sizeCols"
+    __dish_rows_box = "sizeRows"
 
     # Locators for updates and other UI information.
     __update_text = "TimeLabel"
@@ -132,3 +134,31 @@ class PopulationPage(BasePage):
         :return: String containing update information.
         """
         return self.get_text(self.__update_text)
+
+    def edit_dish_cols(self, input):
+        """
+        Edits the dish column number in the environmental settings panel.
+
+        :param input: String containing input to the text box.
+
+        :return: None.
+        """
+        self.show_env_settings()
+        cols_box = self.get_element(self.__dish_cols_box)
+        cols_box.clear()
+        self.send_keys(element=cols_box, keys=input)
+        self.hide_env_settings()
+
+    def edit_dish_rows(self, input):
+        """
+        Edits the dish row number in the environmental settings panel.
+
+        :param input: String containing input to the text box.
+
+        :return: None.
+        """
+        self.show_env_settings()
+        rows_box = self.get_element(self.__dish_rows_box)
+        rows_box.clear()
+        self.send_keys(element=rows_box, keys=input)
+        self.hide_env_settings()
