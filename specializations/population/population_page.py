@@ -1,7 +1,6 @@
 import logging
 
 from base.base_page import BasePage
-from utilities.util_methods import UtilityMethods
 from utilities.custom_logger import create_custom_logger
 
 
@@ -11,8 +10,21 @@ class PopulationPage(BasePage):
     on the Avida-ED website.
     """
 
-    log = create_custom_logger(logging.DEBUG)
-    util = UtilityMethods()
+    # Logger
+    log = create_custom_logger(logging.DEBUG)\
+
+    # Locators for population setup pane.
+    __setup_button_id = "popSetupButton"
+    __setup_dish = "Dish"
+    __setup_setup = "Setup"
+    __setup_block_id = "setupBlock"
+
+    # Locators for population statistics window.
+    __stats_window = "popRight"
+    __stats_button = "popStatsButton"
+
+    # Locators for updates and other UI information.
+    __update_text = "TimeLabel"
 
     def __init__(self, driver):
         """
@@ -34,9 +46,9 @@ class PopulationPage(BasePage):
         """
 
         if self.population_displayed():
-            setup_button_text = self.get_text("popSetupButton")
-            if (self.element_displayed("setupBlock") and
-                    self.util.verify_text_matches(setup_button_text, "Dish")):
+            setup_button_text = self.get_text(self.__setup_button_id)
+            if (self.element_displayed(self.__setup_block_id) and
+                    self.util.verify_text_matches(setup_button_text, self.__setup_dish)):
                 return True
         return False
 
@@ -54,9 +66,9 @@ class PopulationPage(BasePage):
         :return: True if the Petri dish is displayed, false otherwise.
         """
         if self.population_displayed():
-            setup_button_text = self.get_text("popSetupButton")
-            if (not self.element_displayed("setupBlock") and
-                    self.util.verify_text_matches(setup_button_text, "Setup")):
+            setup_button_text = self.get_text(self.__setup_button_id)
+            if (not self.element_displayed(self.__setup_block_id) and
+                    self.util.verify_text_matches(setup_button_text, self.__setup_setup)):
                 return True
         return False
 
@@ -69,7 +81,7 @@ class PopulationPage(BasePage):
         """
         self.go_to_population()
         if not self.env_settings_displayed():
-            self.click_element("popSetupButton")
+            self.click_element(self.__setup_button_id)
 
     def hide_env_settings(self):
         """
@@ -80,7 +92,7 @@ class PopulationPage(BasePage):
         """
         self.go_to_population()
         if self.env_settings_displayed():
-            self.click_element("popSetupButton")
+            self.click_element(self.__setup_button_id)
 
     def pop_stats_displayed(self):
         """
@@ -89,7 +101,7 @@ class PopulationPage(BasePage):
 
         :return: True if the stats panel is visible, false otherwise.
         """
-        pop_stats_displayed = self.element_displayed("popRight")
+        pop_stats_displayed = self.element_displayed(self.__stats_window)
         return pop_stats_displayed
 
     def show_pop_stats(self):
@@ -99,8 +111,8 @@ class PopulationPage(BasePage):
         :return: None.
         """
         self.go_to_population()
-        if not self.element_displayed("popRight"):
-            self.click_element("popStatsButton")
+        if not self.element_displayed(self.__stats_window):
+            self.click_element(self.__stats_button)
 
     def hide_pop_stats(self):
         """
@@ -109,8 +121,8 @@ class PopulationPage(BasePage):
         :return: None.
         """
         self.go_to_population()
-        if self.element_displayed("popRight"):
-            self.click_element("popStatsButton")
+        if self.element_displayed(self.__stats_window):
+            self.click_element(self.__stats_button)
 
     def get_update_ui_text(self):
         """
@@ -119,4 +131,4 @@ class PopulationPage(BasePage):
 
         :return: String containing update information.
         """
-        return self.get_text("TimeLabel")
+        return self.get_text(self.__update_text)
