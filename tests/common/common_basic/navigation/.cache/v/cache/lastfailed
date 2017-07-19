@@ -1,0 +1,5 @@
+{
+  "basic_nav_test.py::BasicNavigationTest::test_go_to_analysis": true,
+  "basic_nav_test.py::BasicNavigationTest::test_go_to_organism": true,
+  "basic_nav_test.py::BasicNavigationTest::test_go_to_population": true
+}

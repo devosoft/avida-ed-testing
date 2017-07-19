@@ -4,6 +4,7 @@ from specializations.js_handler.js_handler import JSHandler
 import unittest
 import pytest
 
+
 @pytest.mark.usefixtures("one_time_setup")
 class SimpleExperimentTest(unittest.TestCase):
     """
