@@ -259,3 +259,18 @@ class ValueGetter(BasePage):
         """
         return self.__gr_get_avg_cost()[-1]
 
+    def get_cols(self):
+        """
+        Gets the current number of columns in the dish grid.
+
+        :return: Integer value of columns in dish.
+        """
+        return self.execute_script("return av.grd.cols")
+
+    def get_rows(self):
+        """
+        Gets the current number of columns in the dish grid.
+
+        :return: Integer value of rows in dish.
+        """
+        return self.execute_script("return av.grd.rows")
