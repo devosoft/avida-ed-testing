@@ -6,7 +6,7 @@ import pytest
 
 
 @pytest.mark.usefixtures("one_time_setup")
-class SimpleExperimentTest(unittest.TestCase):
+class ExperimentControlsTest(unittest.TestCase):
     """
     Test class that runs a very simple experiment in Avida-ED.
     """
