@@ -6,13 +6,22 @@ as opposed to "advanced" tests.
 """
 
 import pytest
+import sys
 
 common_basic_path = r"tests/common/common_basic"
 pop_basic_path = r"tests/population/population_basic"
 org_basic_path = r"tests/organism/organism_basic"
 analysis_basic_path = r"tests/analysis/analysis_basic"
 
-pytest.main(["-v", "-s", common_basic_path, pop_basic_path, org_basic_path, analysis_basic_path])
+pytest_args = ["-v",
+               "-s",
+               common_basic_path,
+               pop_basic_path,
+               org_basic_path,
+               analysis_basic_path]
+
+pytest_args.extend(sys.argv)
+pytest.main(pytest_args)
 
 
 
