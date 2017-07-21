@@ -61,12 +61,12 @@ class PopulationPage(BasePage):
         otherwise.
         """
 
-        if self.population_displayed():
-            setup_button_text = self.get_text(self.__setup_button_id)
-            if (self.element_displayed(self.__setup_block_id) and
-                    self.util.verify_text_matches(setup_button_text, self.__setup_dish)):
-                return True
-        return False
+        setup_button_text = self.get_text(self.__setup_button_id)
+        displayed = (self.element_displayed(self.__setup_block_id) and
+                     self.util.verify_text_matches(setup_button_text,
+                                                   self.__setup_dish))
+        self.log.info("Is Environmental Settings displayed? " + str(displayed))
+        return displayed
 
     def grid_displayed(self):
         """
