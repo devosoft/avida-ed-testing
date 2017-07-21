@@ -752,9 +752,11 @@ class BasePage(DriverWrapper):
         self.open_control_dropdown()
         if self.can_pause_from_menu():
             self.click_element(self.__cn_pause)
-            self.log.info("Successfully clicked on 'Pause' in Control tab.")
+            self.log.info("Successfully clicked on 'Pause' in Control tab via"
+                          "the menu bar.")
         else:
-            self.log.info("Failed to click on 'Pause' in Control tab.")
+            self.log.info("Failed to click on 'Pause' in Control tab via the"
+                          "menu bar.")
 
     def forward_from_menu(self):
         """
@@ -767,7 +769,7 @@ class BasePage(DriverWrapper):
         """
         self.open_control_dropdown()
         self.click_element(self.__cn_one_update)
-        self.log.info("Clicked on 'Forward' in Control tab.")
+        self.log.info("Clicked on 'Forward' in Control tab via the menu bar.")
 
     def start_new_exp_from_menu(self):
         """
