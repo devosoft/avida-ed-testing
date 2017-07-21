@@ -55,6 +55,6 @@ class ExperimentControlsTest(unittest.TestCase):
         assert value_getter.get_current_update() == current_update
 
         # Do one update
-        self.page.do_one_update()
+        self.page.forward_from_menu()
         self.page.util.sleep(1, "Making sure update has time to occur.")
         assert (value_getter.get_current_update() - current_update) == 1

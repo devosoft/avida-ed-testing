@@ -756,9 +756,9 @@ class BasePage(DriverWrapper):
         else:
             self.log.info("Failed to click on 'Pause' in Control tab.")
 
-    def do_one_update(self):
+    def forward_from_menu(self):
         """
-        Clicks on the "Do One Update" option in the Control tab of the main menu
+        Clicks on the "Forward" option in the Control tab of the main menu
         bar.
 
         *** Not Fully Implemented Yet ***
@@ -767,7 +767,7 @@ class BasePage(DriverWrapper):
         """
         self.open_control_dropdown()
         self.click_element(self.__cn_one_update)
-        self.log.info("Clicked on 'Do One Update' in Control tab.")
+        self.log.info("Clicked on 'Forward' in Control tab.")
 
     def start_new_exp_from_menu(self):
         """
