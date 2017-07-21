@@ -81,12 +81,12 @@ class PopulationPage(BasePage):
         
         :return: True if the Petri dish is displayed, false otherwise.
         """
-        if self.population_displayed():
-            setup_button_text = self.get_text(self.__setup_button_id)
-            if (not self.element_displayed(self.__setup_block_id) and
-                    self.util.verify_text_matches(setup_button_text, self.__setup_setup)):
-                return True
-        return False
+        setup_button_text = self.get_text(self.__setup_button_id)
+        displayed = (not self.element_displayed(self.__setup_block_id) and
+                     self.util.verify_text_matches(setup_button_text,
+                                                  self.__setup_setup))
+        self.log.info("Is grid displayed? " + str(displayed))
+        return displayed
 
     def show_env_settings(self):
         """
