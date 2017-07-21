@@ -5,10 +5,10 @@ from utilities.util_methods import UtilityMethods
 from utilities.custom_logger import create_custom_logger
 
 
-class JSHandler(BasePage):
+class ValueGetter(BasePage):
     """
-    Specialization of the BasePage that is specialized to tasks that require
-    executing Javscript code on the webpage.
+    Specialization of the BasePage that is specialized to getting values from
+    within Avida-ED (as opposed to getting the UI text).
     """
 
     log = create_custom_logger(logging.DEBUG)
@@ -259,3 +259,18 @@ class JSHandler(BasePage):
         """
         return self.__gr_get_avg_cost()[-1]
 
+    def get_cols(self):
+        """
+        Gets the current number of columns in the dish grid.
+
+        :return: Integer value of columns in dish.
+        """
+        return self.execute_script("return av.grd.cols")
+
+    def get_rows(self):
+        """
+        Gets the current number of columns in the dish grid.
+
+        :return: Integer value of rows in dish.
+        """
+        return self.execute_script("return av.grd.rows")

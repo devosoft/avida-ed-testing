@@ -1,5 +1,5 @@
 from base.base_page import BasePage
-from specializations.js_handler.js_handler import JSHandler
+from specializations.value_getter.value_getter import ValueGetter
 
 import unittest
 import pytest
@@ -31,7 +31,7 @@ class ExperimentControlsTest(unittest.TestCase):
 
         :return: None.
         """
-        js_assertions = JSHandler(self.page)
+        value_getter = ValueGetter(self.page)
 
         # Add @ancestor to dish.
         self.page.click_freezer_item("@ancestor")
@@ -42,19 +42,19 @@ class ExperimentControlsTest(unittest.TestCase):
         self.page.util.sleep(3, "Waiting for updates to occur.")
 
         # Assert that updates have occurred.
-        assert js_assertions.get_current_update() > 0
-        assert js_assertions.gr_get_current_update() > 0
+        assert value_getter.get_current_update() > 0
+        assert value_getter.gr_get_current_update() > 0
 
         # Pause the experiment.
         self.page.pause_from_menu()
         self.page.util.sleep(1, "Making sure pause goes into effect.")
 
         # Get current update, wait a few seconds, assert it has not changed.
-        current_update = js_assertions.get_current_update()
+        current_update = value_getter.get_current_update()
         self.page.util.sleep(3, "Ensuring no updates occur after pause.")
-        assert js_assertions.get_current_update() == current_update
+        assert value_getter.get_current_update() == current_update
 
         # Do one update
         self.page.do_one_update()
         self.page.util.sleep(1, "Making sure update has time to occur.")
-        assert (js_assertions.get_current_update() - current_update) == 1
+        assert (value_getter.get_current_update() - current_update) == 1
