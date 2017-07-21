@@ -11,7 +11,7 @@ class PopulationPage(BasePage):
     """
 
     # Logger
-    log = create_custom_logger(logging.DEBUG)\
+    log = create_custom_logger(logging.DEBUG)
 
     # Locators for population setup pane.
     __setup_button_id = "popSetupButton"
