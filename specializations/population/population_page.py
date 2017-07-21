@@ -33,6 +33,7 @@ class PopulationPage(BasePage):
     __run_text = "Run"
     __pause_text = "Pause"
     __new_dish_button = "newDishButton"
+    __forward_button = "oneUpdateButton"
 
     # Locators for new dish dialog box.
     __new_dish_dlg = "dijit_Dialog_4"
@@ -254,6 +255,15 @@ class PopulationPage(BasePage):
             if name is not None:
                 name_popup.send_keys(name)
             name_popup.accept()
+
+    def forward_from_pop(self):
+        """
+        Moves the experiment forward by one update by clicking on the 'Forward'
+        button
+        :return:
+        """
+        self.click_element(self.__forward_button)
+
 
     def get_update_ui_text(self):
         """
