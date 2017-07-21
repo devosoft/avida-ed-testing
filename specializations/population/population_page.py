@@ -28,6 +28,11 @@ class PopulationPage(BasePage):
     # Locators for updates and other UI information.
     __update_text = "TimeLabel"
 
+    # Locators for buttons underneath dish.
+    __run_pause_pop = "runStopButton"
+    __run_text = "Run"
+    __pause_text = "Pause"
+
     def __init__(self, driver):
         """
         Sets up the page for use at initialization.
@@ -125,6 +130,45 @@ class PopulationPage(BasePage):
         self.go_to_population()
         if self.element_displayed(self.__stats_window):
             self.click_element(self.__stats_button)
+
+    def __click_runpause_pop_button(self):
+        """
+        Clicks on the main 'Run'/'Pause' button underneath the dish to start
+        the experiment.
+
+        :return: None.
+        """
+        self.click_element(self.__run_pause_pop)
+
+    def runpause_text_is_run(self):
+        """
+        Checks whether the text of the 'Run'/'Pause' button underneath the dish
+        currently says 'Run'.
+
+        :return: True if button text is 'Run', false if it is not (in which case
+        it must be 'Pause").
+        """
+        btn_text = self.get_text(self.__run_pause_pop)
+        if self.util.verify_text_matches(btn_text, self.__run_text):
+            return True
+        return False
+
+    def run_from_pop(self):
+        """
+        Runs the experiment via the button underneath the dish.
+
+        :return: None.
+        """
+        if self.runpause_text_is_run():
+            self.__click_runpause_pop_button()
+
+    def pause_from_pop(self):
+        """
+        Pauses the experiment via the button underneath the dish.
+        :return:
+        """
+        if not self.runpause_text_is_run():
+            self.__click_runpause_pop_button()
 
     def get_update_ui_text(self):
         """
