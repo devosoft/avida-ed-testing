@@ -32,6 +32,14 @@ class PopulationPage(BasePage):
     __run_pause_pop = "runStopButton"
     __run_text = "Run"
     __pause_text = "Pause"
+    __new_dish_button = "newDishButton"
+
+    # Locators for new dish dialog box.
+    __new_dish_dlg = "dijit_Dialog_4"
+    __new_dish_cancel_xpath = "//*/span[@widgetid='newCancel']"
+    __new_dish_discard_xpath = "//*/span[@widgetid='newDiscard']"
+    __new_dish_saveconf_xpath = "//*/span[@widgetid='newSaveConfig']"
+    __new_dish_savepop_xpath = "//*/span[@widgetid='newSaveWorld']"
 
     def __init__(self, driver):
         """
@@ -169,6 +177,83 @@ class PopulationPage(BasePage):
         """
         if not self.runpause_text_is_run():
             self.__click_runpause_pop_button()
+
+    def new_exp_dlg_displayed(self):
+        """
+        Determines if the dialog that is supposed to appear after clicking on
+        the 'New' button under the dish is currently displayed on-screen.
+
+        :return: None.
+        """
+        return self.element_displayed(self.__new_dish_dlg)
+
+    def click_new_exp(self):
+        """
+        Clicks on the 'New' button under the dish to create a new experiment.
+        This method does not have any way of handling the dialog that may appear
+        afterwards. Typically this would be a private method, but it is not
+        because this method may be useful for testing purposes.
+
+        :return: None.
+        """
+        self.click_element(self.__new_dish_button)
+
+    def new_exp_cancel(self):
+        """
+        Clicks on the 'New' button under the dish to create a new experiment. It
+        will cancel the operation once the dialog box comes up.
+
+        :return: None.
+        """
+        self.click_new_exp()
+        if self.new_exp_dlg_displayed():
+            self.click_element(self.__new_dish_cancel_xpath, "xpath")
+
+    def new_exp_discard(self):
+        """
+        Clicks on the 'New' button under the dish to create a new experiment. It
+        will discard the contents of the dish.
+
+        :return: None.
+        """
+        self.click_new_exp()
+        if self.new_exp_dlg_displayed():
+            self.click_element(self.__new_dish_discard_xpath, "xpath")
+
+    def new_exp_saveconf(self, name=None):
+        """
+        Clicks on the 'New' button under the dish to create a new experiment. It
+        will save the dish configuration to the freezer.
+
+        :param name: The name that the experiment configuration should be saved
+        as.
+
+        :return: None.
+        """
+        self.click_new_exp()
+        if self.new_exp_dlg_displayed():
+            self.click_element(self.__new_dish_saveconf_xpath, "xpath")
+            name_popup = self.switch_to_alert()
+            if name is not None:
+                name_popup.send_keys(name)
+            name_popup.accept()
+
+    def new_exp_savepop(self, name=None):
+        """
+        Clicks on the 'New' button under the dish to create a new experiment. It
+        will save the populated dish to the freezer.
+
+        :param name: The name that the populated dish should be saved as.
+
+        :return: None.
+        """
+        self.click_new_exp()
+        if self.new_exp_dlg_displayed():
+            self.click_element(self.__new_dish_savepop_xpath, "xpath")
+            name_popup = self.switch_to_alert()
+            if name is not None:
+                name_popup.send_keys(name)
+            name_popup.accept()
 
     def get_update_ui_text(self):
         """
