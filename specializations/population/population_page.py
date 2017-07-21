@@ -29,7 +29,7 @@ class PopulationPage(BasePage):
     __update_text = "TimeLabel"
 
     # Locators for buttons underneath dish.
-    __run_pause_pop = "runStopButton"
+    __run_pause_pop_button = "runStopButton"
     __run_text = "Run"
     __pause_text = "Pause"
     __new_dish_button = "newDishButton"
@@ -147,7 +147,7 @@ class PopulationPage(BasePage):
 
         :return: None.
         """
-        self.click_element(self.__run_pause_pop)
+        self.click_element(self.__run_pause_pop_button)
 
     def runpause_text_is_run(self):
         """
@@ -157,7 +157,7 @@ class PopulationPage(BasePage):
         :return: True if button text is 'Run', false if it is not (in which case
         it must be 'Pause").
         """
-        btn_text = self.get_text(self.__run_pause_pop)
+        btn_text = self.get_text(self.__run_pause_pop_button)
         if self.util.verify_text_matches(btn_text, self.__run_text):
             return True
         return False
