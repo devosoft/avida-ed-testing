@@ -73,6 +73,9 @@ class BasePage(DriverWrapper):
     __cn_bring_to_org = "mnCnOrganismTrace"
     __cn_bring_offspring_to_org = "mnCnOffspringTrace"
 
+    # Locator for crash report dialog box.
+    __crash_dlg = "dijit_Dialog_11"
+
     # Locator for items in the Freezer
     __fz_item_xpath = "//*/div[@class='dojoDndItem']"
 
@@ -149,6 +152,14 @@ class BasePage(DriverWrapper):
         """
         self.click_element(self.__analysis_button)
         self.log.info("Navigated to analysis window.")
+
+    def crash_report_displayed(self):
+        """
+        Checks if the crash report dialog box is displayed.
+
+        :return: True if the dialog is displayed, False otherwise.
+        """
+        return self.element_displayed(self.__crash_dlg)
 
     def freezer_item_highlighted(self, text_name):
         """
@@ -987,3 +998,4 @@ class BasePage(DriverWrapper):
         """
         self.click_element(self.__help_tab)
         self.log.info("Clicked on Help main menu tab.")
+
