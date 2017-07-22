@@ -274,3 +274,16 @@ class ValueGetter(BasePage):
         :return: Integer value of rows in dish.
         """
         return self.execute_script("return av.grd.rows")
+
+    def get_pop_mute_rate_string(self):
+        """
+        Gets the current mutation rate (for the experiment in the population
+        window.
+
+        NOTE: Returns the string because although the mutation rate should be an
+        integer, you can easily put in a non-integer value.
+
+        :return: String containing the current mutation rate.
+        """
+        return self.execute_script("return av.dom.muteInput.value")
+

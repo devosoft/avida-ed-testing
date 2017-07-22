@@ -18,12 +18,14 @@ class PopulationPage(BasePage):
     __setup_dish = "Dish"
     __setup_setup = "Setup"
     __setup_block_id = "setupBlock"
+    __mut_rate_input = "muteInput"
 
     # Locators for population statistics window.
     __stats_window = "popRight"
     __stats_button = "popStatsButton"
     __dish_cols_box = "sizeCols"
     __dish_rows_box = "sizeRows"
+
 
     # Locators for updates and other UI information.
     __update_text = "TimeLabel"
@@ -333,3 +335,18 @@ class PopulationPage(BasePage):
         self.send_keys(element=rows_box, keys=rows_num)
         self.hide_env_settings()
         self.log.info("Edited dish row number to " + str(rows_num))
+
+    def edit_mut_rate(self, rate):
+        """
+        Edits the dish mutation rate in the environmental settings panel.
+
+        :param rate: The input to be sent to the mutation rate box.
+
+        :return: None.
+        """
+        self.show_env_settings()
+        mut_rate_box = self.get_element(self.__mut_rate_input)
+        mut_rate_box.clear()
+        self.send_keys(element=mut_rate_box, keys=str(rate))
+        self.hide_env_settings()
+        self.log.info("Edited population mutation rate to " + str(rate))
