@@ -2,7 +2,7 @@ import unittest
 import pytest
 
 
-@pytest.mark.usefixtures("bp_setup")
+@pytest.mark.usefixtures("bp_setup", "vg_setup")
 class PopStatsSanityTest(unittest.TestCase):
     """
     Test class that runs a simple experiment that ensures that population

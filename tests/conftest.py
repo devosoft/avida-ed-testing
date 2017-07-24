@@ -30,12 +30,42 @@ def bp_setup(request, driver_setup):
         request.cls.bp = bp
         request.cls.vg = ValueGetter(driver_setup)
         request.cls.pp = PopulationPage(driver_setup)
-        request.cls.op = OrganismPage(driver_setup)
         request.cls.ap = AnalysisPage(driver_setup)
 
     yield bp
 
     assert not bp.crash_report_displayed()
+
+
+@pytest.fixture(scope="class")
+def pp_setup(request, driver_setup):
+    pp = PopulationPage(driver_setup)
+    if request.cls is not None:
+        request.cls.pp = pp
+    return pp
+
+
+@pytest.fixture(scope="class")
+def op_setup(request, driver_setup):
+    op = OrganismPage(driver_setup)
+    if request.cls is not None:
+        request.cls.op = op
+    return op
+
+
+@pytest.fixture(scope="class")
+def ap_setup(request, driver_setup):
+    ap = AnalysisPage(driver_setup)
+    if request.cls is not None:
+        request.cls.ap = ap
+    return ap
+
+@pytest.fixture(scope="class")
+def vg_setup(request, driver_setup):
+    vg = ValueGetter(driver_setup)
+    if request.cls is not None:
+        request.cls.vg = vg
+    return vg
 
 
 def pytest_addoption(parser):

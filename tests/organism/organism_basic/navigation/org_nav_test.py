@@ -3,7 +3,7 @@ import pytest
 import time
 
 
-@pytest.mark.usefixtures("bp_setup")
+@pytest.mark.usefixtures("bp_setup", "op_setup")
 class OrganismNavigationTest(unittest.TestCase):
     """
     Test class that tests navigation between the panels and other sub-specializations

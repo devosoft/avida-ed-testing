@@ -2,7 +2,7 @@ import unittest
 import pytest
 
 
-@pytest.mark.usefixtures("bp_setup")
+@pytest.mark.usefixtures("bp_setup", "vg_setup")
 class ExperimentControlsTest(unittest.TestCase):
     """
     Test class that runs a very simple experiment in Avida-ED.
