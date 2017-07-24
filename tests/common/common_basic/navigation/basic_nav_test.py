@@ -1,11 +1,9 @@
-from base.base_page import BasePage
-
 import unittest
 import pytest
 import time
 
 
-@pytest.mark.usefixtures("one_time_setup")
+@pytest.mark.usefixtures("bp_setup")
 class BasicNavigationTest(unittest.TestCase):
     """
     Test class that tests navigation between the major specializations
@@ -17,18 +15,6 @@ class BasicNavigationTest(unittest.TestCase):
     one of those three parts of the site.
     """
 
-    @pytest.fixture(autouse=True)
-    def class_setup(self, one_time_setup):
-        """
-        Sets up the class before the tests run.
-        
-        :param one_time_setup: Necessary parameter 
-        for the running of the one_time_setup Pytest fixture. DO NOT REMOVE.
-        
-        :return: None. 
-        """
-        self.page = BasePage(self.driver)
-
     @pytest.mark.run(order=3)
     def test_go_to_population(self):
         """
@@ -39,8 +25,8 @@ class BasicNavigationTest(unittest.TestCase):
         
         :return: None. 
         """
-        self.page.go_to_population()
-        assert self.page.population_displayed()
+        self.bp.go_to_population()
+        assert self.bp.population_displayed()
         time.sleep(3)
 
     @pytest.mark.run(order=1)
@@ -50,8 +36,8 @@ class BasicNavigationTest(unittest.TestCase):
         
         :return: None.
         """
-        self.page.go_to_organism()
-        assert self.page.organism_displayed()
+        self.bp.go_to_organism()
+        assert self.bp.organism_displayed()
         time.sleep(3)
 
     @pytest.mark.run(order=2)
@@ -61,6 +47,6 @@ class BasicNavigationTest(unittest.TestCase):
         
         :return: None. 
         """
-        self.page.go_to_analysis()
-        assert self.page.analysis_displayed()
+        self.bp.go_to_analysis()
+        assert self.bp.analysis_displayed()
         time.sleep(3)

@@ -1,9 +1,14 @@
 import pytest
 from base.webdriver_factory import WebDriverFactory
+from base.base_page import BasePage
+from specializations.value_getter.value_getter import ValueGetter
+from specializations.population.population_page import PopulationPage
+from specializations.organism.organism_page import OrganismPage
+from specializations.analysis.analysis_page import AnalysisPage
 
 
 @pytest.yield_fixture(scope="class")
-def one_time_setup(request, browser, local, setuipath, setffpath, seturl):
+def driver_setup(request, browser, local, setuipath, setffpath, seturl):
     print("One time setup begins here.\n")
     wdf = WebDriverFactory(browser, local, setuipath, setffpath, seturl)
     driver = wdf.get_webdriver_instance()
@@ -15,6 +20,22 @@ def one_time_setup(request, browser, local, setuipath, setffpath, seturl):
     wdf.clean_webdriver_instance()
     driver.quit()
     print("\nOne time teardown begins here.")
+
+
+@pytest.yield_fixture(scope="class")
+def bp_setup(request, driver_setup):
+    bp = BasePage(driver_setup)
+
+    if request.cls is not None:
+        request.cls.bp = bp
+        request.cls.vg = ValueGetter(driver_setup)
+        request.cls.pp = PopulationPage(driver_setup)
+        request.cls.op = OrganismPage(driver_setup)
+        request.cls.ap = AnalysisPage(driver_setup)
+
+    yield bp
+
+    assert not bp.crash_report_displayed()
 
 
 def pytest_addoption(parser):

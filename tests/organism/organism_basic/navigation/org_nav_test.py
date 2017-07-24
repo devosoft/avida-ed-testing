@@ -1,27 +1,14 @@
-from specializations.organism.organism_page import OrganismPage
 import unittest
 import pytest
 import time
 
 
-@pytest.mark.usefixtures("one_time_setup")
+@pytest.mark.usefixtures("bp_setup")
 class OrganismNavigationTest(unittest.TestCase):
     """
     Test class that tests navigation between the panels and other sub-specializations
     within the Organism page.
     """
-
-    @pytest.fixture(autouse=True)
-    def class_setup(self, one_time_setup):
-        """
-        Sets up the class before tests run.
-        
-        :param one_time_setup: Necessary parameter for running the 
-        one_time_setup Pytest fixture. DO NOT REMOVE.
-         
-        :return: None.
-        """
-        self.page = OrganismPage(self.driver)
 
     @pytest.mark.run(order=2)
     def test_toggle_org_settings(self):
@@ -30,12 +17,12 @@ class OrganismNavigationTest(unittest.TestCase):
 
         :return: None.
         """
-        self.page.open_org_settings()
-        time.sleep(5)
-        assert self.page.org_settings_displayed()
-        self.page.close_org_settings()
+        self.bp.go_to_organism()
+        self.op.open_org_settings()
+        assert self.op.org_settings_displayed()
+        self.op.close_org_settings()
         time.sleep(1)
-        assert not self.page.org_settings_displayed()
+        assert not self.op.org_settings_displayed()
 
     @pytest.mark.run(order=1)
     def test_toggle_org_details(self):
@@ -44,12 +31,13 @@ class OrganismNavigationTest(unittest.TestCase):
         
         :return: None.
         """
-        self.page.open_org_details()
+        self.bp.go_to_organism()
+        self.op.open_org_details()
         time.sleep(1)
-        assert self.page.org_details_displayed()
-        self.page.close_org_details()
+        assert self.op.org_details_displayed()
+        self.op.close_org_details()
         time.sleep(1)
-        assert not self.page.org_details_displayed()
-        self.page.open_org_details()
+        assert not self.op.org_details_displayed()
+        self.op.open_org_details()
         time.sleep(1)
-        assert self.page.org_details_displayed()
+        assert self.op.org_details_displayed()

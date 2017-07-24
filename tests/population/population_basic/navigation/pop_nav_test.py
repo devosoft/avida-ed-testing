@@ -1,26 +1,13 @@
-from specializations.population.population_page import PopulationPage
 import unittest
 import pytest
 
 
-@pytest.mark.usefixtures("one_time_setup")
+@pytest.mark.usefixtures("bp_setup")
 class PopulationNavigationTest(unittest.TestCase):
     """
     Test class that tests navigation between various panels and sub-specializations within
     the Population page.
     """
-
-    @pytest.fixture(autouse=True)
-    def class_setup(self, one_time_setup):
-        """
-        Sets up the class before the tests run.
-        
-        :param one_time_setup: Necessary parameter to use the one_time_setup
-        Pytest fixture.
-        
-        :return: None.
-        """
-        self.page = PopulationPage(self.driver)
 
     @pytest.mark.run(order=1)
     def test_toggle_env_settings(self):
@@ -29,15 +16,16 @@ class PopulationNavigationTest(unittest.TestCase):
         
         :return: None. 
         """
-        self.page.show_env_settings()
-        assert self.page.env_settings_displayed()
-        assert not self.page.grid_displayed()
-        self.page.hide_env_settings()
-        assert not self.page.env_settings_displayed()
-        assert self.page.grid_displayed()
-        self.page.show_env_settings()
-        assert self.page.env_settings_displayed()
-        assert not self.page.grid_displayed()
+        self.bp.go_to_population()
+        self.pp.show_env_settings()
+        assert self.pp.env_settings_displayed()
+        assert not self.pp.grid_displayed()
+        self.pp.hide_env_settings()
+        assert not self.pp.env_settings_displayed()
+        assert self.pp.grid_displayed()
+        self.pp.show_env_settings()
+        assert self.pp.env_settings_displayed()
+        assert not self.pp.grid_displayed()
 
     @pytest.mark.run(order=2)
     def test_toggle_pop_stats(self):
@@ -46,10 +34,11 @@ class PopulationNavigationTest(unittest.TestCase):
         
         :return: None. 
         """
-        self.page.show_pop_stats()
-        assert self.page.pop_stats_displayed()
-        self.page.hide_pop_stats()
-        assert not self.page.pop_stats_displayed()
-        self.page.show_pop_stats()
-        assert self.page.pop_stats_displayed()
+        self.bp.go_to_population()
+        self.pp.show_pop_stats()
+        assert self.pp.pop_stats_displayed()
+        self.pp.hide_pop_stats()
+        assert not self.pp.pop_stats_displayed()
+        self.pp.show_pop_stats()
+        assert self.pp.pop_stats_displayed()
 
