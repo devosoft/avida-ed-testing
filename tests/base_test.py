@@ -30,3 +30,14 @@ class BaseTest(unittest.TestCase):
         self.op = OrganismPage(self.driver)
         self.ap = AnalysisPage(self.driver)
         self.vg = ValueGetter(self.driver)
+
+    @pytest.yield_fixture(autouse=True)
+    def basic_assertions(self):
+        """
+        Performs basic assertions that should evaluate to True after every test
+        (e.g. crash report not displayed, etc.).
+
+        :return: None.
+        """
+        yield
+        assert not self.bp.crash_report_displayed()
