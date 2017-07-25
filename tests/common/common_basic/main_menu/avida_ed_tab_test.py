@@ -1,9 +1,9 @@
-import unittest
 import pytest
 
+from tests.base_test import BaseTest
 
-@pytest.mark.usefixtures("bp_setup")
-class AvidaEdTabTest(unittest.TestCase):
+
+class AvidaEdTabTest(BaseTest):
     """
     Test class that tests the Avida-ED tab of the main menu bar.
     """

@@ -1,9 +1,9 @@
-import unittest
 import pytest
 
+from tests.base_test import BaseTest
 
-@pytest.mark.usefixtures("bp_setup")
-class FileTabTest(unittest.TestCase):
+
+class FileTabTest(BaseTest):
     """
     Test class that tests the File tab of the main menu bar.
     """
@@ -21,3 +21,4 @@ class FileTabTest(unittest.TestCase):
         assert self.bp.export_graphics_dialog_displayed()
         self.bp.close_export_graphics_dialog()
         assert not self.bp.export_graphics_dialog_displayed()
+

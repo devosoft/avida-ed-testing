@@ -54,7 +54,7 @@ def op_setup(request, driver_setup):
 
 
 @pytest.fixture(scope="class")
-def ap_setup(request, driver_setup):
+def ap_setup(request, driver_setup) -> AnalysisPage:
     ap = AnalysisPage(driver_setup)
     if request.cls is not None:
         request.cls.ap = ap

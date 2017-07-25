@@ -1,9 +1,9 @@
 import pytest
-import unittest
+
+from tests.base_test import BaseTest
 
 
-@pytest.mark.usefixtures("bp_setup")
-class MenuBarStartupTest(unittest.TestCase):
+class MenuBarStartupTest(BaseTest):
     """
     Test class that tests the initial configuration of the main menu bar at the
     top of the Avida-ED website to ensure that the correct menu options are
@@ -34,4 +34,3 @@ class MenuBarStartupTest(unittest.TestCase):
         assert not self.bp.can_pause_from_menu()
         assert not self.bp.can_bring_to_org_window()
         assert not self.bp.can_bring_child_to_org_window()
-

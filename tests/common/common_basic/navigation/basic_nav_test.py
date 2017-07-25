@@ -1,10 +1,10 @@
-import unittest
 import pytest
 import time
 
+from tests.base_test import BaseTest
 
-@pytest.mark.usefixtures("bp_setup")
-class BasicNavigationTest(unittest.TestCase):
+
+class BasicNavigationTest(BaseTest):
     """
     Test class that tests navigation between the major specializations
     within the Avida-ED website.

@@ -1,9 +1,9 @@
-import unittest
 import pytest
 
+from tests.base_test import BaseTest
 
-@pytest.mark.usefixtures("bp_setup", "pp_setup")
-class PopulationNavigationTest(unittest.TestCase):
+
+class PopulationNavigationTest(BaseTest):
     """
     Test class that tests navigation between various panels and sub-specializations within
     the Population page.
