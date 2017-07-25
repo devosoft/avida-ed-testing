@@ -39,3 +39,25 @@ Thumbs.db
 # Custom #
 ##########
 #lastfailed*
+.idea/workspace.xml
+base/__pycache__/config.cpython-36.pyc
+base/output/
+output/
+specializations/__pycache__/
+specializations/analysis/__pycache__/
+specializations/organism/__pycache__/
+specializations/population/__pycache__/
+specializations/value_getter/__pycache__/value_getter.cpython-36.pyc
+tests/__pycache__/base_test.cpython-36-PYTEST.pyc
+tests/__pycache__/test_suite_basic.cpython-36-PYTEST.pyc
+tests/analysis/__pycache__/
+tests/analysis/analysis_basic/__pycache__/
+tests/common/common_basic/experiments/__pycache__/
+tests/common/common_basic/experiments/output/
+tests/common/common_basic/main_menu/__pycache__/
+tests/common/common_basic/navigation/output/
+tests/population/__pycache__/
+tests/population/population_basic/__pycache__/
+tests/population/population_basic/env_settings/__pycache__/
+tests/population/population_basic/navigation/__pycache__/
+utilities/__pycache__/simple_web_server.cpython-36.pyc
