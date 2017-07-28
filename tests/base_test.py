@@ -41,3 +41,17 @@ class BaseTest(unittest.TestCase):
         """
         yield
         assert not self.bp.crash_report_displayed()
+
+    @pytest.fixture()
+    def soft_reset(self):
+        """
+        Performs a 'soft reset" at the beginning of an experiment by resetting
+        the dish. In the future (when tests with Organism and Analysis window
+        are in place) it will also do as much as possible to reset those
+        windows.
+
+        * Not Fully Implemented Yet *
+
+        :return:
+        """
+        self.pp.new_exp_discard()
