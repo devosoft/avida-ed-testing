@@ -32,7 +32,7 @@ class BaseTest(unittest.TestCase):
         self.vg = ValueGetter(self.driver)
 
     @pytest.yield_fixture(autouse=True)
-    def basic_assertions(self):
+    def closing_assertions(self):
         """
         Performs basic assertions that should evaluate to True after every test
         (e.g. crash report not displayed, etc.).
