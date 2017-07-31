@@ -20,12 +20,17 @@ class BaseTest(unittest.TestCase):
     @pytest.fixture(autouse=True)
     def class_setup(self, driver_setup):
         """
-        Sets up class prior to run.
+        Sets up class prior to run. Adds necessary variables to the class and
+        waits for the splash screen to go away.
 
         :return: None.
         """
-        self.bp = BasePage(self.driver)
 
+        # Set up base page and wait for splash screen to go away.
+        self.bp = BasePage(self.driver)
+        self.bp.wait_until_splash_gone()
+
+        # Set up objects for interacting with other pages / specializations.
         self.pp = PopulationPage(self.driver)
         self.op = OrganismPage(self.driver)
         self.ap = AnalysisPage(self.driver)
@@ -42,7 +47,7 @@ class BaseTest(unittest.TestCase):
         yield
         assert not self.bp.crash_report_displayed()
 
-    @pytest.fixture()
+    @pytest.yield_fixture()
     def soft_reset(self):
         """
         Performs a 'soft reset" at the beginning of an experiment by resetting
@@ -54,4 +59,16 @@ class BaseTest(unittest.TestCase):
 
         :return:
         """
+        yield
         self.pp.new_exp_discard()
+
+    @pytest.yield_fixture()
+    def hard_reset(self):
+        """
+        Performs a 'hard reset' at the beginning of an experiment by refreshing
+        the Avida-ED webpage and waits for it to load completely.
+
+        :return: None.
+        """
+        yield
+        self.bp.refresh_avida_ed()

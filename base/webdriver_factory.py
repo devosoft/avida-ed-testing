@@ -72,10 +72,6 @@ class WebDriverFactory:
         driver.maximize_window()
         driver.get(base_url)
 
-        # Wait for splash screen to go away
-        WebDriverWait(driver, 60)\
-            .until(ec.invisibility_of_element_located(('id', 'splash')))
-
         return driver
 
     def clean_webdriver_instance(self):

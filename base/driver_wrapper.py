@@ -3,6 +3,8 @@ import os
 import logging
 
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as ec
 
 from utilities.custom_logger import create_custom_logger
 
@@ -378,3 +380,22 @@ class DriverWrapper:
         :return: Object that allows interaction with the alert.
         """
         return self.driver.switch_to.alert
+
+    def wait_until_invisible(self, my_locator="", locator_type="id"):
+        """
+        Use WebdriverWait to wait until an element is no longer visible on the
+        screen.
+
+        :return: None.
+        """
+        WebDriverWait(self.driver, 60) \
+            .until(ec.invisibility_of_element_located((locator_type,
+                                                       my_locator)))
+
+    def refresh_page(self):
+        """
+        Refreshes the page.
+
+        :return: None.
+        """
+        self.driver.refresh()

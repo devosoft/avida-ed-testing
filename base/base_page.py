@@ -20,6 +20,9 @@ class BasePage(DriverWrapper):
     __organism_block = "organismBlock"
     __analysis_block = "analysisBlock"
 
+    # Locator for splash screen
+    __splash_screen = "splash"
+
     # Locators for buttons to switch between sections.
     __population_button = "populationButton"
     __organism_button = "organismButton"
@@ -94,6 +97,23 @@ class BasePage(DriverWrapper):
         super(BasePage, self).__init__(driver)
         self.driver = driver
         self.util = UtilityMethods()
+
+    def wait_until_splash_gone(self):
+        """
+        Waits for splash screen to go away.
+
+        :return: None.
+        """
+        self.wait_until_invisible(my_locator=self.__splash_screen)
+
+    def refresh_avida_ed(self):
+        """
+        Refreshes Avida-ED webpage.
+
+        :return: None.
+        """
+        self.refresh_page()
+        self.wait_until_splash_gone()
 
     def population_displayed(self):
         """
