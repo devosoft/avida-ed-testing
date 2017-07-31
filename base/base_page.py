@@ -918,6 +918,16 @@ class BasePage(DriverWrapper):
         self.add_org_to_exp()
         self.log.info("Added @ancestor to dish.")
 
+    def add_all_functions_to_dish(self):
+        """
+        Adds the @all_functions organism to the dish via the main menu.
+
+        :return: None.
+        """
+        self.click_freezer_item("@all_functions")
+        self.add_org_to_exp()
+        self.log.info("Added @all_functions to dish.")
+
     ############################################################################
     # Methods below this point shouldn't be called outside this class.
     ############################################################################
