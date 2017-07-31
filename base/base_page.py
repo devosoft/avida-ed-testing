@@ -692,7 +692,8 @@ class BasePage(DriverWrapper):
         """
         self.open_freezer_dropdown()
         self.click_element(self.__fz_bring_org_to_org_view)
-        self.log.info("Clicked on the 'Put Highlighted Organism in Organism View' button in Freezer tab.")
+        self.log.info("Clicked on the 'Put Highlighted Organism in Organism"
+                      " View' button in Freezer tab.")
 
     def add_dish_to_analysis(self):
         """
@@ -702,7 +703,8 @@ class BasePage(DriverWrapper):
         """
         self.open_freezer_dropdown()
         self.click_element(self.__fz_bring_dish_to_ana_view)
-        self.log.info("Clicked on the 'Put Highlighted Populated Dish in Analysis View' button in Freezer tab.")
+        self.log.info("Clicked on the 'Put Highlighted Populated Dish in"
+                      " Analysis View' button in Freezer tab.")
 
     def control_dropdown_expanded(self):
         """
