@@ -1,6 +1,4 @@
 from selenium import webdriver
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as ec
 from selenium.webdriver.firefox.firefox_binary import FirefoxBinary
 from utilities.simple_web_server import CustomWebServer
 from base.config import Configuration
