@@ -22,6 +22,14 @@ class DriverWrapper:
         """ Initializes a DriverWrapper object. """
         self.driver = driver
 
+    def get_title(self):
+        """
+        Gets the title of the page the WebDriver is currently on.
+
+        :return: Title of the page.
+        """
+        return self.driver.title
+
     def send_keys(self, my_locator="", locator_type="id", element=None, keys=""):
         """
         Sends keyboard input to an element.
@@ -49,7 +57,7 @@ class DriverWrapper:
 
         try:
             if element is None:
-                element = self.__get_element(my_locator, locator_type)
+                element = self.get_element(my_locator, locator_type)
             element.send_keys(keys)
             self.log.info("Input '" + keys + "' sent to element with locator "
                           + my_locator + " of type " + locator_type)
@@ -84,7 +92,7 @@ class DriverWrapper:
         text = None
         try:
             if element is None:
-                element = self.__get_element(my_locator, locator_type)
+                element = self.get_element(my_locator, locator_type)
             text = element.text
             text = text.strip()
             self.log.info("Got text '" + text + "' from element with locator "
@@ -126,14 +134,6 @@ class DriverWrapper:
     # direct descendants.
     ############################################################################
 
-    def __get_title(self):
-        """
-        Gets the title of the page the WebDriver is currently on.
-
-        :return: Title of the page.
-        """
-        return self.driver.title
-
     def __get_by_type(self, locator_type):
         """
         Finds a locator type from within the By class that corresponds to the
@@ -162,7 +162,7 @@ class DriverWrapper:
             self.log.info("Locator type " + locator_type + " not supported.")
         return False
 
-    def __get_element(self, my_locator, locator_type="id"):
+    def get_element(self, my_locator, locator_type="id"):
         """
         Attempts to get an element on the webpage from the driver.
 
@@ -191,7 +191,7 @@ class DriverWrapper:
 
         return element
 
-    def __get_element_list(self, my_locator, locator_type="id"):
+    def get_element_list(self, my_locator, locator_type="id"):
         """
         Attempts to get a group of elements on the webpage from the driver.
 
@@ -223,7 +223,7 @@ class DriverWrapper:
 
         return elements
 
-    def __click_element(self, my_locator="", locator_type="id", element=None):
+    def click_element(self, my_locator="", locator_type="id", element=None):
         """
         Clicks on an element.
 
@@ -248,7 +248,7 @@ class DriverWrapper:
         """
         try:
             if element is None:
-                element = self.__get_element(my_locator, locator_type)
+                element = self.get_element(my_locator, locator_type)
             element.click()
             self.log.info("Clicked on element with locator " + my_locator
                           + " of type " + locator_type + ".")
@@ -257,7 +257,7 @@ class DriverWrapper:
             self.log.info("Failed to click on any element with locator "
                           + my_locator + " of type " + locator_type + ".")
 
-    def __element_present(self, my_locator="", locator_type="id"):
+    def element_present(self, my_locator="", locator_type="id"):
         """
         Checks if an element is present on the page the driver is on.
 
@@ -275,7 +275,7 @@ class DriverWrapper:
         """
 
         try:
-            element = self.__get_element(my_locator, locator_type)
+            element = self.get_element(my_locator, locator_type)
             if element is not None:
                 self.log.info("Element with locator " + my_locator
                               + " of type " + locator_type
@@ -290,9 +290,9 @@ class DriverWrapper:
         except:
             return False
 
-    def __element_displayed(self, my_locator="",
-                            locator_type="id",
-                            element=None):
+    def element_displayed(self, my_locator="",
+                          locator_type="id",
+                          element=None):
         """
         Checks if an element is displayed on the web page.
 
@@ -316,7 +316,7 @@ class DriverWrapper:
         is_displayed = False
         try:
             if element is None:
-                element = self.__get_element(my_locator, locator_type)
+                element = self.get_element(my_locator, locator_type)
             if element is not None:
                 is_displayed = element.is_displayed()
             if is_displayed:
@@ -333,10 +333,10 @@ class DriverWrapper:
                           + my_locator + " of type " + locator_type)
             return False
 
-    def __element_has_class(self, my_locator="",
-                            locator_type="id",
-                            class_name="",
-                            element=None):
+    def element_has_class(self, my_locator="",
+                          locator_type="id",
+                          class_name="",
+                          element=None):
         """
         Determines whether the specified element is of class class_name.
 
@@ -355,7 +355,7 @@ class DriverWrapper:
         been applied to the element; False otherwise.
         """
         if element is None:
-            element = self.__get_element(my_locator, locator_type)
+            element = self.get_element(my_locator, locator_type)
         if element is not None:
             class_list = element.get_attribute("class")
             if class_list is not None and class_name in class_list:
@@ -378,7 +378,7 @@ class DriverWrapper:
         except:
             self.log.info("Attempt to run Javascript code failed.")
 
-    def __switch_to_alert(self):
+    def switch_to_alert(self):
         """
         Allows interaction with Javscript alerts.
 
@@ -386,7 +386,7 @@ class DriverWrapper:
         """
         return self.driver.switch_to.alert
 
-    def __wait_until_invisible(self, my_locator="", locator_type="id"):
+    def wait_until_invisible(self, my_locator="", locator_type="id"):
         """
         Use WebdriverWait to wait until an element is no longer visible on the
         screen.

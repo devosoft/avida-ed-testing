@@ -104,7 +104,7 @@ class BasePage(DriverWrapper):
 
         :return: None.
         """
-        self.__wait_until_invisible(my_locator=self.__splash_screen)
+        self.wait_until_invisible(my_locator=self.__splash_screen)
 
     def refresh_avida_ed(self):
         """
@@ -121,7 +121,7 @@ class BasePage(DriverWrapper):
 
         :return: True if the population pane is displayed, false otherwise. 
         """
-        pop_displayed = self.__element_displayed(self.__population_block)
+        pop_displayed = self.element_displayed(self.__population_block)
         self.log.info("Checked if population window displayed: found to be "
                       + str(pop_displayed) + ".")
         return pop_displayed
@@ -131,7 +131,7 @@ class BasePage(DriverWrapper):
         Navigates to the "Population" pane of the Avida-ED website.
         :return: None.
         """
-        self.__click_element(self.__population_button)
+        self.click_element(self.__population_button)
         self.log.info("Navigated to population window.")
 
     def organism_displayed(self):
@@ -140,7 +140,7 @@ class BasePage(DriverWrapper):
 
         :return: True if the organism pane is displayed, false otherwise.
         """
-        org_displayed = self.__element_displayed(self.__organism_block)
+        org_displayed = self.element_displayed(self.__organism_block)
         self.log.info("Checked if organism window displayed: found to be "
                       + str(org_displayed) + ".")
 
@@ -151,7 +151,7 @@ class BasePage(DriverWrapper):
         Navigates to the "Organism" pane of the Avida-ED website.
         :return: None.
         """
-        self.__click_element(self.__organism_button)
+        self.click_element(self.__organism_button)
         self.log.info("Navigated to organism window.")
 
     def analysis_displayed(self):
@@ -160,7 +160,7 @@ class BasePage(DriverWrapper):
 
         :return: True if the analysis pane is displayed, false otherwise. 
         """
-        ana_displayed = self.__element_displayed(self.__analysis_block)
+        ana_displayed = self.element_displayed(self.__analysis_block)
         self.log.info("Checked if analysis window displayed: found to be "
                       + str(ana_displayed) + ".")
         return ana_displayed
@@ -170,7 +170,7 @@ class BasePage(DriverWrapper):
         Navigates to the "Analysis" pane of the Avida-ED website.
         :return: None.
         """
-        self.__click_element(self.__analysis_button)
+        self.click_element(self.__analysis_button)
         self.log.info("Navigated to analysis window.")
 
     def crash_report_displayed(self):
@@ -179,7 +179,7 @@ class BasePage(DriverWrapper):
 
         :return: True if the dialog is displayed, False otherwise.
         """
-        return self.__element_displayed(self.__crash_dlg)
+        return self.element_displayed(self.__crash_dlg)
 
     def freezer_item_highlighted(self, text_name):
         """
@@ -194,7 +194,7 @@ class BasePage(DriverWrapper):
 
         highlighted = False
         if item is not None:
-            highlighted = self.__element_has_class(
+            highlighted = self.element_has_class(
                 class_name=self.__fz_highlight_class,
                 element=item)
 
@@ -212,7 +212,7 @@ class BasePage(DriverWrapper):
         """
         item = self.__get_freezer_item(text_name)
         if item is not None:
-            self.__click_element(element=item)
+            self.click_element(element=item)
             self.log.info("Clicked on freezer item with name " + text_name)
         else:
             self.log.info("Failed to click on any freezer item with name "
@@ -256,7 +256,7 @@ class BasePage(DriverWrapper):
 
         :return: True if the dialog box is displayed, false otherwise.
         """
-        displayed = self.__element_displayed(self.__avida_ed_about_dlg)
+        displayed = self.element_displayed(self.__avida_ed_about_dlg)
         self.log.info("Is 'About' dialog box in Avida-ED tab displayed? "
                       + str(displayed))
         return displayed
@@ -269,7 +269,7 @@ class BasePage(DriverWrapper):
         :return: None.
         """
         self.open_avida_ed_dropdown()
-        self.__click_element(self.__avida_ed_about_menu)
+        self.click_element(self.__avida_ed_about_menu)
         self.log.info("Opened 'About' dialog box in Avida-ED tab.")
 
         # Wait (because opening can take a while).
@@ -282,7 +282,7 @@ class BasePage(DriverWrapper):
         :return: None.
         """
         if self.avida_ed_about_displayed():
-            self.__click_element(self.__avida_ed_about_closedlg)
+            self.click_element(self.__avida_ed_about_closedlg)
             self.log.info("Closed 'About' dialog box in Avida-ED tab.")
 
             # Wait (because closing can take a while).
@@ -331,7 +331,7 @@ class BasePage(DriverWrapper):
         :return: None.
         """
         self.open_file_dropdown()
-        self.__click_element(self.__file_save_workspace)
+        self.click_element(self.__file_save_workspace)
         self.log.info("Click on 'Save Current Workspace' in File tab.")
 
     def save_current_workspace_as(self, workspace_name):
@@ -346,11 +346,11 @@ class BasePage(DriverWrapper):
         :return: None.
         """
         self.open_file_dropdown()
-        self.__click_element(self.__file_save_workspace_as)
+        self.click_element(self.__file_save_workspace_as)
         self.log.info("Clicked on 'Save Current Workspace As' in File tab.")
 
         try:
-            workspace_name_alert = self.__switch_to_alert()
+            workspace_name_alert = self.switch_to_alert()
             workspace_name_alert.send_keys(workspace_name)
             workspace_name_alert.accept()
         except:
@@ -365,7 +365,7 @@ class BasePage(DriverWrapper):
         :return: None.
         """
         self.open_file_dropdown()
-        self.__click_element(self.__file_open_def_workspace)
+        self.click_element(self.__file_open_def_workspace)
         self.log.info("Clicked on 'Open Default Workspace' in File tab.")
 
     def open_workspace(self, workspace_path):
@@ -383,7 +383,7 @@ class BasePage(DriverWrapper):
         :return: None.
         """
         self.open_file_dropdown()
-        self.__click_element(self.__file_open_workspace)
+        self.click_element(self.__file_open_workspace)
         self.log.info("Click on 'Open Workspace' in File tab.")
 
     def import_freezer_item(self, freezer_item_path):
@@ -401,7 +401,7 @@ class BasePage(DriverWrapper):
         :return: None.
         """
         self.open_file_dropdown()
-        self.__click_element(self.__file_import_freezer_item)
+        self.click_element(self.__file_import_freezer_item)
         self.log.info("Clicked on 'Import Freezer Item' in File tab.")
 
     def export_data(self):
@@ -416,7 +416,7 @@ class BasePage(DriverWrapper):
         :return: None.
         """
         self.open_file_dropdown()
-        self.__click_element(self.__file_export_data)
+        self.click_element(self.__file_export_data)
         self.log.info("Clicked on 'Export Data' in the File tab.")
 
     def export_graphics(self):
@@ -430,7 +430,7 @@ class BasePage(DriverWrapper):
         """
         if not self.export_graphics_dialog_displayed():
             self.open_file_dropdown()
-            self.__click_element(self.__file_export_graph)
+            self.click_element(self.__file_export_graph)
             self.log.info("Clicked on 'Export Graphics' in File tab.")
 
             # Opening the dialog takes some time, so we will wait a bit.
@@ -443,7 +443,7 @@ class BasePage(DriverWrapper):
 
         :return: True if the dialog box is displayed, False otherwise.
         """
-        displayed = self.__element_displayed(self.__file_export_graph_dlg)
+        displayed = self.element_displayed(self.__file_export_graph_dlg)
         self.log.info("Is 'Export Graphics' dialog box displayed? "
                       + str(displayed))
         return displayed
@@ -457,7 +457,7 @@ class BasePage(DriverWrapper):
         :return: None.
         """
         if self.export_graphics_dialog_displayed():
-            self.__click_element(self.__file_export_graph_closedlg)
+            self.click_element(self.__file_export_graph_closedlg)
             self.log.info("Closed export graphics dialog.")
 
             # Closing the dialog takes some time, so we will wait a bit.
@@ -505,11 +505,11 @@ class BasePage(DriverWrapper):
         :return: None.
         """
         self.open_freezer_dropdown()
-        self.__click_element(self.__fz_save_exp_conf)
+        self.click_element(self.__fz_save_exp_conf)
         self.log.info("Clicked 'Save Experiment Configuration' button in"
                       " Freezer tab.")
         try:
-            name_exp_conf_alert = self.__switch_to_alert()
+            name_exp_conf_alert = self.switch_to_alert()
             if name is not None:
                 name_exp_conf_alert.send_keys(name)
             name_exp_conf_alert.accept()
@@ -545,10 +545,10 @@ class BasePage(DriverWrapper):
         """
         self.open_freezer_dropdown()
         if self.can_save_current_pop():
-            self.__click_element(self.__fz_save_pop)
+            self.click_element(self.__fz_save_pop)
             self.log.info("Successfully clicked on 'Save Current Population'"
                           " button in Freezer tab.")
-            name_popup = self.__switch_to_alert()
+            name_popup = self.switch_to_alert()
             if name is not None:
                 name_popup.send_keys(name)
                 self.log.info("Saving current population to freezer as '" + name
@@ -586,11 +586,11 @@ class BasePage(DriverWrapper):
         """
         self.open_freezer_dropdown()
         if self.can_save_selected_org():
-            self.__click_element(self.__fz_save_org)
+            self.click_element(self.__fz_save_org)
             self.log.info("Successfully clicked on 'Save Selected Organism' in"
                           " Freezer tab.")
 
-            name_popup = self.__switch_to_alert()
+            name_popup = self.switch_to_alert()
             if name is not None:
                 name_popup.send_keys(name)
                 self.log.info("Saving selected organism as '" + name + "'.")
@@ -627,11 +627,11 @@ class BasePage(DriverWrapper):
         """
         self.open_freezer_dropdown()
         if self.can_save_offspring_org():
-            self.__click_element(self.__fz_save_offspring)
+            self.click_element(self.__fz_save_offspring)
             self.log.info("Successfully clicked on 'Save Offspring Organism'"
                           " button in Freezer tab.")
 
-            name_popup = self.__switch_to_alert()
+            name_popup = self.switch_to_alert()
             if name is not None:
                 name_popup.send_keys(name)
                 self.log.info("Saving offspring organism with name '" + name
@@ -654,7 +654,7 @@ class BasePage(DriverWrapper):
         :return: None.
         """
         self.open_freezer_dropdown()
-        self.__click_element(self.__fz_add_conf_dish)
+        self.click_element(self.__fz_add_conf_dish)
         self.log.info("Clicked on 'Add Highlighted Configured Dish to"
                       " Experiment' button in Freezer tab.")
 
@@ -668,7 +668,7 @@ class BasePage(DriverWrapper):
         :return: None.
         """
         self.open_freezer_dropdown()
-        self.__click_element(self.__fz_add_org)
+        self.click_element(self.__fz_add_org)
         self.log.info("Clicked on 'Add Highlighted Organism to Experiment'"
                       " button in Freezer tab.")
 
@@ -680,7 +680,7 @@ class BasePage(DriverWrapper):
         :return: None.
         """
         self.open_freezer_dropdown()
-        self.__click_element(self.__fz_add_pop_dish)
+        self.click_element(self.__fz_add_pop_dish)
         self.log.info("Clicked on 'Add Highlighted Populated Dish to"
                       " Experiment' button in Freezer tab.")
 
@@ -691,7 +691,7 @@ class BasePage(DriverWrapper):
         :return: None.
         """
         self.open_freezer_dropdown()
-        self.__click_element(self.__fz_bring_org_to_org_view)
+        self.click_element(self.__fz_bring_org_to_org_view)
         self.log.info("Clicked on the 'Put Highlighted Organism in Organism"
                       " View' button in Freezer tab.")
 
@@ -702,7 +702,7 @@ class BasePage(DriverWrapper):
         :return: None.
         """
         self.open_freezer_dropdown()
-        self.__click_element(self.__fz_bring_dish_to_ana_view)
+        self.click_element(self.__fz_bring_dish_to_ana_view)
         self.log.info("Clicked on the 'Put Highlighted Populated Dish in"
                       " Analysis View' button in Freezer tab.")
 
@@ -759,7 +759,7 @@ class BasePage(DriverWrapper):
         """
         self.open_control_dropdown()
         if self.can_run_from_menu():
-            self.__click_element(self.__cn_run)
+            self.click_element(self.__cn_run)
             self.log.info("Successfully clicked on 'Run' in Control tab.")
         else:
             self.log.info("Failed to click on 'Run' in Control tab.")
@@ -784,7 +784,7 @@ class BasePage(DriverWrapper):
         """
         self.open_control_dropdown()
         if self.can_pause_from_menu():
-            self.__click_element(self.__cn_pause)
+            self.click_element(self.__cn_pause)
             self.log.info("Successfully clicked on 'Pause' in Control tab via"
                           "the menu bar.")
         else:
@@ -801,7 +801,7 @@ class BasePage(DriverWrapper):
         :return: None.
         """
         self.open_control_dropdown()
-        self.__click_element(self.__cn_one_update)
+        self.click_element(self.__cn_one_update)
         self.log.info("Clicked on 'Forward' in Control tab via the menu bar.")
 
     def start_new_exp_from_menu(self):
@@ -817,7 +817,7 @@ class BasePage(DriverWrapper):
         :return: None.
         """
         self.open_control_dropdown()
-        self.__click_element(self.__cn_new_exp)
+        self.click_element(self.__cn_new_exp)
         self.log.info("Clicked on 'Start New Experiment' in Control tab.")
 
     def can_bring_to_org_window(self):
@@ -841,7 +841,7 @@ class BasePage(DriverWrapper):
         """
         self.open_control_dropdown()
         if self.can_bring_to_org_window():
-            self.__click_element(self.__cn_bring_to_org)
+            self.click_element(self.__cn_bring_to_org)
             self.log.info("Successfully clicked on 'Put Highlighted Organism in"
                           + " Organism View' button.")
         else:
@@ -871,7 +871,7 @@ class BasePage(DriverWrapper):
         """
         self.open_control_dropdown()
         if self.can_bring_child_to_org_window():
-            self.__click_element(self.__cn_bring_offspring_to_org)
+            self.click_element(self.__cn_bring_offspring_to_org)
             self.log.info("Successfully clicked on Put Offspring in Organism "
                           + "View menu option.")
         else:
@@ -945,8 +945,8 @@ class BasePage(DriverWrapper):
 
         :return: True if the dropdown is expanded, false otherwise.
         """
-        expanded = self.__element_has_class(my_locator, locator_type,
-                                            self.__item_selected)
+        expanded = self.element_has_class(my_locator, locator_type,
+                                          self.__item_selected)
         self.log.info("Is dropdown menu with locator " + my_locator
                       + " of type " + locator_type + "expanded? "
                       + str(expanded) + ".")
@@ -964,9 +964,9 @@ class BasePage(DriverWrapper):
 
         :return: True if the menu item is disabled, False otherwise.
         """
-        disabled = self.__element_has_class(my_locator,
-                                            locator_type,
-                                            self.__item_disabled)
+        disabled = self.element_has_class(my_locator,
+                                          locator_type,
+                                          self.__item_disabled)
         self.log.info("Is menu item with locator " + my_locator + " of type "
                       + locator_type + " disabled? " + str(disabled))
         return disabled
@@ -983,7 +983,7 @@ class BasePage(DriverWrapper):
         self.log.info("Attempting to find freezer item with name "
                       + text_name + ".")
 
-        freezer_items = self.__get_element_list(
+        freezer_items = self.get_element_list(
             self.__fz_item_xpath,
             "xpath"
         )
@@ -1005,7 +1005,7 @@ class BasePage(DriverWrapper):
         :return: None.
         """
         self.log.info("Clicking on Avida-ED main menu tab.")
-        self.__click_element(self.__avida_ed_tab)
+        self.click_element(self.__avida_ed_tab)
 
     def __click_file_dropdown(self):
         """
@@ -1014,7 +1014,7 @@ class BasePage(DriverWrapper):
         :return: None.
         """
         self.log.info("Clicking on File main menu tab.")
-        self.__click_element(self.__file_tab)
+        self.click_element(self.__file_tab)
 
     def __click_freezer_dropdown(self):
         """
@@ -1023,7 +1023,7 @@ class BasePage(DriverWrapper):
         :return: None.
         """
         self.log.info("Clicking on Freezer main menu tab.")
-        self.__click_element(self.__freezer_tab)
+        self.click_element(self.__freezer_tab)
 
     def __click_control_dropdown(self):
         """
@@ -1032,7 +1032,7 @@ class BasePage(DriverWrapper):
         :return: None.
         """
         self.log.info("Clicking on Control main menu tab.")
-        self.__click_element(self.__control_tab)
+        self.click_element(self.__control_tab)
 
     def __click_help_dropdown(self):
         """
@@ -1040,6 +1040,6 @@ class BasePage(DriverWrapper):
 
         :return: None.
         """
-        self.__click_element(self.__help_tab)
+        self.click_element(self.__help_tab)
         self.log.info("Clicked on Help main menu tab.")
 

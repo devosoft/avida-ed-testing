@@ -64,7 +64,7 @@ class PopulationPage(BasePage):
         """
 
         setup_button_text = self.get_text(self.__setup_button_id)
-        displayed = (self.__element_displayed(self.__setup_block_id) and
+        displayed = (self.element_displayed(self.__setup_block_id) and
                      self.util.verify_text_matches(setup_button_text,
                                                    self.__setup_dish))
         self.log.info("Is Environmental Settings displayed? " + str(displayed))
@@ -84,7 +84,7 @@ class PopulationPage(BasePage):
         :return: True if the Petri dish is displayed, false otherwise.
         """
         setup_button_text = self.get_text(self.__setup_button_id)
-        displayed = (not self.__element_displayed(self.__setup_block_id) and
+        displayed = (not self.element_displayed(self.__setup_block_id) and
                      self.util.verify_text_matches(setup_button_text,
                                                    self.__setup_setup))
         self.log.info("Is grid displayed? " + str(displayed))
@@ -99,7 +99,7 @@ class PopulationPage(BasePage):
         """
         self.go_to_population()
         if not self.env_settings_displayed():
-            self.__click_element(self.__setup_button_id)
+            self.click_element(self.__setup_button_id)
             self.log.info("Show environmental settings window.")
 
     def hide_env_settings(self):
@@ -111,7 +111,7 @@ class PopulationPage(BasePage):
         """
         self.go_to_population()
         if self.env_settings_displayed():
-            self.__click_element(self.__setup_button_id)
+            self.click_element(self.__setup_button_id)
             self.log.info("Hid environmental settings window.")
 
     def pop_stats_displayed(self):
@@ -121,7 +121,7 @@ class PopulationPage(BasePage):
 
         :return: True if the stats panel is visible, false otherwise.
         """
-        pop_stats_displayed = self.__element_displayed(self.__stats_window)
+        pop_stats_displayed = self.element_displayed(self.__stats_window)
         self.log.info("Is population statistics displayed? "
                       + str(pop_stats_displayed))
         return pop_stats_displayed
@@ -133,8 +133,8 @@ class PopulationPage(BasePage):
         :return: None.
         """
         self.go_to_population()
-        if not self.__element_displayed(self.__stats_window):
-            self.__click_element(self.__stats_button)
+        if not self.element_displayed(self.__stats_window):
+            self.click_element(self.__stats_button)
             self.log.info("Show population statistics window.")
 
     def hide_pop_stats(self):
@@ -144,8 +144,8 @@ class PopulationPage(BasePage):
         :return: None.
         """
         self.go_to_population()
-        if self.__element_displayed(self.__stats_window):
-            self.__click_element(self.__stats_button)
+        if self.element_displayed(self.__stats_window):
+            self.click_element(self.__stats_button)
             self.log.info("Hid population statistics window.")
 
     def __click_runpause_pop_button(self):
@@ -155,7 +155,7 @@ class PopulationPage(BasePage):
 
         :return: None.
         """
-        self.__click_element(self.__run_pause_pop_button)
+        self.click_element(self.__run_pause_pop_button)
 
     def runpause_text_is_run(self):
         """
@@ -196,7 +196,7 @@ class PopulationPage(BasePage):
 
         :return: True if dialog is displayed, False otherwise.
         """
-        displayed = self.__element_displayed(self.__new_dish_dlg)
+        displayed = self.element_displayed(self.__new_dish_dlg)
         self.log.info("Is new experiment dialog displayed? " + str(displayed))
         return displayed
 
@@ -209,7 +209,7 @@ class PopulationPage(BasePage):
 
         :return: None.
         """
-        self.__click_element(self.__new_dish_button)
+        self.click_element(self.__new_dish_button)
         self.log.info("Clicked on New button without plan for dialog.")
 
     def new_exp_cancel(self):
@@ -222,7 +222,7 @@ class PopulationPage(BasePage):
         self.click_new_exp()
         self.log.info("Clicked on New button.")
         if self.new_exp_dlg_displayed():
-            self.__click_element(self.__new_dish_cancel_xpath, "xpath")
+            self.click_element(self.__new_dish_cancel_xpath, "xpath")
             self.log.info("Cancelled New via dialog box.")
 
     def new_exp_discard(self):
@@ -235,7 +235,7 @@ class PopulationPage(BasePage):
         self.click_new_exp()
         self.log.info("Clicked on New button.")
         if self.new_exp_dlg_displayed():
-            self.__click_element(self.__new_dish_discard_xpath, "xpath")
+            self.click_element(self.__new_dish_discard_xpath, "xpath")
             self.log.info("Carried through with New, discarded old dish.")
 
     def new_exp_saveconf(self, name=None):
@@ -251,8 +251,8 @@ class PopulationPage(BasePage):
         self.click_new_exp()
         self.log.info("Clicked on New button.")
         if self.new_exp_dlg_displayed():
-            self.__click_element(self.__new_dish_saveconf_xpath, "xpath")
-            name_popup = self.__switch_to_alert()
+            self.click_element(self.__new_dish_saveconf_xpath, "xpath")
+            name_popup = self.switch_to_alert()
             if name is not None:
                 name_popup.send_keys(name)
                 self.log.info("Carried through with New, saved dish conf. as "
@@ -274,8 +274,8 @@ class PopulationPage(BasePage):
         self.click_new_exp()
         self.log.info("Clicked on New button.")
         if self.new_exp_dlg_displayed():
-            self.__click_element(self.__new_dish_savepop_xpath, "xpath")
-            name_popup = self.__switch_to_alert()
+            self.click_element(self.__new_dish_savepop_xpath, "xpath")
+            name_popup = self.switch_to_alert()
             if name is not None:
                 name_popup.send_keys(name)
                 self.log.info("Carried through with New, saved populated dish"
@@ -291,7 +291,7 @@ class PopulationPage(BasePage):
         button
         :return:
         """
-        self.__click_element(self.__forward_button)
+        self.click_element(self.__forward_button)
         self.log.info("Moved forward one update via 'Forward' button under dish"
                       ".")
 
@@ -315,7 +315,7 @@ class PopulationPage(BasePage):
         :return: None.
         """
         self.show_env_settings()
-        cols_box = self.__get_element(self.__dish_cols_box)
+        cols_box = self.get_element(self.__dish_cols_box)
         cols_box.clear()
         self.send_keys(element=cols_box, keys=cols_num)
         self.hide_env_settings()
@@ -330,7 +330,7 @@ class PopulationPage(BasePage):
         :return: None.
         """
         self.show_env_settings()
-        rows_box = self.__get_element(self.__dish_rows_box)
+        rows_box = self.get_element(self.__dish_rows_box)
         rows_box.clear()
         self.send_keys(element=rows_box, keys=rows_num)
         self.hide_env_settings()
@@ -345,7 +345,7 @@ class PopulationPage(BasePage):
         :return: None.
         """
         self.show_env_settings()
-        mut_rate_box = self.__get_element(self.__mut_rate_input)
+        mut_rate_box = self.get_element(self.__mut_rate_input)
         mut_rate_box.clear()
         self.send_keys(element=mut_rate_box, keys=str(rate))
         self.hide_env_settings()

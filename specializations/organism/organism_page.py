@@ -40,7 +40,7 @@ class OrganismPage(BasePage):
         :return: True if the organism settings popup currently displayed, false
         otherwise.
         """
-        org_sett_displayed = self.__element_displayed(self.__org_settings_dlg)
+        org_sett_displayed = self.element_displayed(self.__org_settings_dlg)
         self.log.info("Is Organism Settings dialog displayed? "
                       + str(org_sett_displayed))
         return org_sett_displayed
@@ -53,10 +53,10 @@ class OrganismPage(BasePage):
         :return: None.
         """
         self.go_to_organism()
-        button = self.__get_element(self.__org_settings_btn)
+        button = self.get_element(self.__org_settings_btn)
         button_text = self.get_text(element=button)
         if button_text == self.__org_settings_btn_text:
-            self.__click_element(element=button)
+            self.click_element(element=button)
             self.log.info("Opened Organism Settings dialog.")
 
     def close_org_settings(self):
@@ -66,7 +66,7 @@ class OrganismPage(BasePage):
         :return: None.
         """
         if self.org_settings_displayed():
-            self.__click_element(self.__org_settings_close)
+            self.click_element(self.__org_settings_close)
             self.log.info("Closed Organism Settings dialog.")
 
     def org_details_displayed(self):
@@ -76,7 +76,7 @@ class OrganismPage(BasePage):
         
         :return: True if the details panel displayed, otherwise false. 
         """
-        org_details_displayed = self.__element_displayed(self.__org_details_pane)
+        org_details_displayed = self.element_displayed(self.__org_details_pane)
         self.log.info("Is Organism details pane displayed? "
                       + str(org_details_displayed))
         return org_details_displayed
@@ -91,7 +91,7 @@ class OrganismPage(BasePage):
 
         self.go_to_organism()
         if not self.org_details_displayed():
-            self.__click_element(self.__org_details_btn)
+            self.click_element(self.__org_details_btn)
             self.log.info("Opened organism details pane.")
 
     def close_org_details(self):
@@ -103,5 +103,5 @@ class OrganismPage(BasePage):
         """
         self.go_to_organism()
         if self.org_details_displayed():
-            self.__click_element(self.__org_details_btn)
+            self.click_element(self.__org_details_btn)
             self.log.info("Closed organism details pane.")
