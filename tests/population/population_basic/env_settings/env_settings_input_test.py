@@ -10,6 +10,7 @@ class EnvSettingsInputTest(BaseTest):
     """
 
     @pytest.mark.run(order=1)
+    @pytest.mark.usefixtures("hard_reset")
     def test_input_dishsize(self):
         """
         Tests that crashes and unexpected behaviors do not occur if bad input
@@ -29,4 +30,26 @@ class EnvSettingsInputTest(BaseTest):
         self.pp.run_from_pop()
 
         # Wait for a short period so that response to run attempt occurs.
+        self.bp.util.sleep(3)
+
+    @pytest.mark.run(order=2)
+    def test_input_mut(self):
+        """
+        Tests that crashes and unexpected behavior do not occur if bad input is
+        given to the population mutation rate boxes.
+
+        :return: None.
+        """
+
+        # Edit pop mutation rate with nonsensical value.
+        self.pp.show_env_settings()
+        self.pp.edit_mut_rate("-12")
+        self.pp.hide_env_settings()
+
+        # Add an organism to the dish and try to run it.
+        self.bp.click_freezer_item("@ancestor")
+        self.bp.add_org_to_exp()
+        self.pp.run_from_pop()
+
+        # Wait a short period so that response to run attempt occurs.
         self.bp.util.sleep(3)
