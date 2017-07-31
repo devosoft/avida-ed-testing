@@ -11,10 +11,10 @@ class EnvSettingsInputTest(BaseTest):
 
     @pytest.mark.run(order=1)
     @pytest.mark.usefixtures("hard_reset")
-    def test_input_dishsize(self):
+    def test_input_dishsize_negnum(self):
         """
-        Tests that crashes and unexpected behaviors do not occur if bad input
-        is given to the dish size boxes.
+        Tests that crashes and unexpected behaviors do not occur if a negative
+        number is given to the dish size boxes.
 
         :return: None.
         """
@@ -33,6 +33,28 @@ class EnvSettingsInputTest(BaseTest):
         self.bp.util.sleep(3)
 
     @pytest.mark.run(order=2)
+    @pytest.mark.usefixtures("hard_reset")
+    def test_input_dishsize_str(self):
+        """
+        Tests that crashes and unexpected behaviors do not occur if a
+        non-numeric string is given to the dish size boxes.
+
+        :return: None.
+        """
+        # Edit dish size with nonsensical values.
+        self.pp.show_env_settings()
+        self.pp.edit_dish_cols("sample text")
+        self.pp.hide_env_settings()
+
+        # Add an organism to the experiment and try to run it.
+        self.bp.click_freezer_item("@ancestor")
+        self.bp.add_org_to_exp()
+        self.pp.run_from_pop()
+
+        # Wait for a short period so that response to run attempt occurs.
+        self.bp.util.sleep(3)
+
+    @pytest.mark.run(order=3)
     def test_input_mut(self):
         """
         Tests that crashes and unexpected behavior do not occur if bad input is
