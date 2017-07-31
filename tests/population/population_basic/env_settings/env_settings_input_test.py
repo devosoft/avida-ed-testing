@@ -34,6 +34,29 @@ class EnvSettingsInputTest(BaseTest):
 
     @pytest.mark.run(order=2)
     @pytest.mark.usefixtures("hard_reset")
+    def test_input_dishsize_zero(self):
+        """
+        Tests that crashes and unexpected behaviors do not occur if a dish size
+        dimension is set to 0.
+
+        :return: None.
+        """
+
+        # Edit dish size with nonsensical values.
+        self.pp.show_env_settings()
+        self.pp.edit_dish_cols("0")
+        self.pp.hide_env_settings()
+
+        # Add an organism to the experiment and try to run it.
+        self.bp.click_freezer_item("@ancestor")
+        self.bp.add_org_to_exp()
+        self.pp.run_from_pop()
+
+        # Wait for a short period so that response to run attempt occurs.
+        self.bp.util.sleep(3)
+
+    @pytest.mark.run(order=3)
+    @pytest.mark.usefixtures("hard_reset")
     def test_input_dishsize_str(self):
         """
         Tests that crashes and unexpected behaviors do not occur if a
