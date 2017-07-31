@@ -72,3 +72,4 @@ class BaseTest(unittest.TestCase):
         """
         yield
         self.bp.refresh_avida_ed()
+
