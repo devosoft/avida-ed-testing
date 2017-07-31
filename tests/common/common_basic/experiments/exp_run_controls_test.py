@@ -18,8 +18,7 @@ class ExperimentControlsTest(BaseTest):
         """
 
         # Add @ancestor to dish.
-        self.bp.click_freezer_item("@ancestor")
-        self.bp.add_org_to_exp()
+        self.bp.add_ancestor_to_dish()
 
         # Run the experiment.
         self.bp.run_from_menu()
