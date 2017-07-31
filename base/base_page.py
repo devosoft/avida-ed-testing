@@ -112,7 +112,7 @@ class BasePage(DriverWrapper):
 
         :return: None.
         """
-        self.__refresh_page()
+        self.refresh_page()
         self.wait_until_splash_gone()
 
     def population_displayed(self):

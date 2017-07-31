@@ -1,9 +1,1 @@
-{
-  "tests/common/common_basic/experiments/exp_run_controls_test.py::ExperimentControlsTest::test_exp_run_controls": true,
-  "tests/common/common_basic/experiments/pop_stats_sanity_test.py::PopStatsSanityTest::test_pop_stats_sanity_allfxns": true,
-  "tests/common/common_basic/experiments/pop_stats_sanity_test.py::PopStatsSanityTest::test_pop_stats_sanity_ancestor": true,
-  "tests/population/population_basic/env_settings/env_settings_input_test.py::EnvSettingsInputTest::test_input_dishsize_negnum": true,
-  "tests/population/population_basic/env_settings/env_settings_input_test.py::EnvSettingsInputTest::test_input_dishsize_str": true,
-  "tests/population/population_basic/env_settings/env_settings_input_test.py::EnvSettingsInputTest::test_input_dishsize_zero": true,
-  "tests/population/population_basic/env_settings/env_settings_input_test.py::EnvSettingsInputTest::test_input_mut": true
-}
+{}

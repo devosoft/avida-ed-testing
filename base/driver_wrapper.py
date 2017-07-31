@@ -397,7 +397,7 @@ class DriverWrapper:
             .until(ec.invisibility_of_element_located((locator_type,
                                                        my_locator)))
 
-    def __refresh_page(self):
+    def refresh_page(self):
         """
         Refreshes the page.
 
