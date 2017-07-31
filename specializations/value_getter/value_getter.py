@@ -32,7 +32,7 @@ class ValueGetter(BasePage):
 
         :return: Integer value of current update.
         """
-        return self.__execute_script("return av.grd.popStatsMsg.update")
+        return self.execute_script("return av.grd.popStatsMsg.update")
 
     def get_num_orgs(self):
         """
@@ -43,7 +43,7 @@ class ValueGetter(BasePage):
 
         :return: Integer value of current count of all organisms in dish.
         """
-        return self.__execute_script("return av.grd.popStatsMsg.organisms")
+        return self.execute_script("return av.grd.popStatsMsg.organisms")
 
     def get_avg_fit(self):
         """
@@ -54,7 +54,7 @@ class ValueGetter(BasePage):
 
         :return: Float value of the average fitness.
         """
-        return self.__execute_script("return av.grd.popStatsMsg.ave_fitness")
+        return self.execute_script("return av.grd.popStatsMsg.ave_fitness")
 
     def get_avg_age(self):
         """
@@ -62,7 +62,7 @@ class ValueGetter(BasePage):
 
         :return: Float value of the average age.
         """
-        return self.__execute_script("return av.grd.popStatsMsg.ave_age")
+        return self.execute_script("return av.grd.popStatsMsg.ave_age")
 
     def get_avg_offspring_cost(self):
         """
@@ -73,7 +73,7 @@ class ValueGetter(BasePage):
 
         :return: Integer value of current update.
         """
-        return self.__execute_script("return av.grd.popStatsMsg.ave_gestation_time")
+        return self.execute_script("return av.grd.popStatsMsg.ave_gestation_time")
 
     def get_avg_energy_rate(self):
         """
@@ -84,7 +84,7 @@ class ValueGetter(BasePage):
 
         :return: Integer value of avg. energy acquisition rate.
         """
-        return self.__execute_script("return av.grd.popStatsMsg.ave_metabolic_rate")
+        return self.execute_script("return av.grd.popStatsMsg.ave_metabolic_rate")
 
     def get_num_performing_not(self):
         """
@@ -93,7 +93,7 @@ class ValueGetter(BasePage):
 
         :return: Number of orgs that can perform 'not'.
         """
-        return self.__execute_script("return av.grd.popStatsMsg.not")
+        return self.execute_script("return av.grd.popStatsMsg.not")
 
     def get_num_performing_nan(self):
         """
@@ -102,7 +102,7 @@ class ValueGetter(BasePage):
 
         :return: Number of orgs that can perform 'nan'.
         """
-        return self.__execute_script("return av.grd.popStatsMsg.nand")
+        return self.execute_script("return av.grd.popStatsMsg.nand")
 
     def get_num_performing_and(self):
         """
@@ -111,7 +111,7 @@ class ValueGetter(BasePage):
 
         :return: Number of orgs that can perform 'and'.
         """
-        return self.__execute_script("return av.grd.popStatsMsg.and")
+        return self.execute_script("return av.grd.popStatsMsg.and")
 
     def get_num_performing_orn(self):
         """
@@ -120,7 +120,7 @@ class ValueGetter(BasePage):
 
         :return: Number of orgs that can perform 'orn'.
         """
-        return self.__execute_script("return av.grd.popStatsMsg.orn")
+        return self.execute_script("return av.grd.popStatsMsg.orn")
 
     def get_num_performing_oro(self):
         """
@@ -129,7 +129,7 @@ class ValueGetter(BasePage):
 
         :return: Number of orgs that can perform 'oro'.
         """
-        return self.__execute_script("return av.grd.popStatsMsg.or")
+        return self.execute_script("return av.grd.popStatsMsg.or")
 
     def get_num_performing_ant(self):
         """
@@ -138,7 +138,7 @@ class ValueGetter(BasePage):
 
         :return: Number of orgs that can perform 'ant'.
         """
-        return self.__execute_script("return av.grd.popStatsMsg.andn")
+        return self.execute_script("return av.grd.popStatsMsg.andn")
 
     def get_num_performing_nor(self):
         """
@@ -147,7 +147,7 @@ class ValueGetter(BasePage):
 
         :return: Number of orgs that can perform 'nor'.
         """
-        return self.__execute_script("return av.grd.popStatsMsg.nor")
+        return self.execute_script("return av.grd.popStatsMsg.nor")
 
     def get_num_performing_xor(self):
         """
@@ -156,7 +156,7 @@ class ValueGetter(BasePage):
 
         :return: Number of orgs that can perform 'xor'.
         """
-        return self.__execute_script("return av.grd.popStatsMsg.xor")
+        return self.execute_script("return av.grd.popStatsMsg.xor")
 
     def get_num_performing_equ(self):
         """
@@ -165,7 +165,7 @@ class ValueGetter(BasePage):
 
         :return: Number of orgs that can perform 'equ'.
         """
-        return self.__execute_script("return av.grd.popStatsMsg.equ")
+        return self.execute_script("return av.grd.popStatsMsg.equ")
 
     def gr_get_current_update(self):
         """
@@ -176,7 +176,7 @@ class ValueGetter(BasePage):
 
         :return: Integer value of the current update.
         """
-        return self.__execute_script("return av.grd.updateNum")
+        return self.execute_script("return av.grd.updateNum")
 
     def __gr_get_num_orgs_list(self):
         """
@@ -189,7 +189,7 @@ class ValueGetter(BasePage):
         :return: List of integers with number of organisms in dish at each
         update.
         """
-        return self.__execute_script("return av.pch.aveNum")
+        return self.execute_script("return av.pch.aveNum")
 
     def gr_get_curr_num_orgs(self):
         """
@@ -205,7 +205,7 @@ class ValueGetter(BasePage):
 
         :return: List of average fitnesses (floats).
         """
-        return self.__execute_script("return av.pch.aveFit")
+        return self.execute_script("return av.pch.aveFit")
 
     def gr_get_curr_avg_fit(self):
         """
@@ -227,7 +227,7 @@ class ValueGetter(BasePage):
 
         :return: List of average rates.
         """
-        return self.__execute_script("return av.pch.aveEar")
+        return self.execute_script("return av.pch.aveEar")
 
     def gr_get_curr_avg_rate(self):
         """
@@ -246,7 +246,7 @@ class ValueGetter(BasePage):
 
         :return: List of average offspring cost.
         """
-        return self.__execute_script("return av.pch.aveCst")
+        return self.execute_script("return av.pch.aveCst")
 
     def gr_get_curr_avg_cost(self):
         """
@@ -265,7 +265,7 @@ class ValueGetter(BasePage):
 
         :return: Integer value of columns in dish.
         """
-        return self.__execute_script("return av.grd.cols")
+        return self.execute_script("return av.grd.cols")
 
     def get_rows(self):
         """
@@ -273,7 +273,7 @@ class ValueGetter(BasePage):
 
         :return: Integer value of rows in dish.
         """
-        return self.__execute_script("return av.grd.rows")
+        return self.execute_script("return av.grd.rows")
 
     def get_pop_mute_rate_string(self):
         """
@@ -285,5 +285,5 @@ class ValueGetter(BasePage):
 
         :return: String containing the current mutation rate.
         """
-        return self.__execute_script("return av.dom.muteInput.value")
+        return self.execute_script("return av.dom.muteInput.value")
 

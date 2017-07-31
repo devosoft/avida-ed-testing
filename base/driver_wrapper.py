@@ -362,7 +362,7 @@ class DriverWrapper:
                 return True
         return False
 
-    def __execute_script(self, script_text):
+    def execute_script(self, script_text):
         """
         Executes arbitrary Javascript code to interact with the page.
 
