@@ -32,7 +32,7 @@ class PopStatsSanityTest(BaseTest):
         # Test that population stats are valid.
         assert self.vg.get_current_update() > 0
         assert self.vg.get_num_orgs() > 1
-        assert 0.0 <= self.vg.get_avg_fit() <= 1.0
+        assert self.vg.get_avg_fit() >= 0.0
         assert self.vg.get_avg_energy_rate() > 0
         assert self.vg.get_avg_offspring_cost() > 0
         assert self.vg.get_avg_age() >= 0
@@ -59,7 +59,7 @@ class PopStatsSanityTest(BaseTest):
         # Test that population stats are valid.
         assert self.vg.get_current_update() > 0
         assert self.vg.get_num_orgs() > 1
-        assert 0.0 <= self.vg.get_avg_fit() <= 1.0
+        assert self.vg.get_avg_fit() >= 0.0
         assert self.vg.get_avg_energy_rate() > 0
         assert self.vg.get_avg_offspring_cost() > 0
         assert self.vg.get_avg_age() >= 0
