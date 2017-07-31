@@ -25,8 +25,7 @@ class EnvSettingsInputTest(BaseTest):
         self.pp.hide_env_settings()
 
         # Add an organism to the experiment and try to run it.
-        self.bp.click_freezer_item("@ancestor")
-        self.bp.add_org_to_exp()
+        self.bp.add_ancestor_to_dish()
         self.pp.run_from_pop()
 
         # Wait for a short period so that response to run attempt occurs.
@@ -48,8 +47,7 @@ class EnvSettingsInputTest(BaseTest):
         self.pp.hide_env_settings()
 
         # Add an organism to the experiment and try to run it.
-        self.bp.click_freezer_item("@ancestor")
-        self.bp.add_org_to_exp()
+        self.bp.add_ancestor_to_dish()
         self.pp.run_from_pop()
 
         # Wait for a short period so that response to run attempt occurs.
@@ -70,8 +68,7 @@ class EnvSettingsInputTest(BaseTest):
         self.pp.hide_env_settings()
 
         # Add an organism to the experiment and try to run it.
-        self.bp.click_freezer_item("@ancestor")
-        self.bp.add_org_to_exp()
+        self.bp.add_ancestor_to_dish()
         self.pp.run_from_pop()
 
         # Wait for a short period so that response to run attempt occurs.
