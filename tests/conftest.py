@@ -4,7 +4,6 @@ from base.webdriver_factory import WebDriverFactory
 
 @pytest.yield_fixture(scope="class")
 def driver_setup(request, browser, local, setuipath, setffpath, seturl):
-    print("One time setup begins here.\n")
     wdf = WebDriverFactory(browser, local, setuipath, setffpath, seturl)
     driver = wdf.get_webdriver_instance()
 
@@ -14,7 +13,6 @@ def driver_setup(request, browser, local, setuipath, setffpath, seturl):
     yield driver
     wdf.clean_webdriver_instance()
     driver.quit()
-    print("\nOne time teardown begins here.")
 
 
 def pytest_addoption(parser):
