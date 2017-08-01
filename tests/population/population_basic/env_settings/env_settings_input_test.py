@@ -74,7 +74,7 @@ class EnvSettingsInputTest(BaseTest):
         # Wait for a short period so that response to run attempt occurs.
         self.bp.util.sleep(3)
 
-    @pytest.mark.run(order=3)
+    @pytest.mark.run(order=4)
     def test_input_mut(self):
         """
         Tests that crashes and unexpected behavior do not occur if bad input is
