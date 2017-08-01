@@ -17,8 +17,8 @@ class BaseTest(unittest.TestCase):
     accessible at startup.
     """
 
-    @pytest.fixture(autouse=True)
-    def class_setup(self, driver_setup):
+    @pytest.fixture(autouse=True, scope="class")
+    def class_setup(self, request, driver_setup):
         """
         Sets up class prior to run. Adds necessary variables to the class and
         waits for the splash screen to go away.
@@ -26,18 +26,20 @@ class BaseTest(unittest.TestCase):
         :return: None.
         """
 
-        # Set up base page and wait for splash screen to go away.
-        self.bp = BasePage(self.driver)
-        self.bp.wait_until_splash_gone()
+        # Set up base page
+        request.cls.bp = BasePage(self.driver)
 
         # Set up objects for interacting with other pages / specializations.
-        self.pp = PopulationPage(self.driver)
-        self.op = OrganismPage(self.driver)
-        self.ap = AnalysisPage(self.driver)
-        self.vg = ValueGetter(self.driver)
+        request.cls.pp = PopulationPage(self.driver)
+        request.cls.op = OrganismPage(self.driver)
+        request.cls.ap = AnalysisPage(self.driver)
+        request.cls.vg = ValueGetter(self.driver)
 
-    @pytest.yield_fixture(autouse=True)
-    def closing_assertions(self):
+        # Wait for splash screen to go away
+        request.cls.bp.wait_until_splash_gone()
+
+    @pytest.yield_fixture(autouse=True, scope="function")
+    def closing_assertions(self, class_setup):
         """
         Performs basic assertions that should evaluate to True after every test
         (e.g. crash report not displayed, etc.).
@@ -48,7 +50,7 @@ class BaseTest(unittest.TestCase):
         assert not self.bp.crash_report_displayed()
 
     @pytest.yield_fixture()
-    def soft_reset(self):
+    def soft_reset(self, closing_assertions):
         """
         Performs a 'soft reset" at the beginning of an experiment by resetting
         the dish. In the future (when tests with Organism and Analysis window
@@ -63,7 +65,7 @@ class BaseTest(unittest.TestCase):
         self.pp.new_exp_discard()
 
     @pytest.yield_fixture()
-    def hard_reset(self):
+    def hard_reset(self, closing_assertions):
         """
         Performs a 'hard reset' at the beginning of an experiment by refreshing
         the Avida-ED webpage and waits for it to load completely.
