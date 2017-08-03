@@ -31,7 +31,6 @@ class OrganismPage(BasePage):
         """
         super().__init__(driver)
         self.driver = driver
-        self.go_to_organism()
 
     def org_settings_displayed(self):
         """

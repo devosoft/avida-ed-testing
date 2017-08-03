@@ -52,7 +52,6 @@ class PopulationPage(BasePage):
         """
         super().__init__(driver)
         self.driver = driver
-        self.go_to_population()
 
     def env_settings_displayed(self):
         """
