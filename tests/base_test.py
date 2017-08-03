@@ -17,11 +17,14 @@ class BaseTest(unittest.TestCase):
     accessible at startup.
     """
 
-    @pytest.fixture(autouse=True, scope="class")
+    @pytest.yield_fixture(autouse=True, scope="class")
     def class_setup(self, request, driver_setup):
         """
         Sets up class prior to run. Adds necessary variables to the class and
         waits for the splash screen to go away.
+
+        Also performs any necessary cleanup of the objects it instantiates after
+        testing is completed.
 
         :return: None.
         """
@@ -37,6 +40,11 @@ class BaseTest(unittest.TestCase):
 
         # Wait for splash screen to go away
         request.cls.bp.wait_until_splash_gone()
+
+        yield
+
+        # Cleanup of logger object.
+        request.cls.bp.close_logger()
 
     @pytest.yield_fixture(autouse=True, scope="function")
     def closing_assertions(self, class_setup):

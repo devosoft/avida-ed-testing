@@ -404,3 +404,15 @@ class DriverWrapper:
         :return: None.
         """
         self.driver.refresh()
+
+    def close_logger(self):
+        """
+        Correctly closes the FileHandler objects on the logger so that there are
+        no issues with file manipulation.
+
+        :return: None.
+        """
+        handlers = self.log.handlers[:]
+        for handler in handlers:
+            handler.close()
+            self.log.removeHandler(handler)
