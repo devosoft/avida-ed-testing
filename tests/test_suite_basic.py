@@ -22,6 +22,3 @@ pytest_args = ["-v",
 
 pytest_args.extend(sys.argv)
 pytest.main(pytest_args)
-
-
-
