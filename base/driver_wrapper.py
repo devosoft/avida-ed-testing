@@ -362,10 +362,10 @@ class DriverWrapper:
                 return True
         return False
 
-    def element_has_attribute(self, my_locator="",
-                          locator_type="id",
-                          attrib_name="",
-                          element=None):
+    def element_has_attr(self, my_locator="",
+                         locator_type="id",
+                         attr_name="",
+                         element=None):
         """
         Determines whether the specified element has a specific attribute declared.
 
@@ -374,7 +374,7 @@ class DriverWrapper:
         :param locator_type: Type of locator that my_locator is; could be a ID,
         CSS selector, etc.
 
-        :param attrib_name: Name of the attribute that we are looking for.
+        :param attr_name: Name of the attribute that we are looking for.
 
         :param element: Optional argument for an element that has already been
         located.
@@ -385,7 +385,7 @@ class DriverWrapper:
         if element is None:
             element = self.get_element(my_locator, locator_type)
         if element is not None:
-            attrib = element.get_attribute(attrib_name)
+            attrib = element.get_attribute(attr_name)
             if attrib is not None:
                 return True
         return False

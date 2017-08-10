@@ -152,8 +152,8 @@ class OrganismPage(BasePage):
 
         :return: True if element is disabled, false otherwise.
         """
-        disabled = self.element_has_attribute(element=element,
-                                          attrib_name=self.__org_rep_disabled)
+        disabled = self.element_has_attr(element=element,
+                                         attr_name=self.__org_rep_disabled)
         self.log.info("Is Organism Reproduction control button disabled? "
                       + str(disabled))
         return disabled
