@@ -16,6 +16,8 @@ analysis_basic_path = r"tests/analysis/analysis_basic"
 pytest_args = ["-v",
                "-s",
                "--junitxml=./output/junit_xml/junit_xml.log",
+               "--html=./output/html_report/html_report.html",
+               "--self-contained-html",
                common_basic_path,
                pop_basic_path,
                org_basic_path,
