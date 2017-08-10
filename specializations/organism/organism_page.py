@@ -26,6 +26,10 @@ class OrganismPage(BasePage):
     # Locators for Active Organism
     __active_org_xpath = "//*/div[@id='activeOrgan']/div"
 
+    # Locator for current cycle number
+    __current_cycle_xpath = "//*/input[@name='cycle']"
+    __cycle_val = "value"
+
     # Locators/identifiers/class names for Org. Reproduction control buttons
     __org_rep_disabled = "disabled"
     __org_rep_controls = ["orgReset",
@@ -160,6 +164,18 @@ class OrganismPage(BasePage):
         self.log.info("Is there an active org. in Organism Window? "
                       + str(has_active))
         return has_active
+
+    def get_cycle(self):
+        """
+        Gets the current cycle number for the active organism.
+
+        :return: Integer value of the the current cycle.
+        """
+        elem = self.get_element(self.__current_cycle_xpath, "xpath")
+        cyc_num = int(self.get_attr_value(attr=self.__cycle_val,
+                                          element=elem))
+        self.log.info("Curent Org. cycle number is: " + str(cyc_num))
+        return cyc_num
 
     def __org_rep_control_disabled(self, element):
         """
