@@ -32,7 +32,7 @@ class BasePage(DriverWrapper):
     __item_selected = "dijitMenuItemSelected"
 
     # Name of class that is applied to disabled menu options in main menu bar.
-    __item_disabled = "dijitMenuItemDisabled"
+    __dijit_item_disabled = "dijitMenuItemDisabled"
 
     # Locators for dropdowns in the main menu bar.
     __avida_ed_tab = "mnAvidaEd"
@@ -966,7 +966,7 @@ class BasePage(DriverWrapper):
         """
         disabled = self.element_has_class(my_locator,
                                           locator_type,
-                                          self.__item_disabled)
+                                          self.__dijit_item_disabled)
         self.log.info("Is menu item with locator " + my_locator + " of type "
                       + locator_type + " disabled? " + str(disabled))
         return disabled
