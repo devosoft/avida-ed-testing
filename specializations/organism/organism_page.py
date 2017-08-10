@@ -23,6 +23,14 @@ class OrganismPage(BasePage):
     __org_details_pane = "rightDetail"
     __org_details_btn = "OrgDetailsButton"
 
+    # Locators/identifiers/class names for Org. Reproduction control buttons
+    __org_rep_disabled = "disabled"
+    __org_rep_controls = ["orgReset",
+                          "orgBack",
+                          "orgRun",
+                          "orgForward",
+                          "orgEnd"]
+
     def __init__(self, driver):
         """
         Sets up the page at initialization.
@@ -104,3 +112,48 @@ class OrganismPage(BasePage):
         if self.org_details_displayed():
             self.click_element(self.__org_details_btn)
             self.log.info("Closed organism details pane.")
+
+    def org_rep_controls_enabled(self):
+        """
+        Determines if all organism reproduction controls are enabled.
+
+        :return: True if ALL of these buttons are enabled, False otherwise.
+        """
+        for identifier in self.__org_rep_controls:
+            if self.__org_rep_control_disabled(
+                    self.get_element(identifier)) is True:
+
+                self.log.info("Org Rep. Controls are not all enabled.")
+                return False
+        self.log.info("Org Rep. Controls are all enabled.")
+        return True
+
+    def org_rep_controls_disabled(self):
+        """
+        Determines if all organism reproduction controls are disabled.
+
+        :return: True if ALL of these buttons are disabled, False otherwise.
+        """
+        for identifier in self.__org_rep_controls:
+            if self.__org_rep_control_disabled(
+                    self.get_element(identifier)) is False:
+
+                self.log.info("Org. Rep. Controls are not all disabled.")
+                return False
+
+        self.log.info("Org. Rep. Controls are all disabled.")
+        return True
+
+    def __org_rep_control_disabled(self, element):
+        """
+        Determines if an organism reproduction control (e.g Reset) is disabled.
+
+        :param element: The org. rep. control WebElement that is to be checked.
+
+        :return: True if element is disabled, false otherwise.
+        """
+        disabled = self.element_has_attribute(element=element,
+                                          attrib_name=self.__org_rep_disabled)
+        self.log.info("Is Organism Reproduction control button disabled? "
+                      + str(disabled))
+        return disabled

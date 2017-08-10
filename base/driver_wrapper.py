@@ -362,6 +362,34 @@ class DriverWrapper:
                 return True
         return False
 
+    def element_has_attribute(self, my_locator="",
+                          locator_type="id",
+                          attrib_name="",
+                          element=None):
+        """
+        Determines whether the specified element has a specific attribute declared.
+
+        :param my_locator: Locator used to find the element on the site.
+
+        :param locator_type: Type of locator that my_locator is; could be a ID,
+        CSS selector, etc.
+
+        :param attrib_name: Name of the attribute that we are looking for.
+
+        :param element: Optional argument for an element that has already been
+        located.
+
+        :return: True if the specified element exists and class class_name has
+        been applied to the element; False otherwise.
+        """
+        if element is None:
+            element = self.get_element(my_locator, locator_type)
+        if element is not None:
+            attrib = element.get_attribute(attrib_name)
+            if attrib is not None:
+                return True
+        return False
+
     def execute_script(self, script_text):
         """
         Executes arbitrary Javascript code to interact with the page.
