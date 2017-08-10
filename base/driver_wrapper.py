@@ -390,6 +390,33 @@ class DriverWrapper:
                 return True
         return False
 
+    def get_attr_value(self, my_locator="", locator_type="id", attr="",
+                       element=None):
+        """
+
+        :param my_locator: Locator used to find the element on the site.
+
+        :param locator_type: Type of locator that my_locator is; could be a ID,
+        CSS selector, etc.
+
+        :param attr: The attribute whose value we are looking for.
+
+        :param element: Optional argument for an element that has already been
+        located.
+
+        :return: Value of the attribute we are looking for.
+        """
+        if element is None:
+            element = self.get_element(my_locator, locator_type)
+        if element is not None:
+            attr_val = element.get_attribute(attr)
+            self.log.info("Found value of '"
+                          + str(attr)
+                          + "' in element with locator " + my_locator
+                          + " of type " + locator_type + " to be "
+                          + str(attr_val))
+            return attr_val
+
     def execute_script(self, script_text):
         """
         Executes arbitrary Javascript code to interact with the page.
