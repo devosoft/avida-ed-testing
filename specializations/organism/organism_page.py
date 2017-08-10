@@ -23,6 +23,9 @@ class OrganismPage(BasePage):
     __org_details_pane = "rightDetail"
     __org_details_btn = "OrgDetailsButton"
 
+    # Locators for Active Organism
+    __active_org_xpath = "//*/div[@id='activeOrgan']/div"
+
     # Locators/identifiers/class names for Org. Reproduction control buttons
     __org_rep_disabled = "disabled"
     __org_rep_controls = ["orgReset",
@@ -143,6 +146,20 @@ class OrganismPage(BasePage):
 
         self.log.info("Org. Rep. Controls are all disabled.")
         return True
+
+    def has_active_org(self):
+        """
+        Determines if there is an organism actively being examined in the
+        Organism Window.
+
+        :return: True if there is an active organism in the 'activeOrgan' box
+        in the top left of the Organism window; False otherwise.
+        """
+        active_org = self.get_element(self.__active_org_xpath, "xpath")
+        has_active = (active_org is not None)
+        self.log.info("Is there an active org. in Organism Window? "
+                      + str(has_active))
+        return has_active
 
     def __org_rep_control_disabled(self, element):
         """
