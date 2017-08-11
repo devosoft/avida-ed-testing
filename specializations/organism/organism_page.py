@@ -37,6 +37,8 @@ class OrganismPage(BasePage):
                           "orgRun",
                           "orgForward",
                           "orgEnd"]
+    __org_run_text = "Run"
+    __org_stop_text = "Stop"
 
     def __init__(self, driver):
         """
@@ -174,8 +176,93 @@ class OrganismPage(BasePage):
         elem = self.get_element(self.__current_cycle_xpath, "xpath")
         cyc_num = int(self.get_attr_value(attr=self.__cycle_val,
                                           element=elem))
-        self.log.info("Curent Org. cycle number is: " + str(cyc_num))
+        self.log.info("Current Org. cycle number is: " + str(cyc_num))
         return cyc_num
+
+    def reset_org_rep(self):
+        """
+        Clicks on the 'Reset' button for organism reproduction.
+
+        :return: None.
+        """
+        if self.org_rep_controls_enabled():
+            self.click_element(self.__org_rep_controls[0])
+            self.log.info("Clicked on 'Reset' for organism reproduction.")
+        else:
+            self.log.info("Tried to click on 'Reset' for organism reproduction"
+                          " but found button to be disabled.")
+
+    def back_org_rep(self):
+        """
+        Clicks on the 'Back' button for organism reproduction.
+
+        :return: None.
+        """
+        if self.org_rep_controls_enabled():
+            self.click_element(self.__org_rep_controls[1])
+            self.log.info("Clicked on 'Back' for organism reproduction.")
+        else:
+            self.log.info("Tried to click on 'Back' for organism reproduction"
+                          " but found button to be disabled.")
+
+    def run_org_rep(self):
+        """
+        Clicks on the 'Run' button for organism reproduction.
+
+        :return: None.
+        """
+        btn = self.get_element(self.__org_rep_controls[2])
+        if (self.org_rep_controls_enabled()
+                and self.get_text(element=btn) == self.__org_run_text):
+
+            self.click_element(element=btn)
+            self.log.info("Clicked on 'Run' for organism reproduction.")
+        else:
+            self.log.info("Tried to click on 'Run' for organism reproduction "
+                          "but found button to be disabled or already running.")
+
+    def stop_org_rep(self):
+        """
+        Clicks on the 'Stop' button for organism reproduction.
+
+        :return: None.
+        """
+        btn = self.get_element(self.__org_rep_controls[2])
+        if (self.org_rep_controls_enabled()
+                and self.get_text(element=btn) == self.__org_stop_text):
+
+            self.click_element(element=btn)
+            self.log.info("Clicked on 'Pause' for organism reproduction.")
+        else:
+            self.log.info("Tried to click on 'Pause' for organism reproduction"
+                          " but found button to be disabled or already"
+                          " running.")
+
+    def forward_org_rep(self):
+        """
+        Clicks on the 'Forward' button for organism reproduction.
+
+        :return: None.
+        """
+        if self.org_rep_controls_enabled():
+            self.click_element(self.__org_rep_controls[3])
+            self.log.info("Clicked on 'Forward' for organism reproduction.")
+        else:
+            self.log.info("Tried to click on 'Forward' for organism"
+                          " reproduction but found button to be disabled.")
+
+    def end_org_rep(self):
+        """
+        Clicks on the 'End' button for organism reproduction.
+
+        :return: None.
+        """
+        if self.org_rep_controls_enabled():
+            self.click_element(self.__org_rep_controls[4])
+            self.log.info("Clicked on 'End' for organism reproduction.")
+        else:
+            self.log.info("Tried to click on 'End' for organism reproduction"
+                          "but found button to be disabled.")
 
     def __org_rep_control_disabled(self, element):
         """
