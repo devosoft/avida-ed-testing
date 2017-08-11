@@ -688,6 +688,10 @@ class BasePage(DriverWrapper):
         """
         Puts the currently highlighted organism into the Organism view.
 
+        NOTE: Use of this function should be followed by
+        wait_until_org_controls_enabled() call from OrganismPage. This ensures
+        that the organism is fully loaded into the Organism View.
+
         :return: None.
         """
         self.open_freezer_dropdown()
@@ -1042,4 +1046,3 @@ class BasePage(DriverWrapper):
         """
         self.click_element(self.__help_tab)
         self.log.info("Clicked on Help main menu tab.")
-

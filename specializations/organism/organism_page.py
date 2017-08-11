@@ -3,6 +3,8 @@ import logging
 from base.base_page import BasePage
 from utilities.custom_logger import create_custom_logger
 
+from selenium.webdriver.support.ui import WebDriverWait
+
 
 class OrganismPage(BasePage):
     """
@@ -122,9 +124,12 @@ class OrganismPage(BasePage):
             self.click_element(self.__org_details_btn)
             self.log.info("Closed organism details pane.")
 
-    def org_rep_controls_enabled(self):
+    def org_rep_controls_enabled(self, driver=None):
         """
         Determines if all organism reproduction controls are enabled.
+
+        :param driver: Useless parameter that is supplied by wait.until;
+        must be kept here, DO NOT REMOVE.
 
         :return: True if ALL of these buttons are enabled, False otherwise.
         """
@@ -152,6 +157,17 @@ class OrganismPage(BasePage):
 
         self.log.info("Org. Rep. Controls are all disabled.")
         return True
+
+    def wait_until_org_controls_enabled(self):
+        """
+        Use WebdriverWait to wait until the reproduction controls are enabled.
+
+        Times out after 30 seconds.
+
+        :return: None.
+        """
+        WebDriverWait(self.driver, 30) \
+            .until(self.org_rep_controls_enabled)
 
     def has_active_org(self):
         """
@@ -188,6 +204,7 @@ class OrganismPage(BasePage):
         if self.org_rep_controls_enabled():
             self.click_element(self.__org_rep_controls[0])
             self.log.info("Clicked on 'Reset' for organism reproduction.")
+            WebDriverWait(self.driver, 10).until(self.__cycle_is_zero)
         else:
             self.log.info("Tried to click on 'Reset' for organism reproduction"
                           " but found button to be disabled.")
@@ -201,6 +218,7 @@ class OrganismPage(BasePage):
         if self.org_rep_controls_enabled():
             self.click_element(self.__org_rep_controls[1])
             self.log.info("Clicked on 'Back' for organism reproduction.")
+            self.util.sleep(0.25, "Waiting for Back to take effect.")
         else:
             self.log.info("Tried to click on 'Back' for organism reproduction"
                           " but found button to be disabled.")
@@ -217,6 +235,7 @@ class OrganismPage(BasePage):
 
             self.click_element(element=btn)
             self.log.info("Clicked on 'Run' for organism reproduction.")
+            self.util.sleep(0.25, "Waiting for 'Run' to take effect.")
         else:
             self.log.info("Tried to click on 'Run' for organism reproduction "
                           "but found button to be disabled or already running.")
@@ -233,6 +252,7 @@ class OrganismPage(BasePage):
 
             self.click_element(element=btn)
             self.log.info("Clicked on 'Pause' for organism reproduction.")
+            self.util.sleep(0.25, "Waiting for 'Stop' to take effect.")
         else:
             self.log.info("Tried to click on 'Pause' for organism reproduction"
                           " but found button to be disabled or already"
@@ -247,6 +267,7 @@ class OrganismPage(BasePage):
         if self.org_rep_controls_enabled():
             self.click_element(self.__org_rep_controls[3])
             self.log.info("Clicked on 'Forward' for organism reproduction.")
+            self.util.sleep(0.25, "Waiting for 'Forward' to take effect.")
         else:
             self.log.info("Tried to click on 'Forward' for organism"
                           " reproduction but found button to be disabled.")
@@ -260,6 +281,7 @@ class OrganismPage(BasePage):
         if self.org_rep_controls_enabled():
             self.click_element(self.__org_rep_controls[4])
             self.log.info("Clicked on 'End' for organism reproduction.")
+            self.util.sleep(0.25, "Waiting for 'End' to take effect.")
         else:
             self.log.info("Tried to click on 'End' for organism reproduction"
                           "but found button to be disabled.")
@@ -277,3 +299,14 @@ class OrganismPage(BasePage):
         self.log.info("Is Organism Reproduction control button disabled? "
                       + str(disabled))
         return disabled
+
+    def __cycle_is_zero(self, driver=None):
+        """
+        Determines if the current organism reproduction cycle is 0.
+
+        :param driver: Unused parameter that is automatically provided by
+        wait.until. Please DO NOT REMOVE.
+
+        :return: True if cycle is 0, False otherwise.
+        """
+        return self.get_cycle() == 0
