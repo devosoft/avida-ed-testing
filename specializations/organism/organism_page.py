@@ -331,6 +331,27 @@ class OrganismPage(BasePage):
         self.log.info("Is Repeatability set to Demo mode? " + str(is_demo))
         return is_demo
 
+    def set_repeatability_to_exp(self):
+        """
+        Changes repeatability mode to 'Experimental'.
+
+        :return: None.
+        """
+        if not self.repeatability_is_exp():
+            self.click_element(self.__org_settings_exp_rep)
+            self.log.info("Settings repeatability mode to 'Experimental' in Org"
+                          " Settings.")
+
+    def set_repeatability_to_demo(self):
+        """
+        Changes repeatability mode to 'Demo'.
+
+        :return: None.
+        """
+        if not self.repeatability_is_demo():
+            self.click_element(self.__org_settings_demo_rep)
+            self.log.info("Settings repeatability mode to 'Demo' in Org "
+                          "Settings.")
 
     def __org_rep_control_disabled(self, element):
         """
