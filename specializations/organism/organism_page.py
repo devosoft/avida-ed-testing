@@ -20,6 +20,11 @@ class OrganismPage(BasePage):
     __org_settings_btn = "OrgSetting"
     __org_settings_btn_text = "Settings"
     __org_settings_close = "indDone"
+    __org_settings_mut_rate_xpath = ".//*/div[@id='widget_orMuteInput']/div/" \
+                                    "input[@type='hidden']"
+
+    # String for 'value' attribute.
+    __value = "value"
 
     # Locators for Organism Details
     __org_details_pane = "rightDetail"
@@ -30,7 +35,6 @@ class OrganismPage(BasePage):
 
     # Locator for current cycle number
     __current_cycle_xpath = "//*/input[@name='cycle']"
-    __cycle_val = "value"
 
     # Locators/identifiers/class names for Org. Reproduction control buttons
     __org_rep_disabled = "disabled"
@@ -190,7 +194,7 @@ class OrganismPage(BasePage):
         :return: Integer value of the the current cycle.
         """
         elem = self.get_element(self.__current_cycle_xpath, "xpath")
-        cyc_num = int(self.get_attr_value(attr=self.__cycle_val,
+        cyc_num = int(self.get_attr_value(attr=self.__value,
                                           element=elem))
         self.log.info("Current Org. cycle number is: " + str(cyc_num))
         return cyc_num
@@ -285,6 +289,18 @@ class OrganismPage(BasePage):
         else:
             self.log.info("Tried to click on 'End' for organism reproduction"
                           "but found button to be disabled.")
+
+    def get_org_mut_rate(self):
+        """
+        Gets the current mutation rate for the active organism in Org. view.
+
+        :return: Integer value of the the current mutation rate.
+        """
+        elem = self.get_element(self.__org_settings_mut_rate_xpath, "xpath")
+        mut_rate = float(self.get_attr_value(attr=self.__value,
+                                           element=elem))
+        self.log.info("Current Org. cycle number is: " + str(mut_rate))
+        return mut_rate
 
     def __org_rep_control_disabled(self, element):
         """
