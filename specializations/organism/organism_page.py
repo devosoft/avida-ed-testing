@@ -22,6 +22,8 @@ class OrganismPage(BasePage):
     __org_settings_close = "indDone"
     __org_settings_mut_rate_xpath = ".//*/div[@id='widget_orMuteInput']/div/" \
                                     "input[@type='hidden']"
+    __org_settings_exp_rep = "OrganExperimentRadio"
+    __org_settings_demo_rep = "OrganDemoRadio"
 
     # String for 'value' attribute.
     __value = "value"
@@ -301,6 +303,34 @@ class OrganismPage(BasePage):
                                            element=elem))
         self.log.info("Current Org. cycle number is: " + str(mut_rate))
         return mut_rate
+
+    def repeatability_is_exp(self):
+        """
+        Determines whether the organism is in 'experimental Repeatability Mode',
+        meaning that reproduction will be different each time the organism
+        reproduction is started.
+
+        :return: True if experimental Repeatability mode is on; False otherwise.
+        """
+        exp_radio = self.get_element(self.__org_settings_exp_rep)
+        is_exp = exp_radio.is_selected()
+        self.log.info("Is Repeatability set to Experimental mode? "
+                      + str(is_exp))
+        return is_exp
+
+    def repeatability_is_demo(self):
+        """
+        Determines whether the organism is in ' demo Repeatability Mode',
+        meaning that reproduction will go exactly the same every time rather
+        than having random mutations.
+
+        :return: True if demo Repeatability mode is on; False otherwise.
+        """
+        demo_radio = self.get_element(self.__org_settings_demo_rep)
+        is_demo = demo_radio.is_selected()
+        self.log.info("Is Repeatability set to Demo mode? " + str(is_demo))
+        return is_demo
+
 
     def __org_rep_control_disabled(self, element):
         """
