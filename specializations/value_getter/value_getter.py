@@ -286,4 +286,3 @@ class ValueGetter(BasePage):
         :return: String containing the current mutation rate.
         """
         return self.execute_script("return av.dom.muteInput.value")
-

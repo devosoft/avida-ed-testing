@@ -31,6 +31,15 @@ class OrganismPage(BasePage):
     # Locators for Organism Details
     __org_details_pane = "rightDetail"
     __org_details_btn = "OrgDetailsButton"
+    __org_not = "notPerf"
+    __org_nan = "nanPerf"
+    __org_and = "andPerf"
+    __org_orn = "ornPerf"
+    __org_oro = "oroPerf"
+    __org_ant = "antPerf"
+    __org_nor = "norPerf"
+    __org_xor = "xorPerf"
+    __org_equ = "equPerf"
 
     # Locators for Active Organism
     __active_org_xpath = "//*/div[@id='activeOrgan']/div"
@@ -352,6 +361,87 @@ class OrganismPage(BasePage):
             self.click_element(self.__org_settings_demo_rep)
             self.log.info("Settings repeatability mode to 'Demo' in Org "
                           "Settings.")
+
+    def get_org_num_not_performed(self):
+        """
+        Gets the number of NOT functions performed by the reproducing organism
+        in Organism View.
+
+        :return: The integer value of NOT functions performed by the organism.
+        """
+        return int(self.get_text(self.__org_not))
+
+    def get_org_num_nan_performed(self):
+        """
+        Gets the number of NAN functions performed by the reproducing organism
+        in Organism View.
+
+        :return: The integer value of NAN functions performed by the organism.
+        """
+        return int(self.get_text(self.__org_nan))
+
+    def get_org_num_and_performed(self):
+        """
+        Gets the number of AND functions performed by the reproducing organism
+        in Organism View.
+
+        :return: The integer value of AND functions performed by the organism.
+        """
+        return int(self.get_text(self.__org_and))
+
+    def get_org_num_orn_performed(self):
+        """
+        Gets the number of ORN functions performed by the reproducing organism
+        in Organism View.
+
+        :return: The integer value of ORN functions performed by the organism.
+        """
+        return int(self.get_text(self.__org_orn))
+
+    def get_org_num_oro_performed(self):
+        """
+        Gets the number of ORO functions performed by the reproducing organism
+        in Organism View.
+
+        :return: The integer value of ORO functions performed by the organism.
+        """
+        return int(self.get_text(self.__org_oro))
+
+    def get_org_num_ant_performed(self):
+        """
+        Gets the number of ANT functions performed by the reproducing organism
+        in Organism View.
+
+        :return: The integer value of ANT functions performed by the organism.
+        """
+        return int(self.get_text(self.__org_ant))
+
+    def get_org_num_nor_performed(self):
+        """
+        Gets the number of NOR functions performed by the reproducing organism
+        in Organism View.
+
+        :return: The integer value of NOR functions performed by the organism.
+        """
+        return int(self.get_text(self.__org_nor))
+
+    def get_org_num_xor_performed(self):
+        """
+        Gets the number of XOR functions performed by the reproducing organism
+        in Organism View.
+
+        :return: The integer value of XOR functions performed by the organism.
+        """
+        return int(self.get_text(self.__org_xor))
+
+    def get_org_num_equ_performed(self):
+        """
+        Gets the number of EQU functions performed by the reproducing organism
+        in Organism View.
+
+        :return: The integer value of EQU functions performed by the organism.
+        """
+        return int(self.get_text(self.__org_equ))
 
     def __org_rep_control_disabled(self, element):
         """
