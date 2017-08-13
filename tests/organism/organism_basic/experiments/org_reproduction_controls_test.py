@@ -10,7 +10,7 @@ class OrgRepControlsTest(BaseTest):
     """
 
     @pytest.mark.run(order=1)
-    def test_org_rep_startup(self):
+    def test_org_rep_ctrl_startup(self):
         """
         Tests that the control for Organism Reproduction are not enabled on
         startup.
@@ -23,7 +23,7 @@ class OrgRepControlsTest(BaseTest):
         assert self.op.get_cycle() == 0
 
     @pytest.mark.run(order=2)
-    def test_org_rep_functionality(self):
+    def test_org_rep_ctrl_functionality(self):
         """
         Tests that the controls for Organism Reproduction work as intended once
         an organism is loaded into the dish.
