@@ -23,7 +23,7 @@ class ValueGetter(BasePage):
         super().__init__(driver)
         self.driver = driver
 
-    def get_current_update(self):
+    def get_pop_current_update(self):
         """
         Gets the current update from av.grd.PopStatsMsg.
 
@@ -34,7 +34,7 @@ class ValueGetter(BasePage):
         """
         return self.execute_script("return av.grd.popStatsMsg.update")
 
-    def get_num_orgs(self):
+    def get_pop_num_orgs(self):
         """
         Gets the current number of organisms from av.grd.PopStatsMsg.
 
@@ -45,7 +45,7 @@ class ValueGetter(BasePage):
         """
         return self.execute_script("return av.grd.popStatsMsg.organisms")
 
-    def get_avg_fit(self):
+    def get_pop_avg_fit(self):
         """
         Gets the current average organism fitness from av.grd.PopStatsMsg.
 
@@ -56,7 +56,7 @@ class ValueGetter(BasePage):
         """
         return self.execute_script("return av.grd.popStatsMsg.ave_fitness")
 
-    def get_avg_age(self):
+    def get_pop_avg_age(self):
         """
         Gets the current average organism age from av.grd.PopStatsMsg.
 
@@ -64,7 +64,7 @@ class ValueGetter(BasePage):
         """
         return self.execute_script("return av.grd.popStatsMsg.ave_age")
 
-    def get_avg_offspring_cost(self):
+    def get_pop_avg_offspring_cost(self):
         """
         Gets the current average offspring cost from av.grd.PopStatsMsg.
 
@@ -75,7 +75,7 @@ class ValueGetter(BasePage):
         """
         return self.execute_script("return av.grd.popStatsMsg.ave_gestation_time")
 
-    def get_avg_energy_rate(self):
+    def get_pop_avg_energy_rate(self):
         """
         Gets the current avg. energy acquisition rate from av.grd.PopStatsMsg.
 
@@ -86,7 +86,7 @@ class ValueGetter(BasePage):
         """
         return self.execute_script("return av.grd.popStatsMsg.ave_metabolic_rate")
 
-    def get_num_performing_not(self):
+    def get_pop_num_performing_not(self):
         """
         Gets the current number of organisms that can take advantage of notose
         resource.
@@ -95,7 +95,7 @@ class ValueGetter(BasePage):
         """
         return self.execute_script("return av.grd.popStatsMsg.not")
 
-    def get_num_performing_nan(self):
+    def get_pop_num_performing_nan(self):
         """
         Gets the current number of organisms that can take advantage of nanose
         resource.
@@ -104,7 +104,7 @@ class ValueGetter(BasePage):
         """
         return self.execute_script("return av.grd.popStatsMsg.nand")
 
-    def get_num_performing_and(self):
+    def get_pop_num_performing_and(self):
         """
         Gets the current number of organisms that can take advantage of andose
         resource.
@@ -113,7 +113,7 @@ class ValueGetter(BasePage):
         """
         return self.execute_script("return av.grd.popStatsMsg.and")
 
-    def get_num_performing_orn(self):
+    def get_pop_num_performing_orn(self):
         """
         Gets the current number of organisms that can take advantage of ornose
         resource.
@@ -122,7 +122,7 @@ class ValueGetter(BasePage):
         """
         return self.execute_script("return av.grd.popStatsMsg.orn")
 
-    def get_num_performing_oro(self):
+    def get_pop_num_performing_oro(self):
         """
         Gets the current number of organisms that can take advantage of orose
         resource.
@@ -131,7 +131,7 @@ class ValueGetter(BasePage):
         """
         return self.execute_script("return av.grd.popStatsMsg.or")
 
-    def get_num_performing_ant(self):
+    def get_pop_num_performing_ant(self):
         """
         Gets the current number of organisms that can take advantage of andnose
         resource.
@@ -140,7 +140,7 @@ class ValueGetter(BasePage):
         """
         return self.execute_script("return av.grd.popStatsMsg.andn")
 
-    def get_num_performing_nor(self):
+    def get_pop_num_performing_nor(self):
         """
         Gets the current number of organisms that can take advantage of norose
         resource.
@@ -149,7 +149,7 @@ class ValueGetter(BasePage):
         """
         return self.execute_script("return av.grd.popStatsMsg.nor")
 
-    def get_num_performing_xor(self):
+    def get_pop_num_performing_xor(self):
         """
         Gets the current number of organisms that can take advantage of xorose
         resource.
@@ -158,7 +158,7 @@ class ValueGetter(BasePage):
         """
         return self.execute_script("return av.grd.popStatsMsg.xor")
 
-    def get_num_performing_equ(self):
+    def get_pop_num_performing_equ(self):
         """
         Gets the current number of organisms that can take advantage of equose
         resource.
@@ -167,7 +167,7 @@ class ValueGetter(BasePage):
         """
         return self.execute_script("return av.grd.popStatsMsg.equ")
 
-    def gr_get_current_update(self):
+    def gr_get_pop_current_update(self):
         """
         Gets the current update from av.grd.updateNum.
 
@@ -178,7 +178,7 @@ class ValueGetter(BasePage):
         """
         return self.execute_script("return av.grd.updateNum")
 
-    def __gr_get_num_orgs_list(self):
+    def __gr_get_pop_num_orgs_list(self):
         """
         Gets the list of the current amount of organisms for each update from
         av.pch.
@@ -191,15 +191,15 @@ class ValueGetter(BasePage):
         """
         return self.execute_script("return av.pch.aveNum")
 
-    def gr_get_curr_num_orgs(self):
+    def gr_get_pop_curr_num_orgs(self):
         """
         Gets the current number of organisms from av.pch.
 
         :return: Integer value of current number of organisms.
         """
-        return self.__gr_get_num_orgs_list()[-1]
+        return self.__gr_get_pop_num_orgs_list()[-1]
 
-    def __gr_get_avg_fitness_list(self):
+    def __gr_get_pop_avg_fitness_list(self):
         """
         Gets the list of average fitnesses for each update in experiment.
 
@@ -207,7 +207,7 @@ class ValueGetter(BasePage):
         """
         return self.execute_script("return av.pch.aveFit")
 
-    def gr_get_curr_avg_fit(self):
+    def gr_get_pop_curr_avg_fit(self):
         """
         Gets the current average fitness from av.pch.
 
@@ -216,9 +216,9 @@ class ValueGetter(BasePage):
 
         :return: Float value of average fitness.
         """
-        return self.__gr_get_avg_fitness_list()[-1]
+        return self.__gr_get_pop_avg_fitness_list()[-1]
 
-    def __gr_get_avg_rate(self):
+    def __gr_get_pop_avg_rate(self):
         """
         Gets list of average energy acquisition rates for each update in exp.
 
@@ -229,7 +229,7 @@ class ValueGetter(BasePage):
         """
         return self.execute_script("return av.pch.aveEar")
 
-    def gr_get_curr_avg_rate(self):
+    def gr_get_pop_curr_avg_rate(self):
         """
         Gets the current average energy acquisition rate from av.pch.
 
@@ -238,9 +238,9 @@ class ValueGetter(BasePage):
 
         :return: Float value of average energy acquisition rate.
         """
-        return self.__gr_get_avg_rate()[-1]
+        return self.__gr_get_pop_avg_rate()[-1]
 
-    def __gr_get_avg_cost(self):
+    def __gr_get_pop_avg_cost(self):
         """
         Gets list of average offspring cost for each update in experiment.
 
@@ -248,7 +248,7 @@ class ValueGetter(BasePage):
         """
         return self.execute_script("return av.pch.aveCst")
 
-    def gr_get_curr_avg_cost(self):
+    def gr_get_pop_curr_avg_cost(self):
         """
         Gets the current average offspring cost from av.pch.
 
@@ -257,9 +257,9 @@ class ValueGetter(BasePage):
 
         :return: Float value of average offspring cost.
         """
-        return self.__gr_get_avg_cost()[-1]
+        return self.__gr_get_pop_avg_cost()[-1]
 
-    def get_cols(self):
+    def get_pop_cols(self):
         """
         Gets the current number of columns in the dish grid.
 
@@ -267,7 +267,7 @@ class ValueGetter(BasePage):
         """
         return self.execute_script("return av.grd.cols")
 
-    def get_rows(self):
+    def get_pop_rows(self):
         """
         Gets the current number of columns in the dish grid.
 

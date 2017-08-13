@@ -30,12 +30,12 @@ class PopStatsSanityTest(BaseTest):
         self.bp.util.sleep(1, "Waiting for pause to take affect.")
 
         # Test that population stats are valid.
-        assert self.vg.get_current_update() > 0
-        assert self.vg.get_num_orgs() > 1
-        assert self.vg.get_avg_fit() >= 0.0
-        assert self.vg.get_avg_energy_rate() > 0
-        assert self.vg.get_avg_offspring_cost() > 0
-        assert self.vg.get_avg_age() >= 0
+        assert self.vg.get_pop_current_update() > 0
+        assert self.vg.get_pop_num_orgs() > 1
+        assert self.vg.get_pop_avg_fit() >= 0.0
+        assert self.vg.get_pop_avg_energy_rate() > 0
+        assert self.vg.get_pop_avg_offspring_cost() > 0
+        assert self.vg.get_pop_avg_age() >= 0
 
     @pytest.mark.run(order=2)
     def test_pop_stats_sanity_allfxns(self):
@@ -57,21 +57,21 @@ class PopStatsSanityTest(BaseTest):
         self.bp.util.sleep(1, "Waiting for pause to take affect.")
 
         # Test that population stats are valid.
-        assert self.vg.get_current_update() > 0
-        assert self.vg.get_num_orgs() > 1
-        assert self.vg.get_avg_fit() >= 0.0
-        assert self.vg.get_avg_energy_rate() > 0
-        assert self.vg.get_avg_offspring_cost() > 0
-        assert self.vg.get_avg_age() >= 0
+        assert self.vg.get_pop_current_update() > 0
+        assert self.vg.get_pop_num_orgs() > 1
+        assert self.vg.get_pop_avg_fit() >= 0.0
+        assert self.vg.get_pop_avg_energy_rate() > 0
+        assert self.vg.get_pop_avg_offspring_cost() > 0
+        assert self.vg.get_pop_avg_age() >= 0
 
         # Test that all functions have occurred.
-        assert self.vg.get_num_performing_not() > 0
-        assert self.vg.get_num_performing_nan() > 0
-        assert self.vg.get_num_performing_and() > 0
-        assert self.vg.get_num_performing_orn() > 0
-        assert self.vg.get_num_performing_oro() > 0
-        assert self.vg.get_num_performing_ant() > 0
-        assert self.vg.get_num_performing_nor() > 0
-        assert self.vg.get_num_performing_xor() > 0
-        assert self.vg.get_num_performing_equ() > 0
+        assert self.vg.get_pop_num_performing_not() > 0
+        assert self.vg.get_pop_num_performing_nan() > 0
+        assert self.vg.get_pop_num_performing_and() > 0
+        assert self.vg.get_pop_num_performing_orn() > 0
+        assert self.vg.get_pop_num_performing_oro() > 0
+        assert self.vg.get_pop_num_performing_ant() > 0
+        assert self.vg.get_pop_num_performing_nor() > 0
+        assert self.vg.get_pop_num_performing_xor() > 0
+        assert self.vg.get_pop_num_performing_equ() > 0
 
