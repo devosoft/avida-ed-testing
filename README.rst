@@ -26,7 +26,13 @@ Windows:
 Use
 ----
 
-It is possible to run a single test file (containing one or more tests with a common purpose) using the following commands:
+The easiest way to run the tests is through the test suite files, located in the tests folder. The following command (simply typed into a command-line interface from the root folder of the project) will run all tests classified as 'basic':
+
+``python tests/test_suite_basic.py``
+
+There is also a test suite for tests that are considered 'advanced' -- however, this suite a) is currently outdated and b) does not run any tests, because there are none marked as advanced.
+
+It is possible to run a single test file (containing one or more tests with a common purpose) using the following command:
 
 ``pytest path\to\test\testfile.py``
 
@@ -43,6 +49,8 @@ There are also several command-line options that can be provided:
 - --setuipath: Used to set the path to the Avida-ED UI repository, which is used to run the tests locally. You should provide the path to the folder containing the ``av_ui`` folder.
 
 - --setffpath: Used to set the path to the Firefox binary, which at this time is needed to run the tests via Firefox. However, this has not been thoroughly tested and Chrome is recommended to run tests at this time.
+
+These options can be used when running individual tests or the test suite -- the test suite simply pipes all options given into Pytest.
 
 .. _`Python 3.6`: https://www.python.org/downloads/
 .. _pip: https://pypi.python.org/pypi/pip/
