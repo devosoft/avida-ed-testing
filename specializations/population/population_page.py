@@ -19,6 +19,7 @@ class PopulationPage(BasePage):
     __setup_setup = "Setup"
     __setup_block_id = "setupBlock"
     __mut_rate_input = "muteInput"
+    __pause_update_input = "autoUpdateSpinner"
 
     # Locators for population statistics window.
     __stats_window = "popRight"
@@ -349,3 +350,20 @@ class PopulationPage(BasePage):
         self.send_keys(element=mut_rate_box, keys=str(rate))
         self.hide_env_settings()
         self.log.info("Edited population mutation rate to " + str(rate))
+
+    def edit_pause_update(self, update):
+        """
+        Edits the update at which the experiment will pause if the 'Pause at
+        Update' feature is turned on.
+
+        :param update: The integer value of the update that the experiment
+        should pause at.
+
+        :return: None.
+        """
+        self.show_env_settings()
+        pause_update_box = self.get_element(self.__pause_update_input)
+        pause_update_box.clear()
+        self.send_keys(element=pause_update_box, keys=str(update))
+        self.hide_env_settings()
+        self.log.info("Edited 'pause at update' to update " + str(update))
