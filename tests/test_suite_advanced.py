@@ -1,7 +1,7 @@
 """
 Runs all advanced tests included in the tests folder.
 
-This script creates and runs all tests considered in the "advanced" tests groups,
+This script creates and runs all tests considered in the "advanced" tests groups
 as opposed to "basic" tests.
 """
 
