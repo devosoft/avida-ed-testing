@@ -370,6 +370,18 @@ class PopulationPage(BasePage):
         self.hide_env_settings()
         return to_return
 
+    def enable_pause_on_update(self):
+        """
+        Enables 'Pause on update' feature.
+
+        :return: None.
+        """
+        if not self.pause_on_update_enabled():
+            self.show_env_settings()
+            self.click_element(self.__auto_update_btn)
+            self.log.info("Set Pause mode to 'Pause on Update'.")
+            self.hide_env_settings()
+
     def pause_manually_enabled(self):
         """
         Determines if 'Pause at' is set to 'manual'.
@@ -385,6 +397,18 @@ class PopulationPage(BasePage):
         self.log.info("Is 'pause manually' enabled? " + str(to_return))
         self.hide_env_settings()
         return to_return
+
+    def enable_pause_manually(self):
+        """
+        Enables 'Pause Manually' mode (which turns on 'Pause at Update').
+
+        :return: None.
+        """
+        if not self.pause_manually_enabled():
+            self.show_env_settings()
+            self.click_element(self.__manual_update_btn)
+            self.log.info("Set pause mode to 'Pause Manually'.")
+            self.hide_env_settings()
 
     def edit_pause_update(self, update):
         """
