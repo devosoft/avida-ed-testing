@@ -38,7 +38,7 @@ Thumbs.db
 
 # Custom #
 ##########
-#lastfailed*
+lastfailed*
 .idea/workspace.xml
 base/__pycache__/config.cpython-36.pyc
 base/output/
