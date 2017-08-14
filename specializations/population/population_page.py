@@ -354,7 +354,7 @@ class PopulationPage(BasePage):
         self.hide_env_settings()
         self.log.info("Edited population mutation rate to " + str(rate))
 
-    def pause_on_update_enabled(self):
+    def pause_at_update_enabled(self):
         """
         Determines if 'Pause at update' feature is turned on.
 
@@ -370,13 +370,13 @@ class PopulationPage(BasePage):
         self.hide_env_settings()
         return to_return
 
-    def enable_pause_on_update(self):
+    def enable_pause_at_update(self):
         """
         Enables 'Pause on update' feature.
 
         :return: None.
         """
-        if not self.pause_on_update_enabled():
+        if not self.pause_at_update_enabled():
             self.show_env_settings()
             self.click_element(self.__auto_update_btn)
             self.log.info("Set Pause mode to 'Pause on Update'.")
