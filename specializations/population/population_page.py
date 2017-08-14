@@ -19,6 +19,9 @@ class PopulationPage(BasePage):
     __setup_setup = "Setup"
     __setup_block_id = "setupBlock"
     __mut_rate_input = "muteInput"
+    __update_radio_attr = "aria-checked"
+    __manual_update_btn = "manualUpdateRadio"
+    __auto_update_btn = "autoUpdateRadio"
     __pause_update_input = "autoUpdateSpinner"
 
     # Locators for population statistics window.
@@ -350,6 +353,38 @@ class PopulationPage(BasePage):
         self.send_keys(element=mut_rate_box, keys=str(rate))
         self.hide_env_settings()
         self.log.info("Edited population mutation rate to " + str(rate))
+
+    def pause_on_update_enabled(self):
+        """
+        Determines if 'Pause at update' feature is turned on.
+
+        :return: True if pause on update enabled; False otherwise.
+        """
+        self.show_env_settings()
+        is_enabled = self.get_attr_value(my_locator=self.__auto_update_btn,
+                                         attr=self.__update_radio_attr)
+        to_return = False
+        if is_enabled == "true":
+            to_return = True
+        self.log.info("Is 'pause on update' enabled? " + str(to_return))
+        self.hide_env_settings()
+        return to_return
+
+    def pause_manually_enabled(self):
+        """
+        Determines if 'Pause at' is set to 'manual'.
+
+        :return: True if pause is set to manual; False otherwise.
+        """
+        self.show_env_settings()
+        is_enabled = self.get_attr_value(my_locator=self.__manual_update_btn,
+                                         attr=self.__update_radio_attr)
+        to_return = False
+        if is_enabled == "true":
+            to_return = True
+        self.log.info("Is 'pause manually' enabled? " + str(to_return))
+        self.hide_env_settings()
+        return to_return
 
     def edit_pause_update(self, update):
         """
