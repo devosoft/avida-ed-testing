@@ -3,6 +3,7 @@ from selenium.webdriver.firefox.firefox_binary import FirefoxBinary
 from utilities.simple_web_server import CustomWebServer
 from base.config import Configuration
 
+from os import path, getcwd, makedirs
 
 class WebDriverFactory:
     """
@@ -12,6 +13,12 @@ class WebDriverFactory:
      wdf = WebDriverFactory(browser_type)
      driver = wdf.get_webdriver_instance()
      """
+
+    # Path for downloads to go to
+    __dwn_path = path.join(getcwd(), "downloads")
+    if not path.exists(__dwn_path):
+        makedirs(__dwn_path)
+
     def __init__(self, browser, is_local, ui_path, ff_path, av_url):
         """
         Initializes a WebDriverFactory object.
@@ -62,7 +69,19 @@ class WebDriverFactory:
         # Instantiate driver using specified browser (defaults to Chrome)
         if self.browser == "firefox":
             binary = FirefoxBinary(self.config.get_ff_path())
-            driver = webdriver.Firefox(firefox_binary=binary)
+
+            # Set FF preferences up for downloads.
+            profile = webdriver.FirefoxProfile()
+            profile.set_preference("browser.download.folderList", 2)
+            profile.set_preference("browser.download.manager.showWhenStarting",
+                                   False)
+            profile.set_preference("browser.download.dir", self.__dwn_path)
+            profile.set_preference("browser.helperApps.neverAsk.saveToDisk",
+                                   "application/zip")
+
+            # Create the driver itself.
+            driver = webdriver.Firefox(firefox_binary=binary,
+                                       firefox_profile=profile)
         else:
             driver = webdriver.Chrome()
 
@@ -74,7 +93,8 @@ class WebDriverFactory:
 
     def clean_webdriver_instance(self):
         """
-        Clean up after a driver instance (specifically the web server if running locally).
+        Clean up after a driver instance (specifically the web server if running
+         locally).
 
         :return: None.
         """
