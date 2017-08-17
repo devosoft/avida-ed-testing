@@ -50,6 +50,8 @@ There are also several command-line options that can be provided:
 
 - --setffpath: Used to set the path to the Firefox binary, which at this time is needed to run the tests via Firefox. However, this has not been thoroughly tested and Chrome is recommended to run tests at this time.
 
+- --seturl: Used to set the URL for the online version on Avida-ED.
+
 These options can be used when running individual tests or the test suite -- the test suite simply pipes all options given into Pytest.
 
 .. _`Python 3.6`: https://www.python.org/downloads/
