@@ -61,7 +61,7 @@ class DriverWrapper:
             element.send_keys(keys)
             self.log.info("Input '" + keys + "' sent to element with locator "
                           + my_locator + " of type " + locator_type)
-        except:
+        except Exception:
             self.log.info("Failed to send input '" + keys
                           + "'sent to element with locator " + my_locator
                           + " of type " + locator_type)
@@ -98,7 +98,7 @@ class DriverWrapper:
             self.log.info("Got text '" + text + "' from element with locator "
                           + my_locator + " of type " + locator_type + ".")
 
-        except:
+        except Exception:
             self.log.info("Unable to get text from element with locator "
                           + my_locator + " of type " + locator_type + ".")
         return text
@@ -126,7 +126,7 @@ class DriverWrapper:
             self.driver.save_screenshot(destination_file)
             self.log.info("Screenshot taken. Saved at directory "
                           + destination_directory + ".")
-        except:
+        except Exception:
             self.log.info("Attempt to take screenshot failed.")
 
     ############################################################################
@@ -185,7 +185,7 @@ class DriverWrapper:
             self.log.info("Element found with locator " + my_locator
                           + " of type " + locator_type + ".")
 
-        except:
+        except Exception:
             self.log.info("Element with locator " + my_locator
                           + " of type " + locator_type + " not found.")
 
@@ -217,7 +217,7 @@ class DriverWrapper:
                           + " elements found with locator " + my_locator
                           + " of type " + locator_type + " found.")
 
-        except:
+        except Exception:
             self.log.info("No elements with locator " + my_locator + " of type "
                           + locator_type + " found.")
 
@@ -253,7 +253,7 @@ class DriverWrapper:
             self.log.info("Clicked on element with locator " + my_locator
                           + " of type " + locator_type + ".")
 
-        except:
+        except Exception:
             self.log.info("Failed to click on any element with locator "
                           + my_locator + " of type " + locator_type + ".")
 
@@ -287,7 +287,7 @@ class DriverWrapper:
                               + " not found to be present.")
                 return False
 
-        except:
+        except Exception:
             return False
 
     def element_displayed(self, my_locator="",
@@ -328,7 +328,7 @@ class DriverWrapper:
                               + " of type " + locator_type
                               + " found not to be displayed.")
             return is_displayed
-        except:
+        except Exception:
             self.log.info("Error occurred trying to find element with locator "
                           + my_locator + " of type " + locator_type)
             return False
@@ -430,7 +430,7 @@ class DriverWrapper:
             value = self.driver.execute_script(script_text)
             self.log.info("Run Javascript code: '" + script_text + "'.")
             return value
-        except:
+        except Exception:
             self.log.info("Attempt to run Javascript code failed.")
 
     def switch_to_alert(self):

@@ -353,7 +353,7 @@ class BasePage(DriverWrapper):
             workspace_name_alert = self.switch_to_alert()
             workspace_name_alert.send_keys(workspace_name)
             workspace_name_alert.accept()
-        except:
+        except Exception:
             self.log.info("Error occurred while interacting with 'Save"
                           " Workspace As' JS alert.")
 
@@ -515,7 +515,7 @@ class BasePage(DriverWrapper):
             name_exp_conf_alert.accept()
             self.log.info("Successfully named our saved experiment "
                           " configuration '" + name + "'.")
-        except:
+        except Exception:
             self.log.info("Error occurred while interacting with 'Save"
                           " Experiment Configuration' JS alert.")
 
