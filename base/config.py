@@ -7,7 +7,7 @@ class Configuration:
     names and other configurable variables for this project.
     """
 
-    _config_file_path = r'config_files\config.json'
+    _config_file_path = os.path.join(os.getcwd(), r'config_files\config.json')
 
     _uipath_key = "ui_path"
     _ffpath_key = "ff_path"
@@ -68,7 +68,7 @@ class Configuration:
 
         :return: None.
         """
-        modified_config_dict = self._default_config_dict
+        modified_config_dict = self._get_config()
         modified_config_dict[self._uipath_key] = path
         with open(self._config_file_path, "w") as file:
             json.dump(modified_config_dict, file)
@@ -95,7 +95,7 @@ class Configuration:
 
         :return: None.
         """
-        modified_config_dict = self._default_config_dict
+        modified_config_dict = self._get_config()
         modified_config_dict[self._ffpath_key] = path
         with open(self._config_file_path, "w") as file:
             json.dump(modified_config_dict, file)
@@ -121,7 +121,7 @@ class Configuration:
 
         :return: None.
         """
-        modified_config_dict = self._default_config_dict
+        modified_config_dict = self._get_config()
         modified_config_dict[self._avurl_key] = url
         with open(self._config_file_path, "w") as file:
             json.dump(modified_config_dict, file)
