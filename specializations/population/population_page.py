@@ -15,7 +15,7 @@ class PopulationPage(BasePage):
 
     # Locators for population setup pane.
     __setup_button_id = "popSetupButton"
-    __setup_dish = "Dish"
+    __setup_dish = "Map"
     __setup_setup = "Setup"
     __setup_block_id = "setupBlock"
     __mut_rate_input = "muteInput"
