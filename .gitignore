@@ -38,7 +38,6 @@ Thumbs.db
 
 # Custom #
 ##########
-lastfailed*
 .idea/workspace.xml
 base/__pycache__/config.cpython-36.pyc
 base/output/
@@ -62,7 +61,7 @@ tests/population/population_basic/env_settings/__pycache__/
 tests/population/population_basic/navigation/__pycache__/
 utilities/__pycache__/simple_web_server.cpython-36.pyc
 /config_files/config.json
-/.cache/v/cache/lastfailed
+/.cache/
 downloads/
 specializations/value_getter/__pycache__/__init__.cpython-36.pyc
 tests/organism/organism_basic/experiments/__pycache__/
