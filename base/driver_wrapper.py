@@ -442,16 +442,45 @@ class DriverWrapper:
         """
         return self.driver.switch_to.alert
 
-    def wait_until_invisible(self, my_locator="", locator_type="id"):
+    def wait_until_visible(self, my_locator="", locator_type="id", wait_time=10):
+        """
+        Use WebdriverWait until an element is visible on the screen.
+
+        :param my_locator: The locator used to find the element.
+
+        :param locator_type: The type of locator used -- can be id, class, css selector, xpath, etc.
+
+        :param wait_time: The amount of time that WebDriverWait will wait before raising an exception.
+
+        :return: None.
+        """
+        try:
+            WebDriverWait(self.driver, wait_time) \
+                .until(ec.visibility_of_element_located((locator_type, my_locator)))
+        except Exception:
+            self.log.error("wait_until_visible for element with locator " + my_locator + " of type " + locator_type
+                           + " has failed.")
+
+
+    def wait_until_invisible(self, my_locator="", locator_type="id", wait_time=10):
         """
         Use WebdriverWait to wait until an element is no longer visible on the
         screen.
 
+        :param my_locator: The locator used to find the element.
+
+        :param locator_type: The type of locator used -- can be id, class, css selector, xpath, etc.
+
+        :param wait_time: The amount of time that WebDriverWait will wait before raising an exception.
+
         :return: None.
         """
-        WebDriverWait(self.driver, 60) \
-            .until(ec.invisibility_of_element_located((locator_type,
-                                                       my_locator)))
+        try:
+            WebDriverWait(self.driver, wait_time) \
+                .until(ec.invisibility_of_element_located((locator_type, my_locator)))
+        except Exception:
+            self.log.error("wait_until_invisible for element with locator " + locator_type + " of type " + locator_type
+                           + " has failed.")
 
     def refresh_page(self):
         """
