@@ -131,7 +131,10 @@ class OrganismPage(BasePage):
         self.go_to_organism()
         if not self.org_details_displayed():
             self.click_element(self.__org_details_btn)
-            self.log.info("Opened organism details pane.")
+            if self.wait_until_visible(self.__org_details_pane):
+                self.log.info("Opened organism details pane.")
+            else:
+                self.log.info("Failed to open organism details pane.")
 
     def close_org_details(self):
         """
@@ -143,7 +146,10 @@ class OrganismPage(BasePage):
         self.go_to_organism()
         if self.org_details_displayed():
             self.click_element(self.__org_details_btn)
-            self.log.info("Closed organism details pane.")
+            if self.wait_until_invisible(self.__org_details_pane):
+                self.log.info("Closed organism details pane.")
+            else:
+                self.log.info("Failed to close organism details pane.")
 
     def org_rep_controls_enabled(self, driver=None):
         """
