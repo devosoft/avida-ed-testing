@@ -452,7 +452,7 @@ class DriverWrapper:
 
         :param wait_time: The amount of time that WebDriverWait will wait before raising an exception.
 
-        :return: None.
+        :return: True if wait successful; False otherwise.
         """
         try:
             WebDriverWait(self.driver, wait_time) \
@@ -460,7 +460,8 @@ class DriverWrapper:
         except Exception:
             self.log.error("wait_until_visible for element with locator " + my_locator + " of type " + locator_type
                            + " has failed.")
-
+            return False
+        return True
 
     def wait_until_invisible(self, my_locator="", locator_type="id", wait_time=10):
         """
@@ -473,7 +474,7 @@ class DriverWrapper:
 
         :param wait_time: The amount of time that WebDriverWait will wait before raising an exception.
 
-        :return: None.
+        :return: True if wait successful; False otherwise.
         """
         try:
             WebDriverWait(self.driver, wait_time) \
@@ -481,6 +482,8 @@ class DriverWrapper:
         except Exception:
             self.log.error("wait_until_invisible for element with locator " + locator_type + " of type " + locator_type
                            + " has failed.")
+            return False
+        return True
 
     def refresh_page(self):
         """
