@@ -132,7 +132,10 @@ class BasePage(DriverWrapper):
         :return: None.
         """
         self.click_element(self.__population_button)
-        self.log.info("Navigated to population window.")
+        if self.wait_until_visible(self.__population_block):
+            self.log.info("Navigated to population window.")
+        else:
+            self.log.warning("Failed to navigate to population window.")
 
     def organism_displayed(self):
         """
@@ -152,7 +155,10 @@ class BasePage(DriverWrapper):
         :return: None.
         """
         self.click_element(self.__organism_button)
-        self.log.info("Navigated to organism window.")
+        if self.wait_until_visible(self.__organism_block):
+            self.log.info("Navigated to organism window.")
+        else:
+            self.log.warning("Failed to navigate to organism window.")
 
     def analysis_displayed(self):
         """
@@ -171,7 +177,10 @@ class BasePage(DriverWrapper):
         :return: None.
         """
         self.click_element(self.__analysis_button)
-        self.log.info("Navigated to analysis window.")
+        if self.wait_until_visible(self.__analysis_block):
+            self.log.info("Navigated to analysis window.")
+        else:
+            self.log.warning("Failed to navigate to analysis window.")
 
     def crash_report_displayed(self):
         """
@@ -215,8 +224,8 @@ class BasePage(DriverWrapper):
             self.click_element(element=item)
             self.log.info("Clicked on freezer item with name " + text_name)
         else:
-            self.log.info("Failed to click on any freezer item with name "
-                          + text_name)
+            self.log.warning("Failed to click on any freezer item with name "
+                             + text_name)
 
     def avida_ed_dropdown_expanded(self):
         """
@@ -270,10 +279,10 @@ class BasePage(DriverWrapper):
         """
         self.open_avida_ed_dropdown()
         self.click_element(self.__avida_ed_about_menu)
-        self.log.info("Opened 'About' dialog box in Avida-ED tab.")
-
-        # Wait (because opening can take a while).
-        self.util.sleep(1)
+        if self.wait_until_visible(self.__avida_ed_about_dlg):
+            self.log.info("Opened 'About' dialog box in Avida-ED tab.")
+        else:
+            self.log.warning("Failed to open 'About' dialog box in Avida-ED tab.")
 
     def close_avida_ed_about(self):
         """
@@ -283,10 +292,10 @@ class BasePage(DriverWrapper):
         """
         if self.avida_ed_about_displayed():
             self.click_element(self.__avida_ed_about_closedlg)
-            self.log.info("Closed 'About' dialog box in Avida-ED tab.")
-
-            # Wait (because closing can take a while).
-            self.util.sleep(1)
+            if self.wait_until_invisible(self.__avida_ed_about_dlg):
+                self.log.info("Closed 'About' dialog box in Avida-ED tab.")
+            else:
+                self.log.warning("Failed to close 'About' dialog box in Avida-ED tab.")
 
     def file_dropdown_expanded(self):
         """
@@ -431,10 +440,10 @@ class BasePage(DriverWrapper):
         if not self.export_graphics_dialog_displayed():
             self.open_file_dropdown()
             self.click_element(self.__file_export_graph)
-            self.log.info("Clicked on 'Export Graphics' in File tab.")
-
-            # Opening the dialog takes some time, so we will wait a bit.
-            self.util.sleep(1)
+            if self.wait_until_visible(self.__file_export_graph_dlg):
+                self.log.info("Clicked on 'Export Graphics' in File tab.")
+            else:
+                self.log.warning("Failed to click on 'Export Graphics' in File tab.")
 
     def export_graphics_dialog_displayed(self):
         """
@@ -458,7 +467,10 @@ class BasePage(DriverWrapper):
         """
         if self.export_graphics_dialog_displayed():
             self.click_element(self.__file_export_graph_closedlg)
-            self.log.info("Closed export graphics dialog.")
+            if self.wait_until_invisible(self.__file_export_graph_dlg):
+                self.log.info("Closed export graphics dialog.")
+            else:
+                self.log.warning("Failed to close 'Export Graphics' dialog.")
 
             # Closing the dialog takes some time, so we will wait a bit.
             self.util.sleep(1)
@@ -766,7 +778,7 @@ class BasePage(DriverWrapper):
             self.click_element(self.__cn_run)
             self.log.info("Successfully clicked on 'Run' in Control tab.")
         else:
-            self.log.info("Failed to click on 'Run' in Control tab.")
+            self.log.warning("Attempt to use 'Run' in Control tab failed.")
 
     def can_pause_from_menu(self):
         """
@@ -792,8 +804,7 @@ class BasePage(DriverWrapper):
             self.log.info("Successfully clicked on 'Pause' in Control tab via"
                           "the menu bar.")
         else:
-            self.log.info("Failed to click on 'Pause' in Control tab via the"
-                          "menu bar.")
+            self.log.info("Attempt to use 'Pause' in Control tab failed.")
 
     def forward_from_menu(self):
         """
@@ -846,11 +857,9 @@ class BasePage(DriverWrapper):
         self.open_control_dropdown()
         if self.can_bring_to_org_window():
             self.click_element(self.__cn_bring_to_org)
-            self.log.info("Successfully clicked on 'Put Highlighted Organism in"
-                          + " Organism View' button.")
+            self.log.info("Successfully used on 'Put Highlighted Organism in Organism View' button.")
         else:
-            self.log.info("Tried but failed to click on 'Put Highlighted"
-                          + " Organism in Organism View' button.")
+            self.log.info("Tried but failed to use 'Put Highlighted Organism in Organism View' menu option.")
 
     def can_bring_child_to_org_window(self):
         """
@@ -876,11 +885,9 @@ class BasePage(DriverWrapper):
         self.open_control_dropdown()
         if self.can_bring_child_to_org_window():
             self.click_element(self.__cn_bring_offspring_to_org)
-            self.log.info("Successfully clicked on Put Offspring in Organism "
-                          + "View menu option.")
+            self.log.info("Successfully used Put Offspring in Organism View menu option.")
         else:
-            self.log.info("Tried, but could not click on Put Organism in "
-                          + "Offspring View menu option.")
+            self.log.info("Attempt to use 'Put Organism in Offspring View' menu option failed.")
 
     def help_dropdown_expanded(self):
         """
@@ -890,8 +897,7 @@ class BasePage(DriverWrapper):
         :return: True if the dropdown is expanded, False otherwise.
         """
         expanded = self.__menu_dropdown_expanded(self.__help_tab)
-        self.log.info("Is Help menu dropdown expanded? "
-                      + str(expanded) + ".")
+        self.log.info("Is Help menu dropdown expanded? " + str(expanded) + ".")
         return expanded
 
     def open_help_dropdown(self):
