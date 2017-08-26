@@ -90,6 +90,7 @@ class OrganismPage(BasePage):
         button_text = self.get_text(element=button)
         if button_text == self.__org_settings_btn_text:
             self.click_element(element=button)
+            self.wait_until_visible(self.__org_settings_dlg)
             self.log.info("Opened Organism Settings dialog.")
 
     def close_org_settings(self):
@@ -100,6 +101,7 @@ class OrganismPage(BasePage):
         """
         if self.org_settings_displayed():
             self.click_element(self.__org_settings_close)
+            self.wait_until_invisible(self.__org_settings_dlg)
             self.log.info("Closed Organism Settings dialog.")
 
     def org_details_displayed(self):
