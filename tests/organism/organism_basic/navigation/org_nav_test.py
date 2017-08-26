@@ -33,11 +33,8 @@ class OrganismNavigationTest(BaseTest):
         """
         self.bp.go_to_organism()
         self.op.open_org_details()
-        time.sleep(1)
         assert self.op.org_details_displayed()
         self.op.close_org_details()
-        time.sleep(1)
         assert not self.op.org_details_displayed()
         self.op.open_org_details()
-        time.sleep(1)
         assert self.op.org_details_displayed()
