@@ -104,7 +104,7 @@ class BasePage(DriverWrapper):
 
         :return: None.
         """
-        self.wait_until_invisible(my_locator=self.__splash_screen)
+        self.wait_until_invisible(my_locator=self.__splash_screen, wait_time=60)
 
     def refresh_avida_ed(self):
         """
