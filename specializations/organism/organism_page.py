@@ -93,7 +93,7 @@ class OrganismPage(BasePage):
             if self.wait_until_visible(self.__org_settings_dlg):
                 self.log.info("Opened Organism Settings dialog.")
             else:
-                self.log.info("Failed to open Organism Settings dialog.")
+                self.log.warning("Failed to open Organism Settings dialog.")
 
     def close_org_settings(self):
         """
@@ -106,7 +106,7 @@ class OrganismPage(BasePage):
             if self.wait_until_invisible(self.__org_settings_dlg):
                 self.log.info("Closed Organism Settings dialog.")
             else:
-                self.log.info("Failed to close Organism Settings dialog.")
+                self.log.warning("Failed to close Organism Settings dialog.")
 
     def org_details_displayed(self):
         """
@@ -134,7 +134,7 @@ class OrganismPage(BasePage):
             if self.wait_until_visible(self.__org_details_pane):
                 self.log.info("Opened organism details pane.")
             else:
-                self.log.info("Failed to open organism details pane.")
+                self.log.warning("Failed to open organism details pane.")
 
     def close_org_details(self):
         """
@@ -149,7 +149,7 @@ class OrganismPage(BasePage):
             if self.wait_until_invisible(self.__org_details_pane):
                 self.log.info("Closed organism details pane.")
             else:
-                self.log.info("Failed to close organism details pane.")
+                self.log.warning("Failed to close organism details pane.")
 
     def org_rep_controls_enabled(self, driver=None):
         """
