@@ -8,22 +8,23 @@ as opposed to "basic" tests.
 import pytest
 import sys
 
-common_adv_path = r"tests/common/common_advanced"
-pop_adv_path = r"tests/population/population_advanced"
-org_adv_path = r"tests/organism/organism_advanced"
-analysis_adv_path = r"tests/analysis/analysis_advanced"
+if __name__ == "__main__":
+    common_adv_path = r"tests/common/common_advanced"
+    pop_adv_path = r"tests/population/population_advanced"
+    org_adv_path = r"tests/organism/organism_advanced"
+    analysis_adv_path = r"tests/analysis/analysis_advanced"
 
-pytest_args = ["-v",
-               "-s",
-               "--junitxml=./output/junit_xml/junit_xml.log",
-               "--html=./output/html_report/html_report.html",
-               "--self-contained-html",
-               common_adv_path,
-               pop_adv_path,
-               org_adv_path,
-               analysis_adv_path]
+    pytest_args = ["-v",
+                   "-s",
+                   "--junitxml=./output/junit_xml/junit_xml.log",
+                   "--html=./output/html_report/html_report.html",
+                   "--self-contained-html",
+                   common_adv_path,
+                   pop_adv_path,
+                   org_adv_path,
+                   analysis_adv_path]
 
-pytest_args.extend(sys.argv)
-pytest.main(pytest_args)
+    pytest_args.extend(sys.argv)
+    pytest.main(pytest_args)
 
 
