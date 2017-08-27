@@ -103,7 +103,10 @@ class PopulationPage(BasePage):
         self.go_to_population()
         if not self.env_settings_displayed():
             self.click_element(self.__setup_button_id)
-            self.log.info("Show environmental settings window.")
+            if self.wait_until_visible(self.__setup_block_id):
+                self.log.info("Showed environmental settings window.")
+            else:
+                self.log.warning("Failed to show environmental settings window.")
 
     def hide_env_settings(self):
         """
@@ -115,7 +118,10 @@ class PopulationPage(BasePage):
         self.go_to_population()
         if self.env_settings_displayed():
             self.click_element(self.__setup_button_id)
-            self.log.info("Hid environmental settings window.")
+            if self.wait_until_invisible(self.__setup_block_id):
+                self.log.info("Hid environmental settings window.")
+            else:
+                self.log.warning("Failed to hide environmental settings window.")
 
     def pop_stats_displayed(self):
         """
@@ -138,7 +144,10 @@ class PopulationPage(BasePage):
         self.go_to_population()
         if not self.element_displayed(self.__stats_window):
             self.click_element(self.__stats_button)
-            self.log.info("Show population statistics window.")
+            if self.wait_until_visible(self.__stats_window):
+                self.log.info("Showed population statistics window.")
+            else:
+                self.log.warning("Failed to show population statistics window.")
 
     def hide_pop_stats(self):
         """
@@ -149,7 +158,10 @@ class PopulationPage(BasePage):
         self.go_to_population()
         if self.element_displayed(self.__stats_window):
             self.click_element(self.__stats_button)
-            self.log.info("Hid population statistics window.")
+            if self.wait_until_invisible(self.__stats_window):
+                self.log.info("Hid population statistics window.")
+            else:
+                self.log.warning("Failed to hide population statistics window.")
 
     def __click_runpause_pop_button(self):
         """
@@ -203,7 +215,7 @@ class PopulationPage(BasePage):
         self.log.info("Is new experiment dialog displayed? " + str(displayed))
         return displayed
 
-    def click_new_exp(self):
+    def click_new_exp_nodlg(self):
         """
         Clicks on the 'New' button under the dish to create a new experiment.
         This method does not have any way of handling the dialog that may appear
@@ -215,6 +227,21 @@ class PopulationPage(BasePage):
         self.click_element(self.__new_dish_button)
         self.log.info("Clicked on New button without plan for dialog.")
 
+    def __click_new_exp(self):
+        """
+        Clicks on the 'New' button under the dish to create a new experiment.
+        This method should be used only when expecting the new experiment dialog
+        (which contains options for what to do with previous dish) to pop up, i.e.
+        when there is something in the old dish.
+
+        :return: None.
+        """
+        self.click_element(self.__new_dish_button)
+        if self.wait_until_visible(self.__new_dish_dlg) and self.new_exp_dlg_displayed():
+            self.log.info("Opened new experiment dialog.")
+        else:
+            self.log.warning("Failed to open new dish dialog.")
+
     def new_exp_cancel(self):
         """
         Clicks on the 'New' button under the dish to create a new experiment. It
@@ -222,11 +249,12 @@ class PopulationPage(BasePage):
 
         :return: None.
         """
-        self.click_new_exp()
-        self.log.info("Clicked on New button.")
-        if self.new_exp_dlg_displayed():
-            self.click_element(self.__new_dish_cancel_xpath, "xpath")
-            self.log.info("Cancelled New via dialog box.")
+        self.__click_new_exp()
+        self.click_element(self.__new_dish_cancel_xpath, "xpath")
+        if self.wait_until_invisible(self.__new_dish_dlg):
+            self.log.info("Cancelled New dish and closed dialog box.")
+        else:
+            self.log.warning("Dialog box still open -- attempt to cancel new dish action failed.")
 
     def new_exp_discard(self):
         """
@@ -235,11 +263,12 @@ class PopulationPage(BasePage):
 
         :return: None.
         """
-        self.click_new_exp()
-        self.log.info("Clicked on New button.")
-        if self.new_exp_dlg_displayed():
-            self.click_element(self.__new_dish_discard_xpath, "xpath")
-            self.log.info("Carried through with New, discarded old dish.")
+        self.__click_new_exp()
+        self.click_element(self.__new_dish_discard_xpath, "xpath")
+        if self.wait_until_invisible(self.__new_dish_dlg):
+            self.log.info("Created new dish, closing dialog and discarding previous dish.")
+        else:
+            self.log.warning("Dialog box still open -- attempt to create new dish & discard old failed.")
 
     def new_exp_saveconf(self, name=None):
         """
@@ -251,19 +280,25 @@ class PopulationPage(BasePage):
 
         :return: None.
         """
-        self.click_new_exp()
-        self.log.info("Clicked on New button.")
-        if self.new_exp_dlg_displayed():
-            self.click_element(self.__new_dish_saveconf_xpath, "xpath")
-            name_popup = self.switch_to_alert()
-            if name is not None:
-                name_popup.send_keys(name)
-                self.log.info("Carried through with New, saved dish conf. as "
-                              + name + ".")
-            else:
-                self.log.info("Carried through with New, saved dish conf. with"
-                              " default name.")
-            name_popup.accept()
+        self.__click_new_exp()
+        self.click_element(self.__new_dish_saveconf_xpath, "xpath")
+        name_popup = self.switch_to_alert()
+        passing_log_text = ""
+        failing_log_text = ""
+        if name is not None:
+            name_popup.send_keys(name)
+            passing_log_text = "Created new dish, saved old dish conf. as " + name + "."
+            failing_log_text = "Dialog box still open -- attempt to create new dish & save old dish conf. as " + name  \
+                               + " failed."
+        else:
+            passing_log_text = "Carried through with New, saved dish conf. with default name."
+            failing_log_text = "Dialog box still open -- attempt to create new dish & save old dish conf. w/def. name" \
+                               " failed."
+        name_popup.accept()
+        if self.wait_until_invisible(self.__new_dish_dlg):
+            self.log.info(passing_log_text)
+        else:
+            self.log.warning(failing_log_text)
 
     def new_exp_savepop(self, name=None):
         """
@@ -274,19 +309,25 @@ class PopulationPage(BasePage):
 
         :return: None.
         """
-        self.click_new_exp()
-        self.log.info("Clicked on New button.")
-        if self.new_exp_dlg_displayed():
-            self.click_element(self.__new_dish_savepop_xpath, "xpath")
-            name_popup = self.switch_to_alert()
-            if name is not None:
-                name_popup.send_keys(name)
-                self.log.info("Carried through with New, saved populated dish"
-                              "as " + name + ".")
-            else:
-                self.log.info("Carried through with New, saved populated dish"
-                              " with default name.")
-            name_popup.accept()
+        self.__click_new_exp()
+        self.click_element(self.__new_dish_savepop_xpath, "xpath")
+        passing_log_text=""
+        failing_log_text=""
+        name_popup = self.switch_to_alert()
+        if name is not None:
+            name_popup.send_keys(name)
+            passing_log_text = "Created new dish, saved populated dish as " + name + "."
+            failing_log_text = "Dialog box still open -- attempt to create new dish & save old dish pop. as " + name   \
+                               + " failed."
+        else:
+            passing_log_text = "Carried through with New, saved populated dish with default name."
+            failing_log_text = "Dialog box still open -- attempt to create new dish & save old dish pop w/def. name"   \
+                               " failed."
+        name_popup.accept()
+        if self.wait_until_invisible(self.__new_dish_dlg):
+            self.log.info(passing_log_text)
+        else:
+            self.log.warning(failing_log_text)
 
     def forward_from_pop(self):
         """
