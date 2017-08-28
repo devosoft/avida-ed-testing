@@ -1003,9 +1003,10 @@ class BasePage(DriverWrapper):
         for item in freezer_items:
             if self.get_text(element=item) == text_name:
                 self.log.info("Freezer item found.")
+                found = True
                 return item
-            if not found:
-                self.log.info("Freezer item not found.")
+        if not found:
+            self.log.info("Freezer item not found.")
         return None
 
     def __click_avida_ed_dropdown(self):
