@@ -2,13 +2,10 @@ import pytest
 from base.webdriver_factory import WebDriverFactory
 
 
-@pytest.yield_fixture(scope="class")
+@pytest.yield_fixture(scope="session")
 def driver_setup(request, browser, local, setuipath, setffpath, seturl):
     wdf = WebDriverFactory(browser, local, setuipath, setffpath, seturl)
     driver = wdf.get_webdriver_instance()
-
-    if request.cls is not None:
-        request.cls.driver = driver
 
     yield driver
     wdf.clean_webdriver_instance()
