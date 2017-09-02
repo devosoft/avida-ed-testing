@@ -34,3 +34,4 @@ class CustomWebServer:
         :return: None.
         """
         os.chdir(self.test_path)
+        self.httpd.server_close()

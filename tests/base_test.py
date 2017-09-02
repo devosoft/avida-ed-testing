@@ -29,6 +29,9 @@ class BaseTest(unittest.TestCase):
         :return: None.
         """
 
+        # Set up driver
+        request.cls.driver = driver_setup
+
         # Set up base page
         request.cls.bp = BasePage(self.driver)
 

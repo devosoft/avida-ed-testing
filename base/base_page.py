@@ -69,7 +69,7 @@ class BasePage(DriverWrapper):
     __fz_bring_dish_to_ana_view = "mnFzAddPopAnalysis"
 
     # Locators for options within the Control dropdown.
-    __cn_run = "mnCnRun"
+    __cn_run = "mnCnPopRun"
     __cn_pause = "mnCnPause"
     __cn_one_update = "mnCnOne"
     __cn_new_exp = "mnCnNewpop"
@@ -675,14 +675,20 @@ class BasePage(DriverWrapper):
         Clicks on the "Add Highlighted Organism to Experiment" button in the
         Freezer tab of the main menu bar.
 
-        *** Not Fully Implemented Yet ***
-
         :return: None.
         """
         self.open_freezer_dropdown()
         self.click_element(self.__fz_add_org)
         self.log.info("Clicked on 'Add Highlighted Organism to Experiment'"
                       " button in Freezer tab.")
+
+        # Check for alerts
+        alert = self.switch_to_alert()
+        if alert is not None:
+            # If alert appeared, no organism was highlighted.
+            self.log.warning("Alert appeared after trying to add org to experiment -- no organism was highlighted.")
+            return False
+        return True
 
     def add_pop_dish_to_exp(self):
         """
