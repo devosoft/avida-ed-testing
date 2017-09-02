@@ -69,7 +69,7 @@ class BasePage(DriverWrapper):
     __fz_bring_dish_to_ana_view = "mnFzAddPopAnalysis"
 
     # Locators for options within the Control dropdown.
-    __cn_run = "mnCnRun"
+    __cn_run = "mnCnPopRun"
     __cn_pause = "mnCnPause"
     __cn_one_update = "mnCnOne"
     __cn_new_exp = "mnCnNewpop"
