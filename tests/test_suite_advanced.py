@@ -15,7 +15,6 @@ if __name__ == "__main__":
     analysis_adv_path = r"tests/analysis/analysis_advanced"
 
     pytest_args = ["-v",
-                   "-s",
                    "--junitxml=./output/junit_xml/junit_xml.log",
                    "--html=./output/html_report/html_report.html",
                    "--self-contained-html",
