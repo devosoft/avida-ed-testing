@@ -6,7 +6,6 @@ from base.base_page import BasePage
 from specializations.population.population_page import PopulationPage
 from specializations.organism.organism_page import OrganismPage
 from specializations.analysis.analysis_page import AnalysisPage
-from specializations.value_getter.value_getter import ValueGetter
 
 
 @pytest.mark.usefixtures("driver_setup")
@@ -39,7 +38,6 @@ class BaseTest(unittest.TestCase):
         request.cls.pp = PopulationPage(self.driver)
         request.cls.op = OrganismPage(self.driver)
         request.cls.ap = AnalysisPage(self.driver)
-        request.cls.vg = ValueGetter(self.driver)
 
         # Wait for splash screen to go away
         request.cls.bp.wait_until_splash_gone()

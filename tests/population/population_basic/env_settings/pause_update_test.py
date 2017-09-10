@@ -41,8 +41,8 @@ class PauseUpdateTest(BaseTest):
         self.bp.util.sleep(10, "Waiting for experiment to pause automatically.")
 
         # Check that pause worked properly.
-        assert self.vg.get_pop_current_update() == 9
+        assert self.pp.get_pop_current_update() == 9
 
         # Wait to make sure it is paused.
         self.bp.util.sleep(1, "Ensuring that experiment is paused.")
-        assert self.vg.get_pop_current_update() == 9
+        assert self.pp.get_pop_current_update() == 9
