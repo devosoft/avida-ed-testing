@@ -16,7 +16,7 @@ class Configuration:
     _default_config_dict = {
         _uipath_key: r"C:\avida_ed_ui",
         _ffpath_key: r'C:\Program Files (x86)\Mozilla Firefox\Firefox.exe',
-        _avurl_key: r'https://avida-ed.beacon-center.org/appTest/AvidaED.html'
+        _avurl_key: r'https://avida-ed.beacon-center.org/app/AvidaED.html'
     }
 
     def __init__(self):
