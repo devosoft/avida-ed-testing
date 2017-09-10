@@ -1,6 +1,7 @@
 import json
 import os
 
+
 class Configuration:
     """
     Class that interfaces with the main configuration file, which contains file
