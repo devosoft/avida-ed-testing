@@ -12,19 +12,18 @@ This project contains a test suite for the web-based version of Avida-ED_, an aw
 This project uses Selenium to run automated tests in a web browser against the Avida-ED application (running either locally or on the Internet). The test suite is being developed mainly with Chrome in mind, but tests should be runnable in Firefox at some future point.
 
 Installation
-------------
+============
 
 IMPORTANT:
-
+----------
 One of the most important things to be conscious of during the installation process is that you are always using the correct Python interpreter. Almost all Mac users and many Windows users will already have a Python 2.7 installation on their computer, which will NOT be able to run this testing project. If Python 2.7 is already installed on your computer, Python-related commands will be run using 2.7 by default.
 
 You can determine which is the default interpreter by running the command ``which python`` (for Mac) or ``where python`` (for Windows) from a command prompt window. If the path that these commands output contains ``python36``, you should be fine -- if it contains ``python27`` instead, you will need to be careful.
 
-If you are on a Mac, you should just be able to affix a '3' to any Python-related command on the command line; for example, ``python3`` instead of ``python`` or ``pip3`` instead of ``pip``.
-
 If you are on Windows, this is more complicated. Assuming that you already have Python 3.6 installed, the best way to launch Python is using the Python Launcher for Windows. To do this, instead of using ``python`` on the command line, use ``py -3`` for Python 3.6 or ``py -2`` for Python 2.7. Note that this ONLY works if you have at least one version of Python >= 3.3 installed on your computer. To use pip, you will either need to create a virtual environment (described below) or add C:\Path\to\Python36\Scripts to your PATH environment variable (see `this tutorial`_), which will allow you to use ``pip3.6`` instead of ``pip`` to ensure that you are always using the Python 3.6 version of pip.
-Windows:
 
+Windows:
+--------
 1. Install `Python 3.6`_. During the installation process, make sure that the option to also install pip_ is checked. Alternatively, you can install pip_ separately.
 2. (Optional) Install PyCharm_ or another Python IDE of your choice.
 3. If you have not already done so, download/clone this repository to your computer. If you plan on running the test suite locally (which is the default setting), you should also acquire a local version of the main `Avida-ED UI repository`_
@@ -35,8 +34,21 @@ Windows:
 8. If you want to run the tests locally (which is the default setting), you will need to provide the location of the Avida-ED UI repository using the --setuipath option. More information about this option is given below. NOTE: You only need to use --setuipath the first time you run the experiment -- the location you give will be saved by the test suite.
 
 Mac:
+----
 
 The installation process is essentially the same as for Windows. However, the process of adding something to the system path will be different -- this guide_ explains how you can do this. Also, it is important to make sure you are using the correct Python interpreter to run the test suite, since Macs tend to come with Python 2.7 installed. Please see the section marked IMPORTANT above for more information.
+
+Dealing With Multiple Python Versions
+-------------------------------------
+
+Windows:
+
+Assuming that you already have Python 3.6 installed, the best way to launch Python is to use
+
+Mac:
+
+Affix a '3' to Python-related command on the command line; for example, ``python3`` instead of ``python`` or ``pip3`` instead of ``pip``.
+
 
 Use
 ----
