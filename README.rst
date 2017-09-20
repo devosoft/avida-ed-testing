@@ -22,30 +22,30 @@ You can determine which Python interpreter your computer runs by default by runn
 
 If you run into this problem, see the section labelled *Dealing With Multiple Python Versions* below.
 
-**Windows**
+**Windows:**
 
 1. Install `Python 3.6`_. During the installation process, make sure that the option to also install pip_ is checked. Alternatively, you can install pip_ separately.
 2. (Optional) Install PyCharm_ or another Python IDE of your choice.
-3. If you have not already done so, download/clone this repository to your computer. If you plan on running the test suite locally (which is the default setting), you should also acquire a local version of the main `Avida-ED UI repository`_
+3. If you have not already done so, download/clone this repository to your computer. If you plan on running the test suite locally (which is the default setting), you should also acquire a local version of the main `Avida-ED UI repository`_. You do not have to put these in any specific place, but keep track of their locations -- you will need them later.
 4. Install any browsers that you plan to run the test suite with. This test suite currently supports Chrome_ and may support Firefox_ in the future.
 5. If you are using Chrome, you will need to download Chromedriver_, the tool that allows Selenium to interact with Chrome. The directory where chromedriver.exe is located must also be added to your system path. See `this tutorial`_ on how to do this in Windows. If you are using Firefox, you will need to download Geckodriver_ and add its location to the system path -- however, you should be aware that not all tests run properly in Firefox at this time.
-6. (Recommended) This project requires several specific Python packages to run properly. If you use or plan to use the Python 3 installation on your computer to do anything outside the scope of this project, it is helpful to isolate the package requirements for this project to prevent clashing of dependencies with other Python projects. This can be done with a virtual environment. It is possible to set up a project-specific virtual environment `through PyCharm`_, or you can create one manually (the virtualenv_ Python package would be useful for this -- install it via the command ``pip3 install virtualenv``).
+6. (Recommended) This project requires several specific Python packages to run properly. If you use or plan to use the Python 3 installation on your computer to do anything outside the scope of this project, it is helpful to isolate the package requirements for this project to prevent clashing of dependencies with other Python projects. This can be done with a virtual environment. It is possible to set up a project-specific virtual environment `through PyCharm`_, or you can create one manually (the virtualenv_ Python package would be useful for this -- install it via the command ``pip install virtualenv``).
 7. Use pip to install the required packages listed in requirements.txt. This can be done easily by running the command ``pip install -r requirements.txt`` from the ``avida_ed_testing`` folder.
 8. If you want to run the tests locally (which is the default setting), you will need to provide the location of the Avida-ED UI repository using the --setuipath option. More information about this option is given below. NOTE: You only need to use --setuipath the first time you run the experiment -- the location you give will be saved by the test suite.
 
-**Mac**
+**Mac:**
 
 The installation process is essentially the same as for Windows. However, the process of adding something to the system path will be different -- this guide_ explains how you can do this. Also, it is important to make sure you are using the correct Python interpreter to run the test suite, since Macs tend to come with Python 2.7 preinstalled. Please see the section marked IMPORTANT above for more information.
 
-**Dealing With Multiple Python Versions**
+**Dealing With Multiple Python Versions:**
 
 Windows:
 
-It will be quite difficult to manage two separate Python installations that are both  easy to use on Windows. However, if you find yourself in a situation where this is necessary, there are a few steps that you can take. Launching Python should be fairly easy using the Python Launcher for Windows -- simply type ``py -3`` for Python 3.6 (the version this project works with) and ``py -2`` for Python 2.7. To run both versions of pip at the same time, there are specifically named versions of pip called ``pip2`` and ``pip3``. To use them, you will need to add the folder they are stored in to your system path. The folders should be something like this: ``C:\\Path\to\Python36\Scripts`` and ``C:\\Path\to\Python27\Scripts``. Once these folders are added to your system path, you should be able to use both versions of pip without trouble. However, as this setup can be confusing, I would highly recommend creating a virtual environment to isolate your dependencies using either of the methods described in the installation instructions.
+It will be quite difficult to manage two separate Python installations that are both  easy to use on Windows. However, if you find yourself in a situation where this is necessary, there are a few steps that you can take. Launching Python should be fairly easy using the Python Launcher for Windows -- simply type ``py -3`` for Python 3.6 and ``py -2`` for Python 2.7. To run both versions of pip at the same time, there are specifically named versions of pip called ``pip2`` and ``pip3``. To use them, you will need to add the folders they are stored in to your system path (see `this tutorial`_. The folders should be something like this: ``C:\\Path\to\Python36\Scripts`` and ``C:\\Path\to\Python27\Scripts``. Once these folders are added to your system path, you should be able to use both versions of pip without trouble. You will then need to replace any use of ``python`` in the installation/use instructions with ``py -3`` and ``pip`` with ``pip3``. However, as this setup can be confusing, I would highly recommend creating a virtual environment to isolate your dependencies and interpreter using either of the methods described in the installation instructions.
 
 Mac:
 
-Affix a '3' to Python-related command on the command line; for example, ``python3`` instead of ``python`` or ``pip3`` instead of ``pip``. This should work in most instances -- if it does not, you may need to add the some of the Python folders to your system path.
+Affix a '3' to Python-related command on the command line; for example, ``python3`` instead of ``python`` or ``pip3`` instead of ``pip``. This should work in most instances -- if it does not, you may need to add the some of the Python folders to your system path (see this guide_).
 
 
 Use
@@ -77,7 +77,7 @@ There are also several command-line options that can be provided:
 
 - --seturl [URL]: Used to set the URL for the online version on Avida-ED.
 
-These options can be used when running individual tests or the test suite -- the test suite simply pipes all options given into Pytest.
+These options can be used when running individual tests or the test suite.
 
 .. _`Python 3.6`: https://www.python.org/downloads/
 .. _pip: https://pypi.python.org/pypi/pip/
