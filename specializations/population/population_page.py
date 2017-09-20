@@ -731,3 +731,50 @@ class PopulationPage(BasePage):
         :return: String containing the current mutation rate.
         """
         return self.execute_script("return av.dom.muteInput.value")
+
+    def calculate_pop_averages(self):
+        """
+        Calculates the number of viable organisms, the average fitness,
+        average gestation, and average metabolism values of all organisms in the
+        dish manually using data from av.grd.msg.
+
+        :return: A list containing the number of viable organisms and each
+        of the three average values listed above.
+        """
+
+        # JS gets a map -- data we want is the list paired with the key 'data'
+        fitness_list = self.execute_script(
+            "return av.grd.msg.fitness")['data']
+        gestation_list = self.execute_script(
+            "return av.grd.msg.gestation")['data']
+        metabolism_list = self.execute_script(
+            "return av.grd.msg.metabolism")['data']
+
+        viable_sum = 0
+        fitness_sum = 0
+        gestation_sum = 0
+        metabolism_sum = 0
+
+        results = []
+
+        if fitness_list is not None:
+
+            length = len(fitness_list)
+
+            # Iterate through each space in the grid
+            for i in range(length):
+                # Check if there is a viable organism at this spot
+                if fitness_list[i] is not None and fitness_list[i] > 0:
+                    viable_sum += 1
+                    fitness_sum += fitness_list[i]
+                    gestation_sum += gestation_list[i]
+                    metabolism_sum += metabolism_list[i]
+
+            results = [viable_sum,
+                       (fitness_sum / length),
+                       (gestation_sum / length),
+                       (metabolism_sum / length)]
+
+        return results
+
+
