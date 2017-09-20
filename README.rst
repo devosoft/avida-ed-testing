@@ -16,11 +16,11 @@ Installation
 
 **IMPORTANT**:
 
-One of the most important things to be conscious of during the installation process is that you are always using the correct Python interpreter. Almost all Mac users and many Windows users will already have a Python 2.7 installation on their computer, which will NOT be able to run this testing project. If Python 2.7 is already installed on your computer, Python-related commands will be run using 2.7 by default.
+One of the most important things to be conscious of during the installation process is that you are always using the correct Python interpreter. Almost all Mac users and many Windows users will already have a Python 2.7 installation on their computer, which will NOT be able to run this testing project.
 
-You can determine which is the default interpreter by running the command ``which python`` (for Mac) or ``where python`` (for Windows) from a command prompt window. If the path that these commands output contains ``python36``, you should be fine -- if it contains ``python27`` instead, you will need to be careful.
+You can determine which Python interpreter your computer runs by default by running the command ``which python`` (for Mac) or ``where python`` (for Windows) from a command prompt window. If the path that these commands output contains ``python36``, you should be fine -- if it contains ``python27`` instead, you will need to be careful.
 
-If you are on Windows, this is more complicated. Assuming that you already have Python 3.6 installed, the best way to launch Python is using the Python Launcher for Windows. To do this, instead of using ``python`` on the command line, use ``py -3`` for Python 3.6 or ``py -2`` for Python 2.7. Note that this ONLY works if you have at least one version of Python >= 3.3 installed on your computer. To use pip, you will either need to create a virtual environment (described below) or add C:\Path\to\Python36\Scripts to your PATH environment variable (see `this tutorial`_), which will allow you to use ``pip3.6`` instead of ``pip`` to ensure that you are always using the Python 3.6 version of pip.
+If you run into this problem, see the section labelled *Dealing With Multiple Python Versions* below.
 
 **Windows**
 
@@ -35,17 +35,17 @@ If you are on Windows, this is more complicated. Assuming that you already have 
 
 **Mac**
 
-The installation process is essentially the same as for Windows. However, the process of adding something to the system path will be different -- this guide_ explains how you can do this. Also, it is important to make sure you are using the correct Python interpreter to run the test suite, since Macs tend to come with Python 2.7 installed. Please see the section marked IMPORTANT above for more information.
+The installation process is essentially the same as for Windows. However, the process of adding something to the system path will be different -- this guide_ explains how you can do this. Also, it is important to make sure you are using the correct Python interpreter to run the test suite, since Macs tend to come with Python 2.7 preinstalled. Please see the section marked IMPORTANT above for more information.
 
 **Dealing With Multiple Python Versions**
 
 Windows:
 
-
+It will be quite difficult to manage two separate Python installations that are both  easy to use on Windows. However, if you find yourself in a situation where this is necessary, there are a few steps that you can take. Launching Python should be fairly easy using the Python Launcher for Windows -- simply type ``py -3`` for Python 3.6 (the version this project works with) and ``py -2`` for Python 2.7. To run both versions of pip at the same time, there are specifically named versions of pip called ``pip2`` and ``pip3``. To use them, you will need to add the folder they are stored in to your system path. The folders should be something like this: ``C:\\Path\to\Python36\Scripts`` and ``C:\\Path\to\Python27\Scripts``. Once these folders are added to your system path, you should be able to use both versions of pip without trouble. However, as this setup can be confusing, I would highly recommend creating a virtual environment to isolate your dependencies using either of the methods described in the installation instructions.
 
 Mac:
 
-Affix a '3' to Python-related command on the command line; for example, ``python3`` instead of ``python`` or ``pip3`` instead of ``pip``.
+Affix a '3' to Python-related command on the command line; for example, ``python3`` instead of ``python`` or ``pip3`` instead of ``pip``. This should work in most instances -- if it does not, you may need to add the some of the Python folders to your system path.
 
 
 Use
