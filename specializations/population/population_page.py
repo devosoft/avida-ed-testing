@@ -739,7 +739,8 @@ class PopulationPage(BasePage):
         dish manually using data from av.grd.msg.
 
         :return: A list containing the number of viable organisms and each
-        of the three average values listed above.
+        of the three average values listed above, or an empty list (if the
+        information has not been created yet).
         """
 
         # JS gets a map -- data we want is the list paired with the key 'data'
