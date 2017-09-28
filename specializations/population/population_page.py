@@ -29,6 +29,7 @@ class PopulationPage(BasePage):
     __stats_button = "popStatsButton"
     __dish_cols_box = "sizeCols"
     __dish_rows_box = "sizeRows"
+    __viable_num_label = "viableNumLabel"
 
 
     # Locators for updates and other UI information.
@@ -752,9 +753,9 @@ class PopulationPage(BasePage):
             "return av.grd.msg.metabolism")['data']
 
         viable_sum = 0
-        fitness_sum = 0
-        gestation_sum = 0
-        metabolism_sum = 0
+        fitness_sum = 0.0
+        gestation_sum = 0.0
+        metabolism_sum = 0.0
 
         results = []
 
@@ -765,17 +766,25 @@ class PopulationPage(BasePage):
             # Iterate through each space in the grid
             for i in range(length):
                 # Check if there is a viable organism at this spot
-                if fitness_list[i] is not None and fitness_list[i] > 0:
+                if (fitness_list[i] is not None) and (fitness_list[i] > 0):
                     viable_sum += 1
                     fitness_sum += fitness_list[i]
                     gestation_sum += gestation_list[i]
                     metabolism_sum += metabolism_list[i]
 
             results = [viable_sum,
-                       (fitness_sum / length),
-                       (gestation_sum / length),
-                       (metabolism_sum / length)]
+                       (fitness_sum / viable_sum),
+                       (gestation_sum / viable_sum),
+                       (metabolism_sum / viable_sum)]
 
         return results
+
+    def get_pop_current_viable(self):
+        """
+        Gets the number of viable organisms currently in the dish.
+
+        :return: Integer value of number of viable orgs.
+        """
+        return int(self.get_text(self.__viable_num_label))
 
 
